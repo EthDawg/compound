@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-sans); }
+
+.font-serif-display { font-family: var(--font-serif); }
+
+/* Dense table rhythm */
+.tbl { width: 100%; border-collapse: separate; border-spacing: 0; }
+.tbl th {
+  font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: #8A939B; text-align: left; padding: 0 12px 8px; white-space: nowrap;
+}
+.tbl td { padding: 10px 12px; font-size: 13px; border-top: 1px solid #EDF0F2; vertical-align: middle; }
+.tbl tbody tr:hover td { background: #F9FAFB; }
+
+.num { font-variant-numeric: tabular-nums; }
+
+/* Scrollbars */
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: #DCE1E5; border-radius: 8px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+.dark-scroll::-webkit-scrollbar { width: 8px; }
+.dark-scroll::-webkit-scrollbar-thumb { background: #343A40; border-radius: 8px; }
+
+/* X-ray */
+.xr-on [data-xr] {
+  outline: 1.5px dashed rgba(217,169,0,.55);
+  outline-offset: 6px;
+  border-radius: 8px;
+  position: relative;
+}
+.xr-on [data-xr]::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(245,197,24,.055), rgba(245,197,24,.015));
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Reading measure */
+.prose-measure { max-width: 68ch; }
+
+@media print { .no-print { display: none !important; } }
