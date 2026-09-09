@@ -2,17 +2,45 @@ import { COMPOUND_METRICS, ANTI_METRICS } from "@/lib/content/metrics";
 import { BHeader } from "@/components/backstage-ui";
 import * as I from "@/components/icons";
 
-function Spark({ data, invert }: { data: number[]; invert?: boolean }) {
+function Spark({ data }: { data: number[] }) {
   const min = Math.min(...data), max = Math.max(...data), span = max - min || 1;
-  const W = 200, H = 44;
-  const pts = data.map((d, i) => [(i / (data.length - 1)) * W, H - ((d - min) / span) * (H - 6) - 3]);
+  const W = 200, H = 62, PAD = 6;
+  const pts = data.map((d, i) => [
+    (i / (data.length - 1)) * W,
+    H - PAD - ((d - min) / span) * (H - PAD * 2),
+  ]);
   const line = pts.map((p) => p.join(",")).join(" ");
-  const area = `${line} ${W},${H} 0,${H}`;
+  const area = `0,${H} ${line} ${W},${H}`;
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="h-11 w-full" preserveAspectRatio="none" aria-hidden>
-      <polygon points={area} fill="rgba(245,197,24,.10)" />
-      <polyline points={line} fill="none" stroke="#F5C518" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r="2.4" fill="#F5C518" />
+    <svg viewBox={`0 0 ${W} ${H}`} className="h-[62px] w-full" preserveAspectRatio="none" aria-hidden>
+      <defs>
+        <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#F5C518" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#F5C518" stopOpacity="0.02" />
+        </linearGradient>
+      </defs>
+      <polygon points={area} fill="url(#sparkFill)" />
+      <polyline
+        points={line}
+        fill="none"
+        stroke="#F5C518"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
+      />
+      {pts.map(([cx, cy], i) => (
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r={i === pts.length - 1 ? 3.2 : 1.6}
+          fill={i === pts.length - 1 ? "#F5C518" : "#0B0D0E"}
+          stroke="#F5C518"
+          strokeWidth="1.2"
+          vectorEffect="non-scaling-stroke"
+        />
+      ))}
     </svg>
   );
 }
@@ -41,7 +69,14 @@ export default function Metrics() {
               </div>
               <p className="mt-1 text-[12px] text-ink-500">{m.sub}</p>
             </div>
-            <div className="mt-3 px-2"><Spark data={m.series} /></div>
+            <div className="mt-3 px-3 pb-1">
+              <Spark data={m.series} />
+              <div className="mt-2 flex justify-between px-0.5 text-[10px] text-ink-500">
+                <span className="num">{m.series[0]}</span>
+                <span>{m.series.length} periods</span>
+                <span className="num">{m.series[m.series.length - 1]}</span>
+              </div>
+            </div>
             <div className="border-t border-white/[0.06] px-5 py-3.5">
               <p className="text-[13.5px] leading-[1.6] text-ink-300">{m.why}</p>
             </div>
