@@ -1,0 +1,65 @@
+"use client";
+import { useReducer, useState } from "react";
+import type { CompanyStudy } from "@/lib/companies";
+import { RENEWAL_SOURCES, renewalReady, patchInitial, patchReducer, patchResults, PATCH_TESTS, INITIAL_TOOL, toolReducer } from "@/lib/data/ai-scenarios";
+import { AIFrame, SceneTitle, Insight } from "./frame";
+import s from "./studies.module.css";
+
+const TABS = [["cowork", "Cowork"], ["code", "Claude Code"], ["playground", "Playground"]] as const;
+export function AnthropicApp({ company, screen }: { company: CompanyStudy; screen: string }) {
+  const current = screen || "cowork";
+  return <AIFrame company={company} screen={current} tabs={TABS}>{current === "cowork" ? <Cowork/> : current === "code" ? <ClaudeCode/> : <Playground/>}</AIFrame>;
+}
+
+function Cowork() {
+  const [shared,setShared] = useState(false), [source,setSource] = useState<keyof typeof RENEWAL_SOURCES>("notes");
+  const [inspected,setInspected] = useState<string[]>([]), [date,setDate] = useState("1 November 2026"), [draft,setDraft] = useState(false);
+  const ready = renewalReady(shared,inspected,date);
+  const inspect = (id: keyof typeof RENEWAL_SOURCES) => {setSource(id);setInspected([...new Set([...inspected,id])]);};
+  return <><SceneTitle product="Claude · Cowork / folder project" title="Prepare the Meridian renewal brief." detail="Carry the project context into a document the account owner can use. The source files disagree about the renewal date."/>
+    <div className={s.workbench}><aside className={s.rail}><h2>Renewal preparation</h2><p>Project instructions<br/>Use the signed agreement for commercial dates. Separate adoption evidence from renewal intent.</p>
+      <button className={s.secondary} disabled={shared} onClick={()=>setShared(true)}>{shared?"Demo folder shared":"Share demo folder"}</button><p>Selected folder · /Meridian/renewal<br/>3 fictional files. Sharing this folder does not grant access to the rest of the computer.</p>
+      {Object.entries(RENEWAL_SOURCES).map(([id,file])=><button key={id} disabled={!shared} aria-pressed={source===id&&shared} onClick={()=>inspect(id as keyof typeof RENEWAL_SOURCES)}>{file.title} {inspected.includes(id)?"✓":""}</button>)}
+    </aside><section className={s.centre}><div className={s.prompt}>“Prepare a renewal brief for the account owner. Tell me what needs a decision before it can go to the customer.”</div>
+      <div className={s.reply}>{!shared?"I need the selected source folder before I can inspect the documents.":"The account notes say November. The signed agreement governs the date. Usage can describe adoption, but cannot establish an intention to renew."}</div>
+      {shared&&<div className={s.document}><p className={s.fileTitle}>{RENEWAL_SOURCES[source].title} · fictional source</p><p>{RENEWAL_SOURCES[source].text}</p></div>}
+      <label className={s.label}>Date to carry into the brief<select className={s.input} value={date} disabled={draft} onChange={e=>setDate(e.target.value)}><option>1 November 2026</option><option>1 October 2026</option></select></label>
+      <button className={s.button} disabled={!ready||draft} onClick={()=>setDraft(true)}>Prepare reviewed demo brief</button><p className={s.small} role="status">{draft?"Document prepared; commercial decisions still require the account owner.":"Inspect the signed agreement and usage file, then resolve the date conflict."}</p>
+    </section><section className={s.preview}><div className={s.row}><h2>Deliverable</h2><span className={s.badge}>{draft?"Ready for owner review":"Waiting for source review"}</span></div>
+      {draft?<div className={`${s.document} mt-5`}><p className={s.fileTitle}>Renewal brief.md</p><h3>Renewal: 1 October 2026</h3><p>84 of 100 seats are active. Adoption is concentrated in two teams; that is a discovery topic, not a forecast of renewal.</p><p><strong>Decision still open:</strong> the account owner must approve any commercial concession before customer communication.</p><p className={s.small}>Evidence: Signed agreement §4; Usage summary. Account notes carry a conflicting working date.</p><a className={s.link} download="Meridian-renewal-brief.txt" href={`data:text/plain;charset=utf-8,${encodeURIComponent('Meridian renewal brief — fictional study\nRenewal: 1 October 2026 (Signed agreement, clause 4).\n84 of 100 seats active (Usage summary).\nAccount notes contain a conflicting November working date.\nOpen: account-owner approval of any concession before communication.')}`}>Download the illustrative brief ↓</a></div>:<p className={s.muted}>A finished document belongs here once the source conflict is resolved.</p>}
+    </section></div><Insight><strong>Context only compounds when it stays trustworthy.</strong> A persistent project can preserve a good method—or an obsolete assumption. Cowork’s value is the usable work product and the evidence carried into it.</Insight>
+  </>;
+}
+
+function ClaudeCode() {
+  const [state,dispatch] = useReducer(patchReducer,patchInitial(false,true)), [mode,setMode] = useState<"Plan"|"Manual">("Plan");
+  const results = patchResults(state.revision);
+  return <><SceneTitle product="Claude Code · local session / meridian-api" title="Retry a timeout. Stop after the second attempt." detail="Inspect the plan, then work in Manual mode. A plausible patch still needs the edge case that can disprove it."/>
+    <div className={s.cols}><div className={s.stack}><section className={s.terminal}><strong>✳ Claude Code</strong><p>Environment: local · fictional repository<br/>Permission mode: {mode}</p><p>Task: make one retry on a transient timeout.<br/>Preserve the successful response. Do not retry forever.</p><p>Plan<br/>1. Inspect request.ts and its callers.<br/>2. Bound the retry at one additional attempt.<br/>3. Test repeated failure, not only recovery.</p><p className={s.small}>This scene uses a fixed diff and scripted test results. Nothing runs on your computer.</p></section>
+      <section className={s.card}><div className={s.row}><h2>Permission for this task</h2><span className={s.badge}>{mode}</span></div>{mode==="Plan"?<><p>Plan mode establishes the approach. Move to Manual to inspect the proposed edit and the requested command.</p><button className={`${s.button} mt-4`} onClick={()=>setMode("Manual")}>Continue in Manual</button></>:<><p>Requested command: <code>npm test -- request.test.ts</code></p><p className={s.small}>Allow this test command in the simulation. It does not grant arbitrary shell or network access.</p><button className={`${s.secondary} mt-4`} disabled={state.permission} onClick={()=>dispatch({type:"permission"})}>{state.permission?"Test command allowed":"Allow the demo test command"}</button></>}</section>
+    </div><section className={s.card}><div className={s.row}><h2>Review · request.ts</h2><span className={s.badge}>Proposed patch v{state.revision}</span></div>
+      <div className={s.diff}><p className={s.minus}>− return await sendRequest();</p><p className={s.plus}>+ {state.revision===1?'while (true) {\n+   try { return await sendRequest(); }\n+   catch (e) { if (!isTimeout(e)) throw e; }\n+ }':'for (let attempt = 0; attempt < 2; attempt++) {\n+   try { return await sendRequest(); }\n+   catch (e) {\n+     if (!isTimeout(e) || attempt === 1) throw e;\n+   }\n+ }'}</p></div>
+      <div className={s.actions}><button className={s.secondary} disabled={mode==="Plan"||state.inspected===state.revision||state.accepted} onClick={()=>dispatch({type:"inspect"})}>Approve this demo edit</button><button className={s.button} disabled={mode==="Plan"||!state.permission||state.inspected!==state.revision||state.accepted} onClick={()=>dispatch({type:"test"})}>Run demo tests</button></div>
+      {state.tested===state.revision&&<ul className={s.checks}>{PATCH_TESTS.map((test,i)=><li key={test}>{test}<span className={`${s.badge} ${results[i]?s.good:s.bad}`}>{results[i]?"Pass":"Fail"}</span></li>)}</ul>}
+      {state.tested===1&&state.revision===1&&<><p>The second timeout never exits the loop. The patch needs a bound.</p><button className={`${s.secondary} mt-4`} onClick={()=>dispatch({type:"revise"})}>Request bounded retry</button></>}
+      <div className={s.actions}><button className={s.button} disabled={state.tested!==2||state.inspected!==2||state.accepted} onClick={()=>dispatch({type:"accept"})}>{state.accepted?"Patch accepted locally":"Keep the reviewed demo patch"}</button></div><p className={s.small} role="status">{state.accepted?"Accepted in the simulated local session. No commit, merge or deployment occurred.":state.revision===2&&state.tested!==2?"The revision needs fresh edit approval and a new test run.":"Acceptance requires review of the current patch and passing edge-case tests."}</p>
+    </section></div><Insight><strong>The loop around the model is part of the product.</strong> Runtime, context, permissions and feedback determine whether model capability survives contact with a repository. That is the useful lens on Bun and the broader tooling acquisitions.</Insight>
+  </>;
+}
+
+function Playground() {
+  const [state,dispatch] = useReducer(toolReducer,INITIAL_TOOL), [view,setView] = useState("request");
+  const complete=state.phase==="complete";
+  return <><SceneTitle product="Claude Platform · Playground" title="A tool request is not a tool result." detail="A stateless Messages API exchange. The application supplies the client tool's result; the model cannot manufacture its evidence."/>
+    <div className={s.workbench}><aside className={s.rail}><h2>Request configuration</h2><p>System<br/>Use the contract lookup for the renewal date. If lookup fails, report the missing evidence.</p><p>Tool<br/>lookup_contract<br/>Read only · contract M-104</p><p>Illustrative request inspector. The current Playground has raw responses and code export; this scene does not recreate retired saved prompts or evaluations.</p></aside>
+      <section className={s.centre}><div className={s.tabs}><button aria-pressed={view==="request"} onClick={()=>setView("request")}>Request</button><button aria-pressed={view==="response"} onClick={()=>setView("response")}>Raw response</button></div>
+      <pre className={s.code}>{view==="request"?JSON.stringify({messages:[{role:"user",content:"When does contract M-104 renew?"}],tools:[{name:"lookup_contract",description:"Read the selected contract record",input_schema:{type:"object",properties:{contract_id:{type:"string"}},required:["contract_id"]}}]},null,2):JSON.stringify({role:"assistant",stop_reason:"tool_use",content:[{type:"tool_use",id:"toolu_demo_104",name:"lookup_contract",input:{contract_id:"M-104"}}]},null,2)}</pre>
+      <p className={s.small}>The assistant requested a lookup. The application must validate the input, perform the operation and return a <code>tool_result</code> with the matching tool-use ID.</p>
+    </section><section className={s.preview}><h2>Application boundary</h2>
+      {state.phase==="proposal"&&<><p>Requested scope: read contract M-104. No contract mutation or message sending.</p><div className={s.actions}><button className={s.secondary} disabled={state.inspected} onClick={()=>dispatch({type:"inspect"})}>Inspect requested scope</button><button className={s.button} disabled={!state.inspected} onClick={()=>dispatch({type:"approve"})}>Allow demo lookup</button><button className={s.secondary} onClick={()=>dispatch({type:"deny"})}>Reject request</button></div></>}
+      {state.phase==="approved"&&<><p>Scope is accepted. There is no returned evidence yet.</p><div className={s.actions}><button className={s.button} onClick={()=>dispatch({type:"result",success:true})}>Return successful tool_result</button><button className={s.secondary} onClick={()=>dispatch({type:"result",success:false})}>Return lookup error</button></div></>}
+      {(complete||state.phase==="failed")&&<pre className={s.code}>{JSON.stringify({role:"user",content:[{type:"tool_result",tool_use_id:"toolu_demo_104",...(complete?{content:'{"contract_id":"M-104","renewal_date":"2026-10-01"}'}:{is_error:true,content:"Contract store unavailable"})}]},null,2)}</pre>}
+      <p className={s.small}>The application sends the tool result back in a user-role message after the assistant’s tool_use. Claude then continues from the returned evidence.</p><p role="status">{complete?"Grounded demo answer: the returned record says 1 October 2026. It establishes a date, not approval to renew.":state.phase==="failed"?"No date can be established from this failed lookup.":state.phase==="denied"?"The application rejected the request. No lookup ran.":"An answer needs a returned record."}</p><button className={`${s.link} mt-5`} onClick={()=>dispatch({type:"reset"})}>Reset exchange</button>
+    </section></div><Insight><strong>Trust has an inspectable seam.</strong> A requested operation, an allowed operation and a returned record establish different facts. The safety proposition has to hold at this boundary as well as inside the model.</Insight>
+  </>;
+}

@@ -7,11 +7,14 @@ import { PageUpApp } from "@/components/studies/talent/pageup-app";
 import { ElmoApp } from "@/components/studies/talent/elmo-app";
 import { HeroApp } from "@/components/studies/talent/hero-app";
 import { ServiceNowApp } from "@/components/studies/servicenow/app";
+import { AnthropicApp } from "@/components/studies/ai/anthropic-app";
+import { OpenAIApp } from "@/components/studies/ai/openai-app";
+import { ElevenLabsApp } from "@/components/studies/ai/elevenlabs-app";
 import { RIPPLING_APP_SCREENS } from "@/components/studies/rippling/app-screens";
 import EmployeePage from "@/components/studies/rippling/app/people/[id]/page";
 
 type Props={params:Promise<{company:string;screen?:string[]}>};
-const STUDY_APPS = { pageup: PageUpApp, elmo: ElmoApp, "employment-hero": HeroApp, servicenow: ServiceNowApp };
+const STUDY_APPS = { pageup: PageUpApp, elmo: ElmoApp, "employment-hero": HeroApp, servicenow: ServiceNowApp, anthropic: AnthropicApp, openai: OpenAIApp, elevenlabs: ElevenLabsApp };
 export const dynamicParams=false;
 export function generateStaticParams(){return [
   ...COMPANIES.flatMap(c=>c.appScreens.map(s=>({company:c.id,screen:s?s.split('/'):[]}))),

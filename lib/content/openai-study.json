@@ -1,0 +1,342 @@
+{
+  "backstage": {
+    "headline": "Own the journey from asking to getting the work done.",
+    "thesis": "OpenAI packages the same research engine as a familiar place to start, a workspace that can carry out substantial work, and infrastructure other companies can build on. The strategic prize is continuity from intent to a useful result. Its product expansion, operating leadership and acquisitions increasingly address the work around the model: context, execution, testing, distribution and deployment. Those layers must earn their coherence; a shared brand does not make them one permission boundary or one reliable system.",
+    "object": "A task with context, tools and a reviewable result",
+    "question": "Can a useful answer become completed work without losing the evidence or the user's control?",
+    "sequence": [
+      "Establish the task and permitted context",
+      "Choose a working environment and tools",
+      "Produce an inspectable result",
+      "Review the evidence before accepting or acting"
+    ],
+    "premises": [
+      {
+        "title": "Make existing context produce usable work",
+        "body": "ChatGPT Work gives a familiar conversation somewhere to go: a brief, spreadsheet, deck or other deliverable. Projects preserve relevant sources and instructions across related work. The important transition is from an answer that sounds complete to an artifact whose claims, omissions and intended use can be checked.",
+        "screen": "work"
+      },
+      {
+        "title": "Delegate the change and retain the review",
+        "body": "Codex joins model capability to an environment that can read, edit and test a real project. Worktrees and the review pane let a person inspect the resulting change separately from the agent's account of it. The scarce resource shifts toward a clear task, useful tests and reviewer attention.",
+        "screen": "codex"
+      },
+      {
+        "title": "Let builders assemble the execution path",
+        "body": "The Responses API exposes tool use as structured events. With a configured MCP server, a proposed call, the application's approval response, the call's result and an error are different records. Developers can build their own product around these primitives, while retaining responsibility for permissions, execution semantics and recovery.",
+        "screen": "responses"
+      }
+    ],
+    "choices": [
+      {
+        "choice": "Turn broad consumer familiarity into a work surface",
+        "gain": "People can carry an existing habit into projects, sources and substantial deliverables, lowering the effort of starting a new kind of work.",
+        "cost": "A familiar interface can make a speculative draft feel authoritative. Source access, conflicting evidence and responsibility for the final decision still have to be explicit."
+      },
+      {
+        "choice": "Own more of the environment around the model",
+        "gain": "An execution workspace, review tools and product experimentation can make improvements in the model more useful in practice.",
+        "cost": "Applications, infrastructure and frontier research run on different clocks. More surfaces also create more integration work, operating cost and opportunities for a good local result to fail in the full workflow."
+      },
+      {
+        "choice": "Sell the application and supply its builders",
+        "gain": "OpenAI can meet direct users through ChatGPT and Codex while developers embed capabilities in their own products. The April 2026 Microsoft amendment expands its cloud distribution options.",
+        "cost": "Customers need to judge portability as well as capability. A standard protocol does not standardise every tool's behaviour, and OpenAI can also expand into applications built by its ecosystem."
+      }
+    ],
+    "proof": [
+      {
+        "metric": "Accepted deliverables, with traceable corrections",
+        "test": "Give the work a real source conflict and a clear audience. Measure whether the finished artifact resolves it accurately and how much correction remains before use.",
+        "failure": "The output is polished but chooses the wrong source, hides an unresolved decision, or needs the user to reconstruct the evidence."
+      },
+      {
+        "metric": "Changes that survive independent review",
+        "test": "Give Codex a scoped change, a missing edge case and an isolated workspace. Inspect the diff, exercise the failure case, and measure review plus rework alongside implementation time.",
+        "failure": "Passing tests merely mirror the implementation, unrelated changes travel with the task, or staged code is mistaken for a deployed outcome."
+      },
+      {
+        "metric": "Recoverable actions within the intended authority",
+        "test": "Inspect a proposed tool call, deny an out-of-scope request and simulate a tool failure after approval. Count completed outcomes and recovery effort, not only successful model responses.",
+        "failure": "The product treats approval as execution, retries an uncertain side effect blindly, or reports a tool result the external service did not return."
+      }
+    ],
+    "sources": [
+      {
+        "title": "ChatGPT Work · current official documentation",
+        "url": "https://learn.chatgpt.com/docs/get-started-with-work",
+        "supports": "Work produces reviewable deliverables using files, plugins and approved tools. Local/cloud selection depends on the available environment; non-coding Codex users can use Work's everyday-work experience."
+      },
+      {
+        "title": "Projects and chats · current official documentation",
+        "url": "https://learn.chatgpt.com/docs/projects",
+        "supports": "Chats and Sources sections; project instructions and uploaded/connected context; local projects and filesystem projects have different access semantics."
+      },
+      {
+        "title": "Code review · current official documentation",
+        "url": "https://learn.chatgpt.com/docs/code-review?surface=app",
+        "supports": "Review pane scopes, inline comments, staging and reverting. The pane reflects repository state, including changes not made by the agent."
+      },
+      {
+        "title": "Git worktrees · current official documentation",
+        "url": "https://learn.chatgpt.com/docs/environments/git-worktrees",
+        "supports": "Isolated Git working directories and local/worktree handoff. Isolation is an execution mechanism, not proof that the change is correct."
+      },
+      {
+        "title": "Responses API · MCP and Connectors",
+        "url": "https://developers.openai.com/api/docs/guides/tools-connectors-mcp",
+        "supports": "Tool discovery, allowed_tools, configurable approvals and mcp_approval_request / mcp_approval_response / mcp_call output items; call arguments, output and errors. The demo inspector is an interpretation of these primitives."
+      },
+      {
+        "title": "OpenAI structure · current governance account",
+        "url": "https://openai.com/our-structure/",
+        "supports": "2015 nonprofit origin, 2019 for-profit subsidiary, completed October 2025 recapitalisation, Foundation control of Group PBC and board appointment rights. Equity percentages on this page are explicitly as of recapitalisation closing."
+      },
+      {
+        "title": "Introducing ChatGPT · November 2022",
+        "url": "https://openai.com/index/chatgpt/",
+        "supports": "Conversational research-preview launch and its stated limitations. A starting point for the distribution argument, not current product documentation."
+      },
+      {
+        "title": "Applications leadership · Fidji Simo, May 2025",
+        "url": "https://openai.com/index/leadership-expansion-with-fidji-simo/",
+        "supports": "Historical May 2025 appointment: Simo was to become CEO of Applications reporting to Sam Altman. This reporting structure is not presented as current after her July 2026 transition to an advisory role."
+      },
+      {
+        "title": "Statsig acquisition announcement · September 2025",
+        "url": "https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/",
+        "supports": "Vijaye Raji's planned CTO of Applications role, experimentation rationale and intended independent customer service. This announcement alone was conditional on closing."
+      },
+      {
+        "title": "Statsig's post-acquisition role · current OpenAI role description",
+        "url": "https://openai.com/careers/engineering-manager-core-experimentation-seattle/",
+        "supports": "Current first-party description explicitly says Statsig joined OpenAI and describes post-acquisition experimentation and rollout infrastructure. It establishes integration activity, not an exact closing date or measured performance."
+      },
+      {
+        "title": "io team merger · July 2025 update",
+        "url": "https://openai.com/sam-and-jony/",
+        "supports": "The io Products team officially merged on the account updated 9 July 2025. Jony Ive and LoveFrom remain independent with design responsibilities; a shipped device is not established."
+      },
+      {
+        "title": "Microsoft partnership amendment · April 2026",
+        "url": "https://openai.com/index/next-phase-of-microsoft-partnership/",
+        "supports": "Supersedes older exclusivity accounts: Microsoft remains primary cloud partner and Azure-first; OpenAI may serve all products across cloud providers, and Microsoft's IP licence becomes non-exclusive."
+      },
+      {
+        "title": "Astral acquisition announcement · March 2026",
+        "url": "https://openai.com/index/openai-to-acquire-astral/",
+        "supports": "Proposed addition of uv, Ruff and ty expertise to Codex and the software lifecycle. Reviewed announcement is conditional; closing or completed integration is not established here."
+      },
+      {
+        "title": "Ona acquisition announcement · June 2026",
+        "url": "https://openai.com/index/openai-to-acquire-ona/",
+        "supports": "June announcement describes the rationale for persistent, customer-controlled execution around Codex. Ona now confirms it is part of OpenAI on its current homepage; the original release is used for intended capabilities, not current ownership status."
+      },
+      {
+        "title": "Promptfoo · current official repository",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "supports": "Current official README confirms Promptfoo is now part of OpenAI and remains open source and MIT licensed. This supersedes the original conditional acquisition announcement; it does not establish every promised Frontier integration."
+      },
+      {
+        "title": "Deployment Company and Tomoro · May 2026",
+        "url": "https://openai.com/index/openai-launches-the-deployment-company/",
+        "supports": "May launch of the OpenAI-controlled deployment company, investment and consulting partner distribution, embedded engineering and Tomoro agreement. A subsequent July DeployCo release confirms Tomoro was acquired."
+      },
+      {
+        "title": "TBPN acquisition · April 2026",
+        "url": "https://openai.com/index/openai-acquires-tbpn/",
+        "supports": "Completed acquisition and stated editorial independence. It extends communications and audience reach, not model capability; ownership remains relevant when assessing independence."
+      },
+      {
+        "title": "The Work Now Within Reach · September 2026",
+        "url": "https://openai.com/index/the-work-now-within-reach/",
+        "supports": "Current management articulation of research, consumer/enterprise reach and compute strategy. Used as evidence of strategic intent, not independent validation of capability or economics."
+      },
+      {
+        "title": "Fidji Simo transition · July 2026 reporting",
+        "url": "https://www.wired.com/story/fidji-simo-ceo-agi-deployment-openai/",
+        "supports": "Reports Simo leaving her full-time role for part-time advisory work and links her first-person announcement. The original X post could not be fetched; this is explicitly secondary reporting."
+      },
+      {
+        "title": "Dali Rajic appointment · August 2026",
+        "url": "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+        "supports": "Official 13 August appointment as CRO, Denise Dresser departure after transition, and Greg Brockman identified as president/co-founder. Supports the shift toward repeatable enterprise revenue execution; no precise transition-completion date inferred."
+      },
+      {
+        "title": "Current product leadership · Defense Factory",
+        "url": "https://openai.com/the-defense-factory/",
+        "supports": "Current official account identifies Thibault Sottiaux as Head of Core Products & Platform. Used only for current leadership remit, not security effectiveness or performance claims."
+      },
+      {
+        "title": "Ona · current company site",
+        "url": "https://ona.com/",
+        "supports": "Current company homepage identifies Ona as part of OpenAI, superseding the original conditional June announcement. Ownership is confirmed; the page does not date closing or prove every proposed Codex integration is generally available."
+      },
+      {
+        "title": "Deployment Company · Tomoro acquired, Northslope agreed, July 2026",
+        "url": "https://deploy.co/news/the-openai-deployment-company-to-acquire-northslope",
+        "supports": "The 8 July company release refers to the recent acquisition of Tomoro, confirming ownership by that date. Northslope is a separate agreed acquisition subject to closing conditions. Neither exact Tomoro closing date nor full operational integration is inferred."
+      }
+    ]
+  },
+  "strategy": {
+    "contrast": "ServiceNow begins with accountable work already inside the enterprise. OpenAI begins with a person's intent and tries to assemble the context and tools needed to fulfil it. That makes the starting point unusually broad, while leaving the authority of each connected system important.",
+    "flywheel": {
+      "title": "Make each capability improvement easier to put to work.",
+      "body": "Familiar products bring in real tasks. Better environments and feedback expose where capability fails to become useful work. Product and research improvements can then reach those users through the same distribution. This is a strategic interpretation, not a claim that all customer content trains the models.",
+      "steps": [
+        "Attract a useful task",
+        "Observe the completion gap",
+        "Improve the model and working system",
+        "Return a more usable capability"
+      ],
+      "constraint": "Usage alone does not prove useful completion or sustainable economics. Review effort, reliability, capacity and the cost of delivering longer tasks constrain the loop."
+    },
+    "moments": [
+      {
+        "date": "2015 → 2019",
+        "title": "A research mission acquires a capital mechanism",
+        "fact": "OpenAI starts as a nonprofit in 2015 and creates a controlled for-profit subsidiary in 2019.",
+        "consequence": "The tension between frontier research costs and the institution funding them predates ChatGPT. The corporate structure is part of the strategy, not merely legal background.",
+        "source": "https://openai.com/our-structure/"
+      },
+      {
+        "date": "Nov 2022",
+        "title": "The model becomes a place people start",
+        "fact": "ChatGPT launches as a conversational research preview with explicit limitations.",
+        "consequence": "A direct consumer relationship gives later capabilities a route to users without requiring every user to become an API customer. Familiarity is a distribution advantage; it is not evidence that every answer is dependable.",
+        "source": "https://openai.com/index/chatgpt/"
+      },
+      {
+        "date": "2025",
+        "title": "Application execution becomes its own leadership problem",
+        "fact": "Fidji Simo's Applications appointment is followed by the Statsig acquisition announcement and Vijaye Raji's planned engineering remit. Current OpenAI material describes Statsig's post-acquisition rollout and experimentation work. The io team merger is confirmed in July; LoveFrom remains independent.",
+        "consequence": "Experimentation infrastructure and interface design address different gaps between a research advance and a product people can repeatedly use. Neither acquisition is a shortcut to a proven integrated experience.",
+        "source": "https://openai.com/index/leadership-expansion-with-fidji-simo/",
+        "sources": [
+          "https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/",
+          "https://openai.com/careers/engineering-manager-core-experimentation-seattle/",
+          "https://openai.com/sam-and-jony/"
+        ]
+      },
+      {
+        "date": "Oct 2025",
+        "title": "The capital structure changes; nonprofit control remains",
+        "fact": "The recapitalisation completes. OpenAI Foundation controls OpenAI Group PBC through special governance rights, including appointment of the Group board.",
+        "consequence": "Conventional equity simplifies the growth mechanism while governance retains a separate mission-bearing institution. Formal control is observable; its effectiveness in a future commercial or safety conflict still has to be demonstrated.",
+        "source": "https://openai.com/our-structure/"
+      },
+      {
+        "date": "Apr 2026",
+        "title": "A central partner becomes a less exclusive route",
+        "fact": "The amended Microsoft agreement preserves primary cloud partnership and Azure-first distribution while allowing OpenAI to serve all products across cloud providers and making Microsoft's IP licence non-exclusive.",
+        "consequence": "The strategy gains distribution flexibility without a clean break from Microsoft. Older accounts describing blanket Azure exclusivity no longer describe these terms.",
+        "source": "https://openai.com/index/next-phase-of-microsoft-partnership/"
+      },
+      {
+        "date": "Mar → Jul 2026",
+        "title": "Buy the missing parts around sustained work",
+        "fact": "Promptfoo and Ona now identify themselves as part of OpenAI. In July, the Deployment Company confirms its acquisition of Tomoro while agreeing a conditional Northslope deal. Astral’s reviewed announcement describes an agreement to join; TBPN is separately described as acquired in April.",
+        "consequence": "Testing, developer tools, persistent execution, embedded implementation and audience reach address different bottlenecks around sustained work. Ownership and product integration are separate milestones: acquired teams do not automatically become one generally available system.",
+        "source": "https://ona.com/",
+        "sources": [
+          "https://github.com/promptfoo/promptfoo",
+          "https://deploy.co/news/the-openai-deployment-company-to-acquire-northslope",
+          "https://openai.com/index/openai-to-acquire-astral/",
+          "https://openai.com/index/openai-launches-the-deployment-company/",
+          "https://openai.com/index/openai-acquires-tbpn/"
+        ]
+      },
+      {
+        "date": "Jul → Aug 2026",
+        "title": "The operating structure changes again",
+        "fact": "Simo announces a move from full-time leadership to part-time advisory work in July, as reported by WIRED. In August, OpenAI appoints Dali Rajic as CRO and announces Denise Dresser will depart after a transition. Current company material identifies Thibault Sottiaux as Head of Core Products & Platform.",
+        "consequence": "The 2025 Applications hierarchy is historical. The sharper current question is whether product consolidation and more systematic enterprise execution can turn broad demand into dependable deployment through another leadership transition.",
+        "source": "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+        "sources": [
+          "https://www.wired.com/story/fidji-simo-ceo-agi-deployment-openai/",
+          "https://openai.com/the-defense-factory/"
+        ]
+      }
+    ],
+    "leadership": {
+      "title": "A new operating structure has to make adoption repeatable.",
+      "fact": "Sam Altman remains OpenAI CEO. Simo shifted to part-time advisory work in July, according to reporting of her announcement. August brought Dali Rajic’s CRO appointment and Denise Dresser’s announced departure after transition. Current OpenAI material names Thibault Sottiaux Head of Core Products & Platform.",
+      "reading": "The 2025 Applications appointment was a move toward dedicated product execution, not a stable endpoint. The current organisational signals point to consolidation around the core products and more repeatable enterprise selling and deployment. The challenge is to connect research advances, usable products and customer implementation while leadership responsibilities change. A reporting-line change alone does not establish successful execution.",
+      "watch": "Look for accepted work, reliability and lower review burden across the core products, alongside repeatable customer implementation. Foundation control remains a separate governance fact; its effectiveness when mission and commercial incentives conflict must be demonstrated in practice.",
+      "sources": [
+        "https://openai.com/our-structure/",
+        "https://openai.com/index/leadership-expansion-with-fidji-simo/",
+        "https://www.wired.com/story/fidji-simo-ceo-agi-deployment-openai/",
+        "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+        "https://openai.com/the-defense-factory/"
+      ]
+    },
+    "essays": [
+      {
+        "slug": "the-front-door-must-lead-somewhere",
+        "title": "The front door must lead somewhere.",
+        "standfirst": "ChatGPT's familiarity matters most when a person can turn it into a usable result without reconstructing the work elsewhere.",
+        "paragraphs": [
+          "A conversation is an unusually forgiving starting point. A person can arrive with an incomplete brief, an unfamiliar problem or the wrong vocabulary and still begin. ChatGPT's original launch established that interaction. The strategic question now is how much work can finish within the relationship that began there.",
+          "ChatGPT Work and Projects give that relationship more structure. Sources and instructions can survive across related tasks; Work can turn them into a file or other deliverable that the user can inspect. This changes what completion means. A compelling paragraph is no longer sufficient when the requested output is a comparison someone will use or a presentation someone must defend.",
+          "The opportunity is continuity, but its failure mode is borrowed authority. A project can contain an old brief and a newer signed scope without either becoming true merely because it is attached. A confident artifact can conceal that conflict. The scene therefore asks the reader to inspect the competing sources and correct the deliverable while preserving the unresolved decision.",
+          "The 2025 Applications leadership expansion and Statsig integration fit a shift from demonstration to repeatable use; subsequent leadership changes mean that operating design is still evolving. Product iteration can reveal where people abandon or repair a task, although engagement is an incomplete measure of success. The real test is whether the person leaves with useful work and less verification debt."
+        ],
+        "test": "Give the same task to the system with a conflicting source. Does the final artifact surface the conflict and preserve the decision boundary, or merely become more polished?",
+        "sources": [
+          "https://openai.com/index/chatgpt/",
+          "https://learn.chatgpt.com/docs/projects",
+          "https://learn.chatgpt.com/docs/get-started-with-work",
+          "https://openai.com/careers/engineering-manager-core-experimentation-seattle/",
+          "https://openai.com/index/dali-rajic-chief-revenue-officer/"
+        ]
+      },
+      {
+        "slug": "the-environment-is-part-of-the-product",
+        "title": "The environment is part of the product.",
+        "standfirst": "Codex makes a stronger claim than producing code: a delegated task should come back as a change that can be examined and improved.",
+        "paragraphs": [
+          "A model can suggest a correct-looking patch without establishing that it belongs in this repository. A useful coding agent needs the surrounding project, tools and feedback. Codex's worktree and review surfaces expose that larger unit of work: an isolated attempt, the files it changed and the evidence available to the reviewer.",
+          "Isolation makes parallel work manageable; it does not validate the result. The review pane can include changes made by the user or another process, so the reviewer still needs a deliberate scope. Tests can also pass while missing the important failure. In the scene, the retry edge case matters more than the first green status, and staging a corrected hunk remains separate from shipping it.",
+          "Astral’s announced combination and Ona’s arrival make sense at these boundaries. Developer tooling strengthens the path from editing to checking; persistent customer-controlled environments address where longer work can continue. Ona now confirms it is part of OpenAI, while the reviewed Astral announcement establishes an agreement rather than a closing date. These moves map the desired system; they do not prove that every integrated capability is already available.",
+          "This changes the economics of attention before it changes the economics of every software team. More generated changes can increase the review queue unless tasks, tests and ownership improve with them. The durable advantage would be a higher proportion of changes accepted with less total correction, not simply a larger volume of agent activity."
+        ],
+        "test": "Count reviewer time, failed assumptions and rework along with implementation time. A patch is progress only when its behaviour survives a check the agent did not write to flatter itself.",
+        "sources": [
+          "https://learn.chatgpt.com/docs/code-review?surface=app",
+          "https://learn.chatgpt.com/docs/environments/git-worktrees",
+          "https://openai.com/index/openai-to-acquire-astral/",
+          "https://openai.com/index/openai-to-acquire-ona/",
+          "https://ona.com/"
+        ]
+      },
+      {
+        "slug": "intelligence-still-needs-an-execution-contract",
+        "title": "Intelligence still needs an execution contract.",
+        "standfirst": "The API makes the action sequence explicit. It does not absolve the builder of knowing what an action means.",
+        "paragraphs": [
+          "OpenAI can supply the place a user works and the primitives a developer uses to build a competing place. That dual position is strategically valuable: capabilities can travel through direct applications or somebody else's workflow. The April 2026 Microsoft amendment adds flexibility to distribution while retaining an important partner relationship.",
+          "At the product boundary, the Responses API gives this ambition concrete form. A configured MCP interaction can expose a proposed tool call, a separate approval response, and the external tool's output or error. These distinctions are useful precisely because they stop a fluent account of an action from becoming evidence that it occurred.",
+          "The contract still belongs partly to the application. What does creating a refund draft authorise? What happens if the tool times out after receiving the request? Which record proves completion? The illustrative inspector keeps approval, a failed call and a returned draft identifier distinct. It never represents a prepared draft as money refunded.",
+          "Promptfoo’s arrival and the Deployment Company’s acquisition of Tomoro recognise other parts of this problem: testing behaviour and implementing systems inside organisations. Northslope is a further agreed addition, conditional in July’s release. Owning more of the stack may reduce handoffs, but it also concentrates dependencies and expands the integration burden. The promise becomes credible through recoverable execution and useful outcomes, not the number of layers under the same company name."
+        ],
+        "test": "Deny one call and fail another after approval. The application should preserve both distinctions and recover without inventing a result or repeating an uncertain side effect.",
+        "sources": [
+          "https://developers.openai.com/api/docs/guides/tools-connectors-mcp",
+          "https://openai.com/index/next-phase-of-microsoft-partnership/",
+          "https://github.com/promptfoo/promptfoo",
+          "https://openai.com/index/openai-launches-the-deployment-company/",
+          "https://deploy.co/news/the-openai-deployment-company-to-acquire-northslope"
+        ]
+      }
+    ],
+    "watch": {
+      "title": "From broader capability to dependable completion",
+      "shipped": "Current documentation supports ChatGPT Work deliverables and project context, Codex review/worktree workflows, and structured MCP tool calls through the Responses API. These have different environments and access conditions.",
+      "next": "Watch whether acquired Promptfoo, Ona and Tomoro capabilities become coherent, available customer workflows. The reviewed Astral and Northslope announcements establish agreements, not their current closing status. September management commentary links research, product reach and compute economics; the test is dependable completion at sustainable cost.",
+      "boundary": "The scenes use scripted fictional data. They demonstrate the documented mechanics, not live models, real tool execution, universal plan access or benchmark results. Company accounts establish strategic intent; they are not independent proof of returns.",
+      "source": "https://openai.com/index/the-work-now-within-reach/"
+    }
+  }
+}

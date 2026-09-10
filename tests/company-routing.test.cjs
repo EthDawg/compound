@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const ts=require('typescript');
 // Load the pure TypeScript registry without adding another test dependency.
-require.extensions['.ts']=(module,filename)=>module._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText,filename);
+require.extensions['.ts']=(module,filename)=>module._compile(ts.transpileModule(fs.readFileSync(filename,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,filename);
 const {COMPANIES, BACKSTAGE_SECTIONS, switchCompanyHref, companyHref}=require('../lib/companies.ts');
 
 test('company switching preserves each shared Backstage topic in both directions',()=>{
@@ -40,7 +40,7 @@ test('company deep reads link to their own Backstage',()=>{
   }
 });
 test('new studies retain their shared chapters and send unsupported app screens to the right overview',()=>{
-  for(const id of ['pageup','elmo','employment-hero','servicenow']){
+  for(const id of ['pageup','elmo','employment-hero','servicenow','anthropic','openai','elevenlabs']){
     for(const chapter of ['history','essays','leadership'])
       assert.equal(switchCompanyHref(id,`/companies/pageup/backstage/${chapter}`),companyHref(id,'backstage',chapter));
     assert.equal(switchCompanyHref(id,'/companies/rippling/app/devices'),companyHref(id,'app'));

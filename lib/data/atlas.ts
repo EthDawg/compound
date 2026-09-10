@@ -2,6 +2,9 @@ import type { Sector, Category, Vendor, Attrs } from "./atlas-types";
 import type { Archetype } from "./ecosystem";
 
 export const SECTORS: Sector[] = [
+  { id: "ai", name: "AI & generated media", accent: "#7855CC",
+    blurb: "Models, agent workspaces and the tools that turn generated output into usable work.",
+    thesis: "A fight over where intelligence becomes an enduring product: the model, the workspace, the execution layer or the production workflow. Better generation is only part of the cost of a dependable result." },
   { id: "work", name: "Work & employment", accent: "#D9A900",
     blurb: "HR, workforce management and pay — the systems that know who works here.",
     thesis: "A fight about whether the employee record consolidates into one system or stays scattered across thousands. Every other question in the sector is downstream of that one." },
@@ -38,6 +41,8 @@ const cat = (id: string, sector: string, name: string, shape: Archetype, blurb: 
   ({ id, sector, name, shape, blurb });
 
 export const CATEGORIES: Category[] = [
+  cat("frontier-ai", "ai", "Models & agent workspaces", "AI-native", "Research capabilities become tools for reasoning, creating and carrying out work."),
+  cat("voice-ai", "ai", "Voice & audio platforms", "AI-native", "Generation, localisation and conversational agents around the spoken interface."),
   // Work & employment
   cat("hr-compound", "work", "Compound HR platforms", "Compound platform", "One employee record, many products stacked on it."),
   cat("hcm-suite", "work", "Enterprise HCM suites", "Enterprise suite", "Configurable systems of record for large, complex employers."),
@@ -287,6 +292,9 @@ export const WORK_CATEGORY: Record<string, string> = {
 
 /** Existing companies that live outside the employment sector. */
 export const CROSS_SECTOR: Record<string, { sector: string; category: string }> = {
+  anthropic: { sector: "ai", category: "frontier-ai" },
+  openai: { sector: "ai", category: "frontier-ai" },
+  elevenlabs: { sector: "ai", category: "voice-ai" },
   finch: { sector: "data", category: "unified-api" },
   merge: { sector: "data", category: "unified-api" },
   check: { sector: "data", category: "embedded" },

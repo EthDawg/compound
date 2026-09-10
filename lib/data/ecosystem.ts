@@ -41,7 +41,7 @@ export const LENSES: Lens[] = [
     x: { label: "Reach", low: "Narrow", high: "Enormous" },
     y: { label: "Dependency", low: "Swappable in a quarter", high: "Load-bearing; ripping it out is a project" },
     quadrants: [
-      { at: "tr", label: "Infrastructure of employment", tone: "ink" },
+      { at: "tr", label: "Infrastructure of work", tone: "ink" },
       { at: "tl", label: "Deep but narrow", tone: "moss" },
       { at: "br", label: "Broad but shallow", tone: "clay" },
       { at: "bl", label: "Not yet material", tone: "signal" },
@@ -52,12 +52,12 @@ export const LENSES: Lens[] = [
     pill: "Agentic readiness",
     question: "Relevant to whether an agent can safely change something?",
     blurb:
-      "Everyone on this board shipped agents. The word means completely different things depending on whether a company owns a live, permission-aware record or reads a stored copy of one. This lens separates the claim from the architecture underneath it.",
+      "Agent claims hide different architectures: owning a live record, reading a copy, or acting through another system's authorised tools. Record proximity is one dimension; permissions, fresh context and returned evidence still determine what an agent can do.",
     x: { label: "Proximity to the live record", low: "Reads a copy, or calls someone else's API", high: "Owns the record it acts on" },
     y: { label: "How loudly they are betting on agents", low: "Quiet", high: "Betting the positioning on it" },
     quadrants: [
-      { at: "tr", label: "Can actually act", tone: "moss" },
-      { at: "tl", label: "Claiming past the architecture", tone: "clay" },
+      { at: "tr", label: "Acts near its own record", tone: "moss" },
+      { at: "tl", label: "Acts through other systems", tone: "clay" },
       { at: "br", label: "Could act, isn't saying so", tone: "ink" },
       { at: "bl", label: "Outside the frame", tone: "signal" },
     ],
@@ -359,6 +359,33 @@ export const COMPANIES: Company[] = [
 // how HR tech gets bought, implemented, consolidated and eventually disposed of.
 
 export const ADJACENT: Company[] = [
+  C("anthropic", "Anthropic", "AI-native", "US · global",
+    "Make frontier capability useful through context, working environments and controls that survive the move from answering to acting.",
+    [70, 40, 85], [70, 46, 73], [24, 96, 90], [44, 96, 77],
+    {
+      strategic: "Cowork, Code and the platform work across existing files and tools. Bun, Vercept and Stainless address runtime, perception and connectivity around the model.",
+      installed: "Developer and enterprise workflows create dependency through working methods and integrations. The model supplier does not automatically own the business record.",
+      agentic: "Tool use reaches external systems through bounded execution. Current permissions, returned results and error handling matter alongside research capability.",
+      durability: "Trust, developer adoption and reusable work patterns can reinforce one another. Open protocols also help competitors, while policy and compute constraints keep moving.",
+    }, true, "2026-09", "fast"),
+  C("openai", "OpenAI", "AI-native", "US · global",
+    "Carry a broad starting point into useful deliverables, delegated work and the execution primitives other products can build on.",
+    [48, 52, 90], [87, 43, 84], [29, 97, 94], [49, 97, 85],
+    {
+      strategic: "ChatGPT, Codex and the API offer direct and embedded routes to work. Acquisitions increasingly address testing, environments, experimentation and customer deployment.",
+      installed: "Broad familiarity is a distribution asset. Enterprise dependency still depends on accepted work, integration and the cost of changing suppliers.",
+      agentic: "Responses tools expose proposed calls, approvals and returned evidence. Owning the model does not confer authority over every connected system.",
+      durability: "Distribution, compute capacity and product integration support the position; changing leadership, partner terms and governance remain part of the execution test.",
+    }, true, "2026-09", "fast"),
+  C("elevenlabs", "ElevenLabs", "AI-native", "UK / US · global",
+    "Turn convincing speech into a production and interaction platform: direct the take, carry the meaning across languages, and operate the conversation.",
+    [73, 28, 58], [53, 38, 55], [22, 89, 65], [35, 85, 58],
+    {
+      strategic: "Studio, dubbing and agents surround voice generation with revision, finishing and operational control. A replaceable voice component is the counterargument.",
+      installed: "Production workflows and integrated voice agents can create recurring dependency. Good individual clips do not establish workflow depth.",
+      agentic: "Interaction timing and tool behavior meet the caller in real time. Testing and limited traffic experiments matter beyond a fluent voice.",
+      durability: "Research quality, production context and distribution can reinforce the product. Enterprise leadership additions signal a wider delivery obligation, not proven results yet.",
+    }, true, "2026-09", "fast"),
   C("servicenow", "ServiceNow", "Service platform", "US · global",
     "Turn enterprise work into an accountable chain: service context, controlled action and evidence that the obligation is complete.",
     [36, 84, 72], [64, 88, 62], [72, 90, 76], [82, 84, 78],

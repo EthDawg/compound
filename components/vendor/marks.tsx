@@ -2,6 +2,12 @@
 export function Mark({ id, className = "h-4 w-4" }: { id: string; className?: string }) {
   const p = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
   switch (id) {
+    case "anthropic":
+      return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><path d="M2 13 6 3l4 10M3.5 9h5M11 3l3 10"/></g></svg>;
+    case "openai":
+      return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><path d="m8 2 5.2 3v6L8 14l-5.2-3V5zM2.8 5 8 8l5.2-3M8 8v6"/></g></svg>;
+    case "elevenlabs":
+      return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><path d="M5 2v12M10 2v12" strokeWidth="2.5"/></g></svg>;
     case "servicenow": // work moving through accountable stages
       return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><circle cx="3" cy="8" r="1.8"/><circle cx="13" cy="8" r="1.8"/><path d="M5 8h6M7 5l3 3-3 3"/></g></svg>;
     case "pageup":
