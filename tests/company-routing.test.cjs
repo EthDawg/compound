@@ -40,7 +40,7 @@ test('company deep reads link to their own Backstage',()=>{
   }
 });
 test('new studies retain their shared chapters and send unsupported app screens to the right overview',()=>{
-  for(const id of ['pageup','elmo','employment-hero']){
+  for(const id of ['pageup','elmo','employment-hero','servicenow']){
     for(const chapter of ['history','essays','leadership'])
       assert.equal(switchCompanyHref(id,`/companies/pageup/backstage/${chapter}`),companyHref(id,'backstage',chapter));
     assert.equal(switchCompanyHref(id,'/companies/rippling/app/devices'),companyHref(id,'app'));

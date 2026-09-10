@@ -360,14 +360,14 @@ export const COMPANIES: Company[] = [
 
 export const ADJACENT: Company[] = [
   C("servicenow", "ServiceNow", "Service platform", "US · global",
-    "Own the workflow layer above every system of record, then absorb service delivery — including HR's.",
+    "Turn enterprise work into an accountable chain: service context, controlled action and evidence that the obligation is complete.",
     [36, 84, 72], [64, 88, 62], [72, 90, 76], [82, 84, 78],
     {
-      strategic: "Enters HR from above rather than beside it: not the record, the work that happens around the record.",
-      installed: "Enormous enterprise footprint, though HR service delivery is a slice of it rather than the core.",
-      agentic: "Workflow orchestration is the most natural agentic surface in enterprise software — the products were already about routing work.",
-      durability: "Platform gravity plus a very large installed base of processes nobody wants to rebuild.",
-    }, false, "2026-05", "medium"),
+      strategic: "Moveworks widens the employee front door; Logik and native CRM objects deepen commercial work. The neutral workflow layer is also becoming a destination for records.",
+      installed: "IT service management is the enterprise beachhead. Extending those relationships into employee, customer and security workflows still requires domain depth and implementation.",
+      agentic: "AI Control Tower governs the lifecycle; Action Fabric exposes controlled actions. Discovery, approval, execution and verified outcomes remain different achievements.",
+      durability: "Configured processes, service relationships and delivery partners compound the position. Acquiring Armis and Veza expands context; integration and authority still have to be established.",
+    }, true, "2026-09", "fast"),
   C("atlassian", "Atlassian", "Service platform", "Australia · global",
     "Bottom-up adoption of work management, then expand into service and enterprise.",
     [44, 72, 50], [58, 76, 46], [56, 68, 44], [72, 58, 52], {}, false, "2026-05", "medium"),
