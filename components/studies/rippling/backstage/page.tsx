@@ -29,22 +29,29 @@ const PREMISES = [
   { n: "06", t: "Compliance is a constraint", d: "Not a team that catches it. A form that will not let you type it." },
 ];
 
+const START_HERE = [
+  { href: "/companies/rippling/backstage/manual/the-second-product", label: "The second product is the whole company", eyebrow: "The economics", description: "The first sale carries the acquisition cost. Later products can reuse the buyer, contract and data — creating room for lower prices or better margins." },
+  { href: "/companies/rippling/backstage/manual/the-platform-tax", label: "The platform tax", eyebrow: "The building speed", description: "Shared foundations should make each new product faster to build. What the platform pays for, how to test that claim, and the friction it creates." },
+  { href: "/companies/rippling/backstage/ask", label: "Ask the founder", eyebrow: "The founder reasoning", description: "Fourteen hard questions about focus, capital, competition and when the strategy fails. A reconstructed founder voice, with the uncomfortable answers intact." },
+];
+
 export default function Backstage() {
   return (
     <div>
       <div className="border-b border-white/10 py-10">
-        <div className="text-[11px] font-bold uppercase tracking-wider text-signal">Backstage</div>
+        <div className="text-[11px] font-bold uppercase tracking-wider text-signal">Rippling · The compound company</div>
         <h1 className="font-serif-display mt-3 max-w-3xl text-[34px] font-normal leading-[1.14] tracking-tight text-white sm:text-[44px]">
-          You have used the product. Here is why it is shaped like that.
+          The company that compounds.
         </h1>
         <p className="prose-measure mt-5 text-[16.5px] leading-[1.65] text-ink-300">
-          Every screen in the app is downstream of a small number of decisions, most of them made before there was a
-          customer who would have asked for them. Several were expensive. A few looked, at the time, like mistakes —
-          and one of them was.
+          You have used the product. Here is the company-building argument behind it: shared foundations that make
+          the next product faster to build, a customer relationship that makes it cheaper to sell, and the founder
+          decisions needed to hold the whole thing together.
         </p>
         <p className="prose-measure mt-4 text-[16px] leading-[1.65] text-ink-400">
-          This is written the way it would be explained by someone who had to defend it in a board meeting and then go
-          and hold the line on it in a planning session the next morning. Where a position is uncomfortable, it says so.
+          An independent study of Rippling and the compound-startup thesis associated with Parker Conrad. The essays
+          use a reconstructed founder voice to make the reasoning arguable, including the costs and the conditions
+          under which the strategy is wrong.
         </p>
         <div className="mt-6 flex flex-wrap gap-2.5">
           <Link href="/companies/rippling/backstage/manual/focus-is-a-market-discipline"
@@ -57,6 +64,18 @@ export default function Backstage() {
           </Link>
         </div>
       </div>
+
+      <section className="border-b border-white/10 py-8" aria-label="Start with the compound thesis">
+        <div className="grid gap-3 xl:grid-cols-3">
+          {START_HERE.map(item=><Link key={item.href} href={item.href} className="group rounded-xl bg-white/[0.06] p-5 ring-1 ring-white/15 transition hover:bg-white/10 hover:ring-white/30">
+            <div className="text-[10px] font-bold uppercase tracking-wider text-signal">{item.eyebrow}</div>
+            <h2 className="mt-3 text-[18px] font-semibold leading-snug text-white">{item.label}</h2>
+            <p className="mt-3 text-[13.5px] leading-[1.65] text-ink-300">{item.description}</p>
+            <span className="mt-4 inline-flex items-center gap-2 text-[12px] font-semibold text-signal">Read the argument <I.IArrow className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" /></span>
+          </Link>)}
+        </div>
+        <Link href="/companies/rippling/backstage/manual/the-j-curve" className="mt-5 inline-flex items-center gap-2 text-[13px] text-ink-300 underline underline-offset-4">Then read the cost of getting there: the J-curve <I.IArrow className="h-3.5 w-3.5" /></Link>
+      </section>
 
       <section className="py-10">
         <h2 className="font-serif-display text-[25px] text-white">Six premises everything else follows from</h2>

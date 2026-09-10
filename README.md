@@ -1,7 +1,7 @@
 # Compound — company studies
 
 An independent study of software companies, built as an Atlas, an illustrative
-App, and the reasoning behind that app in Backstage.
+App, and the company-building reasoning in Backstage.
 
 Live: https://compound-snowy-pi.vercel.app
 
@@ -17,7 +17,7 @@ compare the two app studies.
 | Atlas | `/` | Sectors, categories and vendors under four editorial lenses |
 | Company app | `/companies/{company}/app` | Explore the company's illustrative interface |
 | Company Backstage | `/companies/{company}/backstage` | Understand the company's thesis, design choices and evaluation criteria |
-| Extended Rippling library | `/companies/rippling/backstage/library` | Preserved essays, decisions, metrics and explorations |
+| Rippling operating manual | `/companies/rippling/backstage/manual` | Full essays on compounding economics, product-building speed and founder decisions |
 | Desk | `/desk` | Research priorities and maintenance prompts |
 | Deep reads | `/ecosystem/{slug}` | Existing company position essays |
 | Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
@@ -25,8 +25,13 @@ compare the two app studies.
 
 The Company selector currently offers **Rippling and Workday** in both App and
 Backstage. The two views share the company's theme and identity, while the
-Backstage content differs by company. Both have five core sections: overview,
-operating model, choices and trade-offs, proposed tests, and sources.
+Backstage content and navigation differ by company. Rippling opens with the full
+compound-company study: economics, product-building speed, founder reasoning,
+essays, decisions, metrics and explorations. Workday opens with its own company
+thesis. Both support shared comparison routes for the operating model, choices
+and trade-offs, proposed tests, and sources. The shared structure must preserve
+each company's depth. The former Rippling `/backstage/library` destination
+redirects to its canonical Backstage home.
 
 The URL is authoritative, including on direct entry, refresh, Back and Forward.
 Switching companies preserves the view and a shared topic/screen. An unavailable
@@ -41,7 +46,7 @@ company studies.
 
 ## Ownership
 
-- `lib/companies.ts`: company identity, brand, supported screens, Backstage data,
+- `lib/companies.ts`: company identity, brand, supported screens, Backstage navigation and data,
   source provenance, route construction and company-switch fallback rules.
 - `lib/vendors/skins.ts`: the referenced palettes, layout tokens and legacy app
   study data. Company shells read these tokens rather than maintaining a second
@@ -51,14 +56,15 @@ company studies.
 - `components/studies/rippling/`: preserved Rippling screens and essays, with
   explicit screen registries for server-side rendering.
 - `components/workday-app.tsx`: Workday workspace and working module links.
-- `components/company-backstage.tsx`: the repeatable Backstage structure.
+- `components/company-backstage.tsx`: shared Backstage comparison pages and the
+  Workday overview. Rippling's full study owns its overview.
 - `components/compound-bar.tsx`: company selection and App/Backstage navigation.
 - `lib/data/`: fictional customer data. Employee IDs join devices, apps, spend
   and payroll; system assignments derive from those employee records.
-- `lib/content/`: the extended compound-platform argument. These constructed
+- `lib/content/`: the core compound-platform argument. These constructed
   essays belong to the Rippling study, not every company on the Atlas.
 
-To add a company, supply its identity/theme and the same core Backstage data,
+To add a company, supply its identity/theme, navigation and core Backstage data,
 register screens its app renderer actually supports, then extend the company ID
 and renderer selection. Do not copy Rippling's essays under a new brand.
 
@@ -72,7 +78,7 @@ check the associated prose remains consistent.
 This is an independent design study, not an official product or an exact
 reproduction. Public sources support company concepts. Layouts, theses,
 trade-offs and proposed tests are editorial interpretations. The demo customer,
-people, records and figures are fictional. The extended founder voice and
+people, records and figures are fictional. The founder voice and
 decision log are constructed, not quotations or claims about real internals.
 
 ## Running and verifying
@@ -93,7 +99,9 @@ Do not build while the development or preview server is running: they share
 `.next`. Stop it, build, then restart the preview from the exact output.
 
 The routing tests exercise company/view/topic retention and fallback behaviour,
-and verify registered routes exist in the production build. Browser checks
+and verify registered routes exist in the production build. They also protect
+direct access to Rippling's economics, product-building and founder content from
+its Backstage home, and each company's complete navigation. Browser checks
 cover the original desktop popup reproduction, App/Backstage switching, company
 styling, mobile navigation, remembered company links and legacy bookmarks.
 

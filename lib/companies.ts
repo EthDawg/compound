@@ -19,6 +19,7 @@ export interface CompanyStudy {
   brand: { chrome: string; ink: string; highlight: string };
   appScreens: readonly string[];
   backstage: {
+    navigation: { label: string; sections: readonly { id: string; label: string }[] }[];
     headline: string;
     thesis: string;
     object: string;
@@ -37,6 +38,22 @@ export const COMPANIES: CompanyStudy[] = [
     brand: { chrome: "#40212D", ink: "#FFFFFF", highlight: "#F9D34F" },
     appScreens: ["", "people", "hire", "payroll", "devices", "apps", "spend", "workflows", "graph", "benefits", "time", "learning", "identity", "security", "expenses", "bills", "planning", "reports", "entities"],
     backstage: {
+      navigation: [
+        { label: "The compound company", sections: [
+          { id: "", label: "The company thesis" },
+          { id: "manual", label: "The operating manual" },
+          { id: "ask", label: "Ask the founder" },
+          { id: "skills", label: "How it out-executes" },
+          { id: "metrics", label: "What we measure" },
+          { id: "org", label: "How it's organised" },
+          { id: "trajectory", label: "Growth from here" },
+          { id: "agentic", label: "The agentic turn" },
+          { id: "decisions", label: "Decision log" },
+          { id: "heresies", label: "Heresies" },
+          { id: "timeline", label: "Nine years" },
+        ] },
+        { label: "Compare the model", sections: BACKSTAGE_SECTIONS.filter(s => s.id !== "") },
+      ],
       headline: "One change. Every consequence.",
       thesis: "The Rippling study starts with the employee and follows the consequences across HR, IT and Finance. Its wager: owning the connections between products can be more valuable than optimising each product separately.",
       object: "Employee + relationships",
@@ -67,6 +84,7 @@ export const COMPANIES: CompanyStudy[] = [
     brand: { chrome: "#0755A5", ink: "#FFFFFF", highlight: "#FFB23F" },
     appScreens: ["", "processes", "people", "reporting", "talent", "compensation", "planning", "financials", "absence", "learning"],
     backstage: {
+      navigation: [{ label: "The company", sections: BACKSTAGE_SECTIONS }],
       headline: "Every change has a process.",
       thesis: "The Workday study starts with a business process: who initiates a change, who can approve it, when it takes effect and what is recorded. Its wager: a configurable operating system can make complex organisations governable.",
       object: "Business process + organisation",

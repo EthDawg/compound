@@ -35,3 +35,32 @@ test('company deep reads link to their own Backstage',()=>{
     assert.ok(!links.some(href=>href.includes('/backstage')&&!href.startsWith(`/companies/${company.id}/`)));
   }
 });
+test('Rippling Backstage opens the compound-company study with direct access to its core arguments',()=>{
+  const root='.next/server/app/companies/rippling/backstage';
+  const html=fs.readFileSync(`${root}.html`,'utf8');
+  assert.match(html,/<h1\b[^>]*>The company that compounds\.<\/h1>/);
+  assert.match(html,/Compounding is arithmetic/);
+  assert.doesNotMatch(html,/Extended Rippling study/);
+  const links=[...html.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match=>match[1]);
+  for(const section of ['manual/the-second-product','manual/the-platform-tax','manual/the-j-curve','ask']){
+    assert.ok(links.includes(companyHref('rippling','backstage',section)),`Missing direct entry to ${section}`);
+  }
+  assert.match(fs.readFileSync(`${root}/manual/the-second-product.html`,'utf8'),/Full customer acquisition cost/);
+  assert.match(fs.readFileSync(`${root}/manual/the-platform-tax.html`,'utf8'),/Does product N ship faster/);
+  assert.match(fs.readFileSync(`${root}/ask.html`,'utf8'),/Fourteen questions, including the ones that sting/);
+});
+test('each company exposes its own complete Backstage navigation with working destinations',()=>{
+  const routes=JSON.parse(fs.readFileSync('.next/prerender-manifest.json','utf8')).routes;
+  for(const company of COMPANIES){
+    const html=fs.readFileSync(`.next/server/app/companies/${company.id}/backstage.html`,'utf8');
+    const nav=html.match(/<nav aria-label="Backstage sections"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
+    assert.ok(nav,`Missing ${company.id} navigation`);
+    const links=[...nav.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match=>match[1]);
+    for(const group of company.backstage.navigation)for(const section of group.sections){
+      const href=companyHref(company.id,'backstage',section.id);
+      assert.ok(links.includes(href),`Missing navigation entry ${href}`);
+      assert.ok(routes[href],`Missing navigation destination ${href}`);
+    }
+    assert.ok(links.every(href=>href.startsWith(`/companies/${company.id}/backstage`)));
+  }
+});
