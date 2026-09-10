@@ -16,7 +16,7 @@ export default async function Essay({ params }: { params: Promise<{ slug: string
   return (
     <article className="max-w-3xl">
       <div className="pt-6">
-        <Link href="/backstage/manual" className="inline-flex items-center gap-1 text-[12.5px] text-ink-500 hover:text-ink-300">
+        <Link href="/companies/rippling/backstage/manual" className="inline-flex items-center gap-1 text-[12.5px] text-ink-500 hover:text-ink-300">
           <I.IChevron className="h-3 w-3 rotate-180" /> The operating manual
         </Link>
       </div>
@@ -42,8 +42,8 @@ export default async function Essay({ params }: { params: Promise<{ slug: string
       </div>
 
       <NextPrev
-        prev={prev ? { href: `/backstage/manual/${prev.slug}`, label: prev.title } : undefined}
-        next={next ? { href: `/backstage/manual/${next.slug}`, label: next.title } : undefined}
+        prev={prev ? { href: `/companies/rippling/backstage/manual/${prev.slug}`, label: prev.title } : undefined}
+        next={next ? { href: `/companies/rippling/backstage/manual/${next.slug}`, label: next.title } : undefined}
       />
     </article>
   );

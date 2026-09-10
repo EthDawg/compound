@@ -3,77 +3,39 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BACKSTAGE_SECTIONS, companyHref, type CompanyStudy } from "@/lib/companies";
+import { CompoundBar } from "./compound-bar";
+import { Mark } from "./vendor/marks";
 import * as I from "./icons";
 
-const SECTIONS = [
-  { href: "/backstage", label: "Overview", icon: I.ILayers, n: "" },
-  { href: "/desk", label: "The desk", icon: I.IHome, n: "" },
-  { href: "/ecosystem", label: "The map", icon: I.IGraph, n: "" },
-  { href: "/brief", label: "The 12-minute brief", icon: I.IClock, n: "" },
-  { href: "/backstage/manual", label: "The operating manual", icon: I.IBook, n: "12" },
-  { href: "/backstage/agentic", label: "The agentic turn", icon: I.ISpark, n: "" },
-  { href: "/backstage/skills", label: "How it out-executes", icon: I.IBolt, n: "9" },
-  { href: "/backstage/trajectory", label: "Growth from here", icon: I.IReport, n: "4" },
-  { href: "/backstage/decisions", label: "Decision log", icon: I.IBook, n: "14" },
-  { href: "/backstage/heresies", label: "Heresies", icon: I.ILayers, n: "11" },
-  { href: "/backstage/metrics", label: "What we measure", icon: I.IList, n: "8" },
-  { href: "/backstage/org", label: "How it's organised", icon: I.IPeople, n: "4" },
-  { href: "/backstage/timeline", label: "Nine years", icon: I.IClock, n: "5" },
-  { href: "/backstage/ask", label: "Ask the founder", icon: I.IBook, n: "14" },
-];
-
-export function BackstageShell({ children }: { children: React.ReactNode }) {
+export function BackstageShell({ company, children }: { company: CompanyStudy; children: React.ReactNode }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
-
-  return (
-    <div className="min-h-screen bg-ink text-ink-200">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-[1280px] items-center gap-3 px-4 sm:px-6">
-          <button onClick={() => setOpen((v) => !v)} className="grid h-8 w-8 place-items-center rounded-md text-ink-400 hover:bg-white/10 lg:hidden" aria-label="Toggle sections">
-            <I.IList />
-          </button>
-          <Link href="/backstage" className="flex items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-signal text-ink">
-              <I.ILayers className="h-4 w-4" />
-            </span>
-            <span className="text-[15px] font-semibold tracking-tight text-white">Backstage</span>
-          </Link>
-          <span className="hidden text-[12.5px] text-ink-500 sm:block">· the reasoning under the product</span>
-          <Link href="/app" className="ml-auto inline-flex h-8 items-center gap-1.5 rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white transition hover:bg-white/15">
-            <I.IArrow className="h-3.5 w-3.5 rotate-180" />
-            Back to the app
-          </Link>
-        </div>
-      </header>
-
-      <div className="mx-auto flex max-w-[1280px] gap-8 px-4 sm:px-6">
-        <aside className={`${open ? "block" : "hidden"} shrink-0 py-6 lg:block lg:w-[210px]`}>
-          <nav className="sticky top-20 space-y-px">
-            {SECTIONS.map((s) => {
-              const active = s.href === "/backstage" ? path === s.href : path.startsWith(s.href);
-              const Icon = s.icon;
-              return (
-                <Link key={s.href} href={s.href} onClick={() => setOpen(false)}
-                  className={`flex items-center gap-2.5 rounded-md px-2.5 py-2 text-[13px] transition ${
-                    active ? "bg-white/10 font-medium text-white" : "text-ink-400 hover:bg-white/5 hover:text-ink-200"
-                  }`}>
-                  <Icon className={`h-4 w-4 shrink-0 ${active ? "text-signal" : "text-ink-500"}`} />
-                  <span className="truncate">{s.label}</span>
-                  {s.n && <span className="num ml-auto text-[11px] text-ink-600">{s.n}</span>}
-                </Link>
-              );
-            })}
-            <div className="!mt-5 border-t border-white/10 pt-4">
-              <p className="px-2.5 text-[11.5px] leading-relaxed text-ink-500">
-                An independent study. The founder voice here is a reconstruction, not a quotation.
-              </p>
-            </div>
-          </nav>
-        </aside>
-
-        <main className="min-w-0 flex-1 pb-20">{children}</main>
+  const t = company.skin.theme;
+  return <div className="company-backstage min-h-screen" data-company={company.id} style={{background:t.bg, color:t.ink, fontFamily:t.font}}>
+    <CompoundBar activeId={company.id} />
+    <header style={{background:company.brand.chrome, color:company.brand.ink, borderBottom:`3px solid ${company.brand.highlight}`}}>
+      <div className="mx-auto flex max-w-[1320px] items-center gap-3 px-4 py-5 sm:px-6">
+        <span className="grid h-10 w-10 place-items-center rounded-lg" style={{background:company.brand.highlight,color:company.brand.chrome}}><Mark id={company.id} className="h-6 w-6" /></span>
+        <div><div className="text-[21px] font-semibold tracking-tight">{company.name} <span className="font-normal opacity-65">/ Backstage</span></div>
+          <div className="mt-0.5 text-[12px] opacity-75">The reasoning behind the app · {company.archetype}</div></div>
+        <Link href={companyHref(company.id,"app")} className="ml-auto hidden items-center gap-2 rounded-lg border border-white/30 px-3 py-2 text-[12px] font-semibold sm:flex">Explore the app <I.IArrow className="h-3.5 w-3.5" /></Link>
       </div>
+    </header>
+    <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:flex lg:gap-10">
+      <aside className="shrink-0 border-b py-4 lg:w-[205px] lg:border-b-0 lg:py-8" style={{borderColor:t.border}}>
+        <button className="flex w-full items-center justify-between py-1 text-[13px] font-semibold lg:hidden" aria-expanded={open} onClick={()=>setOpen(!open)}>Backstage sections<I.IChevronDown className="h-4 w-4" /></button>
+        <nav aria-label="Backstage sections" className={`${open ? "block" : "hidden"} mt-3 space-y-1 lg:sticky lg:top-24 lg:mt-0 lg:block`}>
+          {BACKSTAGE_SECTIONS.map(s=>{const href=companyHref(company.id,"backstage",s.id); const active=path===href;return <Link key={s.id} href={href} onClick={()=>setOpen(false)} aria-current={active?"page":undefined}
+            className="block rounded-lg px-3 py-2.5 text-[13px]" style={{background:active?t.accentSoft:undefined,color:active?t.ink:t.inkMuted,fontWeight:active?650:450,borderLeft:active?`3px solid ${t.accent}`:"3px solid transparent"}}>{s.label}</Link>})}
+          {company.id==="rippling" && <div className="!mt-6 border-t pt-5" style={{borderColor:t.border}}>
+            <div className="px-3 text-[10px] font-semibold uppercase tracking-wider" style={{color:t.inkFaint}}>Extended Rippling study</div>
+            {[['library','All essays & explorations'],['manual','Operating manual'],['agentic','The agentic turn'],['decisions','Illustrative decision log']].map(([id,label])=><Link key={id} href={companyHref(company.id,"backstage",id)} className="mt-1 block rounded-lg px-3 py-2 text-[12px] hover:underline" style={{color:t.inkMuted}}>{label}</Link>)}
+          </div>}
+          <p className="!mt-6 px-3 text-[11px] leading-relaxed" style={{color:t.inkFaint}}>Independent analysis and an illustrative interface. No affiliation. Demo records belong to the fictional Meridian Optics.</p>
+        </nav>
+      </aside>
+      <main className="min-w-0 flex-1 pb-16">{children}</main>
     </div>
-  );
+  </div>;
 }

@@ -50,3 +50,18 @@ body { font-family: var(--font-sans); }
 .prose-measure { max-width: 68ch; }
 
 @media print { .no-print { display: none !important; } }
+
+/* Rippling's shared palette is visible in the app and in its Backstage study. */
+.company-app[data-company="rippling"] main .bg-ink-50 { background-color: var(--study-bg); }
+.company-app[data-company="rippling"] main .text-ink { color: var(--study-ink); }
+.company-app[data-company="rippling"] aside { background: var(--study-surface-alt); border-color: var(--study-border); }
+.company-app[data-company="rippling"] aside a.bg-ink-100 { background: var(--study-accent-soft); color: var(--study-ink); }
+.company-app[data-company="rippling"] .company-product-header { border-bottom-width: 3px; }
+.company-app[data-company="rippling"] .company-product-header .bg-ink { background: var(--study-chrome); }
+.company-backstage[data-company="rippling"] .legacy-analysis .text-signal { color: #F9D34F; }
+
+/* Keep navigation usable when an operating-system text size wraps the company bar. */
+@media (max-width: 380px) {
+  .study-bar > div { gap: 5px; padding-left: 8px; padding-right: 8px; }
+  .study-bar label { display: none; }
+}

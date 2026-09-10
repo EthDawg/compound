@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StudyLink } from "@/components/study-link";
 import { Desk } from "@/components/desk";
 import * as I from "@/components/icons";
 
@@ -21,7 +22,7 @@ export default function DeskPage() {
           <span className="hidden text-[12.5px] text-ink-500 sm:block">· the desk</span>
           <div className="ml-auto flex gap-2">
             <Link href="/ecosystem" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">The map</Link>
-            <Link href="/backstage" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">Backstage</Link>
+            <StudyLink surface="backstage" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">Backstage</StudyLink>
           </div>
         </div>
       </header>

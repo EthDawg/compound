@@ -56,7 +56,7 @@ export default async function EmployeePage({ params }: { params: Promise<{ id: s
       {/* Header */}
       <div className="border-b border-ink-200 bg-white">
         <div className="mx-auto max-w-[1180px] px-5 pt-4 sm:px-7">
-          <Link href="/app/people" className="inline-flex items-center gap-1 text-[12.5px] text-ink-500 hover:text-ink">
+          <Link href="/companies/rippling/app/people" className="inline-flex items-center gap-1 text-[12.5px] text-ink-500 hover:text-ink">
             <I.IChevron className="h-3 w-3 rotate-180" /> People
           </Link>
         </div>
@@ -203,7 +203,7 @@ export default async function EmployeePage({ params }: { params: Promise<{ id: s
                 {chain.length > 0 && (
                   <div className="mb-2 space-y-1">
                     {chain.map((m, i) => (
-                      <Link key={m!.id} href={`/app/people/${m!.id}`} className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-ink-50" style={{ marginLeft: i * 12 }}>
+                      <Link key={m!.id} href={`/companies/rippling/app/people/${m!.id}`} className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-ink-50" style={{ marginLeft: i * 12 }}>
                         <Avatar name={m!.name} size={22} />
                         <span className="truncate text-[12.5px] text-ink-600">{m!.name}</span>
                         <span className="truncate text-[11.5px] text-ink-400">{m!.title}</span>
@@ -218,7 +218,7 @@ export default async function EmployeePage({ params }: { params: Promise<{ id: s
                 {reports.length > 0 && (
                   <div className="mt-2 space-y-1">
                     {reports.map((r) => (
-                      <Link key={r.id} href={`/app/people/${r.id}`} className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-ink-50" style={{ marginLeft: (chain.length + 1) * 12 }}>
+                      <Link key={r.id} href={`/companies/rippling/app/people/${r.id}`} className="flex items-center gap-2 rounded-md px-1 py-1 hover:bg-ink-50" style={{ marginLeft: (chain.length + 1) * 12 }}>
                         <Avatar name={r.name} size={22} />
                         <span className="truncate text-[12.5px] text-ink-600">{r.name}</span>
                       </Link>

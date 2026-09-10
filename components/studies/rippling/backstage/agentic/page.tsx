@@ -144,11 +144,11 @@ export default function Agentic() {
       </section>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/backstage/manual/the-graph-was-always-the-point"
+        <Link href="/companies/rippling/backstage/manual/the-graph-was-always-the-point"
           className="inline-flex h-9 items-center gap-1.5 rounded-md bg-signal px-4 text-[13px] font-semibold text-ink transition hover:bg-signal-300">
           Read the full essay <I.IArrow className="h-3.5 w-3.5" />
         </Link>
-        <Link href="/backstage/decisions#D-014"
+        <Link href="/companies/rippling/backstage/decisions#D-014"
           className="inline-flex h-9 items-center gap-1.5 rounded-md bg-white/10 px-4 text-[13px] font-semibold text-white transition hover:bg-white/15">
           The decision this forced (D-014)
         </Link>

@@ -9,12 +9,12 @@ import { fmtCompact } from "@/lib/data/finance";
 import * as I from "@/components/icons";
 
 const TASKS = [
-  { id: "t1", domain: "Payroll", tone: "bad" as const, title: "US semi-monthly run needs review", detail: "208 people · $3.18M gross · pays Sep 15", meta: "Due in 2 days", href: "/app/payroll" },
-  { id: "t2", domain: "IT", tone: "warn" as const, title: "3 devices out of compliance past 72h", detail: "Conditional access has already restricted 6 apps on those machines", meta: "Auto-escalated", href: "/app/devices" },
-  { id: "t3", domain: "Hiring", tone: "info" as const, title: "2 hires start Sep 22 — provisioning staged", detail: "Tobias Mensah, Valentina Rossi · laptops shipped, access pending start date", meta: "13 days", href: "/app/hire" },
-  { id: "t4", domain: "Finance", tone: "warn" as const, title: "4 transactions over policy await approval", detail: "$112,330 total · largest is $68,400 to Shenzhen Precision", meta: "Oldest 3 days", href: "/app/spend" },
-  { id: "t5", domain: "Compliance", tone: "bad" as const, title: "Offboarding: Hugo Lindgren, Sep 30", detail: "German notice period computed · final pay staged · device recovery pending", meta: "21 days", href: "/app/people/e-046" },
-  { id: "t6", domain: "IT", tone: "neutral" as const, title: "23 app seats unused for 45+ days", detail: "Projected $4,180/mo if released · one-click confirm per manager", meta: "Suggested", href: "/app/apps" },
+  { id: "t1", domain: "Payroll", tone: "bad" as const, title: "US semi-monthly run needs review", detail: "208 people · $3.18M gross · pays Sep 15", meta: "Due in 2 days", href: "/companies/rippling/app/payroll" },
+  { id: "t2", domain: "IT", tone: "warn" as const, title: "3 devices out of compliance past 72h", detail: "Conditional access has already restricted 6 apps on those machines", meta: "Auto-escalated", href: "/companies/rippling/app/devices" },
+  { id: "t3", domain: "Hiring", tone: "info" as const, title: "2 hires start Sep 22 — provisioning staged", detail: "Tobias Mensah, Valentina Rossi · laptops shipped, access pending start date", meta: "13 days", href: "/companies/rippling/app/hire" },
+  { id: "t4", domain: "Finance", tone: "warn" as const, title: "4 transactions over policy await approval", detail: "$112,330 total · largest is $68,400 to Shenzhen Precision", meta: "Oldest 3 days", href: "/companies/rippling/app/spend" },
+  { id: "t5", domain: "Compliance", tone: "bad" as const, title: "Offboarding: Hugo Lindgren, Sep 30", detail: "German notice period computed · final pay staged · device recovery pending", meta: "21 days", href: "/companies/rippling/app/people/e-046" },
+  { id: "t6", domain: "IT", tone: "neutral" as const, title: "23 app seats unused for 45+ days", detail: "Projected $4,180/mo if released · one-click confirm per manager", meta: "Suggested", href: "/companies/rippling/app/apps" },
 ];
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
         eyebrow={`${COMPANY.name} · ${COMPANY.entities.length} entities`}
         title="Wednesday, 9 September"
         sub="Six things need a person today. They come from four different domains and they are in one list, because they are all the same kind of object: an action waiting on a human."
-        actions={<><Btn variant="secondary"><I.IReport className="h-3.5 w-3.5" />Reports</Btn><Btn variant="primary" href="/app/hire"><I.IHire className="h-3.5 w-3.5" />Hire someone</Btn></>}
+        actions={<><Btn variant="secondary"><I.IReport className="h-3.5 w-3.5" />Reports</Btn><Btn variant="primary" href="/companies/rippling/app/hire"><I.IHire className="h-3.5 w-3.5" />Hire someone</Btn></>}
       />
 
       <div className="mx-auto max-w-[1180px] px-5 py-5 sm:px-7">
@@ -74,7 +74,7 @@ export default function Home() {
                 <ul className="divide-y divide-ink-100">
                   {onboarding.map((e) => (
                     <li key={e.id}>
-                      <Link href={`/app/people/${e.id}`} className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-ink-50">
+                      <Link href={`/companies/rippling/app/people/${e.id}`} className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-ink-50">
                         <Avatar name={e.name} size={30} tone="sky" />
                         <div className="min-w-0 flex-1">
                           <div className="truncate text-[13px] font-medium text-ink">{e.name}</div>
@@ -92,7 +92,7 @@ export default function Home() {
                 <ul className="divide-y divide-ink-100">
                   {offboarding.map((e) => (
                     <li key={e.id}>
-                      <Link href={`/app/people/${e.id}`} className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-ink-50">
+                      <Link href={`/companies/rippling/app/people/${e.id}`} className="flex items-center gap-2.5 px-4 py-2.5 hover:bg-ink-50">
                         <Avatar name={e.name} size={30} tone="clay" />
                         <div className="min-w-0 flex-1">
                           <div className="truncate text-[13px] font-medium text-ink">{e.name}</div>
@@ -150,7 +150,7 @@ export default function Home() {
                 in the app. Every screen gets annotated with why it is built this way, what it trades away, and what it
                 cost to hold the line.
               </p>
-              <Link href="/backstage" className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-signal hover:underline">
+              <Link href="/companies/rippling/backstage" className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-signal hover:underline">
                 Or go straight to the backstage <I.IArrow className="h-3 w-3" />
               </Link>
             </div>

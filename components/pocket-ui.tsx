@@ -30,7 +30,7 @@ export function PocketChrome({ children }: { children: React.ReactNode }) {
           <span className="rounded-full bg-white/[0.07] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-signal ring-1 ring-white/10">
             Pocket
           </span>
-          <Link href="/backstage" className="ml-auto grid h-8 w-8 place-items-center rounded-md text-ink-400 hover:bg-white/10"
+          <Link href="/companies/rippling/backstage" className="ml-auto grid h-8 w-8 place-items-center rounded-md text-ink-400 hover:bg-white/10"
             aria-label="Backstage">
             <I.IBook className="h-4 w-4" />
           </Link>

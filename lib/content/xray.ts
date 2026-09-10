@@ -23,13 +23,13 @@ export const XNOTES: Record<string, XNote> = {
     title: "Yes, this navigation is absurd. That's the strategy.",
     body: "Every piece of conventional advice says pick one of these and be the best at it. We run all of them because a company does not experience HR, IT and Finance as separate problems — it experiences one person joining, moving, or leaving, and eleven vendors that each need to be told about it separately.",
     aside: "The nav is the most common objection in a first sales call and the most common relief in the second.",
-    ref: { label: "Focus is a market discipline", href: "/backstage/manual/focus-is-a-market-discipline" },
+    ref: { label: "Focus is a market discipline", href: "/companies/rippling/backstage/manual/focus-is-a-market-discipline" },
   },
   "nav-divisions": {
     id: "nav-divisions", kind: "premise",
     title: "The groupings are for you, not for us",
     body: "HR, IT and Finance are labels on a menu. Underneath there is no separation — Devices reads the same employee record that Payroll writes to. The categories exist because that is how buyers' org charts are shaped, not because the software is shaped that way.",
-    ref: { label: "The employee is the schema", href: "/backstage/manual/the-employee-is-the-schema" },
+    ref: { label: "The employee is the schema", href: "/companies/rippling/backstage/manual/the-employee-is-the-schema" },
   },
   "topbar-search": {
     id: "topbar-search", kind: "mechanism",
@@ -46,14 +46,14 @@ export const XNOTES: Record<string, XNote> = {
     id: "home-ripple", kind: "mechanism",
     title: "This is the whole demo",
     body: "Change one field on one person and watch what moves. We do not demo features. We change a dropdown and let the room watch six systems react, because everyone in that room has personally lived the nine-day version of this.",
-    ref: { label: "The seams are the product", href: "/backstage/manual/the-seams-are-the-product" },
+    ref: { label: "The seams are the product", href: "/companies/rippling/backstage/manual/the-seams-are-the-product" },
   },
   "people-table": {
     id: "people-table", kind: "premise",
     title: "Not a directory. The primary key of the company.",
     body: "This looks like an employee list because that is the honest interface for it. Structurally it is the object every other product in the nav reads from. Payroll has no employee table. Devices has no employee table. There is one, and this is it.",
     aside: "No product may keep a copy. That rule has cost us launch dates and it is the thing the company is built on.",
-    ref: { label: "Decision D-001", href: "/backstage/decisions#D-001" },
+    ref: { label: "Decision D-001", href: "/companies/rippling/backstage/decisions#D-001" },
   },
   "people-filters": {
     id: "people-filters", kind: "mechanism",
@@ -65,14 +65,14 @@ export const XNOTES: Record<string, XNote> = {
     title: "Every field here is effective-dated",
     body: "Not just stored — stored with a validity window. You can ask what this person's department was on any past date, and payroll amendments, benefits reconciliation and audit responses all depend on that answer being cheap to get.",
     aside: "Nobody asked for this in 2017. Retrofitting it later is a rewrite, which is why we built it before there was a customer who needed it.",
-    ref: { label: "Decision D-002", href: "/backstage/decisions#D-002" },
+    ref: { label: "Decision D-002", href: "/companies/rippling/backstage/decisions#D-002" },
   },
   "emp-ripple": {
     id: "emp-ripple", kind: "mechanism",
     title: "Consequences, not follow-up tasks",
     body: "These are not automations we configured. They are what it means for the record to change. In a conventional stack each line here is a ticket, a person, and a few days of latency — and the one that gets missed is found by an auditor eight months later.",
     aside: "Count the systems. Then count the days it takes at your current company.",
-    ref: { label: "The seams are the product", href: "/backstage/manual/the-seams-are-the-product" },
+    ref: { label: "The seams are the product", href: "/companies/rippling/backstage/manual/the-seams-are-the-product" },
   },
   "emp-comp": {
     id: "emp-comp", kind: "tradeoff",
@@ -94,13 +94,13 @@ export const XNOTES: Record<string, XNote> = {
     id: "hire-jurisdiction", kind: "premise",
     title: "The form will not let you create a violation",
     body: "Hiring into a state or country where the entity is not registered does not produce a warning that a person can click past. It opens the registration and blocks the hire until it clears. Compliance here is a constraint in the system, not a review step downstream of it.",
-    ref: { label: "Compliance is infrastructure", href: "/backstage/manual/compliance-is-infrastructure" },
+    ref: { label: "Compliance is infrastructure", href: "/companies/rippling/backstage/manual/compliance-is-infrastructure" },
   },
   "payroll-entities": {
     id: "payroll-entities", kind: "mechanism",
     title: "Four entities, one engine",
     body: "US semi-monthly, Canadian, German and EOR runs are the same code path with different configuration. The moment 'what is different in Germany' becomes a conditional inside the product, you have started forking the company — twelve countries becomes twelve codebases and a combinatorial testing problem.",
-    ref: { label: "Decision D-007", href: "/backstage/decisions#D-007" },
+    ref: { label: "Decision D-007", href: "/companies/rippling/backstage/decisions#D-007" },
   },
   "payroll-variance": {
     id: "payroll-variance", kind: "mechanism",
@@ -142,7 +142,7 @@ export const XNOTES: Record<string, XNote> = {
     id: "workflows-engine", kind: "premise",
     title: "Products contribute triggers and actions. They never own orchestration.",
     body: "One engine handles triggers, conditions, approvals, effective dates, retries and the audit trail. Every product plugs into it. If each product built its own automation layer, we would have nineteen half-good workflow engines and no way to write a rule that spans two of them.",
-    ref: { label: "The platform tax", href: "/backstage/manual/the-platform-tax" },
+    ref: { label: "The platform tax", href: "/companies/rippling/backstage/manual/the-platform-tax" },
   },
   "workflows-cross": {
     id: "workflows-cross", kind: "heresy",
@@ -159,7 +159,7 @@ export const XNOTES: Record<string, XNote> = {
     id: "graph-asof", kind: "mechanism",
     title: "As-of is the field that costs the most and shows the least",
     body: "Every fact carries a validity window, so any query can be asked about any past date. Four engineer-months in 2017 for a feature with no customer demand. It is now load-bearing for payroll amendments, benefits reconciliation, equity and every audit conversation we have.",
-    ref: { label: "Decision D-002", href: "/backstage/decisions#D-002" },
+    ref: { label: "Decision D-002", href: "/companies/rippling/backstage/decisions#D-002" },
   },
 };
 

@@ -1,0 +1,22 @@
+import { notFound } from "next/navigation";
+import { COMPANIES, companyStudy } from "@/lib/companies";
+import { EMPLOYEES } from "@/lib/data/employees";
+import { ProductShell } from "@/components/product-shell";
+import { WorkdayApp } from "@/components/workday-app";
+import { RIPPLING_APP_SCREENS } from "@/components/studies/rippling/app-screens";
+import EmployeePage from "@/components/studies/rippling/app/people/[id]/page";
+
+type Props={params:Promise<{company:string;screen?:string[]}>};
+export const dynamicParams=false;
+export function generateStaticParams(){return [
+  ...COMPANIES.flatMap(c=>c.appScreens.map(s=>({company:c.id,screen:s?s.split('/'):[]}))),
+  ...EMPLOYEES.map(e=>({company:'rippling',screen:['people',e.id]})),
+];}
+export async function generateMetadata({params}:Props){const p=await params;const c=companyStudy(p.company);return {title:`${c?.name??'Company'} · App study — Compound`};}
+export default async function CompanyApp({params}:Props){
+  const {company:id,screen=[]}=await params;const c=companyStudy(id);if(!c)notFound();
+  const key=screen.join('/');
+  if(c.id==='workday'){if(!c.appScreens.includes(key))notFound();return <WorkdayApp company={c} screen={key}/>;}
+  if(screen.length===2&&screen[0]==='people')return <ProductShell><EmployeePage params={Promise.resolve({id:screen[1]})}/></ProductShell>;
+  const Screen=RIPPLING_APP_SCREENS[key];if(!Screen)notFound();return <ProductShell><Screen/></ProductShell>;
+}

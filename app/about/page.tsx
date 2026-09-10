@@ -4,12 +4,12 @@ import * as I from "@/components/icons";
 
 const DOORS = [
   {
-    href: "/app", kicker: "Front of house", title: "The product",
+    href: "/companies/rippling/app", kicker: "Front of house", title: "The product",
     body: "A working admin platform for a 344-person hardware company across four entities and six countries. Payroll, devices, app access, spend, workflows — one employee record underneath all of it.",
     cta: "Open the app",
   },
   {
-    href: "/backstage", kicker: "Behind it", title: "The operating manual",
+    href: "/companies/rippling/backstage", kicker: "Behind it", title: "The operating manual",
     body: "Twelve essays, fourteen logged decisions with the alternatives that were rejected, the metrics that would falsify the whole strategy, the nine skills that actually get it executed, and the questions people ask when they think it's nonsense.",
     cta: "Go backstage",
   },
@@ -168,10 +168,10 @@ export default function About() {
         <div className="mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-3 px-6 py-6 text-[12px] text-ink-500">
           <span>Compound — the founder&rsquo;s view</span>
           <div className="flex gap-4">
-            <Link href="/app" className="hover:text-ink-300">Product</Link>
-            <Link href="/backstage" className="hover:text-ink-300">Backstage</Link>
+            <Link href="/companies/rippling/app" className="hover:text-ink-300">Product</Link>
+            <Link href="/companies/rippling/backstage" className="hover:text-ink-300">Backstage</Link>
             <Link href="/about" className="hover:text-ink-300">About</Link>
-            <Link href="/backstage/manual/focus-is-a-market-discipline" className="hover:text-ink-300">Start reading</Link>
+            <Link href="/companies/rippling/backstage/manual/focus-is-a-market-discipline" className="hover:text-ink-300">Start reading</Link>
           </div>
         </div>
       </footer>

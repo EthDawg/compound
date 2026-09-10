@@ -9,6 +9,8 @@ import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
 import { AtlasSearch } from "./atlas-search";
 import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
+import { StudyLink } from "./study-link";
+import { companyStudy, companyHref } from "@/lib/companies";
 
 const G = {
   wide:   { W: 1040, H: 620, PAD: 78, fq: 11, fax: 11, flab: 11.5, flabOn: 13, rMin: 5, rMax: 20, cap: 18, floor: 42 },
@@ -50,8 +52,11 @@ export function Atlas() {
     return [...seen.entries()].map(([label, color]) => ({ key: label, label, color }));
   }, [level, nodes]);
 
-  const goRoot = useCallback(() => { setFocus({}); setLevel("sector"); setSel(null); setMuted(null); }, []);
+  const clearHover = useCallback(() => { setHover(null); setTip(null); }, []);
+
+  const goRoot = useCallback(() => { setHover(null); setTip(null); setFocus({}); setLevel("sector"); setSel(null); setMuted(null); }, []);
   const goSector = useCallback(() => {
+    setHover(null); setTip(null);
     setFocus((f) => ({ sector: f.sector })); setLevel("category"); setSel(null); setMuted(null);
   }, []);
   const up = useCallback(() => {
@@ -60,6 +65,7 @@ export function Atlas() {
   }, [level, goRoot, goSector]);
 
   const open = useCallback((n: AtlasNode) => {
+    setHover(null); setTip(null);
     if (n.level === "sector") { setFocus({ sector: n.id }); setLevel("category"); setSel(null); setMuted(null); }
     else if (n.level === "category") { setFocus({ sector: n.sector, category: n.id }); setLevel("vendor"); setSel(null); setMuted(null); }
     else setSel((cur) => (cur === n.id ? null : n.id));   // second click deselects
@@ -67,6 +73,7 @@ export function Atlas() {
 
   // Search lands you at the right altitude with the node already selected.
   const jump = useCallback((n: AtlasNode) => {
+    setHover(null); setTip(null);
     setMuted(null);
     if (n.level === "sector") { setFocus({ sector: n.id }); setLevel("category"); setSel(null); }
     else if (n.level === "category") { setFocus({ sector: n.sector, category: n.id }); setLevel("vendor"); setSel(null); }
@@ -78,19 +85,32 @@ export function Atlas() {
     const h = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
-      if (e.key === "Escape") { if (sel) setSel(null); else up(); }
+      if (e.key === "Escape") { clearHover(); if (sel) setSel(null); else up(); }
       if (e.key === "Backspace") { e.preventDefault(); up(); }
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [sel, up]);
+  }, [sel, up, clearHover]);
 
   // On a phone the detail sits below the fold, so bring it into view on select.
   useEffect(() => {
     if (sel && narrow) detailRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [sel, narrow]);
 
-  const active = hover ?? sel;
+  useEffect(() => {
+    clearHover();
+  }, [level, focus, lensId, muted, narrow, clearHover]);
+  useEffect(() => {
+    window.addEventListener("scroll", clearHover, true);
+    window.addEventListener("resize", clearHover);
+    window.addEventListener("blur", clearHover);
+    return () => {
+      window.removeEventListener("scroll", clearHover, true);
+      window.removeEventListener("resize", clearHover);
+      window.removeEventListener("blur", clearHover);
+    };
+  }, [clearHover]);
+  const active = nodes.some((n) => n.id === hover) ? hover : sel;
   const dimmed = (n: AtlasNode) =>
     (muted && (n.level === "sector" ? n.id : n.archetype) !== muted) ||
     (!!active && active !== n.id);
@@ -104,7 +124,9 @@ export function Atlas() {
   const tipFor = (n: AtlasNode, e: React.MouseEvent) => {
     const r = svgRef.current?.getBoundingClientRect();
     if (!r) return;
-    setTip({ n, x: e.clientX - r.left, y: e.clientY - r.top });
+    const x = Math.max(8, Math.min(e.clientX - r.left + 16, r.width - 264));
+    const y = Math.max(8, Math.min(e.clientY - r.top + 16, r.height - 190));
+    setTip({ n, x, y });
   };
 
   return (
@@ -120,10 +142,10 @@ export function Atlas() {
           <span className="hidden text-[11.5px] lg:block" style={{ color: PAPER.faint }}>
             {BOARD_STATS.vendors} vendors · {BOARD_STATS.categories} categories · {BOARD_STATS.sectors} sectors
           </span>
-          <nav className="ml-auto hidden items-center gap-1 text-[12.5px] sm:flex">
-            <Link href="/app" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">The app</Link>
+          <nav className="ml-auto flex items-center gap-1 text-[12.5px]">
+            <StudyLink surface="app" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">App</StudyLink>
             <Link href="/desk" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">Desk</Link>
-            <Link href="/backstage" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">Backstage</Link>
+            <StudyLink surface="backstage" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">Backstage</StudyLink>
           </nav>
         </div>
       </header>
@@ -180,13 +202,14 @@ export function Atlas() {
           <div className="relative min-w-0 overflow-hidden rounded-xl border" style={{ borderColor: PAPER.line, background: PAPER.surface }}>
             <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full touch-manipulation"
               role="group" aria-label={`Atlas — ${lens.pill}, ${level} level`}
-              onClick={(e) => { if (e.target === e.currentTarget) setSel(null); }}>
+              onMouseLeave={clearHover}
+              onClick={(e) => { if (e.target === e.currentTarget) { setSel(null); clearHover(); } }}>
               <defs>
                 <pattern id="atlasgrid" width="26" height="26" patternUnits="userSpaceOnUse">
                   <path d="M26 0H0V26" fill="none" stroke={PAPER.grid} strokeWidth="1" />
                 </pattern>
               </defs>
-              <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => setSel(null)} />
+              <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => { setSel(null); clearHover(); }} />
               <rect x={PAD} y={PAD} width={W - PAD * 2} height={H - PAD * 2} fill="url(#atlasgrid)" pointerEvents="none" />
               <g pointerEvents="none">
                 <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke="#E0DDD4" strokeDasharray="2 4" />
@@ -248,12 +271,11 @@ export function Atlas() {
             </svg>
 
             {/* Hover card — read without committing to a click */}
-            {tip && !narrow && (
-              <div className="pointer-events-none absolute z-20 w-[16rem] rounded-lg border p-3 shadow-pop"
+            {tip && !narrow && nodes.some((n) => n.id === tip.n.id) && (
+              <div role="tooltip" className="pointer-events-none absolute z-20 w-[16rem] rounded-lg border p-3 shadow-pop"
                 style={{
                   borderColor: PAPER.line, background: PAPER.surface,
-                  left: Math.min(Math.max(tip.x + 14, 8), 1040), top: Math.max(tip.y - 10, 8),
-                  transform: tip.x > 520 ? "translateX(-100%) translateX(-28px)" : undefined,
+                  left: tip.x, top: tip.y, maxWidth: "calc(100% - 16px)",
                 }}>
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: tint(tip.n) }} />
@@ -266,7 +288,7 @@ export function Atlas() {
                   {tip.n.blurb.length > 128 ? tip.n.blurb.slice(0, 128) + "…" : tip.n.blurb}
                 </p>
                 <p className="mt-2 text-[11px] font-medium" style={{ color: PAPER.highlight }}>
-                  {tip.n.level === "vendor" ? "Click to select" : "Click to open"}
+                  {tip.n.level === "vendor" ? "Select the dot for details" : "Select the dot to open"}
                 </p>
               </div>
             )}
@@ -433,8 +455,11 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
           <Link href={n.instance}
             className="flex h-10 w-full items-center justify-center gap-1.5 rounded-lg text-[13.5px] font-bold transition"
             style={{ background: PAPER.ink, color: PAPER.highlight }}>
-            Open the {n.name} study <I.IArrow className="h-3.5 w-3.5" />
+            Open {n.name} App <I.IArrow className="h-3.5 w-3.5" />
           </Link>
+        )}
+        {companyStudy(n.id) && (
+          <Link href={companyHref(n.id, "backstage")} className="flex h-10 items-center justify-center gap-1.5 rounded-lg border text-[13.5px] font-semibold" style={{borderColor:PAPER.line}}>Open {n.name} Backstage <I.IArrow className="h-3.5 w-3.5" /></Link>
         )}
         {n.href && (
           <Link href={n.href}

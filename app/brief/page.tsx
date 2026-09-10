@@ -20,10 +20,10 @@ export default function Brief() {
           </Link>
           <span className="hidden text-[12.5px] text-ink-500 sm:block">· the 12-minute brief</span>
           <div className="ml-auto flex gap-2">
-            <Link href="/app" className="inline-flex h-8 items-center gap-1.5 rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">
+            <Link href="/companies/rippling/app" className="inline-flex h-8 items-center gap-1.5 rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">
               The app
             </Link>
-            <Link href="/backstage" className="inline-flex h-8 items-center gap-1.5 rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">
+            <Link href="/companies/rippling/backstage" className="inline-flex h-8 items-center gap-1.5 rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">
               Backstage
             </Link>
           </div>

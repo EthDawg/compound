@@ -12,7 +12,7 @@ export default function ManualIndex() {
       />
       <div className="mt-8 space-y-3">
         {MANUAL.map((e) => (
-          <Link key={e.slug} href={`/backstage/manual/${e.slug}`}
+          <Link key={e.slug} href={`/companies/rippling/backstage/manual/${e.slug}`}
             className="group block rounded-xl bg-white/[0.04] p-5 ring-1 ring-white/10 transition hover:bg-white/[0.08] hover:ring-white/20">
             <div className="flex items-start gap-4">
               <span className="font-serif-display mt-px w-7 shrink-0 text-[24px] leading-none text-ink-600 group-hover:text-signal">

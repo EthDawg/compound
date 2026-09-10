@@ -8,16 +8,16 @@ import * as I from "@/components/icons";
 
 const ROUTES = [
   { href: "/brief", label: "The 12-minute brief", n: "4 lenses", d: "The whole argument ordered for whoever is holding it — prospect, investor, new joiner, skeptic. Start here if you have twelve minutes.", icon: I.IClock },
-  { href: "/backstage/manual", label: "The operating manual", n: `${MANUAL.length} essays`, d: "The beliefs, at length. Each one ends with what it costs and when it would be wrong.", icon: I.IBook },
-  { href: "/backstage/agentic", label: "The agentic turn", n: "6 requirements", d: "Why the graph stopped being a convenience argument and became a capability one — with a live question the agent refuses to answer.", icon: I.ISpark },
-  { href: "/backstage/skills", label: "How it out-executes", n: "9 skills", d: "Not values. Observable, teachable skills — what each looks like when it is missing, and how to spot it.", icon: I.IBolt },
-  { href: "/backstage/trajectory", label: "Growth from here", n: "4 vectors", d: "Where the next decade comes from, each run through the same four-question test, including the two that fail it.", icon: I.IGraph },
-  { href: "/backstage/decisions", label: "Decision log", n: `${DECISIONS.length} entries`, d: "Real decisions with the alternative that was rejected, the price paid, and the condition that would reopen them.", icon: I.IList },
-  { href: "/backstage/heresies", label: "Heresies", n: "11 positions", d: "Where this goes against standard advice — and, in every case, when the standard advice is right.", icon: I.ILayers },
-  { href: "/backstage/metrics", label: "What we measure", n: `${COMPOUND_METRICS.length} metrics`, d: "The numbers that would prove the whole strategy wrong, and how each one can flatter you.", icon: I.IReport },
-  { href: "/backstage/org", label: "How it's organised", n: "4 layers", d: "Small pods on a thick platform, the rule that keeps it from forking, and the tension that never resolves.", icon: I.IPeople },
-  { href: "/backstage/timeline", label: "Nine years", n: "5 eras", d: "The sequence, the trough, and the curve that is the only real evidence any of it worked.", icon: I.IClock },
-  { href: "/backstage/ask", label: "Ask the founder", n: `${QA_ITEMS.length} questions`, d: "Including the hostile ones. Sorted by how uncomfortable they are to answer.", icon: I.ISpark },
+  { href: "/companies/rippling/backstage/manual", label: "The operating manual", n: `${MANUAL.length} essays`, d: "The beliefs, at length. Each one ends with what it costs and when it would be wrong.", icon: I.IBook },
+  { href: "/companies/rippling/backstage/agentic", label: "The agentic turn", n: "6 requirements", d: "Why the graph stopped being a convenience argument and became a capability one — with a live question the agent refuses to answer.", icon: I.ISpark },
+  { href: "/companies/rippling/backstage/skills", label: "How it out-executes", n: "9 skills", d: "Not values. Observable, teachable skills — what each looks like when it is missing, and how to spot it.", icon: I.IBolt },
+  { href: "/companies/rippling/backstage/trajectory", label: "Growth from here", n: "4 vectors", d: "Where the next decade comes from, each run through the same four-question test, including the two that fail it.", icon: I.IGraph },
+  { href: "/companies/rippling/backstage/decisions", label: "Decision log", n: `${DECISIONS.length} entries`, d: "Illustrative decisions with the alternative that was rejected, the price paid, and the condition that would reopen them.", icon: I.IList },
+  { href: "/companies/rippling/backstage/heresies", label: "Heresies", n: "11 positions", d: "Where this goes against standard advice — and, in every case, when the standard advice is right.", icon: I.ILayers },
+  { href: "/companies/rippling/backstage/metrics", label: "What we measure", n: `${COMPOUND_METRICS.length} metrics`, d: "The numbers that would prove the whole strategy wrong, and how each one can flatter you.", icon: I.IReport },
+  { href: "/companies/rippling/backstage/org", label: "How it's organised", n: "4 layers", d: "Small pods on a thick platform, the rule that keeps it from forking, and the tension that never resolves.", icon: I.IPeople },
+  { href: "/companies/rippling/backstage/timeline", label: "Nine years", n: "5 eras", d: "The sequence, the trough, and the curve that is the only real evidence any of it worked.", icon: I.IClock },
+  { href: "/companies/rippling/backstage/ask", label: "Ask the founder", n: `${QA_ITEMS.length} questions`, d: "Including the hostile ones. Sorted by how uncomfortable they are to answer.", icon: I.ISpark },
 ];
 
 const PREMISES = [
@@ -47,11 +47,11 @@ export default function Backstage() {
           and hold the line on it in a planning session the next morning. Where a position is uncomfortable, it says so.
         </p>
         <div className="mt-6 flex flex-wrap gap-2.5">
-          <Link href="/backstage/manual/focus-is-a-market-discipline"
+          <Link href="/companies/rippling/backstage/manual/focus-is-a-market-discipline"
             className="inline-flex h-9 items-center gap-1.5 rounded-md bg-signal px-4 text-[13px] font-semibold text-ink transition hover:bg-signal-300">
             Start at essay one <I.IArrow className="h-3.5 w-3.5" />
           </Link>
-          <Link href="/backstage/ask"
+          <Link href="/companies/rippling/backstage/ask"
             className="inline-flex h-9 items-center gap-1.5 rounded-md bg-white/10 px-4 text-[13px] font-semibold text-white transition hover:bg-white/15">
             Or go straight to the hard questions
           </Link>

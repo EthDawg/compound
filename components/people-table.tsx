@@ -87,7 +87,7 @@ function Row({ e }: { e: Employee }) {
   return (
     <tr className="cursor-pointer">
       <td>
-        <Link href={`/app/people/${e.id}`} className="flex items-center gap-2.5">
+        <Link href={`/companies/rippling/app/people/${e.id}`} className="flex items-center gap-2.5">
           <Avatar name={e.name} size={30} tone={e.status === "Onboarding" ? "sky" : e.status === "Offboarding" ? "clay" : "ink"} />
           <span className="min-w-0">
             <span className="block truncate font-medium text-ink">{e.name}</span>

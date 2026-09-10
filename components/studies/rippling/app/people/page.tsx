@@ -14,12 +14,12 @@ export default function People() {
       <PageHeader
         eyebrow="HR · People"
         title="People"
-        sub="This screen looks like a directory. Structurally it is the primary key of the company — the object every other product in the sidebar reads from."
-        actions={<><Btn><I.IReport className="h-3.5 w-3.5" />Export</Btn><Btn variant="primary" href="/app/hire"><I.IHire className="h-3.5 w-3.5" />Add person</Btn></>}
+        sub="A representative sample from the fictional 344-person Meridian Optics. Each employee identity connects the products in the sidebar."
+        actions={<><Btn><I.IReport className="h-3.5 w-3.5" />Export</Btn><Btn variant="primary" href="/companies/rippling/app/hire"><I.IHire className="h-3.5 w-3.5" />Add person</Btn></>}
       />
       <div className="mx-auto max-w-[1180px] px-5 py-5 sm:px-7">
         <div className="mb-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          <Stat label="Total people" value={String(EMPLOYEES.length)} sub={`across ${countries} countries`} />
+          <Stat label="Sample profiles" value={String(EMPLOYEES.length)} sub={`across ${countries} countries`} />
           <Stat label="Legal entities" value={String(COMPANY.entities.filter((e) => e.type === "Own entity").length)} sub="plus 2 EOR jurisdictions" />
           <Stat label="EOR employees" value={String(eor)} sub="UK and India" tone="neutral" />
           <Stat label="Contractors" value={String(contractors)} sub="classification reviewed quarterly" tone="warn" />

@@ -163,7 +163,7 @@ export function GraphExplorer() {
                     {query.cols.map((c, ci) => (
                       <td key={c.k} className={`${c.align === "right" ? "num text-right font-medium text-ink" : "text-ink-600"}`}>
                         {ci === 0 && String(r.id).startsWith("e-") ? (
-                          <Link href={`/app/people/${r.id}`} className="flex items-center gap-2 font-medium text-ink hover:underline">
+                          <Link href={`/companies/rippling/app/people/${r.id}`} className="flex items-center gap-2 font-medium text-ink hover:underline">
                             <Avatar name={String(r[c.k])} size={22} />{String(r[c.k])}
                           </Link>
                         ) : String(r[c.k])}

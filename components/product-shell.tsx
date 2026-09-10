@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { NAV } from "./nav";
 import { useXRay } from "./xray-provider";
 import { XRay } from "./xray";
 import { COMPANY } from "@/lib/data/company";
 import { CompoundBar } from "./compound-bar";
 import { Mark } from "./vendor/marks";
+import { companyStudy } from "@/lib/companies";
 import * as I from "./icons";
 
 const ICONS: Record<string, (p: { className?: string }) => React.JSX.Element> = {
@@ -20,59 +21,65 @@ const ICONS: Record<string, (p: { className?: string }) => React.JSX.Element> = 
 
 export function ProductShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
+  const company = companyStudy("rippling")!;
+  const t = company.skin.theme;
   const { on } = useXRay();
   const [mobileNav, setMobileNav] = useState(false);
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setMobileNav(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-ink-50">
+    <div className="company-app min-h-screen" data-company="rippling" style={{background:t.bg,color:t.ink,"--study-bg":t.bg,"--study-ink":t.ink,"--study-surface-alt":t.surfaceAlt,"--study-border":t.border,"--study-accent-soft":t.accentSoft,"--study-chrome":company.brand.chrome} as CSSProperties}>
       <CompoundBar activeId="rippling" />
 
       <div className="border-b border-ink-200 bg-ink-100 px-3 py-2 text-[11.5px] text-ink-600 sm:px-4">
-        <span className="font-semibold text-ink">Design study.</span> An interpretation of the compound-platform
-        pattern, as most publicly associated with Rippling. Fictional company, no logos or real product designs, not
-        affiliated.
+        <span className="font-semibold text-ink">Design study.</span> Rippling-inspired interface · fictional Meridian Optics records · independent, no affiliation.
       </div>
 
       {/* ── Vendor chrome ───────────────────────────────────────── */}
-      <header className="sticky top-12 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
+      <header className="company-product-header sticky top-14 z-40 border-b backdrop-blur" style={{background:company.brand.chrome,color:company.brand.ink,borderColor:company.brand.highlight}}>
         <div className="flex h-14 items-center gap-3 px-3 sm:px-4">
           <button
             onClick={() => setMobileNav((v) => !v)}
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-md text-ink-500 hover:bg-ink-100 lg:hidden"
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-md text-white/80 hover:bg-white/10 lg:hidden"
             aria-label="Toggle navigation"
+            aria-expanded={mobileNav}
           >
             <I.IList />
           </button>
 
-          <Link href="/app" className="flex shrink-0 items-center gap-2">
+          <Link href="/companies/rippling/app" className="flex shrink-0 items-center gap-2">
             <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-signal text-ink">
               <Mark id="rippling" />
             </span>
-            <span className="hidden whitespace-nowrap text-[14.5px] font-semibold tracking-tight sm:block">
-              Compound platform
+            <span className="whitespace-nowrap text-[14.5px] font-semibold tracking-tight sm:block">
+              Rippling
             </span>
           </Link>
 
           <div className="mx-1 hidden h-5 w-px bg-ink-200 sm:block" />
 
-          <button className="hidden shrink-0 items-center gap-1.5 rounded-md px-2 py-1.5 text-[13px] font-medium text-ink-700 hover:bg-ink-100 sm:flex"
+          <span className="hidden shrink-0 items-center gap-1.5 rounded-md px-2 py-1.5 text-[12px] font-medium text-white/80 sm:flex"
             title="The fictional customer this study runs on">
             <span className="grid h-5 w-5 place-items-center rounded bg-clay-100 text-[10px] font-bold text-clay">M</span>
             {COMPANY.name}
-            <I.IChevronDown className="h-3.5 w-3.5 text-ink-400" />
-          </button>
+            <span className="text-[10px] text-white/50">Demo customer</span>
+          </span>
 
           <div className="ml-auto flex flex-1 items-center justify-end gap-2">
             <div className="relative hidden md:block">
               <I.ISearch className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink-400" />
               <input
                 placeholder="Search people, devices, apps, spend…"
-                className="h-8 w-[19rem] rounded-md border border-ink-200 bg-ink-50 pl-8 pr-3 text-[13px] placeholder:text-ink-400 focus:border-ink-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-signal/25"
+                className="h-8 w-[19rem] text-ink rounded-md border border-ink-200 bg-ink-50 pl-8 pr-3 text-[13px] placeholder:text-ink-400 focus:border-ink-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-signal/25"
               />
             </div>
 
             <Link
-              href="/backstage"
+              href="/companies/rippling/backstage"
               className="flex h-8 items-center gap-1.5 rounded-md bg-ink px-2.5 text-[12.5px] font-semibold text-white transition hover:bg-ink-800"
             >
               <I.IBook className="h-3.5 w-3.5 text-signal" />
@@ -100,14 +107,18 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
         <aside
           className={`${
             mobileNav ? "block" : "hidden"
-          } fixed inset-y-0 left-0 z-30 w-[236px] shrink-0 overflow-y-auto border-r border-ink-200 bg-white pt-16 lg:sticky lg:top-[6.5rem] lg:block lg:h-[calc(100vh-6.5rem)] lg:pt-0 thin-scroll`}
+          } fixed bottom-0 left-0 top-[7.5rem] z-40 w-[236px] shrink-0 overflow-y-auto border-r border-ink-200 bg-white pt-0 lg:sticky lg:top-[7rem] lg:block lg:h-[calc(100vh-7rem)] lg:pt-0 thin-scroll`}
         >
           <nav className="px-2.5 py-3">
+            <div className="mb-2 flex items-center justify-between px-2.5 lg:hidden">
+              <span className="text-[12px] font-semibold">Navigation</span>
+              <button onClick={() => setMobileNav(false)} aria-label="Close navigation" className="grid h-8 w-8 place-items-center rounded-md hover:bg-ink-100"><I.IClose className="h-4 w-4" /></button>
+            </div>
             <Link
-              href="/app"
+              href="/companies/rippling/app"
               onClick={() => setMobileNav(false)}
               className={`mb-2 flex items-center gap-2.5 rounded-md px-2.5 py-1.5 text-[13px] font-medium ${
-                path === "/app" ? "bg-ink-100 text-ink" : "text-ink-600 hover:bg-ink-50"
+                path === "/companies/rippling/app" ? "bg-ink-100 text-ink" : "text-ink-600 hover:bg-ink-50"
               }`}
             >
               <I.IHome className="h-4 w-4 text-ink-400" />
@@ -190,7 +201,7 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
                 12-minute brief
               </Link>
               <Link
-                href="/backstage"
+                href="/companies/rippling/backstage"
                 className="group block rounded-lg bg-ink p-3 text-white transition hover:bg-ink-800"
               >
                 <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-signal">
@@ -198,7 +209,7 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
                   Backstage
                 </div>
                 <p className="mt-1 text-[12px] leading-snug text-ink-300">
-                  Why any of this is shaped the way it is. Ten essays, fourteen decisions, and the numbers that would
+                  Why any of this is shaped the way it is. Company-specific analysis, an extended essay library, and the tests that would
                   prove it wrong.
                 </p>
                 <span className="mt-2 inline-flex items-center gap-1 text-[12px] font-medium text-white">
@@ -210,7 +221,7 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
         </aside>
 
         {mobileNav && (
-          <div className="fixed inset-0 z-20 bg-ink/20 lg:hidden" onClick={() => setMobileNav(false)} />
+          <div className="fixed inset-0 z-30 bg-ink/20 lg:hidden" onClick={() => setMobileNav(false)} />
         )}
 
         {/* ── Main ──────────────────────────────────────────────── */}

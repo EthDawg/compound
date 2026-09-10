@@ -116,8 +116,8 @@ export function Empty({ title, body, note }: { title: string; body: string; note
         </p>
       )}
       <div className="mt-6 flex justify-center gap-2">
-        <Btn href="/app/people" variant="primary">Go to People</Btn>
-        <Btn href="/backstage">Read the thinking</Btn>
+        <Btn href="/companies/rippling/app/people" variant="primary">Go to People</Btn>
+        <Btn href="/companies/rippling/backstage">Read the thinking</Btn>
       </div>
     </div>
   );

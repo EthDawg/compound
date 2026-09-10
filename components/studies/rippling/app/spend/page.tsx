@@ -45,7 +45,7 @@ export default function Spend() {
                             <td className="font-medium text-ink">{s.merchant}<span className="block text-[11.5px] font-normal text-ink-400">{s.category}</span></td>
                             <td>
                               {p && (
-                                <Link href={`/app/people/${p.id}`} className="flex items-center gap-2 text-ink-600 hover:text-ink">
+                                <Link href={`/companies/rippling/app/people/${p.id}`} className="flex items-center gap-2 text-ink-600 hover:text-ink">
                                   <Avatar name={p.name} size={22} />
                                   <span className="truncate">{p.name.split(" ")[0]}</span>
                                 </Link>

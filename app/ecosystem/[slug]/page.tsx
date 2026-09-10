@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { DEEP, deepBySlug } from "@/lib/content/ecosystem-deep";
 import { ALL_COMPANIES, LENSES, volatility, companyBySlug, staleness } from "@/lib/data/ecosystem";
 import { crankFor } from "@/lib/content/ecosystem-crank";
+import { companyStudy, companyHref } from "@/lib/companies";
 import * as I from "@/components/icons";
 
 export function generateStaticParams() { return DEEP.map((d) => ({ slug: d.slug })); }
@@ -11,6 +12,7 @@ export default async function Position({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const d = deepBySlug(slug);
   const c = companyBySlug(slug);
+  const study = companyStudy(slug);
   if (!d || !c) notFound();
 
   const { ranks, spread } = volatility(c, ALL_COMPANIES);
@@ -27,7 +29,7 @@ export default async function Position({ params }: { params: Promise<{ slug: str
             <I.IChevron className="h-3 w-3 rotate-180" /> The map
           </Link>
           <div className="ml-auto flex gap-2">
-            <Link href="/backstage" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">Backstage</Link>
+            <Link href={study ? companyHref(study.id, "backstage") : "/desk"} className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">{study ? `${study.name} Backstage` : "Desk"}</Link>
           </div>
         </div>
       </header>

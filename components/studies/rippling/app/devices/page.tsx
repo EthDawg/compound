@@ -41,7 +41,7 @@ export default function Devices() {
                     {p && <Avatar name={p.name} size={30} tone="clay" />}
                     <div className="min-w-0 flex-1">
                       <div className="text-[13px] font-medium text-ink">
-                        {p ? <Link href={`/app/people/${p.id}`} className="hover:underline">{p.name}</Link> : "Unassigned"}
+                        {p ? <Link href={`/companies/rippling/app/people/${p.id}`} className="hover:underline">{p.name}</Link> : "Unassigned"}
                         <span className="ml-2 font-normal text-ink-500">{d.model}</span>
                       </div>
                       <div className="mt-0.5 text-[12px] text-ink-500">
@@ -81,7 +81,7 @@ export default function Devices() {
                           <td className="num text-ink-500">{d.serial}</td>
                           <td>
                             {p ? (
-                              <Link href={`/app/people/${p.id}`} className="flex items-center gap-2 text-ink-600 hover:text-ink">
+                              <Link href={`/companies/rippling/app/people/${p.id}`} className="flex items-center gap-2 text-ink-600 hover:text-ink">
                                 <Avatar name={p.name} size={22} />{p.name}
                               </Link>
                             ) : <span className="text-ink-400">In stock</span>}

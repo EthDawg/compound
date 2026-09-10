@@ -6,12 +6,12 @@ import type { VendorSkin } from "./types";
 
 export const WORKDAY: VendorSkin = {
   id: "workday",
-  name: "Enterprise suite",
+  name: "Workday",
   studyOf: "the enterprise-suite pattern, as most publicly associated with Workday",
   bet: "Own the enterprise system of record and defend it from above.",
   ethos:
     "The interface argues that the company is an org chart with reporting on top. You start at a dashboard of tiles rather than a task, because the assumption is an administrator who came here to run something, not an employee who came here to do one thing. Squarer corners, cooler palette, more chrome — the visual language of governance.",
-  href: "/instance/workday",
+  href: "/companies/workday/app",
   depth: "Home screen",
   theme: {
     bg: "#EEF2F6", surface: "#FFFFFF", surfaceAlt: "#F7F9FB", border: "#D3DCE4",
@@ -192,16 +192,16 @@ export const ADP: VendorSkin = {
 
 export const RIPPLING: VendorSkin = {
   id: "rippling",
-  name: "Compound platform",
+  name: "Rippling",
   studyOf: "the compound-platform pattern, as most publicly associated with Rippling",
   bet: "One employee record; compound outward across HR, IT and Finance.",
   ethos:
     "The interface argues that HR, IT and Finance are one problem wearing three org charts. The navigation is deliberately, almost absurdly long, and the home screen is a single queue mixing a payroll approval with a device compliance failure — because to the underlying system they are the same kind of object.",
-  href: "/app",
+  href: "/companies/rippling/app",
   depth: "Full study",
   theme: {
-    bg: "#F6F8F9", surface: "#FFFFFF", surfaceAlt: "#F9FAFB", border: "#DCE1E5",
-    ink: "#0B0D0E", inkMuted: "#5B646C", inkFaint: "#8A939B",
+    bg: "#F7F4EE", surface: "#FFFFFF", surfaceAlt: "#FAF7F1", border: "#E4DCD5",
+    ink: "#40212D", inkMuted: "#6D5C62", inkFaint: "#918389",
     accent: "#F5C518", accentInk: "#0B0D0E", accentSoft: "#FFF6D1",
     radius: "8px", radiusSm: "6px",
     font: 'ui-sans-serif, -apple-system, "Segoe UI", sans-serif',
@@ -215,4 +215,4 @@ export const RIPPLING: VendorSkin = {
 
 export const SKINS: VendorSkin[] = [RIPPLING, WORKDAY, DEEL, FINCH, ADP];
 export const skinById = (id: string) => SKINS.find((s) => s.id === id);
-export const INSTANCE_SKINS = SKINS.filter((s) => s.id !== "rippling");
+export const INSTANCE_SKINS = SKINS.filter((s) => s.id !== "rippling" && s.id !== "workday");

@@ -1,126 +1,108 @@
-# Compound — the founder's view
+# Compound — company studies
 
-An independent study of the compound-startup thesis, built as working software so
-the argument can be walked through rather than read about. Live at
-**https://compound-snowy-pi.vercel.app**
+An independent study of software companies, built as an Atlas, an illustrative
+App, and the reasoning behind that app in Backstage.
 
-Three surfaces at one address:
+Live: https://compound-snowy-pi.vercel.app
 
-| Surface | Route | What it is |
+## The model
+
+**Company → App / Backstage.** A company is Rippling or Workday. An archetype
+(compound platform, enterprise suite) describes its position; it is not an
+instance to switch to. Meridian Optics is the shared fictional customer used to
+compare the two app studies.
+
+| Surface | Route | Purpose |
 | --- | --- | --- |
-| The atlas | `/` | The front door. 10 sectors → ~41 categories → 118 vendors, plotted under four definitions of relevance. Light, spare, its own design language. |
-| The product | `/app` | A dense admin platform for a fictional 344-person hardware company across four entities and six countries. Payroll, devices, app access, spend, workflows, graph explorer. |
-| Backstage | `/backstage` | The operating philosophy underneath it — 12 essays, 14 logged decisions, 11 heresies, 8 metrics, 9 execution skills, the agentic turn, growth trajectory. |
-| Pocket | `/pocket` | Installable mobile PWA. Three flagship flows for a demo in someone's hand: Onboard, Offboard, Ask. |
-| Deep reads | `/ecosystem/[slug]` | Eleven positions read in full. `/ecosystem` itself redirects to the atlas. |
-| Instances | `/app`, `/instance/[id]` | Five playable design studies — compound platform, enterprise suite, global employment, connective layer, payroll rail — under one Compound observability bar. |
-| About | `/about` | The cold open and provenance that used to be the landing page. |
+| Atlas | `/` | Sectors, categories and vendors under four editorial lenses |
+| Company app | `/companies/{company}/app` | Explore the company's illustrative interface |
+| Company Backstage | `/companies/{company}/backstage` | Understand the company's thesis, design choices and evaluation criteria |
+| Extended Rippling library | `/companies/rippling/backstage/library` | Preserved essays, decisions, metrics and explorations |
+| Desk | `/desk` | Research priorities and maintenance prompts |
+| Deep reads | `/ecosystem/{slug}` | Existing company position essays |
+| Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
+| Brief | `/brief` | Existing 12-minute Rippling/compound-platform argument |
 
-The bridge between the first two is **x-ray mode** — press `X` anywhere in `/app`
-and every screen grows founder annotations explaining its design premise, what it
-trades away, and what holding the line cost.
+The Company selector currently offers **Rippling and Workday** in both App and
+Backstage. The two views share the company's theme and identity, while the
+Backstage content differs by company. Both have five core sections: overview,
+operating model, choices and trade-offs, proposed tests, and sources.
 
-`/brief` is a 12-minute speed run with four audience lenses (prospect, investor,
-new joiner, skeptic) — the thing to send someone.
+The URL is authoritative, including on direct entry, refresh, Back and Forward.
+Switching companies preserves the view and a shared topic/screen. An unavailable
+screen lands at that company's overview within the same view. Content is never
+borrowed from the other company as a fallback. Atlas and Desk entry links resume
+the most recently viewed supported company; explicit company links always win.
 
-The atlas spans `lib/data/atlas.ts` (sectors, categories, breadth vendors),
-`lib/data/atlas-types.ts` (the archetype→position derivation) and
-`lib/data/atlas-nodes.ts` (rollups, overlap relaxation). Hand-read vendors keep
-their positions from `lib/data/ecosystem.ts`; breadth vendors are placed by
-archetype plus three attributes and render dashed to say so. The organising claim
-is that the same archetypes recur in every sector — legal has its compound
-platform and its connective layer just as employment does.
+Old `/app/*`, `/backstage/*` and `/instance/workday` bookmarks redirect to the
+company-qualified equivalents. The other legacy instance studies remain
+reachable separately; their depth is not presented as equivalent to the paired
+company studies.
 
-The map's whole argument is that relevance is not one quantity. Each lens is a
-different question ("relevant to the argument?" / "to the number of people whose
-pay depends on it?" / "to whether an agent can safely act?" / "to whoever has to
-keep using it Monday?"), and node position *and size* change under each. The
-companies that swing most between lenses — ADP, Mercor, nga.net — are the point.
-Scores live in `lib/data/ecosystem.ts` and are editorial judgements, deliberately
-so; if you change one, check the prose in `lib/content/ecosystem-deep.ts` still
-agrees with it.
+## Ownership
 
-## Framing, deliberately
+- `lib/companies.ts`: company identity, brand, supported screens, Backstage data,
+  source provenance, route construction and company-switch fallback rules.
+- `lib/vendors/skins.ts`: the referenced palettes, layout tokens and legacy app
+  study data. Company shells read these tokens rather than maintaining a second
+  theme for Backstage.
+- `app/companies/[company]/`: canonical routes, static page generation and
+  metadata. Unknown companies or unimplemented paths return 404.
+- `components/studies/rippling/`: preserved Rippling screens and essays, with
+  explicit screen registries for server-side rendering.
+- `components/workday-app.tsx`: Workday workspace and working module links.
+- `components/company-backstage.tsx`: the repeatable Backstage structure.
+- `components/compound-bar.tsx`: company selection and App/Backstage navigation.
+- `lib/data/`: fictional customer data. Employee IDs join devices, apps, spend
+  and payroll; system assignments derive from those employee records.
+- `lib/content/`: the extended compound-platform argument. These constructed
+  essays belong to the Rippling study, not every company on the Atlas.
 
-This is a study, not a facsimile. It engages the real, publicly-stated
-compound-startup thesis by name, but the company in the product, its people and
-numbers, the decision log and the founder voice are all constructed. The voice is
-a reconstruction written to be argued with — not quotations, and not a claim about
-any real company's internal operations. That framing is stated on the landing
-page, in backstage, and on `/brief`. Keep it if you extend this.
+To add a company, supply its identity/theme and the same core Backstage data,
+register screens its app renderer actually supports, then extend the company ID
+and renderer selection. Do not copy Rippling's essays under a new brand.
 
-Competitors are described as **archetypes** (point specialist, suite-by-acquisition,
-legacy enterprise, services-led) rather than named companies. Better analysis, and
-it keeps the study honest.
+The Atlas derives breadth positions from archetypes and uses hand-read positions
+where available. `lib/data/atlas-nodes.ts` joins the company registry to playable
+App links. `lib/data/ecosystem.ts` owns editorial lens scores. If scores change,
+check the associated prose remains consistent.
 
-## Running it
+## Framing
+
+This is an independent design study, not an official product or an exact
+reproduction. Public sources support company concepts. Layouts, theses,
+trade-offs and proposed tests are editorial interpretations. The demo customer,
+people, records and figures are fictional. The extended founder voice and
+decision log are constructed, not quotations or claims about real internals.
+
+## Running and verifying
 
 ```sh
 npm install
-npm run dev          # http://localhost:3000
-npm run build        # also the pre-deploy check
+npm run dev
+npm run build
+npm test
+npm run start
 vercel deploy --prod --yes
 ```
 
-Next.js 15 App Router, React 19, Tailwind, TypeScript. No database, no API —
-every "record" is a typed module under `lib/data`. Fully static except the
-manifest route.
+Next.js 15, React 19, Tailwind and TypeScript. Typed modules hold the data; there
+is no live customer database or transactional backend.
 
-> Do not run `npm run build` while `npm run dev` is live: the build overwrites
-> `.next` and the dev server starts 404-ing its own chunks. Kill dev first.
+Do not build while the development or preview server is running: they share
+`.next`. Stop it, build, then restart the preview from the exact output.
 
-## Where things live
+The routing tests exercise company/view/topic retention and fallback behaviour,
+and verify registered routes exist in the production build. Browser checks
+cover the original desktop popup reproduction, App/Backstage switching, company
+styling, mobile navigation, remembered company links and legacy bookmarks.
 
-```
-lib/data/          The fictional tenant: employees, systems, finance, workflows
-lib/content/       All prose and structured argument (manual-a…d, decisions,
-                   heresies, metrics, skills, agentic, trajectory, brief, pocket)
-lib/content/xray.ts  The annotation registry — keyed by anchor id
-components/        UI. cascade.tsx and ripple-demo.tsx carry the animated proofs
-app/app/           Product surfaces
-app/backstage/     The essays and analysis
-app/pocket/        The installable PWA
-public/            Generated PWA icons + service worker
-```
+The Atlas clears hover and tooltip state on drill-down, search, breadcrumbs,
+lens/filter changes, Escape, scroll, resize and pointer exit. Coordinates use
+the rendered plot size, preventing a removed node from leaving the next map
+faded beneath a stale card.
 
-Two ideas do most of the work:
-
-- **`lib/data/employees.ts` is the primary key.** Devices, apps, spend and payroll
-  all derive from it. `lib/data/systems.ts` builds the device fleet *from* employee
-  assignments rather than duplicating them, which is why the home-page stats and
-  the task list can't drift apart. Keep that property.
-- **`XNOTES` in `lib/content/xray.ts` is keyed by anchor id.** Wrap any UI region
-  in `<XRay id="...">` and the annotation renders inline beneath it in x-ray mode.
-  Adding commentary to a new screen is a data edit, not a component edit.
-
-## Tinkering notes
-
-Things that are genuinely unfinished, roughly in order of payoff:
-
-1. **Ten `/app` routes are stubs** (benefits, time, learning, identity, security,
-   expenses, bills, planning, reports, entities). Each renders an honest empty
-   state with a one-line premise. The nav is long on purpose; building one out is
-   a self-contained afternoon.
-2. **X-ray coverage is partial.** Annotations exist for the built surfaces only.
-   New notes are entries in `XNOTES` plus an `<XRay>` wrapper.
-3. **The pocket cascade timings are hand-tuned** in `lib/content/pocket.ts`
-   (`atMs` per step). There's a Node simulation approach in scratch that replays
-   the gate logic if you retune them — onboard lands ~9s, offboard gates at ~8.1s.
-4. **`prefers-reduced-motion` settles the cascade straight to its end state**, and
-   the run pauses/resumes on tab visibility rather than skipping ahead. Preserve
-   both if you touch `components/cascade.tsx`.
-5. **No tests.** The riskiest logic is the cascade's human-gate resume (it uses a
-   ref, not state, to avoid a stale closure) and the graph explorer's joins.
-6. **Effective-dated retrieval is the honest open problem** in the argument itself
-   — see `backstage/agentic`. If you want a hard build, that's the one.
-7. **The map covers ~33 companies; only nine have deep reads.** Adding one is a
-   `COMPANIES` entry (four lens positions) plus optionally a `DEEP` entry. Keep
-   the honesty framing: real companies get interpretation of public positioning,
-   never invented decisions, quotes or internals — that line is what separates
-   this from the fictional tenant in `/app`.
-
-## Provenance
-
-Built with Claude Code, September 2026. Registered in the Personal AI OS Canonical
-Map as a reference build; resumption is queued on the Action Board under
-CAPACITY BLOCKED.
+Existing depth limits remain: several Rippling modules are explicitly empty
+states; Workday modules are illustrative read-only screens. X-ray annotates
+supported app surfaces. Pocket animations preserve reduced-motion behaviour
+and pause/resume when tab visibility changes.

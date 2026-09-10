@@ -1,3 +1,4 @@
+import { companyStudy, companyHref } from "@/lib/companies";
 import { ALL_COMPANIES, type LensId, type Pos, type Archetype } from "./ecosystem";
 import { SECTORS, CATEGORIES, VENDORS, WORK_CATEGORY, CROSS_SECTOR, categoriesIn } from "./atlas";
 import { derive, type Vendor } from "./atlas-types";
@@ -34,8 +35,8 @@ export const ALL_VENDORS: Node[] = [
       category: cross?.category ?? WORK_CATEGORY[c.slug] ?? "hr-compound",
       archetype: c.archetype, geo: c.geo, blurb: c.bet,
       lens: c.lens, handRead: true, deep: c.deep,
-      instance: c.slug === "rippling" ? "/app"
-        : ["workday", "deel", "finch", "adp"].includes(c.slug) ? `/instance/${c.slug}` : undefined,
+      instance: companyStudy(c.slug) ? companyHref(c.slug, "app")
+        : ["deel", "finch", "adp"].includes(c.slug) ? `/instance/${c.slug}` : undefined,
       href: c.deep ? `/ecosystem/${c.slug}` : undefined,
     };
   }),
