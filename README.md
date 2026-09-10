@@ -5,6 +5,8 @@ App, and the company-building reasoning in Backstage.
 
 Live: https://compound-snowy-pi.vercel.app
 
+Licensed under the [MIT License](LICENSE). Copyright © 2026 Ethan Harley.
+
 ## The model
 
 **Company → App / Backstage.** A company is Rippling or Workday. An archetype
