@@ -1,0 +1,314 @@
+{
+  "backstage": {
+    "headline": "Make speech a controllable part of the product.",
+    "thesis": "ElevenLabs started with the difficult output layer — believable speech — and is moving toward ownership of the surrounding creative and operational workflow. Its advantage is the combination of a performance people will tolerate, controls a producer can use, and a conversation an enterprise can inspect. Each expands the value of the others, but none guarantees the other two.",
+    "object": "A performed utterance: meaning, voice, timing and intent",
+    "question": "Can the same intent survive a new take, a new language and a real interruption?",
+    "sequence": [
+      "Direct the intended performance",
+      "Keep the audio aligned with its script",
+      "Review what survives a language change",
+      "Test the conversation before expanding its reach"
+    ],
+    "premises": [
+      {
+        "title": "Direct the performance, retain the edit",
+        "body": "Voice quality gets the first trial. Compared takes, script-to-audio consistency and a production timeline make repeated work practical. The app makes a changed script invalidate the previous take.",
+        "screen": "studio"
+      },
+      {
+        "title": "Move the performance across languages",
+        "body": "Localization must preserve meaning and timing while allowing the delivery to change. A natural voice can still make the wrong promise. The app keeps language review and timing review attached to a specific version.",
+        "screen": "dubbing"
+      },
+      {
+        "title": "Make the conversation operational",
+        "body": "Turn-taking, tools, tests and controlled rollout make speech useful when something must happen. A caller can change the request mid-sentence; the action needs to change with it.",
+        "screen": "agents"
+      }
+    ],
+    "choices": [
+      {
+        "choice": "Optimize expression for the conversation",
+        "gain": "Speech can adapt to context and emotional tone, with more natural response timing.",
+        "cost": "There is no single best voice configuration. Current V3 Conversational documentation warns that Professional Voice Clone characteristics are not preserved well."
+      },
+      {
+        "choice": "Improve generation while retaining finishing paths",
+        "gain": "Dubbing v2 conditions on the source performance; Productions provides human localization and audio finishing when the job needs it.",
+        "cost": "The current automatic v2 app and the legacy editable v1 Studio have different capabilities. Better generation does not imply editing parity or zero review effort."
+      },
+      {
+        "choice": "Keep the reasoning model separable",
+        "gain": "A cascaded agent architecture allows enterprises to choose reasoning components while using ElevenLabs for the interaction layer.",
+        "cost": "The complete experience still depends on recognition, retrieval, reasoning, tools, network and synthesis. Component flexibility does not remove end-to-end delivery responsibility."
+      }
+    ],
+    "proof": [
+      {
+        "metric": "Revision effort per finished piece",
+        "test": "Review identical approved scripts through a real production workflow. Count incorrect readings, revision rounds and stale handoffs as well as listening preference.",
+        "failure": "A pleasing sample masks extra editing work or the wrong take is delivered."
+      },
+      {
+        "metric": "Meaning preserved per localized version",
+        "test": "Blind-review target-language output for factual fidelity, natural phrasing and timing. Include human finishing effort and rejected versions.",
+        "failure": "A fluent dub changes the promise or is marked complete without a language reviewer."
+      },
+      {
+        "metric": "Correctly completed interactions",
+        "test": "Test interruptions against expected tool parameters, then measure actual resolution, fallback and repeat contact under a limited rollout.",
+        "failure": "A synthetic test pass is treated as production reliability, or a shorter conversation ends with the wrong action."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Origin",
+        "url": "https://help.elevenlabs.io/hc/en-us/articles/27583713738257-What-is-ElevenLabs",
+        "supports": "Founded 2022; film-dubbing motivation."
+      },
+      {
+        "title": "Omnivore team",
+        "url": "https://elevenlabs.io/blog/omnivore-joins-elevenlabs",
+        "supports": "29 Oct 2024; team joined for ElevenReader; open-source code retained publicly."
+      },
+      {
+        "title": "Series D",
+        "url": "https://elevenlabs.io/blog/series-d",
+        "supports": "4 Feb 2026; research/Agents/Creative/API strategy and funding; founder statements. Company financial claims are self-reported."
+      },
+      {
+        "title": "Studio",
+        "url": "https://elevenlabs.io/docs/eleven-creative/products/studio",
+        "supports": "Current timeline/context inspector/generation-history vocabulary, converted status, and model support."
+      },
+      {
+        "title": "Studio Agent",
+        "url": "https://elevenlabs.io/blog/introducing-studio-agents",
+        "supports": "7 May 2026; updated31 Aug; timeline co-editor with Plan/Create modes."
+      },
+      {
+        "title": "Dubbing v2 launch",
+        "url": "https://elevenlabs.io/blog/introducing-dubbing-v2",
+        "supports": "28 May 2026; source-performance conditioning and managed professional workflow. Its “API coming soon” footer is stale against current docs S7, so do not repeat it as current."
+      },
+      {
+        "title": "Current dubbing capability",
+        "url": "https://elevenlabs.io/docs/overview/capabilities/dubbing",
+        "supports": "Alpha status, no current real-time/live dubbing, creation/download API available; Enterprise-only API edit/regenerate."
+      },
+      {
+        "title": "Legacy editor",
+        "url": "https://elevenlabs.io/docs/eleven-creative/products/dubbing/dubbing-studio",
+        "supports": "Maintenance mode; v1 required for in-app editor; v2 automatic."
+      },
+      {
+        "title": "Expressive mode",
+        "url": "https://elevenlabs.io/docs/eleven-agents/customization/voice/expressive-mode",
+        "supports": "V3 Conversational, turn-taking, context, and PVC identity limitation."
+      },
+      {
+        "title": "Interaction architecture",
+        "url": "https://elevenlabs.io/blog/interaction-models",
+        "supports": "16 July, updated8 Sep2026; cascaded architecture, model choice and end-to-end latency factors."
+      },
+      {
+        "title": "Agent testing",
+        "url": "https://elevenlabs.io/docs/eleven-agents/customization/agent-testing",
+        "supports": "Three test types, repeated runs, observed/expected behavior. Use this current test type, not deprecated simulate-conversation API guide."
+      },
+      {
+        "title": "Experiments",
+        "url": "https://elevenlabs.io/docs/eleven-agents/operate/experiments",
+        "supports": "Branches, percentage traffic, metrics and rollout."
+      },
+      {
+        "title": "CRO",
+        "url": "https://elevenlabs.io/blog/cro",
+        "supports": "2 Sep2026; Ashley Kramer, prior OpenAI enterprise-sales remit, company-reported enterprise revenue55%."
+      },
+      {
+        "title": "CFO",
+        "url": "https://elevenlabs.io/blog/cfo",
+        "supports": "8 Sep2026; Ethan Tandowsky, prior Adyen CFO, growth/financial infrastructure remit."
+      },
+      {
+        "title": "Field CTO",
+        "url": "https://elevenlabs.io/blog/alex-holt-field-cto",
+        "supports": "8 Jun2026; Alex Holt, customer production deployment."
+      },
+      {
+        "title": "Iconic Marketplace",
+        "url": "https://elevenlabs.io/blog/announcing-partnership-with-sir-michael-caine-to-newly-launched-iconic-marketplace",
+        "supports": "11 Nov2025; requested talent access and agency/estate relationships, not blanket rights."
+      },
+      {
+        "title": "Productions",
+        "url": "https://elevenlabs.io/blog/introducing-productions-human-edited-content-done-for-you",
+        "supports": "15 Sep2025; linguists and audio professionals finish dubbing, captions, transcripts and audiobooks."
+      },
+      {
+        "title": "v3 GA",
+        "url": "https://elevenlabs.io/blog/eleven-v3-is-now-generally-available",
+        "supports": "2 Feb2026; improved numerical/context interpretation; internal benchmark scope and residual errors."
+      }
+    ]
+  },
+  "strategy": {
+    "contrast": "ElevenLabs makes human-facing communication its entry point: the performed utterance, the production workflow and the operational conversation. The strategic challenge is earning a platform position when an excellent voice can also be bought as a replaceable component.",
+    "flywheel": {
+      "title": "An acceptable first interaction opens the next workflow.",
+      "body": "Audio quality makes adoption possible. Editing and operational feedback then reveal what the next piece or conversation needs. The compounding claim is that research and workflow improvements make expansion easier for the customer.",
+      "steps": [
+        "Make the first interaction viable",
+        "Deploy into a real workflow",
+        "Inspect revisions and failed outcomes",
+        "Improve and expand into the next context"
+      ],
+      "constraint": "Usage is not a universal data right. Synthetic success is not customer success, and implementation effort may grow with enterprise scope."
+    },
+    "moments": [
+      {
+        "date": "2022",
+        "title": "Start with a communication failure",
+        "fact": "ElevenLabs is founded with improving film dubbing as its original motivation.",
+        "consequence": "Natural delivery and accessibility shape the problem before the enterprise platform exists.",
+        "source": "https://help.elevenlabs.io/hc/en-us/articles/27583713738257-What-is-ElevenLabs"
+      },
+      {
+        "date": "October 2024",
+        "title": "Listening becomes a product capability",
+        "fact": "The Omnivore team joins ElevenLabs on 29 October to develop ElevenReader further.",
+        "consequence": "This talent acquisition strengthens a listening workflow and distribution surface. It is not the purchase of an audio foundation model.",
+        "source": "https://elevenlabs.io/blog/omnivore-joins-elevenlabs"
+      },
+      {
+        "date": "September–November 2025",
+        "title": "The job expands beyond raw generation",
+        "fact": "Productions launches on 15 September; Iconic Marketplace follows on 11 November.",
+        "consequence": "Human finishing and organized access to voice rights become parts of the proposition. More useful output does not mean identical permissions across products.",
+        "source": "https://elevenlabs.io/blog/introducing-productions-human-edited-content-done-for-you",
+        "sources": [
+          "https://elevenlabs.io/blog/announcing-partnership-with-sir-michael-caine-to-newly-launched-iconic-marketplace"
+        ]
+      },
+      {
+        "date": "February 2026",
+        "title": "Research maturity meets enterprise ambition",
+        "fact": "Eleven v3 reaches general availability on 2 February. The 4 February Series D explicitly backs agents, research and international adoption.",
+        "consequence": "The company is financing a broader production platform. General availability does not make speech error-free or turn model quality into proven business value.",
+        "source": "https://elevenlabs.io/blog/series-d",
+        "sources": [
+          "https://elevenlabs.io/blog/eleven-v3-is-now-generally-available"
+        ]
+      },
+      {
+        "date": "May 2026",
+        "title": "Own more of the creative workflow",
+        "fact": "Studio Agent launches on 7 May and Dubbing v2 on 28 May.",
+        "consequence": "The product moves into composition and performance transfer. The underlying model and the editing surface have different maturity boundaries.",
+        "source": "https://elevenlabs.io/blog/introducing-studio-agents",
+        "sources": [
+          "https://elevenlabs.io/blog/introducing-dubbing-v2",
+          "https://elevenlabs.io/docs/eleven-creative/products/dubbing/dubbing-studio"
+        ]
+      },
+      {
+        "date": "June 2026",
+        "title": "Give deployment an executive owner",
+        "fact": "Alex Holt becomes Field CTO on 8 June, with bringing customer implementations into production as his remit.",
+        "consequence": "The company gives a named leader responsibility for the distance between an impressive model and a working customer system.",
+        "source": "https://elevenlabs.io/blog/alex-holt-field-cto"
+      },
+      {
+        "date": "September 2026",
+        "title": "Enterprise scale gains an operating team",
+        "fact": "Ashley Kramer joins as CRO on 2 September; former Adyen CFO Ethan Tandowsky joins as CFO on 8 September.",
+        "consequence": "These are additions around founder leadership. The mandate is clear, but days-old appointments cannot yet prove their effect on retention, delivery or investment discipline.",
+        "source": "https://elevenlabs.io/blog/cro",
+        "sources": [
+          "https://elevenlabs.io/blog/cfo"
+        ]
+      }
+    ],
+    "leadership": {
+      "title": "Founder-led research meets an enterprise operating model.",
+      "fact": "Mati Staniszewski remains cofounder and CEO, with Piotr Dabkowski continuing as cofounder associated with the research program. Alex Holt became Field CTO in June. Ashley Kramer joined as CRO on 2 September 2026, followed by Ethan Tandowsky as CFO on 8 September.",
+      "reading": "The constraint is shifting from whether speech can sound natural toward whether it can be sold, integrated and operated across many contexts without losing that quality. The company reports enterprise accounts now contribute 55% of revenue; this is its own disclosure, not an independent measurement.",
+      "watch": "Watch repeatable deployment, localized performance, retention and investment discipline. The new executives have an evidenced mandate; their future operating impact is not yet demonstrated.",
+      "sources": [
+        "https://elevenlabs.io/blog/series-d",
+        "https://elevenlabs.io/blog/cro",
+        "https://elevenlabs.io/blog/cfo",
+        "https://elevenlabs.io/blog/alex-holt-field-cto"
+      ]
+    },
+    "essays": [
+      {
+        "slug": "performance-is-the-entry-point",
+        "title": "A beautiful voice is the beginning of the workflow",
+        "standfirst": "The durable product is the ability to make the next take without losing control of the last one.",
+        "paragraphs": [
+          "Speech exposes a distinctive weakness in software: a response can be semantically correct and still be unpleasant to use. Timing, emphasis and tone affect whether a listener stays with it. ElevenLabs’ origin in improving dubbed speech made that human reception problem central from the start. The early technical achievement created demand; it did not remove the production work around it.",
+          "The important move is therefore from generation to direction. A producer needs to compare takes, recover a previous delivery and keep script changes aligned with the audio that will ship. Studio gives those decisions a persistent project context. Studio Agent extends the same logic into video: conversation can propose or place material while the creator retains an editable timeline. The strategic asset is not the chat box; it is a place where generated material becomes accountable to a finished piece.",
+          "Distribution and permission add another layer. The Omnivore team joining in 2024 strengthened ElevenReader’s consumer experience rather than adding a new core speech model. The later Iconic Marketplace organizes access to recognizable voices through requested licensing relationships. Inference: a voice platform can become harder to substitute when it helps organize audience access and usable voice rights, even if competing models improve. That does not mean every voice in every product carries identical permissions.",
+          "The counterargument is straightforward: if a creator only needs one clip, the model can remain a replaceable supplier. The broader platform earns its place when revision, collaboration and delivery are faster across an entire project. This is why the demo should make a stale take visible. It shows the cost of an incorrect handoff that a voice-quality benchmark cannot capture."
+        ],
+        "test": "Change the script after rendering. Can everyone tell which take is current, hear the alternatives and recover the intended performance?",
+        "sources": [
+          "https://help.elevenlabs.io/hc/en-us/articles/27583713738257-What-is-ElevenLabs",
+          "https://elevenlabs.io/docs/eleven-creative/products/studio",
+          "https://elevenlabs.io/blog/introducing-studio-agents",
+          "https://elevenlabs.io/blog/omnivore-joins-elevenlabs",
+          "https://elevenlabs.io/blog/announcing-partnership-with-sir-michael-caine-to-newly-launched-iconic-marketplace"
+        ]
+      },
+      {
+        "slug": "translation-is-only-half-the-job",
+        "title": "The message has to survive the language change",
+        "standfirst": "Scale is useful only if the new audience receives the same promise.",
+        "paragraphs": [
+          "A dub has two obligations that can pull apart. It must preserve what was meant, and it must sound as if a person naturally meant it in the destination language. Literal wording can damage rhythm; fluent delivery can conceal a changed fact. The business opportunity is therefore not simply producing more audio minutes. It is lowering the cost of carrying a credible performance into another market.",
+          "Dubbing v2’s stated architectural change is to condition on the original performance, rather than reconstruct delivery from a transcript alone. That is a meaningful extension of the company’s founding concern. It aims to preserve information that text tends to discard. But an ambitious generation model and an equally mature editing workflow are separate achievements: the current v2 app is automatic, while the legacy editable Dubbing Studio is in maintenance mode. Enterprise API refinement is another route, not evidence of a universal in-app editor.",
+          "The launch of Productions in 2025 makes the remaining work unusually explicit. Human localization professionals and audio specialists participate in finishing the content. Read strategically, that service is not an embarrassment to automation; it is a way to sell a completed job when raw output is insufficient. It also means model margin and service delivery economics should not be confused.",
+          "A convincing test should therefore catch a beautifully spoken wrong promise. If “your room is ready” becomes “your room is ready early,” emotional fidelity is not enough. The correct acceptance unit is the reviewed language version, with meaning and timing checked independently. Successful scale means that quality control gets more economical, not that review becomes unnecessary."
+        ],
+        "test": "Does the target version preserve the promise and fit the scene, and does a correction invalidate the previous approval?",
+        "sources": [
+          "https://elevenlabs.io/blog/introducing-dubbing-v2",
+          "https://elevenlabs.io/docs/overview/capabilities/dubbing",
+          "https://elevenlabs.io/docs/eleven-creative/products/dubbing/dubbing-studio",
+          "https://elevenlabs.io/blog/introducing-productions-human-edited-content-done-for-you"
+        ]
+      },
+      {
+        "slug": "the-unit-of-value-is-a-resolved-interaction",
+        "title": "Sounding helpful and being useful are different achievements",
+        "standfirst": "ElevenLabs’ enterprise turn makes the action behind the conversation part of the product.",
+        "paragraphs": [
+          "A voice agent is evaluated by a person in real time. An interruption can revise the request before the system has finished speaking; an empathetic reply can still execute the wrong action. ElevenLabs’ interaction architecture combines speech recognition, reasoning and speech generation with turn-taking controls. Its cascaded approach leaves room for a customer's chosen reasoning model. The strategic bet is that control over the rhythm and operation of the encounter can matter even when the reasoning is supplied elsewhere.",
+          "The tradeoff reaches the model itself. V3 Conversational supports more expressive delivery and context-sensitive timing, but current documentation cautions that it does not preserve Professional Voice Clone characteristics well. That is a useful reminder that “best voice” is not one universal setting. A brand may prefer consistent identity, lower latency or richer expression depending on the job. The right choice needs evidence in the actual language and context.",
+          "Tests and experiments turn that choice into an operating practice. A conversation scenario asks whether the task completed; a tool-call test checks the concrete action; a small traffic split asks whether the behavior helps real users. These are different questions. A synthetic pass rate should not be promoted into a customer outcome, and a faster conversation should not be assumed to be a better resolution. The control surface is part of the value proposition because it helps make those distinctions repeatable.",
+          "The organization is changing to support this wider obligation. Alex Holt became Field CTO in June 2026 with production deployment as his remit. Ashley Kramer arrived as CRO in September, followed days later by former Adyen CFO Ethan Tandowsky. The company reports that enterprise accounts now contribute 55% of revenue. Inference: the next constraint increasingly includes implementation, distribution and investment discipline alongside model research. These are recent appointments, so the mandate is evidenced; their future operating impact is not."
+        ],
+        "test": "After a caller corrects the date, does the agent stop, reconfirm the new request and send the right tool payload — and can that change be tested before wider deployment?",
+        "sources": [
+          "https://elevenlabs.io/blog/interaction-models",
+          "https://elevenlabs.io/docs/eleven-agents/customization/voice/expressive-mode",
+          "https://elevenlabs.io/docs/eleven-agents/customization/agent-testing",
+          "https://elevenlabs.io/docs/eleven-agents/operate/experiments",
+          "https://elevenlabs.io/blog/cro",
+          "https://elevenlabs.io/blog/cfo",
+          "https://elevenlabs.io/blog/alex-holt-field-cto"
+        ]
+      }
+    ],
+    "watch": {
+      "title": "A broader interaction platform, with uneven maturity across surfaces",
+      "shipped": "Eleven v3 is generally available. Studio has a timeline and co-editor; agent testing and experiments are documented capabilities. Automatic Dubbing v2 is available but remains labelled Alpha.",
+      "next": "Watch whether the surrounding creative and enterprise workflows become as dependable as the strongest individual speech experiences.",
+      "boundary": "Current v2 dubbing availability does not imply an in-app editor. Synthetic testing does not prove acoustic or production reliability. Recent executive hiring establishes direction, not results.",
+      "source": "https://elevenlabs.io/docs/overview/capabilities/dubbing"
+    }
+  }
+}

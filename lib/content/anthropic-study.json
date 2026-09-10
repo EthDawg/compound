@@ -1,0 +1,343 @@
+{
+  "backstage": {
+    "headline": "Earn the right to take on more of the work.",
+    "thesis": "Anthropic is turning frontier research into a system people can entrust with consequential work. Claude carries context into a deliverable, Claude Code closes the loop between a proposed change and its consequences, and the platform exposes the machinery for others to build on. Its distinctive tension is that greater usefulness creates a larger obligation to make behavior observable and controllable. Trust must survive the transition from a helpful answer to an acting system.",
+    "object": "A task, its working context and a reviewable result",
+    "question": "What can you hand over—and what evidence makes the result worth accepting?",
+    "sequence": [
+      "Establish the task and its source context",
+      "Give Claude bounded room to work",
+      "Inspect the result and its supporting evidence",
+      "Retain what makes the next task easier"
+    ],
+    "premises": [
+      {
+        "title": "Carry context into a finished piece of work",
+        "body": "Cowork extends the assistant into project instructions, selected files and sustained tasks. The result is something a colleague can use and revise. The advantage depends on resolving conflicting evidence rather than merely making a polished summary of it.",
+        "screen": "cowork"
+      },
+      {
+        "title": "Make software changes a reviewable loop",
+        "body": "Claude Code works with the repository, its tools and the consequences of a change. A plan, an editable patch and a test result are different things. Useful delegation means the developer can inspect the seams and redirect the work before accepting it.",
+        "screen": "code"
+      },
+      {
+        "title": "Give builders a clear boundary between thinking and acting",
+        "body": "The Claude Platform exposes requests, tools and returned evidence. MCP and SDK tooling widen the systems Claude can reach; they do not establish that a requested operation succeeded or was authorized. The Playground scene makes that boundary visible.",
+        "screen": "playground"
+      }
+    ],
+    "choices": [
+      {
+        "choice": "Build products alongside the model",
+        "gain": "Direct work surfaces reveal where capability becomes useful and where the surrounding tools still fail. One improvement can travel from coding into broader knowledge work.",
+        "cost": "The lab now competes for product attention as well as research talent. More surfaces bring more reliability, support and permission complexity."
+      },
+      {
+        "choice": "Open the connection standard and own some of the connecting machinery",
+        "gain": "MCP lowers integration friction; Bun and Stainless strengthen parts of the runtime and developer experience. Broader reach can make the same model more useful.",
+        "cost": "An open protocol also helps competitors. Acquired tooling does not make external data clean or external permissions coherent, and ecosystem partners must judge a supplier that also builds applications."
+      },
+      {
+        "choice": "Make trust a continuing operational claim",
+        "gain": "Explicit behavioral principles, product controls and published risk evidence give customers more to inspect than a promise that the model is responsible.",
+        "cost": "The commitments evolve. Stronger monitoring can conflict with data-retention requirements, while more autonomy makes a hidden failure more consequential. A safety identity is not an exemption from testing."
+      }
+    ],
+    "proof": [
+      {
+        "metric": "Accepted work after evidence review",
+        "test": "Compare the time to a usable deliverable with the time spent finding sources, correcting factual conflicts and reviewing the output. Include documents that disagree.",
+        "failure": "The draft is produced quickly but the reviewer must reconstruct the research or misses an unsupported conclusion."
+      },
+      {
+        "metric": "Changes that survive the repository",
+        "test": "Track accepted changes, meaningful test coverage, regressions, review effort and later reversions on representative work.",
+        "failure": "More code is generated while debugging and rework rise, or passing a narrow check is treated as proof that the whole change is correct."
+      },
+      {
+        "metric": "Useful actions inside a tested boundary",
+        "test": "Exercise missing results, tool errors and out-of-scope requests. Record completed outcomes, authorization errors and total model plus human-review cost.",
+        "failure": "A tool call is counted as a completed outcome, or the system reports success after a denied or failed operation."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Constitutional AI · December 2022",
+        "url": "https://www.anthropic.com/news/constitutional-ai-harmlessness-from-ai-feedback",
+        "supports": "Early research on training behavior using explicit principles and AI feedback; an origin for the steerability argument, not proof of perfect alignment."
+      },
+      {
+        "title": "MCP launch · November 2024",
+        "url": "https://www.anthropic.com/news/model-context-protocol",
+        "supports": "Open protocol for connecting assistants to external data and tools."
+      },
+      {
+        "title": "Bun acquisition announcement · December 2025",
+        "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone",
+        "supports": "Claude Code GA in May 2025; Bun's role in its infrastructure and commitment to remain MIT-licensed."
+      },
+      {
+        "title": "Vercept acquisition · February 2026",
+        "url": "https://www.anthropic.com/news/acquires-vercept",
+        "supports": "Explicitly acquired; computer-use expertise; external Vercept product would wind down. No claim that all later computer use was built by this team."
+      },
+      {
+        "title": "Stainless acquisition announcement · May 2026",
+        "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+        "supports": "SDK and MCP tooling rationale. The announcement uses acquiring; no separate legal closing date is inferred."
+      },
+      {
+        "title": "Labs and Product leadership · January 2026",
+        "url": "https://www.anthropic.com/news/introducing-anthropic-labs",
+        "supports": "Mike Krieger moves to Labs with Ben Mann; Ami Vora leads Product alongside CTO Rahul Patil. Cowork began as a January research preview."
+      },
+      {
+        "title": "Rahul Patil becomes CTO · October 2025",
+        "url": "https://www.anthropic.com/news/rahul-patil-joins-anthropic",
+        "supports": "Engineering remit across product and infrastructure; Sam McCandlish moves to Chief Architect."
+      },
+      {
+        "title": "Responsible Scaling Policy v3 · February 2026",
+        "url": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+        "supports": "Separates unilateral plans from industry recommendations; introduces public roadmap goals and risk reports. Earlier commitments cannot be described as unchanged."
+      },
+      {
+        "title": "Alignment and security changes · August 2026",
+        "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+        "supports": "First-party account of evaluation incidents involving reduced-safeguard models, containment changes and an independent review still planned. These were not ordinary safeguarded customer sessions."
+      },
+      {
+        "title": "Enterprise Frontier Safeguards · September 2026",
+        "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+        "supports": "Announced customer-controlled storage and monitoring design; phased rollout intended to begin later in fall 2026, not GA at this research date."
+      },
+      {
+        "title": "Claude Code desktop · current documentation",
+        "url": "https://code.claude.com/docs/en/desktop",
+        "supports": "Session, environment, diff review and current Manual / Accept edits / Plan / Auto permission names. Local, cloud and SSH are supported."
+      },
+      {
+        "title": "Cowork projects · current documentation",
+        "url": "https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork",
+        "supports": "Project instructions, context and memory; account projects versus local-folder projects have different persistence boundaries."
+      },
+      {
+        "title": "Cowork enterprise release · April 2026",
+        "url": "https://claude.com/blog/cowork-for-enterprise",
+        "supports": "Cowork GA on paid plans; organization access, spend and observability controls."
+      },
+      {
+        "title": "Playground · current help",
+        "url": "https://support.claude.com/en/articles/8606378-how-do-i-use-the-playground",
+        "supports": "Stateless request testing, raw response and code export. Saved prompt versions and evals are absent."
+      },
+      {
+        "title": "Client tool-call lifecycle",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls",
+        "supports": "tool_use describes a requested client operation; the application executes it and returns tool_result, including explicit errors."
+      },
+      {
+        "title": "Claude Platform release notes · current",
+        "url": "https://platform.claude.com/docs/en/release-notes/overview",
+        "supports": "Workbench retired in August; Playground replacement, current platform lifecycle and GA versus beta distinctions."
+      },
+      {
+        "title": "Amazon compute agreement · April 2026",
+        "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+        "supports": "Long-term capacity commitments and admitted capacity pressure; planned capacity is not already-delivered compute."
+      },
+      {
+        "title": "Tino Cuéllar appointment announcement · August 2026",
+        "url": "https://www.anthropic.com/news/tino-cuellar",
+        "supports": "August appointment announcement and departure from the Long-Term Benefit Trust. The current leadership page now confirms the executive role; no exact start date is inferred."
+      },
+      {
+        "title": "The 2021 launch and research agenda",
+        "url": "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems",
+        "supports": "Contemporaneous May 2021 account of the company, founding leadership and initial research purpose. No personal departure motive is inferred."
+      },
+      {
+        "title": "Long-Term Benefit Trust · governance design",
+        "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
+        "supports": "PBC purpose and the independent Trust’s board-appointment mechanism, detailed September 2023. The original phase-in design is not treated as proof of a current board majority."
+      },
+      {
+        "title": "Current Anthropic leadership",
+        "url": "https://www.anthropic.com/company/leadership",
+        "supports": "Current Dario CEO, Daniela President and board chair, Rahul CTO, Ami Vora CPO and Tino Cuéllar Chief Global Affairs Officer. The page supersedes the earlier incoming wording for Tino; no exact start date is inferred."
+      }
+    ]
+  },
+  "strategy": {
+    "contrast": "Anthropic's useful distinction is the continuity between research, a working environment and a result that can be examined. Cowork, Code and the API expose different parts of that chain. The argument does not depend on claiming that only Anthropic can do them; it depends on how coherently the company connects them.",
+    "flywheel": {
+      "title": "A better model matters when the surrounding work can use it.",
+      "body": "Useful work exposes missing context, awkward interactions and failure modes. Better tools and clearer controls let a later model take on more of the task. This can compound through reusable instructions and workflows; it is not a claim that private customer work automatically trains the model.",
+      "steps": [
+        "Start with useful capability",
+        "Put it inside real work",
+        "Find the friction and failure",
+        "Improve the environment and controls"
+      ],
+      "constraint": "More autonomy can compound review cost and mistakes. The loop pays only when accepted outcomes grow faster than supervision, compute and rework."
+    },
+    "moments": [
+      {
+        "date": "2021 → 2023",
+        "title": "A research thesis gets an institutional form",
+        "fact": "Anthropic’s 2021 launch puts reliable, steerable AI research at the centre of the company. Its Public Benefit Corporation structure is complemented by the Long-Term Benefit Trust, publicly detailed in 2023 with independent trustees and board-appointment powers.",
+        "consequence": "The question of who can hold the company to its public purpose belongs to the origin story. Governance creates a mechanism for balancing interests; it does not prove that future conflicts will be resolved well.",
+        "source": "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems",
+        "sources": [
+          "https://www.anthropic.com/news/the-long-term-benefit-trust"
+        ]
+      },
+      {
+        "date": "Dec 2022",
+        "title": "Steerability becomes a research programme",
+        "fact": "Anthropic publishes Constitutional AI, using explicit principles and AI feedback to shape assistant behavior.",
+        "consequence": "The company puts behavioral design alongside capability. The later enterprise proposition inherits this concern, without inheriting a guarantee that the model follows every principle.",
+        "source": "https://www.anthropic.com/news/constitutional-ai-harmlessness-from-ai-feedback"
+      },
+      {
+        "date": "Nov 2024",
+        "title": "The model needs access to the world around the prompt",
+        "fact": "Anthropic opens the Model Context Protocol for connections to data and tools.",
+        "consequence": "Better answers depend on context the lab does not own. Open connectivity can grow usage while making the protocol itself a weak exclusive moat.",
+        "source": "https://www.anthropic.com/news/model-context-protocol"
+      },
+      {
+        "date": "May → Dec 2025",
+        "title": "Coding makes the execution layer strategic",
+        "fact": "Claude Code becomes generally available in May. The December Bun acquisition announcement links the runtime to Code's infrastructure and native installer.",
+        "consequence": "The surrounding engineering starts to matter as much as the chat surface. Buying runtime expertise addresses an operational bottleneck rather than adding another model brand.",
+        "source": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+      },
+      {
+        "date": "Oct 2025 → Jan 2026",
+        "title": "Separate invention from scaling",
+        "fact": "Rahul Patil joins as CTO; Sam McCandlish becomes Chief Architect. Mike Krieger then moves into Labs with Ben Mann while Ami Vora leads Product.",
+        "consequence": "The structure gives exploratory products and reliable everyday products different leadership attention. It is a response to scale, not proof that the tension is solved.",
+        "source": "https://www.anthropic.com/news/introducing-anthropic-labs",
+        "sources": [
+          "https://www.anthropic.com/news/rahul-patil-joins-anthropic"
+        ]
+      },
+      {
+        "date": "Jan → Apr 2026",
+        "title": "The coding engine takes on knowledge work",
+        "fact": "Cowork moves from January research preview to April general availability. In February Anthropic acquires Vercept for computer-use expertise.",
+        "consequence": "The user need broadens from a changed repository to a finished business deliverable. Vercept's external product winds down; this is capability absorption, not a new standalone module.",
+        "source": "https://claude.com/blog/cowork-for-enterprise",
+        "sources": [
+          "https://www.anthropic.com/news/introducing-anthropic-labs",
+          "https://www.anthropic.com/news/acquires-vercept"
+        ]
+      },
+      {
+        "date": "Apr → May 2026",
+        "title": "Reach and capacity become company-building constraints",
+        "fact": "Anthropic signs a larger Amazon capacity agreement, then announces the Stainless acquisition for SDK and MCP tooling.",
+        "consequence": "Runtime, connectivity and compute sit around the same bottleneck: a capable model must be reachable and usable under load. Deal announcements do not establish completed integration or delivered capacity.",
+        "source": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+        "sources": [
+          "https://www.anthropic.com/news/anthropic-amazon-compute"
+        ]
+      },
+      {
+        "date": "Feb → Sep 2026",
+        "title": "Trust moves from an identity to changing operating arrangements",
+        "fact": "RSP v3 restructures the policy in February. August disclosures describe security changes after evaluation incidents; September's Enterprise Frontier Safeguards announcement proposes customer-controlled monitoring storage.",
+        "consequence": "The company must preserve a credible trust proposition while revising its mechanisms. EFS remains a phased future rollout, and the evaluation incidents cannot be generalized to all customer use.",
+        "source": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+        "sources": [
+          "https://www.anthropic.com/news/improving-alignment-security-efforts",
+          "https://www.anthropic.com/news/enterprise-frontier-safeguards"
+        ]
+      }
+    ],
+    "leadership": {
+      "title": "The founders' thesis now needs several operating systems.",
+      "fact": "The current leadership page lists Dario Amodei as CEO, Daniela Amodei as President and board chair, Rahul Patil as CTO, Ami Vora as Chief Product Officer and Tino Cuéllar as Chief Global Affairs Officer. The January 2026 reorganisation moved Mike Krieger into Labs with Ben Mann, separating experimental product work from the main Product organisation.",
+      "reading": "This is a separation of research depth, experimental product discovery, dependable delivery and institutional negotiation. Cowork makes that structure legible: an idea can move from a rough experiment to a product enterprises must govern. The appointments support this interpretation; they do not establish who personally caused an individual product outcome.",
+      "watch": "Look for fewer handoffs between the experiment and the dependable service: stable task completion, useful administration and clear migration paths. Also watch whether changes to the safety and retention model remain legible to customers as capability and policy pressure increase.",
+      "sources": [
+        "https://www.anthropic.com/company/leadership",
+        "https://www.anthropic.com/news/anthropic-amazon-compute",
+        "https://www.anthropic.com/news/introducing-anthropic-labs",
+        "https://www.anthropic.com/news/rahul-patil-joins-anthropic",
+        "https://www.anthropic.com/news/tino-cuellar",
+        "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+        "https://www.anthropic.com/news/the-long-term-benefit-trust"
+      ]
+    },
+    "essays": [
+      {
+        "slug": "context-that-becomes-work",
+        "title": "The durable unit is the work product.",
+        "standfirst": "Cowork makes context valuable by carrying it into something another person can use.",
+        "paragraphs": [
+          "A conversation is an easy place to begin a task and an awkward place to leave its result. The recipient of a renewal brief, forecast or proposal needs an intelligible document, its sources and the decisions that remain open. Anthropic's move into Cowork is a bet that the assistant can hold that whole job together, rather than repeatedly handing fragments back to the user.",
+          "The product structure supports the bet. Cowork projects collect instructions, context and memory; the April enterprise release adds ways to govern access, spend and activity. The task can acquire a reusable working environment instead of starting from an empty box every morning. That does not remove source selection or verification. A persistent project can preserve an outdated assumption as efficiently as a good one.",
+          "The useful compounding asset is the method: how a team gathers evidence, handles uncertainty and presents an accepted result. A well-maintained workflow can carry those decisions forward. The same mechanism creates maintenance work when policy, source access or business definitions change. More context is valuable only when the system can distinguish authoritative evidence from convenient background.",
+          "The demo therefore puts a conflict inside an ordinary business deliverable. Reading three files is not the achievement; identifying which date governs the renewal is. The lesson extends beyond Claude: judge a knowledge-work agent by how much reconstruction the next human must do, not how impressive its first draft looks."
+        ],
+        "test": "Give the workflow two plausible but conflicting sources. Does it expose the conflict and produce a usable result whose important claims can be checked?",
+        "sources": [
+          "https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork",
+          "https://claude.com/blog/cowork-for-enterprise",
+          "https://www.anthropic.com/news/introducing-anthropic-labs"
+        ]
+      },
+      {
+        "slug": "the-loop-around-the-model",
+        "title": "Buy the bottleneck around the model.",
+        "standfirst": "Bun, Vercept and Stainless reveal how a frontier lab becomes an execution company.",
+        "paragraphs": [
+          "The strongest reading of Anthropic's acquisitions is not a shopping list of adjacent categories. Bun concerns the runtime and developer experience around coding. Vercept concerns perceiving and interacting with existing software. Stainless concerns reliable interfaces to APIs. Each addresses something a more intelligent model cannot solve merely by producing better text.",
+          "Claude Code makes the pattern concrete. A software task repeatedly moves between understanding, editing, running and interpreting a result. If the runtime is unreliable, tool access is awkward or the operator cannot inspect changes, model capability is stranded. The acquisition argument is that improving these surrounding mechanisms makes more of the research usable in daily work.",
+          "The boundaries matter. Bun is to remain open source; Vercept's external product winds down; Stainless's announcement describes joining forces around tooling, without a separately verified close date. There is no evidence here that every subsequent feature came from an acquired team or that the whole stack is now seamless. Capability acquisition and successful product integration are separate achievements.",
+          "This also explains the leadership split between Labs and the main Product organization. Finding a new form of work requires experimentation; making that form dependable requires infrastructure, migration discipline and support. The difficult company-building question is whether each new surface benefits from the shared foundation or creates another place where customers must rediscover its limits."
+        ],
+        "test": "Does the same task require less setup, fewer repair cycles and less supervision after the surrounding tools improve, holding the acceptance standard constant?",
+        "sources": [
+          "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone",
+          "https://www.anthropic.com/news/acquires-vercept",
+          "https://www.anthropic.com/news/anthropic-acquires-stainless",
+          "https://code.claude.com/docs/en/desktop",
+          "https://www.anthropic.com/news/introducing-anthropic-labs",
+          "https://www.anthropic.com/news/rahul-patil-joins-anthropic"
+        ]
+      },
+      {
+        "slug": "trust-has-to-operate",
+        "title": "Trust is a boundary you can inspect.",
+        "standfirst": "The safety proposition becomes harder—and more valuable—when Claude can act.",
+        "paragraphs": [
+          "An assistant can be articulate about its limits while the application around it still grants too much authority. A useful enterprise system needs several distinct answers: what the model may attempt, what the environment permits, what actually happened and who can examine the evidence. Anthropic's research identity makes those questions central to its proposition, but cannot answer them on its own.",
+          "The API exposes a small, revealing seam. A client tool call asks the application to do something; a tool result reports what that application returned. Conflating the two turns a proposed action into fictional completion. The current Playground helps builders inspect this exchange. Its August replacement of Workbench also shows the limits of the surface: prompt-history and evaluation workflows are no longer built into it.",
+          "The larger trust story has changed too. RSP v3 separates company plans from wider industry recommendations and introduces public roadmap goals and risk reports. August's security disclosure describes failures in evaluations using reduced-safeguard models and subsequent containment changes. Those circumstances should be stated precisely: they neither prove ordinary customer sessions behave the same way nor make the operational lessons irrelevant.",
+          "September's Enterprise Frontier Safeguards proposal addresses another difficult seam: customers want privacy while misuse detection may need retained activity. The announced design puts that storage under customer control, with rollout still ahead. That is a substantive architectural response to a commercial constraint. Whether it works must be judged through deployment evidence, not folded into a timeless claim that Anthropic is simply the safe choice."
+        ],
+        "test": "Try a tool error and a request outside scope. Can the operator see the denied or failed action, prevent false completion and retain enough evidence to investigate?",
+        "sources": [
+          "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls",
+          "https://support.claude.com/en/articles/8606378-how-do-i-use-the-playground",
+          "https://platform.claude.com/docs/en/release-notes/overview",
+          "https://www.anthropic.com/news/constitutional-ai-harmlessness-from-ai-feedback",
+          "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+          "https://www.anthropic.com/news/improving-alignment-security-efforts",
+          "https://www.anthropic.com/news/enterprise-frontier-safeguards"
+        ]
+      }
+    ],
+    "watch": {
+      "title": "The next trust feature is not yet an installed control.",
+      "shipped": "Cowork is generally available; Code provides inspectable changes and permission modes; the current Playground exposes API requests and responses.",
+      "next": "Enterprise Frontier Safeguards, announced 1 September 2026, is intended to start rolling out in phases later in the fall, with customer-controlled activity storage and review.",
+      "boundary": "An announced design is not a deployed safeguard. Model access, retention terms, product surface and customer configuration still determine the applicable controls.",
+      "source": "https://www.anthropic.com/news/enterprise-frontier-safeguards"
+    }
+  }
+}

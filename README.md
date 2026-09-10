@@ -9,7 +9,7 @@ Licensed under the [MIT License](LICENSE). Copyright © 2026 Ethan Harley.
 
 ## The model
 
-**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software, Employment Hero and ServiceNow. An archetype
+**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs. An archetype
 (compound platform, enterprise suite) describes its position; it is not an
 instance to switch to. Meridian Optics is the shared fictional customer used to
 compare the app studies; the talent studies use an explicitly fictional Australian expansion scenario. ServiceNow follows a service incident, an employee move and an AI model-change request.
@@ -26,7 +26,7 @@ compare the app studies; the talent studies use an explicitly fictional Australi
 | Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
 | Brief | `/brief` | Existing 12-minute Rippling/compound-platform argument |
 
-The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software, Employment Hero and ServiceNow** in both App and
+The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs** in both App and
 Backstage. The two views share the company's theme and identity, while the
 Backstage content and navigation differ by company. Rippling opens with the full
 compound-company study: economics, product-building speed, founder reasoning,
@@ -36,20 +36,27 @@ and trade-offs, proposed tests, and sources. The shared structure must preserve
 each company's depth. The former Rippling `/backstage/library` destination
 redirects to its canonical Backstage home.
 
-PageUp, ELMO, Employment Hero and ServiceNow each have three linked value propositions,
+PageUp, ELMO, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs each have three linked value propositions,
 three deeper arguments, causal acquisition history, leadership/direction,
-trade-offs, proposed proof and claim-linked primary sources checked on
+trade-offs, proposed proof and claim-linked sources checked on
 10 September 2026. The App scenes use their own product vocabulary and workflow:
 
 - PageUp: committee review, Clinch nurture and Paige source inspection.
 - ELMO: capability/development, constrained remuneration and payroll conflicts.
 - Employment Hero: payroll exceptions, Find Talent and direct/HeroForce responsibilities.
+- Anthropic: Cowork source conflicts, Claude Code Manual permissions and current Playground tool-result continuation.
+- OpenAI: ChatGPT Work deliverables, Codex review scopes and Responses MCP approval/result boundaries.
+- ElevenLabs: playable Studio takes, version-specific dubbing review and voice-agent test/traffic controls.
 - ServiceNow: service-impact investigation and controlled recovery, EmployeeWorks handoffs by role, and AI Control Tower review through a separate deployment receipt. Failed health checks and decision rationales remain visible.
 
 ServiceNow’s argument connects the Glide/ITSM origin to McDermott and Zavery’s platform direction, Moveworks and EmployeeWorks, Logik and commercial workflows, and the completed Armis/Veza acquisitions. It distinguishes shipping capabilities, roadmap claims and integration boundaries.
 
 Interactions change local illustrative state only. They reset on screen navigation;
 no messages, hiring decisions, payroll, contracts or live records are changed.
+The AI studies add an AI sector to the Atlas, with model/workspace and voice categories. Their source notes distinguish primary documentation from attributed reporting; OpenAI’s July leadership transition uses reporting of the executive’s announcement. Current target-company readbacks establish completed acquisitions where older deal announcements were conditional.
+
+ElevenLabs audio uses original fictional scripts and generic local synthetic voices, explicitly labelled as illustrative rather than ElevenLabs output. Six real clips support playback and downloads; waveform data comes from those clips. Changing script/delivery invalidates export readiness. Dubbing review is an explicit judgment, not inferred from finishing playback.
+
 The sources distinguish acquisitions from integrations/divestitures, current
 features from roadmap, and ownership announcements from completed transactions.
 
@@ -79,6 +86,9 @@ company studies.
 - `lib/content/{pageup,elmo,hero,servicenow}-study.ts`: sourced company arguments and causal history.
 - `components/strategy-backstage.tsx`: new thesis, essay, history and leadership surfaces.
 - `components/studies/talent/`: three distinct app studies and shared presentation primitives.
+- `lib/content/ai-companies.ts` and `{anthropic,openai,elevenlabs}-study.json`: reviewed AI company evidence, arguments and history.
+- `components/studies/ai/`: nine company-specific scenes, shared presentation and source/permission/version guards in `lib/data/ai-scenarios.ts`.
+- `public/audio/company-studies/`: original illustrative audio and provenance.
 - `components/studies/servicenow/`: Service Operations, EmployeeWorks and AI Control Tower scenes.
 - `lib/data/servicenow-scenarios.ts`: guarded illustrative workflow states with separate approvals, receipts and outcomes.
 - `lib/data/study-scenarios.ts`: fictional input records and guarded calculation logic.
