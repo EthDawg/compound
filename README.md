@@ -9,10 +9,10 @@ Licensed under the [MIT License](LICENSE). Copyright © 2026 Ethan Harley.
 
 ## The model
 
-**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software and Employment Hero. An archetype
+**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software, Employment Hero and ServiceNow. An archetype
 (compound platform, enterprise suite) describes its position; it is not an
 instance to switch to. Meridian Optics is the shared fictional customer used to
-compare the app studies; the three new studies use an explicitly fictional Australian expansion scenario.
+compare the app studies; the talent studies use an explicitly fictional Australian expansion scenario. ServiceNow follows a service incident, an employee move and an AI model-change request.
 
 | Surface | Route | Purpose |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ compare the app studies; the three new studies use an explicitly fictional Austr
 | Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
 | Brief | `/brief` | Existing 12-minute Rippling/compound-platform argument |
 
-The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software and Employment Hero** in both App and
+The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software, Employment Hero and ServiceNow** in both App and
 Backstage. The two views share the company's theme and identity, while the
 Backstage content and navigation differ by company. Rippling opens with the full
 compound-company study: economics, product-building speed, founder reasoning,
@@ -36,7 +36,7 @@ and trade-offs, proposed tests, and sources. The shared structure must preserve
 each company's depth. The former Rippling `/backstage/library` destination
 redirects to its canonical Backstage home.
 
-PageUp, ELMO and Employment Hero each have three linked value propositions,
+PageUp, ELMO, Employment Hero and ServiceNow each have three linked value propositions,
 three deeper arguments, causal acquisition history, leadership/direction,
 trade-offs, proposed proof and claim-linked primary sources checked on
 10 September 2026. The App scenes use their own product vocabulary and workflow:
@@ -44,6 +44,9 @@ trade-offs, proposed proof and claim-linked primary sources checked on
 - PageUp: committee review, Clinch nurture and Paige source inspection.
 - ELMO: capability/development, constrained remuneration and payroll conflicts.
 - Employment Hero: payroll exceptions, Find Talent and direct/HeroForce responsibilities.
+- ServiceNow: service-impact investigation and controlled recovery, EmployeeWorks handoffs by role, and AI Control Tower review through a separate deployment receipt. Failed health checks and decision rationales remain visible.
+
+ServiceNow’s argument connects the Glide/ITSM origin to McDermott and Zavery’s platform direction, Moveworks and EmployeeWorks, Logik and commercial workflows, and the completed Armis/Veza acquisitions. It distinguishes shipping capabilities, roadmap claims and integration boundaries.
 
 Interactions change local illustrative state only. They reset on screen navigation;
 no messages, hiring decisions, payroll, contracts or live records are changed.
@@ -73,9 +76,11 @@ company studies.
 - `components/studies/rippling/`: preserved Rippling screens and essays, with
   explicit screen registries for server-side rendering.
 - `components/workday-app.tsx`: Workday workspace and working module links.
-- `lib/content/{pageup,elmo,hero}-study.ts`: sourced company arguments and causal history.
+- `lib/content/{pageup,elmo,hero,servicenow}-study.ts`: sourced company arguments and causal history.
 - `components/strategy-backstage.tsx`: new thesis, essay, history and leadership surfaces.
 - `components/studies/talent/`: three distinct app studies and shared presentation primitives.
+- `components/studies/servicenow/`: Service Operations, EmployeeWorks and AI Control Tower scenes.
+- `lib/data/servicenow-scenarios.ts`: guarded illustrative workflow states with separate approvals, receipts and outcomes.
 - `lib/data/study-scenarios.ts`: fictional input records and guarded calculation logic.
 - `components/company-backstage.tsx`: shared Backstage comparison pages and the
   Workday overview. Rippling's full study owns its overview.

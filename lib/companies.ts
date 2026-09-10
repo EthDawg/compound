@@ -1,9 +1,10 @@
 import { RIPPLING, WORKDAY } from "./vendors/skins";
 import type { VendorSkin } from "./vendors/types";
 import { TALENT_COMPANIES } from "./content/talent-companies";
+import { SERVICENOW_STUDY } from "./content/servicenow-study";
 import type { CompanyStrategy } from "./content/strategy-types";
 
-export type CompanyId = "rippling" | "workday" | "pageup" | "elmo" | "employment-hero";
+export type CompanyId = "rippling" | "workday" | "pageup" | "elmo" | "employment-hero" | "servicenow";
 export type StudySurface = "app" | "backstage";
 export const BACKSTAGE_SECTIONS = [
   { id: "", label: "Overview" },
@@ -119,6 +120,7 @@ export const COMPANIES: CompanyStudy[] = [
     },
   },
   ...TALENT_COMPANIES,
+  SERVICENOW_STUDY,
 ];
 
 export const companyStudy = (id: string) => COMPANIES.find((c) => c.id === id);

@@ -2,6 +2,8 @@
 export function Mark({ id, className = "h-4 w-4" }: { id: string; className?: string }) {
   const p = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
   switch (id) {
+    case "servicenow": // work moving through accountable stages
+      return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><circle cx="3" cy="8" r="1.8"/><circle cx="13" cy="8" r="1.8"/><path d="M5 8h6M7 5l3 3-3 3"/></g></svg>;
     case "pageup":
       return <svg viewBox="0 0 16 16" className={className} aria-hidden><g {...p}><path d="M3 13V3h7l3 3v7H3zM10 3v3h3M5.5 9h5M5.5 11h3"/></g></svg>;
     case "elmo":
