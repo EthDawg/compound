@@ -10,8 +10,23 @@ const DOORS = [
   },
   {
     href: "/backstage", kicker: "Behind it", title: "The operating manual",
-    body: "Ten essays, fourteen logged decisions with the alternatives that were rejected, the metrics that would falsify the whole strategy, and the questions people ask when they think it's nonsense.",
+    body: "Twelve essays, fourteen logged decisions with the alternatives that were rejected, the metrics that would falsify the whole strategy, the nine skills that actually get it executed, and the questions people ask when they think it's nonsense.",
     cta: "Go backstage",
+  },
+];
+
+const QUICK = [
+  {
+    href: "/brief", kicker: "12 minutes", title: "The speed run",
+    body: "The whole argument, ordered for whoever is holding it — prospect, investor, new joiner, or skeptic.",
+  },
+  {
+    href: "/pocket", kicker: "Installable", title: "Pocket",
+    body: "Three flagship flows built for a phone: onboard, offboard, ask. Add it to your home screen and it runs full screen, offline.",
+  },
+  {
+    href: "/backstage/agentic", kicker: "2026", title: "The agentic turn",
+    body: "Why the graph stopped being a convenience argument and became a capability one — including a question the agent refuses to answer.",
   },
 ];
 
@@ -64,6 +79,18 @@ export default function Landing() {
                   {d.cta}
                   <I.IArrow className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
                 </span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {QUICK.map((q) => (
+              <Link key={q.href} href={q.href} className="group rounded-xl bg-white/[0.03] p-4 ring-1 ring-white/[0.08] transition hover:bg-white/[0.07] hover:ring-white/15">
+                <div className="text-[10.5px] font-bold uppercase tracking-wider text-signal">{q.kicker}</div>
+                <h3 className="mt-1 flex items-center gap-1.5 text-[15px] font-semibold tracking-tight">
+                  {q.title}
+                  <I.IArrow className="h-3.5 w-3.5 text-ink-500 transition group-hover:translate-x-0.5 group-hover:text-signal" />
+                </h3>
+                <p className="mt-1.5 text-[12.5px] leading-[1.55] text-ink-400">{q.body}</p>
               </Link>
             ))}
           </div>

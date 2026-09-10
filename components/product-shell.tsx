@@ -164,7 +164,22 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
               </div>
             </XRay>
 
-            <div className="mt-5 border-t border-ink-100 px-2.5 pt-3">
+            <div className="mt-5 space-y-2 border-t border-ink-100 px-2.5 pt-3">
+              <Link
+                href="/pocket"
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-[12.5px] font-medium text-ink-600 ring-1 ring-ink-200 transition hover:bg-ink-50 hover:text-ink"
+              >
+                <I.ILayers className="h-3.5 w-3.5 text-ink-400" />
+                Pocket
+                <span className="ml-auto text-[10.5px] text-ink-400">mobile</span>
+              </Link>
+              <Link
+                href="/brief"
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-[12.5px] font-medium text-ink-600 ring-1 ring-ink-200 transition hover:bg-ink-50 hover:text-ink"
+              >
+                <I.IClock className="h-3.5 w-3.5 text-ink-400" />
+                12-minute brief
+              </Link>
               <Link
                 href="/backstage"
                 className="group block rounded-lg bg-ink p-3 text-white transition hover:bg-ink-800"
