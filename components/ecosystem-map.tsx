@@ -11,12 +11,15 @@ import {
   type Altitude, type MapNode,
 } from "@/lib/data/altitude";
 import { ERAS, ERA_THESIS, RECURRENCE, type Footprint } from "@/lib/content/eras";
+import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 
-const W = 1000, H = 620, PAD = 74;
-const px = (x: number) => PAD + (x / 100) * (W - PAD * 2);
-const py = (y: number) => H - PAD - (y / 100) * (H - PAD * 2);
-const rr = (r: number) => 6 + (r / 100) * 22;
+// Desktop plots wide; phones plot portrait with type sized so it survives the
+// viewBox scale. A 12px label in a 1000-wide viewBox is 4.5px on a 375px screen.
+const GEO = {
+  wide: { W: 1000, H: 620, PAD: 74, fq: 12.5, fax: 12, fax2: 11, flab: 11.5, flabOn: 12.5, rMin: 6, rMax: 22 },
+  narrow: { W: 560, H: 700, PAD: 52, fq: 17, fax: 16, fax2: 16, flab: 16, flabOn: 18, rMin: 7, rMax: 26 },
+} as const;
 
 const ARCH: Record<Archetype, { fill: string; label: string }> = {
   "Compound platform": { fill: "#F5C518", label: "Compound platform" },
@@ -37,7 +40,6 @@ const groupFill = (g: string) =>
   (ARCH as Record<string, { fill: string }>)[g]?.fill ??
   (g === "Likely to emerge" ? "#B4441F" : "#F5C518");
 
-const QPOS = { tl: [PAD + 10, PAD + 6], tr: [W - PAD - 10, PAD + 6], bl: [PAD + 10, H - PAD - 10], br: [W - PAD - 10, H - PAD - 10] };
 const QTONE: Record<string, string> = { signal: "#D9A900", moss: "#0E7C5A", clay: "#B4441F", ink: "#8A939B" };
 
 const FOOT: Record<Footprint, { c: string; label: string }> = {
@@ -49,6 +51,13 @@ const FOOT: Record<Footprint, { c: string; label: string }> = {
 };
 
 export function EcosystemMap() {
+  const narrow = useNarrow();
+  const G = narrow ? GEO.narrow : GEO.wide;
+  const { W, H, PAD } = G;
+  const px = (x: number) => PAD + (x / 100) * (W - PAD * 2);
+  const py = (y: number) => H - PAD - (y / 100) * (H - PAD * 2);
+  const rr = (r: number) => G.rMin + (r / 100) * G.rMax;
+  const QPOS = { tl: [PAD + 8, PAD + 4], tr: [W - PAD - 8, PAD + 4], bl: [PAD + 8, H - PAD - 8], br: [W - PAD - 8, H - PAD - 8] } as const;
   const [alt, setAlt] = useState<Altitude>("companies");
   const [focus, setFocus] = useState<{ ecosystem?: string; category?: string }>({});
   const [lensId, setLensId] = useState<LensId>("strategic");
@@ -124,7 +133,7 @@ export function EcosystemMap() {
       </div>
 
       {alt === "eras" ? (
-        <EraLayer era={era} setEra={setEra} />
+        <EraLayer era={era} setEra={setEra} narrow={narrow} />
       ) : (
         <>
           {/* Lens */}
@@ -155,17 +164,17 @@ export function EcosystemMap() {
                   const [qx, qy] = QPOS[q.at];
                   return (
                     <text key={q.at} x={qx} y={qy} textAnchor={q.at.endsWith("l") ? "start" : "end"}
-                      fill={QTONE[q.tone]} fontSize="12.5" fontWeight="700" letterSpacing="0.04em" opacity="0.75">
+                      fill={QTONE[q.tone]} fontSize={G.fq} fontWeight="700" letterSpacing="0.04em" opacity="0.8">
                       {q.label.toUpperCase()}
                     </text>
                   );
                 })}
 
-                <text x={W / 2} y={H - 22} textAnchor="middle" fill="#8A939B" fontSize="12" fontWeight="600">{lens.x.label}</text>
-                <text x={PAD} y={H - 42} textAnchor="start" fill="#5B646C" fontSize="11">← {lens.x.low}</text>
-                <text x={W - PAD} y={H - 42} textAnchor="end" fill="#5B646C" fontSize="11">{lens.x.high} →</text>
-                <text x={22} y={H / 2} textAnchor="middle" fill="#8A939B" fontSize="12" fontWeight="600"
-                  transform={`rotate(-90 22 ${H / 2})`}>{lens.y.label}</text>
+                <text x={W / 2} y={H - (narrow ? 16 : 22)} textAnchor="middle" fill="#8A939B" fontSize={G.fax} fontWeight="600">{lens.x.label}</text>
+                <text x={PAD} y={H - (narrow ? 36 : 42)} textAnchor="start" fill="#5B646C" fontSize={G.fax2}>← {lens.x.low}</text>
+                <text x={W - PAD} y={H - (narrow ? 36 : 42)} textAnchor="end" fill="#5B646C" fontSize={G.fax2}>{lens.x.high} →</text>
+                <text x={narrow ? 16 : 22} y={H / 2} textAnchor="middle" fill="#8A939B" fontSize={G.fax} fontWeight="600"
+                  transform={`rotate(-90 ${narrow ? 16 : 22} ${H / 2})`}>{lens.y.label}</text>
 
                 {shownEdges.map((e, i) => {
                   const a = companyBySlug(e.from), b = companyBySlug(e.to);
@@ -187,7 +196,11 @@ export function EcosystemMap() {
                   const dim = !!active && !isActive && !isLinked;
                   const fill = groupFill(n.group);
                   // Label everything unless the view is dense enough that it would collide.
-                  const showLabel = alt !== "companies" || nodes.length <= 14 || p.r >= 46 || isActive || isLinked;
+                  // On a phone, label only the biggest few plus whatever is selected — anything
+                  // more collides at this size and reads as noise.
+                  const showLabel = narrow
+                    ? isActive || isLinked || p.r >= (alt === "companies" ? 74 : 56)
+                    : alt !== "companies" || nodes.length <= 14 || p.r >= 46 || isActive || isLinked;
                   return (
                     <g key={n.id} transform={`translate(${px(p.x)} ${py(p.y)})`}
                       style={{ transition: "transform .6s cubic-bezier(.2,.7,.3,1)", cursor: "pointer" }}
@@ -201,7 +214,7 @@ export function EcosystemMap() {
                       {n.deep && <circle r={rr(p.r) + 4.5} fill="none" stroke={fill} strokeOpacity="0.42" strokeWidth="1" />}
                       {showLabel && (
                         <text y={rr(p.r) + 13} textAnchor="middle" fill={isActive ? "#fff" : "#B6BEC5"}
-                          fontSize={isActive ? 12.5 : 11.5} fontWeight={isActive ? 700 : 500} style={{ pointerEvents: "none" }}>
+                          fontSize={isActive ? G.flabOn : G.flab} fontWeight={isActive ? 700 : 500} style={{ pointerEvents: "none" }}>
                           {n.name}
                         </text>
                       )}
@@ -217,9 +230,31 @@ export function EcosystemMap() {
                   </span>
                 ))}
                 {alt !== "companies" && (
-                  <span className="text-[11px] text-signal">click a circle to zoom in</span>
+                  <span className="text-[11px] text-signal">tap a circle to zoom in</span>
                 )}
               </div>
+
+              {narrow && (
+                <div className="border-t border-white/10">
+                  <div className="px-4 pt-3 text-[10.5px] font-bold uppercase tracking-wider text-ink-500">
+                    Ranked by {lens.pill.toLowerCase()} — tap to read
+                  </div>
+                  <ul className="max-h-[19rem] overflow-y-auto thin-scroll px-2 py-2">
+                    {ordered.map((n, i) => (
+                      <li key={n.id}>
+                        <button onClick={() => drill(n)}
+                          className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition ${
+                            sel === n.id ? "bg-white/10" : "active:bg-white/[0.06]"}`}>
+                          <span className="num w-5 shrink-0 text-right text-[11px] text-ink-600">{i + 1}</span>
+                          <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: groupFill(n.group) }} />
+                          <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink-200">{n.name}</span>
+                          {n.deep && <I.IArrow className="h-3 w-3 shrink-0 text-signal" />}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="min-w-0">
@@ -308,7 +343,7 @@ function Detail({ node, lensId, alt }: { node: MapNode; lensId: LensId; alt: Alt
   );
 }
 
-function EraLayer({ era, setEra }: { era: string; setEra: (s: string) => void }) {
+function EraLayer({ era, setEra, narrow }: { era: string; setEra: (s: string) => void; narrow: boolean }) {
   const e = ERAS.find((x) => x.id === era)!;
   const EW = 1000, EH = 300, EP = 60;
   const ex = (x: number) => EP + (x / 100) * (EW - EP * 2);
@@ -323,6 +358,30 @@ function EraLayer({ era, setEra }: { era: string; setEra: (s: string) => void })
       </p>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[1.55fr_1fr]">
+        {narrow ? (
+          <div className="min-w-0 overflow-hidden rounded-xl bg-white/[0.03] ring-1 ring-white/10">
+            <ul className="divide-y divide-white/[0.07]">
+              {ERAS.map((x) => {
+                const on = x.id === era;
+                const f = FOOT[x.footprint];
+                return (
+                  <li key={x.id}>
+                    <button onClick={() => setEra(x.id)}
+                      className={`flex w-full items-center gap-3 px-4 py-3 text-left ${on ? "bg-white/[0.07]" : ""}`}>
+                      <span className="h-3 w-3 shrink-0 rounded-full" style={{ background: f.c }} />
+                      <span className="min-w-0 flex-1">
+                        <span className={`block text-[14px] ${on ? "font-semibold text-white" : "text-ink-200"}`}>{x.name}</span>
+                        <span className="block text-[11.5px] text-ink-500">{x.span}</span>
+                      </span>
+                      <span className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                        style={{ background: `${f.c}22`, color: f.c }}>{x.footprint}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ) : (
         <div className="min-w-0 overflow-hidden rounded-xl bg-white/[0.03] ring-1 ring-white/10">
           <svg viewBox={`0 0 ${EW} ${EH}`} className="w-full" role="img" aria-label="Architecture eras and footprints">
             <line x1={EP} y1={EH - 46} x2={EW - EP} y2={EH - 46} stroke="rgba(255,255,255,.14)" />
@@ -358,6 +417,7 @@ function EraLayer({ era, setEra }: { era: string; setEra: (s: string) => void })
             ))}
           </div>
         </div>
+        )}
 
         <div className="min-w-0 rounded-xl bg-white/[0.05] ring-1 ring-white/10">
           <div className="border-b border-white/10 px-5 py-4">

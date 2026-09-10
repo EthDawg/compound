@@ -64,7 +64,7 @@ export function HireFlow() {
   };
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
       {/* Form */}
       <div className="rounded-lg border border-ink-200 bg-white shadow-card">
         <div className="border-b border-ink-100 px-4 py-3">

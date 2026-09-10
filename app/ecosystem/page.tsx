@@ -85,15 +85,15 @@ export default function Ecosystem() {
               <ul className="mt-3 space-y-2.5">
                 {swings.map(({ c, ranks, spread }) => (
                   <li key={c.slug} className="flex items-center gap-3">
-                    <span className="w-[132px] shrink-0 truncate text-[13.5px] font-medium text-white">{c.name}</span>
-                    <span className="flex flex-1 gap-1">
+                    <span className="w-[92px] shrink-0 truncate text-[13px] font-medium text-white sm:w-[132px] sm:text-[13.5px]">{c.name}</span>
+                    <span className="flex min-w-0 flex-1 gap-1">
                       {ranks.map((r, i) => (
-                        <span key={i} className="flex-1 rounded bg-white/[0.06] px-1 py-1 text-center" title={LENSES[i].pill}>
+                        <span key={i} className="min-w-0 flex-1 rounded bg-white/[0.06] px-0.5 py-1 text-center sm:px-1" title={LENSES[i].pill}>
                           <span className="num text-[11.5px] text-ink-300">#{r}</span>
                         </span>
                       ))}
                     </span>
-                    <span className="num w-12 shrink-0 text-right text-[12px] font-semibold text-clay">±{spread}</span>
+                    <span className="num w-9 shrink-0 text-right text-[12px] font-semibold text-clay sm:w-12">±{spread}</span>
                   </li>
                 ))}
               </ul>

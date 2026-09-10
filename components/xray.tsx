@@ -18,8 +18,8 @@ export function XRay({ id, children }: { id: string; children: React.ReactNode }
   if (!note) return <>{children}</>;
 
   return (
-    <div className="relative">
-      <div data-xr={on ? id : undefined}>{children}</div>
+    <div className="relative min-w-0">
+      <div className="min-w-0" data-xr={on ? id : undefined}>{children}</div>
       {on && <XNoteCard id={id} />}
     </div>
   );

@@ -20,7 +20,7 @@ export default function Hire() {
           <HireFlow />
         </XRay>
 
-        <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_1fr]">
+        <div className="mt-5 grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <XRay id="hire-jurisdiction">
             <Card pad={false}>
               <CardHead title="The workflow behind it" sub={wf.name} right={<Badge tone="good" dot>Enabled</Badge>} />
@@ -47,7 +47,7 @@ export default function Hire() {
             </Card>
           </XRay>
 
-          <Card pad={false}>
+          <Card pad={false} className="min-w-0">
             <CardHead title="Starting soon" right={<Badge tone="info">{starting.length}</Badge>} />
             <ul className="divide-y divide-ink-100">
               {starting.map((e) => (
@@ -60,7 +60,7 @@ export default function Hire() {
                     </div>
                     <Badge tone="info">22 Sep</Badge>
                   </div>
-                  <div className="mt-2 grid grid-cols-4 gap-1.5">
+                  <div className="mt-2 grid grid-cols-2 gap-1.5 sm:grid-cols-4">
                     {[
                       ["Offer", true], ["Right to work", true], ["Laptop", true], ["Access", false],
                     ].map(([l, done]) => (

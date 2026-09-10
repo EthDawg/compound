@@ -7,6 +7,7 @@ import { NAV } from "./nav";
 import { useXRay } from "./xray-provider";
 import { XRay } from "./xray";
 import { COMPANY } from "@/lib/data/company";
+import { CompoundBar } from "./compound-bar";
 import * as I from "./icons";
 
 const ICONS: Record<string, (p: { className?: string }) => React.JSX.Element> = {
@@ -18,13 +19,21 @@ const ICONS: Record<string, (p: { className?: string }) => React.JSX.Element> = 
 
 export function ProductShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
-  const { on, toggle } = useXRay();
+  const { on } = useXRay();
   const [mobileNav, setMobileNav] = useState(false);
 
   return (
     <div className="min-h-screen bg-ink-50">
-      {/* ── Top bar ─────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
+      <CompoundBar activeId="rippling" />
+
+      <div className="border-b border-ink-200 bg-ink-100 px-3 py-2 text-[11.5px] text-ink-600 sm:px-4">
+        <span className="font-semibold text-ink">Design study.</span> An interpretation of the compound-platform
+        pattern, as most publicly associated with Rippling. Fictional company, no logos or real product designs, not
+        affiliated.
+      </div>
+
+      {/* ── Vendor chrome ───────────────────────────────────────── */}
+      <header className="sticky top-12 z-40 border-b border-ink-200 bg-white/95 backdrop-blur">
         <div className="flex h-14 items-center gap-3 px-3 sm:px-4">
           <button
             onClick={() => setMobileNav((v) => !v)}
@@ -35,15 +44,18 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
           </button>
 
           <Link href="/app" className="flex shrink-0 items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-ink text-signal">
+            <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-signal text-ink">
               <I.ILayers className="h-4 w-4" />
             </span>
-            <span className="hidden text-[15px] font-semibold tracking-tight sm:block">Compound</span>
+            <span className="hidden whitespace-nowrap text-[14.5px] font-semibold tracking-tight sm:block">
+              Compound platform
+            </span>
           </Link>
 
           <div className="mx-1 hidden h-5 w-px bg-ink-200 sm:block" />
 
-          <button className="hidden shrink-0 items-center gap-1.5 rounded-md px-2 py-1.5 text-[13px] font-medium text-ink-700 hover:bg-ink-100 sm:flex">
+          <button className="hidden shrink-0 items-center gap-1.5 rounded-md px-2 py-1.5 text-[13px] font-medium text-ink-700 hover:bg-ink-100 sm:flex"
+            title="The fictional customer this study runs on">
             <span className="grid h-5 w-5 place-items-center rounded bg-clay-100 text-[10px] font-bold text-clay">M</span>
             {COMPANY.name}
             <I.IChevronDown className="h-3.5 w-3.5 text-ink-400" />
@@ -57,26 +69,6 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
                 className="h-8 w-[19rem] rounded-md border border-ink-200 bg-ink-50 pl-8 pr-3 text-[13px] placeholder:text-ink-400 focus:border-ink-300 focus:bg-white focus:outline-none focus:ring-2 focus:ring-signal/25"
               />
             </div>
-
-            <button
-              onClick={toggle}
-              className={`group flex h-8 items-center gap-1.5 rounded-md border px-2.5 text-[12.5px] font-semibold transition ${
-                on
-                  ? "border-ink bg-ink text-signal shadow-sm"
-                  : "border-ink-200 bg-white text-ink-700 hover:border-ink-300 hover:bg-ink-50"
-              }`}
-              title="Toggle x-ray mode  ·  press X"
-            >
-              <I.IEye className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">X-ray</span>
-              <kbd
-                className={`ml-0.5 hidden rounded px-1 py-px font-mono text-[10px] font-bold sm:inline ${
-                  on ? "bg-white/15 text-signal-300" : "bg-ink-100 text-ink-400"
-                }`}
-              >
-                X
-              </kbd>
-            </button>
 
             <Link
               href="/backstage"
@@ -107,7 +99,7 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
         <aside
           className={`${
             mobileNav ? "block" : "hidden"
-          } fixed inset-y-0 left-0 z-30 w-[236px] shrink-0 overflow-y-auto border-r border-ink-200 bg-white pt-16 lg:sticky lg:top-14 lg:block lg:h-[calc(100vh-3.5rem)] lg:pt-0 thin-scroll`}
+          } fixed inset-y-0 left-0 z-30 w-[236px] shrink-0 overflow-y-auto border-r border-ink-200 bg-white pt-16 lg:sticky lg:top-[6.5rem] lg:block lg:h-[calc(100vh-6.5rem)] lg:pt-0 thin-scroll`}
         >
           <nav className="px-2.5 py-3">
             <Link
