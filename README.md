@@ -11,6 +11,7 @@ Three surfaces at one address:
 | The product | `/app` | A dense admin platform for a fictional 344-person hardware company across four entities and six countries. Payroll, devices, app access, spend, workflows, graph explorer. |
 | Backstage | `/backstage` | The operating philosophy underneath it — 12 essays, 14 logged decisions, 11 heresies, 8 metrics, 9 execution skills, the agentic turn, growth trajectory. |
 | Pocket | `/pocket` | Installable mobile PWA. Three flagship flows for a demo in someone's hand: Onboard, Offboard, Ask. |
+| The map | `/ecosystem` | One level up: ~33 HR-tech companies plotted four times under four incompatible definitions of relevance, plus nine positions read in full. |
 
 The bridge between the first two is **x-ray mode** — press `X` anywhere in `/app`
 and every screen grows founder annotations explaining its design premise, what it
@@ -18,6 +19,15 @@ trades away, and what holding the line cost.
 
 `/brief` is a 12-minute speed run with four audience lenses (prospect, investor,
 new joiner, skeptic) — the thing to send someone.
+
+The map's whole argument is that relevance is not one quantity. Each lens is a
+different question ("relevant to the argument?" / "to the number of people whose
+pay depends on it?" / "to whether an agent can safely act?" / "to whoever has to
+keep using it Monday?"), and node position *and size* change under each. The
+companies that swing most between lenses — ADP, Mercor, nga.net — are the point.
+Scores live in `lib/data/ecosystem.ts` and are editorial judgements, deliberately
+so; if you change one, check the prose in `lib/content/ecosystem-deep.ts` still
+agrees with it.
 
 ## Framing, deliberately
 
@@ -92,6 +102,11 @@ Things that are genuinely unfinished, roughly in order of payoff:
    ref, not state, to avoid a stale closure) and the graph explorer's joins.
 6. **Effective-dated retrieval is the honest open problem** in the argument itself
    — see `backstage/agentic`. If you want a hard build, that's the one.
+7. **The map covers ~33 companies; only nine have deep reads.** Adding one is a
+   `COMPANIES` entry (four lens positions) plus optionally a `DEEP` entry. Keep
+   the honesty framing: real companies get interpretation of public positioning,
+   never invented decisions, quotes or internals — that line is what separates
+   this from the fictional tenant in `/app`.
 
 ## Provenance
 

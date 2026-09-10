@@ -17,16 +17,16 @@ const DOORS = [
 
 const QUICK = [
   {
+    href: "/ecosystem", kicker: "One level up", title: "The map",
+    body: "Thirty-odd HR-tech companies drawn four times, under four incompatible definitions of what makes something relevant. Nine positions read in full.",
+  },
+  {
     href: "/brief", kicker: "12 minutes", title: "The speed run",
     body: "The whole argument, ordered for whoever is holding it — prospect, investor, new joiner, or skeptic.",
   },
   {
     href: "/pocket", kicker: "Installable", title: "Pocket",
     body: "Three flagship flows built for a phone: onboard, offboard, ask. Add it to your home screen and it runs full screen, offline.",
-  },
-  {
-    href: "/backstage/agentic", kicker: "2026", title: "The agentic turn",
-    body: "Why the graph stopped being a convenience argument and became a capability one — including a question the agent refuses to answer.",
   },
 ];
 

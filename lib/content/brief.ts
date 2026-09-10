@@ -96,7 +96,7 @@ export const LENSES: Lens[] = [
     who: "You think this is a conglomerate with better branding and you would like to test that.",
     opener:
       "Good. The friendly version of this argument is not worth your time. Go straight at the structural objection, the place the strategy is most plausibly wrong, and the loss column.",
-    total: 12,
+    total: 15,
     closing:
       "The strongest remaining objection is not the conglomerate one — it is that good-enough-everywhere is a ceiling rather than a floor, and the market will pay for depth in more categories than assumed. That is unresolved and it is worth more attention than any competitor's roadmap.",
     steps: [
@@ -112,7 +112,10 @@ export const LENSES: Lens[] = [
       { n: 4, title: "The metrics that would prove it wrong", mins: 2, href: "/backstage/metrics", cta: "Check the falsifiers",
         why: "Each with the specific way it can flatter you, plus five metrics deliberately ignored and why.",
         takeaway: "If the falsifier is ever quietly retired, assume the strategy has stopped being tested." },
-      { n: 5, title: "The AI claim, stated narrowly enough to be wrong", mins: 2, href: "/backstage/agentic", cta: "Test the agentic case",
+      { n: 5, title: "The whole category, drawn four different ways", mins: 3, href: "/ecosystem", cta: "Open the map",
+        why: "The best test of a strategy is where it sits among the alternatives. Four incompatible definitions of relevance over thirty companies — including one included specifically because it would normally be left out.",
+        takeaway: "Relevance is not one quantity. The companies that move most between lenses are the ones worth arguing about." },
+      { n: 6, title: "The AI claim, stated narrowly enough to be wrong", mins: 2, href: "/backstage/agentic", cta: "Test the agentic case",
         why: "Every company is currently explaining why its existing strategy was secretly an AI strategy. This one includes what it currently costs, what is still an open problem, and the risk that actually matters.",
         takeaway: "Everyone will have the same models. The claim is about the graph, and it is checkable." },
     ],

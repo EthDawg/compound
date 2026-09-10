@@ -7,14 +7,15 @@ import * as I from "./icons";
 
 const SECTIONS = [
   { href: "/backstage", label: "Overview", icon: I.IHome, n: "" },
+  { href: "/ecosystem", label: "The map", icon: I.IGraph, n: "" },
   { href: "/brief", label: "The 12-minute brief", icon: I.IClock, n: "" },
   { href: "/backstage/manual", label: "The operating manual", icon: I.IBook, n: "12" },
   { href: "/backstage/agentic", label: "The agentic turn", icon: I.ISpark, n: "" },
   { href: "/backstage/skills", label: "How it out-executes", icon: I.IBolt, n: "9" },
-  { href: "/backstage/trajectory", label: "Growth from here", icon: I.IGraph, n: "4" },
-  { href: "/backstage/decisions", label: "Decision log", icon: I.IList, n: "14" },
+  { href: "/backstage/trajectory", label: "Growth from here", icon: I.IReport, n: "4" },
+  { href: "/backstage/decisions", label: "Decision log", icon: I.IBook, n: "14" },
   { href: "/backstage/heresies", label: "Heresies", icon: I.ILayers, n: "11" },
-  { href: "/backstage/metrics", label: "What we measure", icon: I.IReport, n: "8" },
+  { href: "/backstage/metrics", label: "What we measure", icon: I.IList, n: "8" },
   { href: "/backstage/org", label: "How it's organised", icon: I.IPeople, n: "4" },
   { href: "/backstage/timeline", label: "Nine years", icon: I.IClock, n: "5" },
   { href: "/backstage/ask", label: "Ask the founder", icon: I.IBook, n: "14" },
