@@ -7,6 +7,7 @@ import { SECTORS, sectorById, categoryById } from "@/lib/data/atlas";
 import { nodesAt, BOARD_STATS, type Node as AtlasNode, type Level } from "@/lib/data/atlas-nodes";
 import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
 import { AtlasSearch } from "./atlas-search";
+import { AtlasMaps } from "./atlas-maps";
 import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { StudyLink } from "./study-link";
@@ -151,6 +152,7 @@ export function Atlas() {
       </header>
 
       <main className="mx-auto max-w-[1180px] px-4 pb-16 sm:px-6">
+        <AtlasMaps />
         {/* Controls */}
         <div className="flex flex-col gap-3 py-4 lg:flex-row lg:items-center">
           <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-[13.5px]">
@@ -460,6 +462,9 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
         )}
         {companyStudy(n.id) && (
           <Link href={companyHref(n.id, "backstage")} className="flex h-10 items-center justify-center gap-1.5 rounded-lg border text-[13.5px] font-semibold" style={{borderColor:PAPER.line}}>Open {n.name} Backstage <I.IArrow className="h-3.5 w-3.5" /></Link>
+        )}
+        {companyStudy(n.id)?.ecosystem && (
+          <Link href={companyStudy(n.id)!.ecosystem!.href} className="flex min-h-10 items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[13px] font-semibold text-[#0755A5]" style={{borderColor:PAPER.line}}>Explore the partner network <I.IGraph className="h-4 w-4" /></Link>
         )}
         {n.href && (
           <Link href={n.href}

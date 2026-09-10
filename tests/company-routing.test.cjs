@@ -61,6 +61,7 @@ test('each company exposes its own complete Backstage navigation with working de
       assert.ok(links.includes(href),`Missing navigation entry ${href}`);
       assert.ok(routes[href],`Missing navigation destination ${href}`);
     }
-    assert.ok(links.every(href=>href.startsWith(`/companies/${company.id}/backstage`)));
+    assert.ok(links.every(href=>href.startsWith(`/companies/${company.id}/backstage`)||href===company.ecosystem?.href));
+    if(company.ecosystem){assert.ok(links.includes(company.ecosystem.href));assert.ok(routes[company.ecosystem.href]);}
   }
 });

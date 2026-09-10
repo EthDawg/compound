@@ -35,6 +35,10 @@ export function BackstageShell({ company, children }: { company: CompanyStudy; c
                 className="block rounded-lg px-3 py-2 text-[13px]" style={{background:active?t.accentSoft:undefined,color:active?t.ink:t.inkMuted,fontWeight:active?650:450,borderLeft:active?`3px solid ${t.accent}`:"3px solid transparent"}}>{s.label}</Link>;
             })}</div>
           </div>)}
+          {company.ecosystem && <div>
+            <div className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-wider" style={{color:t.inkFaint}}>Around the company</div>
+            <Link href={company.ecosystem.href} className="flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium" style={{color:t.inkMuted}}><I.IGraph className="h-4 w-4"/>{company.ecosystem.label}</Link>
+          </div>}
           <p className="!mt-6 px-3 text-[11px] leading-relaxed" style={{color:t.inkFaint}}>Independent analysis and an illustrative interface. No affiliation. Demo records belong to the fictional Meridian Optics.</p>
         </nav>
       </aside>

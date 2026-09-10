@@ -18,6 +18,7 @@ export interface CompanyStudy {
   skin: VendorSkin;
   brand: { chrome: string; ink: string; highlight: string };
   appScreens: readonly string[];
+  ecosystem?: { href: string; label: string };
   backstage: {
     navigation: { label: string; sections: readonly { id: string; label: string }[] }[];
     headline: string;
@@ -81,6 +82,7 @@ export const COMPANIES: CompanyStudy[] = [
   },
   {
     id: "workday", name: "Workday", archetype: "Enterprise suite", skin: WORKDAY,
+    ecosystem: { href: "/atlas/workday", label: "Partner network" },
     brand: { chrome: "#0755A5", ink: "#FFFFFF", highlight: "#FFB23F" },
     appScreens: ["", "processes", "people", "reporting", "talent", "compensation", "planning", "financials", "absence", "learning"],
     backstage: {

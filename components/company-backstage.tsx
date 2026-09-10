@@ -12,6 +12,7 @@ export function CompanyBackstage({ company: c, section = "" }: { company: Compan
     <h1 className={`mt-3 max-w-3xl text-[34px] leading-[1.1] tracking-tight sm:text-[46px] ${c.id==='rippling'?'font-serif-display':'font-semibold'}`}>{title}</h1>
     <p className="mt-5 max-w-[68ch] text-[16px] leading-[1.75]" style={label}>{b.thesis}</p>
     {!section && <>
+      {c.ecosystem && <Link href={c.ecosystem.href} className="mt-7 flex items-center gap-4 rounded-xl border p-5 transition hover:shadow-sm" style={{background:t.accentSoft,borderColor:t.border}}><I.IGraph className="h-6 w-6 shrink-0"/><div className="min-w-0 flex-1"><h2 className="text-[16px] font-semibold">Explore the {c.name} partner network</h2><p className="mt-1 text-[13px] leading-relaxed" style={label}>The integrators, specialists and staffing firms that deploy and support the platform. Open the map and follow their published coverage.</p></div><I.IArrow className="h-4 w-4 shrink-0"/></Link>}
       <div className="my-8 grid gap-4 sm:grid-cols-2">
         <div className="p-5" style={card}><div className="text-[10px] font-bold uppercase tracking-wider" style={label}>The organising object</div><div className="mt-2 text-[20px] font-semibold">{b.object}</div></div>
         <div className="p-5" style={{...card,background:t.accentSoft}}><div className="text-[10px] font-bold uppercase tracking-wider" style={label}>The question the app asks</div><div className="mt-2 text-[20px] font-semibold leading-snug">{b.question}</div></div>

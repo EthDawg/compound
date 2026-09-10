@@ -17,6 +17,7 @@ compare the two app studies.
 | Surface | Route | Purpose |
 | --- | --- | --- |
 | Atlas | `/` | Sectors, categories and vendors under four editorial lenses |
+| Workday partner network | `/atlas/workday` | Explore integrators, specialists and staffing firms by published services, products and regions |
 | Company app | `/companies/{company}/app` | Explore the company's illustrative interface |
 | Company Backstage | `/companies/{company}/backstage` | Understand the company's thesis, design choices and evaluation criteria |
 | Rippling operating manual | `/companies/rippling/backstage/manual` | Full essays on compounding economics, product-building speed and founder decisions |
@@ -82,6 +83,38 @@ reproduction. Public sources support company concepts. Layouts, theses,
 trade-offs and proposed tests are editorial interpretations. The demo customer,
 people, records and figures are fictional. The founder voice and
 decision log are constructed, not quotations or claims about real internals.
+
+## Workday partner network
+
+The map contains the complete 174-entry public Workday **Services** directory
+snapshot gathered on 10 September 2026, plus Cognizant and NTT DATA, whose current
+company sites publish Workday offerings. These two additions are identified
+separately and excluded by the directory-only filter. The directory includes
+staffing, advisory and adjacent firms as well as implementation partners;
+independents outside it are not comprehensively covered.
+
+Every firm has source links. `lib/data/workday-partners.json` contains sanitized
+directory records, declared competencies and regions, and short attributed
+excerpts. `lib/data/workday-partners.ts` owns reviewed additions, aliases, evidence
+labels, filtering and CSV export. The graph groups published service signals;
+positions and dot sizes are not market-share estimates or quality rankings.
+Related firms share product tags, not an asserted commercial relationship.
+
+Structured directory fields and explicit profile-text mentions remain distinct.
+Region filters use declared coverage, including Global, and never infer delivery
+locations from headquarters. The detailed competency table retains the original
+service/product/region relationships. Missing fields remain unspecified.
+
+The roster importer uses the same public search and profile interfaces as
+[Workday's directory](https://marketplace.workday.com/en-US/pages/find-a-partner/listing#f-appdirect_comp_partner_type_id=Services).
+It stores no search tokens, contact addresses, signed logo URLs or private data.
+To prepare a refresh, run `python3 scripts/import-workday-partners.py`, review
+the resulting diff and text-derived tags, recheck the curated sources, then
+build and test. The import fails on missing profiles, partial results or duplicate
+identities. It does not automatically publish anything.
+
+Filters and selected profiles are represented in the URL. Back/Forward and direct
+links preserve the view. CSV export contains the filtered set and evidence labels.
 
 ## Running and verifying
 
