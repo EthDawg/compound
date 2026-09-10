@@ -34,7 +34,7 @@ export function CompoundBar({ activeId }: { activeId: string }) {
             <span className="pointer-events-none absolute left-2.5" style={{color: active?.skin.theme.ink}}><Mark id={activeId} className="h-3.5 w-3.5" /></span>
             <select id="company-selector" value={active?.id ?? ""}
               onChange={(e) => router.push(switchCompanyHref(e.target.value as CompanyId, path))}
-              className="h-9 w-[112px] appearance-none sm:w-[126px] rounded-lg border border-ink-200 bg-ink-50 pl-8 pr-6 text-[13px] font-semibold text-ink focus:outline-none focus:ring-2 focus:ring-sky">
+              className="h-9 w-[160px] appearance-none sm:w-[188px] rounded-lg border border-ink-200 bg-ink-50 pl-8 pr-6 text-[13px] font-semibold text-ink focus:outline-none focus:ring-2 focus:ring-sky">
               {!active && <option value="" disabled>Choose company</option>}
               {COMPANIES.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </select>

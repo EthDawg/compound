@@ -19,7 +19,7 @@ export function Desk() {
       const f = staleness(c);
       const { ranks } = volatility(c, ALL_COMPANIES);
       const weight = (ALL_COMPANIES.length - Math.min(...ranks)) / ALL_COMPANIES.length;
-      const deep = DEEP.some((d) => d.slug === c.slug);
+      const deep = Boolean(c.deep) || DEEP.some((d) => d.slug === c.slug);
       // Dampen raw staleness so a peripheral node that is wildly overdue cannot outrank
       // a load-bearing one that is merely due. Importance should dominate, not decay.
       return { c, f, weight, deep, score: Math.sqrt(f.months / f.budget) * (0.2 + weight * 0.8) * (deep ? 1.6 : 1) };

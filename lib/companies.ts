@@ -1,7 +1,9 @@
 import { RIPPLING, WORKDAY } from "./vendors/skins";
 import type { VendorSkin } from "./vendors/types";
+import { TALENT_COMPANIES } from "./content/talent-companies";
+import type { CompanyStrategy } from "./content/strategy-types";
 
-export type CompanyId = "rippling" | "workday";
+export type CompanyId = "rippling" | "workday" | "pageup" | "elmo" | "employment-hero";
 export type StudySurface = "app" | "backstage";
 export const BACKSTAGE_SECTIONS = [
   { id: "", label: "Overview" },
@@ -19,6 +21,8 @@ export interface CompanyStudy {
   brand: { chrome: string; ink: string; highlight: string };
   appScreens: readonly string[];
   ecosystem?: { href: string; label: string };
+  workflowScreen?: string;
+  strategy?: CompanyStrategy;
   backstage: {
     navigation: { label: string; sections: readonly { id: string; label: string }[] }[];
     headline: string;
@@ -26,7 +30,7 @@ export interface CompanyStudy {
     object: string;
     question: string;
     sequence: string[];
-    premises: { title: string; body: string }[];
+    premises: { title: string; body: string; screen?: string }[];
     choices: { choice: string; gain: string; cost: string }[];
     proof: { metric: string; test: string; failure: string }[];
     sources: { title: string; url: string; supports: string }[];
@@ -114,6 +118,7 @@ export const COMPANIES: CompanyStudy[] = [
       ],
     },
   },
+  ...TALENT_COMPANIES,
 ];
 
 export const companyStudy = (id: string) => COMPANIES.find((c) => c.id === id);
@@ -126,7 +131,7 @@ export function switchCompanyHref(id: CompanyId, pathname: string) {
   const [, , , surface, ...segments] = pathname.split("/");
   const section = segments.join("/");
   if (surface === "backstage") {
-    const shared = BACKSTAGE_SECTIONS.some((s) => s.id === section);
+    const shared = company.backstage.navigation.some(g => g.sections.some(s => s.id === section));
     return companyHref(id, "backstage", shared ? section : "");
   }
   return companyHref(id, "app", company.appScreens.includes(section) ? section : "");

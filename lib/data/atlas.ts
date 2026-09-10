@@ -280,7 +280,7 @@ export const WORK_CATEGORY: Record<string, string> = {
   ukg: "wfm", dayforce: "wfm",
   adp: "payroll-rail", paychex: "payroll-rail", paycom: "payroll-rail", paylocity: "payroll-rail",
   remote: "eor", "velocity-global": "eor", "papaya-global": "eor", oyster: "eor",
-  greenhouse: "talent", ashby: "talent", lattice: "talent", "culture-amp": "talent",
+  greenhouse: "talent", ashby: "talent", lattice: "talent", "culture-amp": "talent", pageup: "talent",
   checkr: "talent", paradox: "talent", mercor: "talent", upwork: "talent",
   "nga-net": "hr-regional", elmo: "hr-regional",
 };

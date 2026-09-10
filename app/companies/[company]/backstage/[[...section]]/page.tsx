@@ -3,6 +3,7 @@ import { COMPANIES, BACKSTAGE_SECTIONS, companyStudy } from "@/lib/companies";
 import { MANUAL } from "@/lib/content/manual";
 import { BackstageShell } from "@/components/backstage-shell";
 import { CompanyBackstage } from "@/components/company-backstage";
+import { StrategyBackstage } from "@/components/strategy-backstage";
 import { RIPPLING_BACKSTAGE_SCREENS } from "@/components/studies/rippling/backstage-screens";
 import RipplingBackstage from "@/components/studies/rippling/backstage/page";
 import Essay from "@/components/studies/rippling/backstage/manual/[slug]/page";
@@ -11,6 +12,7 @@ type Props={params:Promise<{company:string;section?:string[]}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return [
   ...COMPANIES.flatMap(c=>BACKSTAGE_SECTIONS.map(s=>({company:c.id,section:s.id?[s.id]:[]}))),
+  ...COMPANIES.filter(c=>c.strategy).flatMap(c=>['essays','history','leadership'].map(s=>({company:c.id,section:[s]}))),
   ...['library',...Object.keys(RIPPLING_BACKSTAGE_SCREENS)].map(s=>({company:'rippling',section:[s]})),
   ...MANUAL.map(e=>({company:'rippling',section:['manual',e.slug]})),
 ];}
@@ -19,7 +21,8 @@ export default async function CompanyBackstagePage({params}:Props){
   const {company:id,section=[]}=await params;const c=companyStudy(id);if(!c)notFound();
   const key=section.join('/');let content:React.ReactNode;
   if(c.id==='rippling' && key==='library')permanentRedirect('/companies/rippling/backstage');
-  if(BACKSTAGE_SECTIONS.some(s=>s.id===key) && !(c.id==='rippling' && key===''))content=<CompanyBackstage company={c} section={key}/>;
+  if(c.strategy && ['', 'essays', 'history', 'leadership'].includes(key))content=<StrategyBackstage company={c} section={key}/>;
+  else if(BACKSTAGE_SECTIONS.some(s=>s.id===key) && !(c.id==='rippling' && key===''))content=<CompanyBackstage company={c} section={key}/>;
   else if(c.id==='rippling'){
     const Screen=RIPPLING_BACKSTAGE_SCREENS[key];
     if(key==='')content=<RipplingBackstage/>;

@@ -30,9 +30,35 @@ test('every registered screen and core Backstage topic is included in the produc
 test('company deep reads link to their own Backstage',()=>{
   for(const company of COMPANIES){
     const html=fs.readFileSync(`.next/server/app/ecosystem/${company.id}.html`,'utf8');
+    if(company.strategy){
+      assert.ok(html.includes(companyHref(company.id,'backstage')),`Missing canonical study redirect for ${company.id}`);
+      continue;
+    }
     const links=[...html.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match=>match[1]);
     assert.ok(links.includes(companyHref(company.id,'backstage')));
     assert.ok(!links.some(href=>href.includes('/backstage')&&!href.startsWith(`/companies/${company.id}/`)));
+  }
+});
+test('new studies retain their shared chapters and send unsupported app screens to the right overview',()=>{
+  for(const id of ['pageup','elmo','employment-hero']){
+    for(const chapter of ['history','essays','leadership'])
+      assert.equal(switchCompanyHref(id,`/companies/pageup/backstage/${chapter}`),companyHref(id,'backstage',chapter));
+    assert.equal(switchCompanyHref(id,'/companies/rippling/app/devices'),companyHref(id,'app'));
+  }
+  assert.equal(switchCompanyHref('rippling','/companies/elmo/backstage/history'),'/companies/rippling/backstage');
+  assert.equal(switchCompanyHref('employment-hero','/companies/pageup/app/talent'),'/companies/employment-hero/app/talent');
+});
+test('each new thesis connects three arguments to three implemented product journeys',()=>{
+  for(const company of COMPANIES.filter(c=>c.strategy)){
+    assert.equal(company.backstage.premises.length,3);
+    assert.equal(company.strategy.essays.length,3);
+    for(const premise of company.backstage.premises)assert.ok(company.appScreens.includes(premise.screen));
+    const html=fs.readFileSync(`.next/server/app/companies/${company.id}/backstage.html`,'utf8');
+    for(const premise of company.backstage.premises)assert.ok(html.includes(companyHref(company.id,'app',premise.screen)));
+    for(const section of ['history','leadership','essays'])assert.ok(html.includes(companyHref(company.id,'backstage',section)));
+    const known=new Set(company.backstage.sources.map(s=>s.url));
+    const used=[...company.strategy.moments.flatMap(m=>[m.source,...(m.sources||[])]),...company.strategy.essays.flatMap(e=>e.sources),...company.strategy.leadership.sources,company.strategy.watch.source];
+    for(const url of used)assert.ok(known.has(url),`Unregistered supporting source ${company.id}: ${url}`);
   }
 });
 test('Rippling Backstage opens the compound-company study with direct access to its core arguments',()=>{

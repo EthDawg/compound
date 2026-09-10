@@ -9,10 +9,10 @@ Licensed under the [MIT License](LICENSE). Copyright © 2026 Ethan Harley.
 
 ## The model
 
-**Company → App / Backstage.** A company is Rippling or Workday. An archetype
+**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software and Employment Hero. An archetype
 (compound platform, enterprise suite) describes its position; it is not an
 instance to switch to. Meridian Optics is the shared fictional customer used to
-compare the two app studies.
+compare the app studies; the three new studies use an explicitly fictional Australian expansion scenario.
 
 | Surface | Route | Purpose |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ compare the two app studies.
 | Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
 | Brief | `/brief` | Existing 12-minute Rippling/compound-platform argument |
 
-The Company selector currently offers **Rippling and Workday** in both App and
+The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software and Employment Hero** in both App and
 Backstage. The two views share the company's theme and identity, while the
 Backstage content and navigation differ by company. Rippling opens with the full
 compound-company study: economics, product-building speed, founder reasoning,
@@ -35,6 +35,20 @@ thesis. Both support shared comparison routes for the operating model, choices
 and trade-offs, proposed tests, and sources. The shared structure must preserve
 each company's depth. The former Rippling `/backstage/library` destination
 redirects to its canonical Backstage home.
+
+PageUp, ELMO and Employment Hero each have three linked value propositions,
+three deeper arguments, causal acquisition history, leadership/direction,
+trade-offs, proposed proof and claim-linked primary sources checked on
+10 September 2026. The App scenes use their own product vocabulary and workflow:
+
+- PageUp: committee review, Clinch nurture and Paige source inspection.
+- ELMO: capability/development, constrained remuneration and payroll conflicts.
+- Employment Hero: payroll exceptions, Find Talent and direct/HeroForce responsibilities.
+
+Interactions change local illustrative state only. They reset on screen navigation;
+no messages, hiring decisions, payroll, contracts or live records are changed.
+The sources distinguish acquisitions from integrations/divestitures, current
+features from roadmap, and ownership announcements from completed transactions.
 
 The URL is authoritative, including on direct entry, refresh, Back and Forward.
 Switching companies preserves the view and a shared topic/screen. An unavailable
@@ -59,6 +73,10 @@ company studies.
 - `components/studies/rippling/`: preserved Rippling screens and essays, with
   explicit screen registries for server-side rendering.
 - `components/workday-app.tsx`: Workday workspace and working module links.
+- `lib/content/{pageup,elmo,hero}-study.ts`: sourced company arguments and causal history.
+- `components/strategy-backstage.tsx`: new thesis, essay, history and leadership surfaces.
+- `components/studies/talent/`: three distinct app studies and shared presentation primitives.
+- `lib/data/study-scenarios.ts`: fictional input records and guarded calculation logic.
 - `components/company-backstage.tsx`: shared Backstage comparison pages and the
   Workday overview. Rippling's full study owns its overview.
 - `components/compound-bar.tsx`: company selection and App/Backstage navigation.
@@ -146,6 +164,6 @@ the rendered plot size, preventing a removed node from leaving the next map
 faded beneath a stale card.
 
 Existing depth limits remain: several Rippling modules are explicitly empty
-states; Workday modules are illustrative read-only screens. X-ray annotates
+states; Workday modules are illustrative read-only screens. The new company scenes are interactive, scripted demonstrations; their AI panels do not call a live model. X-ray annotates
 supported app surfaces. Pocket animations preserve reduced-motion behaviour
 and pause/resume when tab visibility changes.

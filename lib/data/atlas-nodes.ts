@@ -37,7 +37,7 @@ export const ALL_VENDORS: Node[] = [
       lens: c.lens, handRead: true, deep: c.deep,
       instance: companyStudy(c.slug) ? companyHref(c.slug, "app")
         : ["deel", "finch", "adp"].includes(c.slug) ? `/instance/${c.slug}` : undefined,
-      href: c.deep ? `/ecosystem/${c.slug}` : undefined,
+      href: companyStudy(c.slug)?.strategy ? companyHref(c.slug, "backstage") : c.deep ? `/ecosystem/${c.slug}` : undefined,
     };
   }),
   ...VENDORS.map((v: Vendor): Node => ({
