@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DEEP, deepBySlug } from "@/lib/content/ecosystem-deep";
-import { COMPANIES, LENSES, volatility } from "@/lib/data/ecosystem";
+import { ALL_COMPANIES, LENSES, volatility, companyBySlug, staleness } from "@/lib/data/ecosystem";
+import { crankFor } from "@/lib/content/ecosystem-crank";
 import * as I from "@/components/icons";
 
 export function generateStaticParams() { return DEEP.map((d) => ({ slug: d.slug })); }
@@ -9,10 +10,12 @@ export function generateStaticParams() { return DEEP.map((d) => ({ slug: d.slug 
 export default async function Position({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const d = deepBySlug(slug);
-  const c = COMPANIES.find((x) => x.slug === slug);
+  const c = companyBySlug(slug);
   if (!d || !c) notFound();
 
-  const { ranks, spread } = volatility(c);
+  const { ranks, spread } = volatility(c, ALL_COMPANIES);
+  const crank = crankFor(slug);
+  const fresh = staleness(c);
   const i = DEEP.findIndex((x) => x.slug === slug);
   const prev = DEEP[i - 1], next = DEEP[i + 1];
 
@@ -104,6 +107,50 @@ export default async function Position({ params }: { params: Promise<{ slug: str
           <p className="prose-measure mt-2 text-[15px] leading-[1.65] text-ink-100">{d.vsCompound}</p>
         </section>
 
+        {crank && (
+          <>
+            <section className="mt-7">
+              <h2 className="text-[11px] font-bold uppercase tracking-wider text-ink-500">What this bet demands of the people running it</h2>
+              <p className="prose-measure mt-1.5 text-[13.5px] leading-[1.6] text-ink-500">
+                Capabilities, not values — things an organisation can be observed doing well or badly.
+              </p>
+              <div className="mt-3 space-y-2.5">
+                {crank.skills.map((sk) => (
+                  <div key={sk.name} className="rounded-lg bg-white/[0.04] px-4 py-3.5 ring-1 ring-white/10">
+                    <div className="text-[14.5px] font-semibold text-white">{sk.name}</div>
+                    <p className="mt-1 text-[13.5px] leading-[1.6] text-ink-300">{sk.why}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mt-6">
+              <h2 className="text-[11px] font-bold uppercase tracking-wider text-ink-500">Where the next increment comes from</h2>
+              <div className="mt-3 space-y-2">
+                {crank.trajectory.map((t) => (
+                  <div key={t.vector} className="flex gap-3.5 rounded-lg bg-white/[0.03] px-4 py-3 ring-1 ring-white/[0.07]">
+                    <I.IArrow className="mt-1 h-3.5 w-3.5 shrink-0 text-signal" />
+                    <div>
+                      <div className="text-[14px] font-medium text-ink-100">{t.vector}</div>
+                      <p className="mt-0.5 text-[13px] leading-[1.55] text-ink-400">{t.note}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mt-6 rounded-xl bg-moss/[0.08] p-5 ring-1 ring-moss/25">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-moss">
+                <I.IEye className="h-3.5 w-3.5" /> The one thing to track
+              </div>
+              <p className="prose-measure mt-2 text-[15px] leading-[1.65] text-ink-100">{crank.watch}</p>
+              <p className="mt-3 border-t border-moss/20 pt-3 text-[12.5px] text-ink-400">
+                Reading about a company keeps you current. Tracking one specific observable keeps you early.
+              </p>
+            </section>
+          </>
+        )}
+
         <div className="mt-12 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-2">
           {prev ? (
             <Link href={`/ecosystem/${prev.slug}`} className="rounded-lg bg-white/[0.04] p-4 ring-1 ring-white/10 transition hover:bg-white/[0.08]">
@@ -119,7 +166,17 @@ export default async function Position({ params }: { params: Promise<{ slug: str
           )}
         </div>
 
-        <p className="mt-8 border-t border-white/10 pt-5 text-[12.5px] leading-[1.7] text-ink-500">
+        <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-5">
+          <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-medium ring-1 ${
+            fresh.stale ? "bg-clay/15 text-clay ring-clay/30" : "bg-moss/15 text-moss ring-moss/30"}`}>
+            <I.IClock className="h-3 w-3" />
+            Last checked {c.checked ?? "2026-09"}{fresh.stale ? ` · ${fresh.overdue}mo overdue` : " · current"}
+          </span>
+          <span className="text-[11.5px] text-ink-500">Facts here rot at a {c.rots ?? "medium"} rate.</span>
+          <Link href="/desk" className="ml-auto text-[12px] font-medium text-signal hover:underline">Refresh this →</Link>
+        </div>
+
+        <p className="mt-5 text-[12.5px] leading-[1.7] text-ink-500">
           A reading of publicly-stated positioning, not an account of anyone&rsquo;s internal decisions. The scores and
           rankings are editorial judgements made to support an argument, not measurements. No affiliation with any
           company named.

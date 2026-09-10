@@ -166,6 +166,14 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
 
             <div className="mt-5 space-y-2 border-t border-ink-100 px-2.5 pt-3">
               <Link
+                href="/desk"
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-[12.5px] font-medium text-ink-600 ring-1 ring-ink-200 transition hover:bg-ink-50 hover:text-ink"
+              >
+                <I.IHome className="h-3.5 w-3.5 text-ink-400" />
+                The desk
+                <span className="ml-auto text-[10.5px] text-ink-400">start</span>
+              </Link>
+              <Link
                 href="/ecosystem"
                 className="flex items-center gap-2 rounded-md px-2.5 py-2 text-[12.5px] font-medium text-ink-600 ring-1 ring-ink-200 transition hover:bg-ink-50 hover:text-ink"
               >

@@ -310,6 +310,74 @@ export const DEEP: DeepRead[] = [
     vsCompound:
       "The control case. If your definition of relevance cannot account for this company, your definition is doing less work than you think.",
   },
+  {
+    slug: "accenture",
+    title: "Accenture and the integrator channel",
+    headline: "The hands that make enterprise software land — pointed at by the automation they are selling",
+    bet: "Enterprise software does not deploy itself. Own the implementation, the change management and the accreditation, and capture a multiple on every licence the vendors sell.",
+    premise:
+      "The integrator is invisible on every product map and decisive in a large share of enterprise deals. For a category bought by committee with an RFP and a multi-year programme, the firm writing the evaluation criteria often matters more than the feature grid being evaluated.",
+    mustBeTrue: [
+      "Enterprise software keeps requiring substantial human implementation. This is the assumption agents are aimed directly at.",
+      "Partnership economics hold while the firm is simultaneously the platforms' largest channel and an occasional competitor to them.",
+      "The leverage model — junior hours sold at a multiple — survives a transition to work that needs fewer hours.",
+      "Clients keep buying capability they could in principle build, which has been reliably true for forty years.",
+    ],
+    agentic: {
+      position:
+        "The most structurally exposed group on the entire map, and the least discussed as such. A meaningful share of the revenue is implementation and support hours, which is precisely what agentic delivery is designed to remove.",
+      tell: "Watch contract structure, not marketing. A firm genuinely managing this exposure moves toward outcome-based pricing, because that is the only structure where doing the work in fewer hours is an increase in margin rather than a decrease in revenue.",
+    },
+    wins: [
+      "Large, complex, multi-country programmes where accountability is the purchase",
+      "Any evaluation where the client lacks the internal capability to run it",
+      "Situations where somebody senior needs a defensible recommendation",
+    ],
+    loses: [
+      "Mid-market buyers who cannot absorb the cost and do not need the ceremony",
+      "Products designed to deploy without an integrator, which is most of the compound platforms by intent",
+    ],
+    falsifier:
+      "Implementation hours per licence dollar falling materially across the industry. That is the number that decides whether this is a transition or a contraction.",
+    paradox:
+      "The channel is one of the largest forces in enterprise HR software and appears on no map of it — including, until now, this one. That omission is itself a lesson about what product-centric maps systematically miss.",
+    vsCompound:
+      "The compound platforms are partly an attack on this layer: software that does not need an integrator is software whose total cost of ownership is structurally lower. Every deployment that lands without a services programme is a small subtraction from this model.",
+  },
+  {
+    slug: "constellation",
+    title: "Constellation Software",
+    headline: "Buy small, never sell, hold forever — durability as the entire strategy",
+    bet: "Small vertical software businesses with entrenched customers are permanently valuable. Acquire them at a disciplined return threshold, run them decentrally, and never dispose of anything.",
+    premise:
+      "Every other company on this map is playing a growth game. This one is playing a duration game, and it is the only strategy here that explicitly optimises for the lens the others treat as an afterthought. If durability is a real form of relevance, this is its purest expression.",
+    mustBeTrue: [
+      "Small entrenched software keeps generating cash long after growth stops — the observation the whole model rests on.",
+      "Acquisition discipline holds under capital pressure. The threshold not moving is the strategy; the moment it moves, this becomes an ordinary roll-up.",
+      "Decentralisation continues to scale. Very many small businesses without a flattening central function is unusual and is the reason it works.",
+      "Feature commoditisation from AI raises rather than lowers the value of entrenched niche positions.",
+    ],
+    agentic: {
+      position:
+        "Almost entirely outside the frame, deliberately. The portfolio is full of exactly the software that technology discourse assumes is about to be swept away and that has instead been quietly compounding for decades.",
+      tell: "If AI genuinely commoditises features, the differentiator becomes the customer relationship and the switching cost — which is the only thing this model has ever bought.",
+    },
+    wins: [
+      "Niches too small for venture-backed competition and too entrenched to displace",
+      "Founders who want a permanent home rather than an exit and a reset",
+      "Any market where being unglamorous and unkillable beats being excellent and funded",
+    ],
+    loses: [
+      "Every conversation about the future of software",
+      "Assets that require growth investment rather than disciplined operation",
+    ],
+    falsifier:
+      "Acquisition discipline drifting — paying more for growth, or being forced to sell something. Either would mean the duration bet had become a growth bet wearing its clothes.",
+    paradox:
+      "On the strategic lens this barely registers. On durability it is close to the top of the board. It is the answer to the disposal question the rest of this map never asks: where do these companies actually go, and who is content to hold them forever?",
+    vsCompound:
+      "The inverse of compounding through product expansion — compounding through acquisition and time instead. Both are bets that the second thing is cheaper than the first. Only one of them requires being right about the future.",
+  },
 ];
 
 export const deepBySlug = (s: string) => DEEP.find((d) => d.slug === s);

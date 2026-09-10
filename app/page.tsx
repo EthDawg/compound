@@ -17,16 +17,16 @@ const DOORS = [
 
 const QUICK = [
   {
+    href: "/desk", kicker: "Start here", title: "The desk",
+    body: "One place: what this is for, what has gone stale, and the phrases to run when you want the map to move. No job runs behind it — that is the point.",
+  },
+  {
     href: "/ecosystem", kicker: "One level up", title: "The map",
-    body: "Thirty-odd HR-tech companies drawn four times, under four incompatible definitions of what makes something relevant. Nine positions read in full.",
+    body: "Four altitudes from architecture eras down to individual companies, each drawn under four incompatible definitions of relevance. Eleven positions read in full.",
   },
   {
     href: "/brief", kicker: "12 minutes", title: "The speed run",
     body: "The whole argument, ordered for whoever is holding it — prospect, investor, new joiner, or skeptic.",
-  },
-  {
-    href: "/pocket", kicker: "Installable", title: "Pocket",
-    body: "Three flagship flows built for a phone: onboard, offboard, ask. Add it to your home screen and it runs full screen, offline.",
   },
 ];
 

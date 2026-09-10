@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EcosystemMap } from "@/components/ecosystem-map";
-import { COMPANIES, LENSES, volatility } from "@/lib/data/ecosystem";
+import { ALL_COMPANIES, LENSES, volatility, companyBySlug } from "@/lib/data/ecosystem";
 import { DEEP, MAP_NOTE } from "@/lib/content/ecosystem-deep";
 import * as I from "@/components/icons";
 
@@ -10,8 +10,8 @@ export const metadata = {
 };
 
 export default function Ecosystem() {
-  const swings = [...COMPANIES]
-    .map((c) => ({ c, ...volatility(c) }))
+  const swings = [...ALL_COMPANIES]
+    .map((c) => ({ c, ...volatility(c, ALL_COMPANIES) }))
     .sort((a, b) => b.spread - a.spread)
     .slice(0, 5);
 
@@ -27,7 +27,7 @@ export default function Ecosystem() {
           </Link>
           <span className="hidden text-[12.5px] text-ink-500 sm:block">· the map</span>
           <div className="ml-auto flex gap-2">
-            <Link href="/brief" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">Brief</Link>
+            <Link href="/desk" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">The desk</Link>
             <Link href="/app" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">The app</Link>
             <Link href="/backstage" className="inline-flex h-8 items-center rounded-md bg-white/10 px-3 text-[12.5px] font-medium text-white hover:bg-white/15">Backstage</Link>
           </div>
@@ -46,9 +46,14 @@ export default function Ecosystem() {
             the thing and you get a completely different set of companies, several of which nobody writes about.
           </p>
           <p className="prose-measure mt-3 text-[16px] leading-[1.65] text-ink-400">
-            So this map refuses to pick. The same thirty-odd companies, drawn four times, under four incompatible
-            definitions of what makes something matter. The companies that move most between the four are the ones
-            worth arguing about.
+            So this map refuses to pick. The same companies, drawn four times, under four incompatible definitions of
+            what makes something matter. The companies that move most between the four are the ones worth arguing about.
+          </p>
+          <p className="prose-measure mt-3 text-[16px] leading-[1.65] text-ink-400">
+            It also zooms. Above companies sit categories, above those the surrounding ecosystems — the integrator
+            channel, the capital layer, the service platforms entering from above — and above all of it the
+            architecture patterns themselves, where the useful observation is that the integration layer returns
+            roughly every eight years under a new name.
           </p>
         </div>
 
@@ -101,15 +106,16 @@ export default function Ecosystem() {
 
         {/* Deep dives */}
         <section className="border-t border-white/10 py-10">
-          <h2 className="font-serif-display text-[27px] text-white">Nine positions, read in full</h2>
+          <h2 className="font-serif-display text-[27px] text-white">Eleven positions, read in full</h2>
           <p className="prose-measure mt-2 text-[15px] leading-[1.65] text-ink-400">
             Chosen for strategic diversity rather than size — each is a different answer to the same question about who
-            owns the employee record and what follows from that. One of them is here specifically because it would
-            normally be left out.
+            owns the employee record and what follows from that. Two are not HR-tech companies at all — the channel that
+            decides many enterprise deals, and the capital layer that decides where these companies end up. One is here
+            specifically because it would normally be left out.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {DEEP.map((d) => {
-              const c = COMPANIES.find((x) => x.slug === d.slug)!;
+              const c = companyBySlug(d.slug)!;
               return (
                 <Link key={d.slug} href={`/ecosystem/${d.slug}`}
                   className="group rounded-xl bg-white/[0.04] p-5 ring-1 ring-white/10 transition hover:bg-white/[0.08] hover:ring-white/20">

@@ -6,7 +6,8 @@ import { useState } from "react";
 import * as I from "./icons";
 
 const SECTIONS = [
-  { href: "/backstage", label: "Overview", icon: I.IHome, n: "" },
+  { href: "/backstage", label: "Overview", icon: I.ILayers, n: "" },
+  { href: "/desk", label: "The desk", icon: I.IHome, n: "" },
   { href: "/ecosystem", label: "The map", icon: I.IGraph, n: "" },
   { href: "/brief", label: "The 12-minute brief", icon: I.IClock, n: "" },
   { href: "/backstage/manual", label: "The operating manual", icon: I.IBook, n: "12" },
