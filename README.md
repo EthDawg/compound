@@ -8,10 +8,13 @@ Three surfaces at one address:
 
 | Surface | Route | What it is |
 | --- | --- | --- |
+| The atlas | `/` | The front door. 10 sectors → ~41 categories → 118 vendors, plotted under four definitions of relevance. Light, spare, its own design language. |
 | The product | `/app` | A dense admin platform for a fictional 344-person hardware company across four entities and six countries. Payroll, devices, app access, spend, workflows, graph explorer. |
 | Backstage | `/backstage` | The operating philosophy underneath it — 12 essays, 14 logged decisions, 11 heresies, 8 metrics, 9 execution skills, the agentic turn, growth trajectory. |
 | Pocket | `/pocket` | Installable mobile PWA. Three flagship flows for a demo in someone's hand: Onboard, Offboard, Ask. |
-| The map | `/ecosystem` | One level up: ~33 HR-tech companies plotted four times under four incompatible definitions of relevance, plus nine positions read in full. |
+| Deep reads | `/ecosystem/[slug]` | Eleven positions read in full. `/ecosystem` itself redirects to the atlas. |
+| Instances | `/app`, `/instance/[id]` | Five playable design studies — compound platform, enterprise suite, global employment, connective layer, payroll rail — under one Compound observability bar. |
+| About | `/about` | The cold open and provenance that used to be the landing page. |
 
 The bridge between the first two is **x-ray mode** — press `X` anywhere in `/app`
 and every screen grows founder annotations explaining its design premise, what it
@@ -19,6 +22,14 @@ trades away, and what holding the line cost.
 
 `/brief` is a 12-minute speed run with four audience lenses (prospect, investor,
 new joiner, skeptic) — the thing to send someone.
+
+The atlas spans `lib/data/atlas.ts` (sectors, categories, breadth vendors),
+`lib/data/atlas-types.ts` (the archetype→position derivation) and
+`lib/data/atlas-nodes.ts` (rollups, overlap relaxation). Hand-read vendors keep
+their positions from `lib/data/ecosystem.ts`; breadth vendors are placed by
+archetype plus three attributes and render dashed to say so. The organising claim
+is that the same archetypes recur in every sector — legal has its compound
+platform and its connective layer just as employment does.
 
 The map's whole argument is that relevance is not one quantity. Each lens is a
 different question ("relevant to the argument?" / "to the number of people whose

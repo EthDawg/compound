@@ -6,6 +6,7 @@ import type { VendorSkin } from "@/lib/vendors/types";
 import { CompoundBar } from "../compound-bar";
 import { Blocks } from "./blocks";
 import { useXRay } from "../xray-provider";
+import { Mark } from "./marks";
 import * as I from "../icons";
 
 export function VendorShell({ skin }: { skin: VendorSkin }) {
@@ -36,7 +37,7 @@ export function VendorShell({ skin }: { skin: VendorSkin }) {
           )}
           <div className="flex shrink-0 items-center gap-2">
             <span className="grid h-7 w-7 place-items-center" style={{ background: t.accent, color: t.accentInk, borderRadius: t.radiusSm }}>
-              <I.ILayers className="h-4 w-4" />
+              <Mark id={skin.id} />
             </span>
             <span className="text-[14.5px] font-semibold tracking-tight" style={{ color: t.ink }}>{skin.name}</span>
           </div>

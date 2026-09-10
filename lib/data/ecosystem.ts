@@ -20,10 +20,10 @@ export const LENSES: Lens[] = [
   {
     id: "strategic",
     pill: "Strategic bet",
-    question: "Relevant to the argument about where this category is going?",
+    question: "Relevant to the argument about where this is going?",
     blurb:
-      "The axis nobody agrees on: does the employee record consolidate into one system, or stay scattered across thousands and get connected by a layer above? Almost every company here is a wager on one answer. They cannot both be right at scale.",
-    x: { label: "What they bet the record does", low: "Consolidates into one system", high: "Stays fragmented forever" },
+      "The axis nobody agrees on, in every sector: does the core record consolidate into one system, or stay scattered and get connected by a layer above? Almost every company on this board is a wager on one answer, and they cannot both be right at scale.",
+    x: { label: "What they bet the core record does", low: "Consolidates into one system", high: "Stays fragmented forever" },
     y: { label: "Position", low: "Insurgent", high: "Incumbent" },
     quadrants: [
       { at: "bl", label: "Consolidation insurgents", tone: "signal" },
@@ -35,9 +35,9 @@ export const LENSES: Lens[] = [
   {
     id: "installed",
     pill: "Installed reality",
-    question: "Relevant to the number of people whose pay actually depends on it?",
+    question: "Relevant to the number of people whose work actually depends on it?",
     blurb:
-      "The corrective. Discourse relevance and payroll relevance are different quantities, and the gap between them is enormous. Several companies that dominate the conversation administer a rounding error of the workforce. Several that nobody writes about pay one in six Americans.",
+      "The corrective. Discourse relevance and operational relevance are different quantities, and the gap between them is enormous. Several companies that dominate the conversation touch a rounding error of actual work. Several that nobody writes about are load-bearing for millions of people every day.",
     x: { label: "Reach", low: "Narrow", high: "Enormous" },
     y: { label: "Dependency", low: "Swappable in a quarter", high: "Load-bearing; ripping it out is a project" },
     quadrants: [
@@ -52,7 +52,7 @@ export const LENSES: Lens[] = [
     pill: "Agentic readiness",
     question: "Relevant to whether an agent can safely change something?",
     blurb:
-      "Everyone in this map shipped AI agents in 2026. The word means completely different things depending on whether the company owns a live, permission-aware record or reads a stored copy of one. This lens separates the claim from the architecture underneath it.",
+      "Everyone on this board shipped agents. The word means completely different things depending on whether a company owns a live, permission-aware record or reads a stored copy of one. This lens separates the claim from the architecture underneath it.",
     x: { label: "Proximity to the live record", low: "Reads a copy, or calls someone else's API", high: "Owns the record it acts on" },
     y: { label: "How loudly they are betting on agents", low: "Quiet", high: "Betting the positioning on it" },
     quadrants: [

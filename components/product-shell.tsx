@@ -8,6 +8,7 @@ import { useXRay } from "./xray-provider";
 import { XRay } from "./xray";
 import { COMPANY } from "@/lib/data/company";
 import { CompoundBar } from "./compound-bar";
+import { Mark } from "./vendor/marks";
 import * as I from "./icons";
 
 const ICONS: Record<string, (p: { className?: string }) => React.JSX.Element> = {
@@ -45,7 +46,7 @@ export function ProductShell({ children }: { children: React.ReactNode }) {
 
           <Link href="/app" className="flex shrink-0 items-center gap-2">
             <span className="grid h-7 w-7 place-items-center rounded-[7px] bg-signal text-ink">
-              <I.ILayers className="h-4 w-4" />
+              <Mark id="rippling" />
             </span>
             <span className="hidden whitespace-nowrap text-[14.5px] font-semibold tracking-tight sm:block">
               Compound platform

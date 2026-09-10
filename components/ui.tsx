@@ -24,7 +24,7 @@ export function Btn({
   const base =
     "inline-flex h-8 items-center gap-1.5 rounded-md px-3 text-[12.5px] font-medium transition whitespace-nowrap";
   const v = {
-    primary: "bg-ink text-white hover:bg-ink-800",
+    primary: "bg-signal text-ink hover:bg-signal-300 font-semibold",
     secondary: "border border-ink-200 bg-white text-ink-700 hover:border-ink-300 hover:bg-ink-50",
     ghost: "text-ink-600 hover:bg-ink-100",
   }[variant];

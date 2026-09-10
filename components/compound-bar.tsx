@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { SKINS } from "@/lib/vendors/skins";
 import { useXRay } from "./xray-provider";
+import { Mark } from "./vendor/marks";
 import * as I from "./icons";
 
 /**
@@ -42,7 +43,7 @@ export function CompoundBar({ activeId }: { activeId: string }) {
         <div className="relative min-w-0" ref={ref}>
           <button onClick={() => setOpen((v) => !v)}
             className="flex h-8 min-w-0 items-center gap-2 rounded-md bg-white/[0.08] px-2.5 text-[12.5px] font-medium text-white ring-1 ring-white/12 hover:bg-white/[0.14]">
-            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: active?.theme.accent }} />
+            <span className="shrink-0" style={{ color: active?.theme.accent }}><Mark id={activeId} className="h-3.5 w-3.5" /></span>
             <span className="truncate">{active?.name}</span>
             <I.IChevronDown className={`h-3.5 w-3.5 shrink-0 text-ink-400 transition ${open ? "rotate-180" : ""}`} />
           </button>
@@ -61,7 +62,7 @@ export function CompoundBar({ activeId }: { activeId: string }) {
                     <Link href={s.href}
                       className={`flex items-start gap-2.5 px-3.5 py-2.5 transition hover:bg-white/[0.07] ${
                         s.id === activeId ? "bg-white/[0.06]" : ""}`}>
-                      <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: s.theme.accent }} />
+                      <span className="mt-0.5 shrink-0" style={{ color: s.theme.accent }}><Mark id={s.id} className="h-3.5 w-3.5" /></span>
                       <span className="min-w-0 flex-1">
                         <span className="flex items-center gap-2">
                           <span className="text-[13px] font-semibold text-white">{s.name}</span>
