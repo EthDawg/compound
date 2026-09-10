@@ -1,0 +1,93 @@
+import type { CompanyStudy } from "../companies";
+import { EMPLOYMENT_HERO } from "../vendors/talent-skins";
+import { TALENT_NAVIGATION } from "./talent-navigation";
+const S = {
+  origin: "https://employmenthero.com/uk/blog/employment-hero-unicorn-status-acquires-keypay/",
+  keypay: "https://employmenthero.com/blog/keypay-becomes-employment-hero/",
+  ei: "https://employmenthero.com/sg/blog/employment-hero-acquires-employment-innovations-news/",
+  humi: "https://employmenthero.com/en-ca/blog/employment-hero-acquires-humi/",
+  canada: "https://employmenthero.com/en-ca/faq/",
+  seek: "https://employmenthero.com/blog/at-a300m-arr-ai-powered-employment-hero-enters-next-phase-as-seek-growth-fund-launches-stake-sale/",
+  heroforce: "https://employmenthero.com/products/heroforce/",
+  releases: "https://employmenthero.zendesk.com/hc/en-au/articles/16347883331983-Week-22-2026-Release-Notes",
+  talent: "https://help.employmenthero.com/hc/en-gb/articles/7446340495759-Find-Talent-questions-answered",
+  work: "https://help.employmenthero.com/hc/en-au/articles/17426895001743-Swag-Rebrand-Customer-FAQ",
+  payroll: "https://employmenthero.com/blog/automated-pay-runs/",
+  sync: "https://employmenthero.zendesk.com/hc/en-gb/articles/14516786184591-Sync-your-Employment-Hero-and-payroll-platform",
+};
+export const HERO_STUDY: CompanyStudy = {
+  id: "employment-hero", name: "Employment Hero", archetype: "Employment operating system", skin: EMPLOYMENT_HERO,
+  brand: { chrome: "#281448", ink: "#FFFFFF", highlight: "#CAEF68" },
+  appScreens: ["", "payroll", "talent", "people"], workflowScreen: "payroll",
+  backstage: {
+    navigation: TALENT_NAVIGATION,
+    headline: "Run employment for the business that cannot staff it.",
+    thesis: "Employment Hero combines payroll machinery, employment specialists and an employee-facing network. The ambition has expanded from helping a small business administer employment to doing more of that work for it. Its acquisitions explain why the next step is execution and services, rather than simply another HR module.",
+    object: "Employment relationship + pay run", question: "What still needs the employer's attention?",
+    sequence: ["Bring people, time and terms together", "Prepare the recurring employment work", "Surface the exceptions and responsibilities", "Review the decision; complete the operation"],
+    premises: [
+      { title: "Get payroll ready; bring me the exceptions", body: "KeyPay supplied the engine and partner channel. Employment Innovations added people who operate payroll and handle difficult employment questions. The useful demo is an almost-ready run with an explainable exception, not an impressive payroll total.", screen: "payroll" },
+      { title: "Begin hiring with a consenting network", body: "Find Talent lets employers start with jobseekers already on the network. EH Work gives employees reasons to return for pay, leave and other utilities. Candidate participation and contact preferences determine whether that distribution advantage remains useful.", screen: "talent" },
+      { title: "Choose who actually runs the employment", body: "HeroForce changes the responsibility model: the customer chooses hires and directs daily work while Employment Hero acts as legal employer. Direct employment can coexist. This is a service and operating-model choice, not just another software setting.", screen: "people" },
+    ],
+    choices: [
+      { choice: "Own the engine and acquire operating expertise", gain: "Software can be informed by the difficult cases encountered in managed payroll and HR services.", cost: "Services introduce execution obligations and human capacity costs. Automation quality must improve on real exceptions, not just on the easy majority." },
+      { choice: "Serve both employer and worker", gain: "Recurring employee utility can support a consenting hiring network and additional employment services.", cost: "The employer's convenience and the worker's interests are not always aligned. Privacy, consent and contact controls are part of the product's economics." },
+      { choice: "Expand from administration into employment execution", gain: "HeroForce and agents promise to remove work that a small business otherwise has to operate itself.", cost: "Responsibility becomes more consequential. The buyer must understand who employs, directs, pays and handles exceptions for each worker." },
+    ],
+    proof: [
+      { metric: "Payroll effort at the exception", test: "Give a pay run a plausible time-entry discrepancy. Count the human steps to explain, correct and approve it, including any work performed by a service team.", failure: "The headline automation rate excludes the difficult work now happening out of sight." },
+      { metric: "Interested, suitable candidates per invitation", test: "Track consenting matches through invitation, response and a qualified application. Keep a visible denominator and a clear evidence gap.", failure: "A large database or AI score is presented as a candidate's willingness to join." },
+      { metric: "Responsibility understood before activation", test: "Ask a buyer to explain direct versus HeroForce employment for the same proposed role, including who directs work and who is the legal employer.", failure: "The interface makes a service relationship look like a harmless payroll preference." },
+    ],
+    sources: [
+      { title: "Origins and KeyPay acquisition rationale", url: S.origin, supports: "Employment-law origin, founders and small-business focus." },
+      { title: "KeyPay becomes Employment Hero · March 2023", url: S.keypay, supports: "Full acquisition completed December 2021, announced in 2022; brand retirement in March 2023; payroll partner channel." },
+      { title: "Employment Innovations acquisition · April 2024", url: S.ei, supports: "Managed payroll and advisory expertise acquired with an explicit automation ambition." },
+      { title: "Humi announcement · January 2025", url: S.humi, supports: "Canadian expansion. Announcement subject to closing conditions; not used as an exact completion date." },
+      { title: "Current Canadian product paths and founders", url: S.canada, supports: "Employment OS and Humi by Employment Hero coexist; Ben Thompson CEO and Dave Tong CTO." },
+      { title: "SEEK stake-sale process · February 2026", url: S.seek, supports: "Announced sale process and direction toward agentic employment execution. Not evidence of a completed takeover." },
+      { title: "HeroForce product and responsibility split", url: S.heroforce, supports: "Direct and HeroForce models; customer hiring/day-to-day direction and Employment Hero legal-employer role. Availability is product and region dependent." },
+      { title: "AU release notes · May 2026", url: S.releases, supports: "Find Talent migration completed 26 May; HeroForce costs in roster/timesheet workflows." },
+      { title: "Find Talent workflow and privacy · UK help", url: S.talent, supports: "Search by job or language, save/invite, candidate participation and privacy controls. Regional documentation is not a universal entitlement claim." },
+      { title: "Swag rebrand FAQ", url: S.work, supports: "EH Work name effective 13 January 2025." },
+      { title: "Automated pay runs", url: S.payroll, supports: "Preparation, configured warnings, stop conditions and finalisation controls." },
+      { title: "HR/payroll sync ownership", url: S.sync, supports: "Documented directional sync after initial import; shared branding alone does not establish bidirectional updates." },
+    ],
+  },
+  strategy: {
+    contrast: "Rippling's distinctive argument is employee-data orchestration across HR, IT and Finance. Employment Hero's is the combination of a payroll engine, operating expertise and a worker network. Geography alone does not explain the difference.",
+    flywheel: { title: "Recurring pay can support a broader employment relationship.", body: "Our interpretation: recurring employer and worker utility can create distribution for hiring and services, while operating experience can inform automation. These benefits must be earned; usage is not permission to use someone's data for another purpose.", steps: ["Operate pay and HR", "Earn worker usage", "Connect consenting talent", "Provide more employment services"], constraint: "Execution quality, employee trust and clear responsibility boundaries determine whether the loop strengthens or turns into overhead." },
+    moments: [
+      { date: "2014", title: "Employment pain defines the brief", fact: "Ben Thompson and Dave Tong establish Employment Hero. Thompson's background is employment law.", consequence: "The customer is a business without a large employment function. Removing administrative work matters more than recreating an enterprise HR department.", source: S.origin, sources: [S.canada] },
+      { date: "2021/22 → 2023", title: "KeyPay supplies an owned engine and channel", fact: "Full acquisition completes in December 2021, is announced in February 2022, and the KeyPay brand retires in March 2023.", consequence: "The deal brings calculation depth and payroll partners, changing both what can be delivered and how it reaches employers.", source: S.keypay },
+      { date: "2024", title: "Employment Innovations brings the operators", fact: "The April acquisition adds managed payroll and HR advisory expertise.", consequence: "The company buys knowledge of difficult cases alongside service delivery capacity. That is a bridge toward execution, not proof that payroll is already autonomous.", source: S.ei },
+      { date: "2025", title: "Humi adds Canada; Swag becomes EH Work", fact: "The Humi acquisition is announced in January. The employee app adopts the Employment Hero Work name that month.", consequence: "Geographic and worker-side reach broaden. Canada still has two supported product paths, so brand consolidation must not be mistaken for instant product unification.", source: S.canada, sources: [S.humi, S.work] },
+      { date: "2026", title: "From managing employment toward operating it", fact: "HeroForce enters roster/timesheet workflows, while AU SmartMatch users migrate to Find Talent in May.", consequence: "The next proposition combines agent assistance, services and a worker network. It changes the scope of responsibility as well as the interface.", source: S.releases },
+    ],
+    leadership: {
+      title: "Founder continuity; a wider operating ambition.",
+      fact: "Ben Thompson remains CEO and Dave Tong CTO in current official material. The 2026 chapter is not a verified CEO reset. February's SEEK Growth Fund announcement describes a stake-sale process, not a completed takeover.",
+      reading: "The observable change is in the scope of the promise: agents and HeroForce extend the founder-led ambition from administering employment into running more of it. KeyPay, Employment Innovations and Humi supply different ingredients: software, operational judgement and a local market foothold.",
+      watch: "Measure the whole cost and quality of executing an employment task, including service-team work, exception resolution and worker experience. The strategy wins when the customer needs less operational capacity without losing control of consequential decisions.", sources: [S.canada, S.seek, S.heroforce],
+    },
+    essays: [
+      { slug: "operators", title: "Buy the people who know where the software breaks.", standfirst: "KeyPay and Employment Innovations solve different halves of the same problem.", paragraphs: [
+        "An engine calculates a pay run. An operating team knows why a customer's inputs are wrong, why a case is unusual and who must resolve it. KeyPay and Employment Innovations therefore contribute different assets: calculation and distribution on one side, judgement and service delivery on the other.",
+        "The combined opportunity is more specific than adding AI to payroll. Repeated operational cases can identify where automation should prepare work and where it should stop. The valuable surface is a ready-to-review run with understandable warnings, source inputs and a named next action. It is not a percentage of tasks supposedly automated.",
+        "There is a cost hidden by the attractive story. If exceptions are simply moved to a service team, the employer may save time while the provider absorbs expensive work. That can still be a good service, but it is a different economic claim from software making the work disappear. A serious evaluation counts both sides.",
+      ], test: "Measure customer effort and operator effort together on the awkward cases. Fewer visible clicks alone do not prove better unit economics.", sources: [S.keypay, S.ei, S.payroll] },
+      { slug: "network", title: "An employee app is a distribution decision.", standfirst: "A payroll relationship can create reach; consent determines what that reach is worth.", paragraphs: [
+        "EH Work gives the employee a reason to return even when HR has nothing to announce: pay information, leave and other utilities. Find Talent gives the employer a recruiting starting point within a participating jobseeker network. That is a different architecture of demand from a vacancy that begins with an empty candidate database.",
+        "The opportunity is to connect recurring worker utility with useful hiring discovery. But the employee is not merely a distribution endpoint. Existing employment information, jobseeker participation and willingness to be contacted are different facts. The product's privacy and contact controls determine whether the network earns trust or consumes it.",
+        "The naming history matters because it makes the strategy visible: Swag becomes EH Work in 2025; the AU SmartMatch dashboard migrates to Find Talent in 2026. Those are current product surfaces, not separate acquisitions. Our demo shows a candidate's match evidence and an unanswered criterion, then a checking-interest state. A match is not an accepted invitation.",
+      ], test: "Track invitations to interested, qualified applicants. Penalise stale data and unwanted contact rather than celebrating pool size.", sources: [S.work, S.talent, S.releases] },
+      { slug: "responsibility", title: "The next product changes who does the work.", standfirst: "Employment infrastructure is a more demanding promise than HR software.", paragraphs: [
+        "In a direct-employment model the customer remains the employer, even if software automates administration. HeroForce changes the relationship: Employment Hero acts as legal employer while the customer chooses hires and directs daily work. The same workforce can contain both models, but they must not become visually interchangeable.",
+        "This is the clearest expression of the current trajectory. An owner buys not only a tool but capacity to operate employment. It explains the relevance of managed services and domain expertise. It also increases the need to make responsibility, approval and exception boundaries understandable before anything is activated.",
+        "International expansion adds another limit. Humi supplies a Canadian foothold, yet official FAQs still describe Employment OS and Humi by Employment Hero as separate supported paths. The house brand can grow faster than product convergence. Neither that fact nor a stake-sale announcement should be rewritten into a fictional universal platform or leadership reset.",
+      ], test: "Have the buyer explain who employs, directs and administers each proposed worker. If that cannot be answered from the screen, the operating promise is too opaque.", sources: [S.heroforce, S.humi, S.canada, S.seek] },
+    ],
+    watch: { title: "Execution is the next promise to test", shipped: "2026 AU release notes include HeroForce costs in roster and timesheet views and the completed move to Find Talent.", next: "Watch whether agents and services remove recurring employment work while keeping meaningful exceptions in the employer's control.", boundary: "Current names: EH Work and Find Talent. Humi remains a supported product path. The documented SEEK process is not treated as a completed ownership change.", source: S.releases },
+  },
+};

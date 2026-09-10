@@ -1,18 +1,19 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { DEEP, deepBySlug } from "@/lib/content/ecosystem-deep";
 import { ALL_COMPANIES, LENSES, volatility, companyBySlug, staleness } from "@/lib/data/ecosystem";
 import { crankFor } from "@/lib/content/ecosystem-crank";
-import { companyStudy, companyHref } from "@/lib/companies";
+import { companyStudy, companyHref, COMPANIES } from "@/lib/companies";
 import * as I from "@/components/icons";
 
-export function generateStaticParams() { return DEEP.map((d) => ({ slug: d.slug })); }
+export function generateStaticParams() { return [...new Set([...DEEP.map(d=>d.slug), ...COMPANIES.filter(c=>c.strategy).map(c=>c.id)])].map(slug=>({slug})); }
 
 export default async function Position({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const d = deepBySlug(slug);
   const c = companyBySlug(slug);
   const study = companyStudy(slug);
+  if(study?.strategy)permanentRedirect(companyHref(study.id, "backstage"));
   if (!d || !c) notFound();
 
   const { ranks, spread } = volatility(c, ALL_COMPANIES);
