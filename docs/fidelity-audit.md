@@ -80,3 +80,20 @@ keyboard and touch journeys, reload/back behaviour, company recognition and
 whether the three complete learning journeys are coherent in use. Current
 operational status of dated construction projects needs newer evidence before
 any stronger capacity claim; current source dates remain explicit.
+
+## Returning and comparing — navigation follow-up
+
+Source inspection after the first refinement found two further broken journeys:
+landscape clicks did not update the URL, and a mixed company/platform query could
+open another platform's practice. The next change makes sector, category,
+company, lens and legend selection addressable, uses native links for map items,
+and restores those values on browser history events. Recent visits retain the
+actual internal destination, while migrating earlier ID-only history.
+
+Search now treats platform context explicitly and matches word beginnings, so
+`Cognizant ServiceNow IT` reaches the ServiceNow IT evidence rather than matching
+`IT` inside a person's name. Focused tests exercise these expected destinations,
+state restoration, invalid parameters, and safe recent-history migration.
+The production build and all 73 tests pass with this follow-up.
+Browser interaction and visual verification remain outstanding; source logic is
+not proof of the rendered experience.

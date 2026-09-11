@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { COMPANY_INDEX, COMPANY_SECTORS as SECTORS, atlasCompanyHref, companyDestination, recentCompanies, relatedCompanies, searchCompanies, type IndexedCompany } from "@/lib/company-index";
+import { COMPANY_INDEX, COMPANY_SECTORS as SECTORS, atlasCompanyHref, companyDestination, recentCompanyVisits, relatedCompanies, searchCompanies, type IndexedCompany, type CompanyVisit } from "@/lib/company-index";
 import { Mark } from "./vendor/marks";
 import * as I from "./icons";
 
@@ -18,7 +18,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   const [all, setAll] = useState(true);
   const [ecosystemsOnly, setEcosystemsOnly] = useState(false);
   const [sector, setSector] = useState("");
-  const [recent, setRecent] = useState<string[]>([]);
+  const [recent, setRecent] = useState<CompanyVisit[]>([]);
   const [cursor, setCursor] = useState(0);
   const [opened, setOpened] = useState(false);
   const current = COMPANY_INDEX.find((c) => c.id === activeId);
@@ -27,7 +27,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   const groups = useMemo(() => {
     if (searching) return [{ label: `${matches.length} ${matches.length === 1 ? "match" : "matches"}`, companies: matches.map((m) => m.company) }];
     const available = COMPANY_INDEX.filter((c) => (all || c.studyId) && (!ecosystemsOnly || c.ecosystemHref || c.ecosystemLinks.length) && (!sector || c.sector === sector));
-    const recentList = recent.flatMap((id) => available.find((c) => c.id === id) ?? []);
+    const recentList = recent.flatMap(({id}) => available.find((c) => c.id === id) ?? []);
     return [
       ...(!sector && recentList.length ? [{ label: "Recent", companies: recentList }] : []),
       ...SECTORS.map((s) => ({ label: s.name, companies: available.filter((c) => c.sector === s.id && (sector || !recentList.includes(c))) })).filter((g) => g.companies.length),
@@ -37,11 +37,12 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   const selected = rows[Math.min(cursor, Math.max(0, rows.length - 1))];
   const related = selected ? relatedCompanies(selected) : [];
   const matchedContext = searching ? matches.find((m) => m.company.id === selected?.id)?.context : undefined;
-  const remember = (id:string) => {
-    try {const next=recentCompanies(JSON.parse(localStorage.getItem(RECENT_KEY)??'[]'),id);localStorage.setItem(RECENT_KEY,JSON.stringify(next));setRecent(next);} catch { /* Navigation remains available without storage. */ }
+  const remember = (id:string,href?:string) => {
+    try {const next=recentCompanyVisits(JSON.parse(localStorage.getItem(RECENT_KEY)??'[]'),{id,href:href??window.location.pathname+window.location.search});localStorage.setItem(RECENT_KEY,JSON.stringify({version:2,entries:next}));setRecent(next);} catch { /* Navigation remains available without storage. */ }
   };
   const close = () => { dialog.current?.close(); setOpened(false); };
   const show = () => {
+    remember(recentId??activeId);
     setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0);
     dialog.current?.showModal(); setOpened(true); input.current?.focus();
   };
@@ -50,11 +51,11 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
     try {
       let saved: unknown;
       try { saved = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]"); } catch { saved = []; }
-      const next = recentCompanies(saved, recentId ?? activeId);
+      const next = recentCompanyVisits(saved, {id:recentId??activeId,href:window.location.pathname+window.location.search});
       setRecent(next);
-      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+      localStorage.setItem(RECENT_KEY, JSON.stringify({version:2,entries:next}));
     } catch { /* Browsing and search do not require storage. */ }
-  }, [activeId, recentId]);
+  }, [activeId, recentId, path]);
   useEffect(() => { dialog.current?.close(); setOpened(false); }, [path]);
   useEffect(() => { setCursor(0); resultsRef.current?.scrollTo({ top: 0 }); }, [query, all, sector, ecosystemsOnly]);
   useEffect(() => {
@@ -70,12 +71,12 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
         if (document.querySelector("dialog[open]") && !dialog.current?.open) return;
         event.preventDefault();
         if (dialog.current?.open) { dialog.current.close(); setOpened(false); }
-        else { setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
+        else { remember(recentId??activeId); setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [activeId,recentId,path]);
 
   const move = (next: number) => {
     const index = (next + rows.length) % rows.length;
@@ -89,7 +90,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
     if (event.key === "Enter") {
       event.preventDefault();
       const anchor = document.getElementById(`${uid}-${selected.id}`) as HTMLAnchorElement | null;
-      if (event.metaKey || event.ctrlKey) window.open(anchor?.href, "_blank", "noopener,noreferrer");
+      if (event.metaKey || event.ctrlKey) { remember(selected.id,anchor?.getAttribute('href')??undefined); window.open(anchor?.href, "_blank", "noopener,noreferrer"); }
       else anchor?.click();
     }
   };
@@ -141,8 +142,8 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
                 {group.companies.map((company) => {
                   const index = rows.indexOf(company);
                   const reason = searching ? matches.find((m) => m.company.id === company.id)?.reason : "";
-                  return <div key={company.id} className="flex items-stretch"><a id={`${uid}-${company.id}`} href={(searching && matches.find((m) => m.company.id === company.id)?.context?.href) || companyDestination(company, path)} role="option" tabIndex={-1} aria-selected={selected?.id === company.id}
-                    onMouseEnter={() => setCursor(index)} onFocus={() => setCursor(index)} onClick={()=>remember(company.id)}
+                  return <div key={company.id} className="flex items-stretch"><a id={`${uid}-${company.id}`} href={(searching && matches.find((m) => m.company.id === company.id)?.context?.href) || (!searching&&group.label==='Recent'&&recent.find(v=>v.id===company.id)?.href) || companyDestination(company, path)} role="option" tabIndex={-1} aria-selected={selected?.id === company.id}
+                    onMouseEnter={() => setCursor(index)} onFocus={() => setCursor(index)} onClick={(e)=>remember(company.id,e.currentTarget.getAttribute('href')??undefined)}
                     className={`flex min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2.5 outline-offset-[-2px] ${selected?.id === company.id ? "bg-ink-100" : "hover:bg-ink-50"}`}>
                     {mark(company)}<span className="min-w-0 flex-1">
                       <span className="block text-[13px] font-semibold">{company.name}</span>
@@ -158,10 +159,11 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
               <button type="button" onClick={() => { setQuery(""); setAll(true); setSector(""); input.current?.focus(); }} className="mt-4 font-semibold underline underline-offset-4">Browse all companies</button>
             </div>}
           </div>
-          {selected && <aside onClick={(e)=>{if((e.target as HTMLElement).closest('a'))remember(selected.id);}} aria-label="Company preview" className="thin-scroll min-h-0 overflow-y-auto overscroll-contain border-t border-ink-200 bg-ink-50 p-4 sm:border-l sm:border-t-0 sm:p-5">
+          {selected && <aside onClick={(e)=>{const link=(e.target as HTMLElement).closest('a');if(link)remember(selected.id,link.getAttribute('href')??undefined);}} aria-label="Company preview" className="thin-scroll min-h-0 overflow-y-auto overscroll-contain border-t border-ink-200 bg-ink-50 p-4 sm:border-l sm:border-t-0 sm:p-5">
             <div className="flex items-center gap-3">{mark(selected, true)}<div><p className="text-[10px] font-semibold uppercase tracking-wider text-ink-500">{selected.sectorName}</p><h3 className="text-lg font-semibold tracking-tight">{selected.name}</h3></div></div>
             <p className="mt-3 text-xs text-ink-500">{selected.categoryName}{selected.geo ? ` · ${selected.geo}` : ""}</p>
             <p className="mt-2 text-[13px] leading-relaxed">{selected.blurb}</p>
+            {!searching&&recent.some(v=>v.id===selected.id)&&<a href={recent.find(v=>v.id===selected.id)!.href} className="mt-3 inline-block rounded-lg bg-ink px-3 py-2 text-xs font-semibold text-white">Resume where you left off →</a>}
             {matchedContext && <a href={matchedContext.href} className="mt-3 block rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-xs"><span className="text-[10px] font-semibold uppercase tracking-wide text-emerald-800">{matchedContext.kind}</span><strong className="mt-1 block text-sm">{matchedContext.term} →</strong><span className="mt-1 block text-ink-500">{matchedContext.detail}</span></a>}
             {!selected.studyId && !selected.ecosystemLinks.length && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">{selected.atlasListed?'In the company landscape.':'Recognised in the global research.'} {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
             {!!selected.ecosystemLinks.length && <div className="mt-4 space-y-2"><p className="text-[10px] font-bold uppercase tracking-wider text-ink-500">Choose the practice context</p>{selected.ecosystemLinks.map((link) => <a key={link.href} href={link.href} className="block rounded-lg border border-ink-200 bg-white p-3 text-xs hover:bg-ink-100"><span className="font-semibold">{link.ecosystemName} · ANZ ↗</span><span className="mt-1 block text-[11px] text-ink-500">{link.historical ? 'Career / ownership context' : link.context}</span></a>)}</div>}
@@ -174,7 +176,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
               {selected.atlasListed && <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>}
             </div>
             {!!related.length && <div className="mt-5 hidden border-t border-ink-200 pt-3 sm:block"><p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-ink-500">Explore alongside</p>
-              {related.map(({company:c,reason}) => <a key={c.id} onClick={e=>{e.stopPropagation();remember(c.id);}} href={companyDestination(c, path)} className="block rounded py-1.5 text-xs hover:underline"><span className="font-semibold">{c.name}</span><span className="mt-1 block text-[10px] text-ink-500">{reason}</span></a>)}
+              {related.map(({company:c,reason}) => <a key={c.id} onClick={e=>{e.stopPropagation();remember(c.id,e.currentTarget.getAttribute('href')??undefined);}} href={companyDestination(c, path)} className="block rounded py-1.5 text-xs hover:underline"><span className="font-semibold">{c.name}</span><span className="mt-1 block text-[10px] text-ink-500">{reason}</span></a>)}
             </div>}
           </aside>}
         </div>

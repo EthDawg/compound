@@ -76,8 +76,20 @@ export function matchCompany(company: IndexedCompany, query: string): CompanyMat
   if (name === c) return hit(0);
   if (name.startsWith(c)) return hit(1);
   if (name.includes(c)) return hit(2);
-  const context = company.contexts.find((x) => [x.term,...(x.aliases??[])].some(t=>compact(t).includes(c) || q.split(' ').every(w=>normalizeSearch(`${company.name} ${t}`).includes(w))));
-  if (context) return hit(compact(context.term) === c ? 2 : 3, `${context.term} · ${context.kind}`, context);
+  const companyWords=normalizeSearch(company.name).split(' ');
+  const remaining=q.split(' ').filter(w=>!companyWords.includes(w)).join(' ');
+  const contextQueries=[q,...(remaining&&remaining!==q?[remaining]:[])];
+  const contextHits=company.contexts.flatMap(context=>{
+    const scores=contextQueries.flatMap(query=>[context.term,...(context.aliases??[])].flatMap(term=>{
+      if(compact(term)===compact(query))return [2];
+      // Match word beginnings: "IT" must not resolve through the middle of "Mitch".
+      const words=normalizeSearch(term).split(' ');
+      const parts=query.split(' '),withContext=[...words,...normalizeSearch(context.detail).split(' ')];
+      return parts.some(part=>words.some(word=>word.startsWith(part)))&&parts.every(part=>withContext.some(word=>word.startsWith(part)))?[3]:[];
+    }));
+    return scores.length?[{context,score:Math.min(...scores)}]:[];
+  }).sort((a,b)=>a.score-b.score);
+  if(contextHits.length){const {context,score}=contextHits[0];return hit(score,`${context.term} · ${context.kind}`,context);}
   const term = company.terms.find((t) => compact(t).includes(c));
   if (term) return hit(compact(term) === c ? 2 : 3, term);
   const metadata = [company.name, ...company.terms, ...company.contexts.map((x) => x.term), company.categoryName, company.sectorName, company.archetype ?? "", company.blurb].join(" ");
@@ -125,4 +137,29 @@ export function companyDestination(company: IndexedCompany, pathname: string): s
 export function recentCompanies(value: unknown, current?: string): string[] {
   const valid = new Set(COMPANY_INDEX.map((c) => c.id));
   return [...new Set([current, ...(Array.isArray(value) ? value : [])])].filter((id): id is string => typeof id === "string" && valid.has(id)).slice(0, 6);
+}
+
+export type CompanyVisit={id:string;href:string};
+/** Accept only a known company's internal destination; old ID-only history still works. */
+export function recentCompanyVisits(value:unknown,visit?:CompanyVisit):CompanyVisit[]{
+ const raw=Array.isArray(value)?value:typeof value==='object'&&value!==null&&'entries'in value&&Array.isArray(value.entries)?value.entries:[];
+ const seen=new Set<string>();
+ return [visit,...raw].flatMap(item=>{
+  const id=typeof item==='string'?item:typeof item==='object'&&item!==null&&'id'in item?item.id:undefined;
+  const company=COMPANY_INDEX.find(c=>c.id===id);
+  if(!company||seen.has(company.id))return [];
+  const href=typeof item==='object'&&item!==null&&'href'in item?item.href:companyDestination(company,'/');
+  if(typeof href!=='string'||!href.startsWith('/')||href.startsWith('//')||href.length>1500)return [];
+  let url:URL;try{url=new URL(href,'https://compound.invalid');}catch{return [];}
+  if(url.origin!=='https://compound.invalid')return [];
+  const p=url.pathname,query=url.searchParams;
+  const study=company.studyId&&p.startsWith(`/companies/${company.id}/`)&&(p===company.appHref||p===company.backstageHref||p.startsWith(`/companies/${company.id}/app/`)||p.startsWith(`/companies/${company.id}/backstage/`));
+  const map=company.atlasListed&&p==='/'&&query.get('company')===company.id;
+  const practice=company.ecosystemLinks.some(l=>p===new URL(l.href,'https://compound.invalid').pathname&&query.get('firm')===company.id);
+  const ecosystem=company.ecosystemHref&&p===company.ecosystemHref&&!query.get('firm');
+  const market=company.marketLinks?.some(l=>{const target=new URL(l.href,'https://compound.invalid');return p===target.pathname&&query.get('market')===target.searchParams.get('market');});
+  const other=p===company.appHref||p===company.readHref;
+  if(!study&&!map&&!practice&&!ecosystem&&!market&&!other)return [];
+  seen.add(company.id);return [{id:company.id,href:url.pathname+url.search+url.hash}];
+ }).slice(0,6);
 }
