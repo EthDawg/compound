@@ -3,7 +3,8 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),ts=require('typescript');
 require.extensions['.ts']=(m,f)=>m._compile(ts.transpileModule(fs.readFileSync(f,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText,f);
 const {initialAtlas,readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel}=require('../lib/atlas-navigation.ts');
-const {ALL_VENDORS,SECTOR_NODES,CATEGORY_NODES}=require('../lib/data/atlas-nodes.ts');
+const {ALL_VENDORS,SECTOR_NODES,CATEGORY_NODES,nodesAt}=require('../lib/data/atlas-nodes.ts');
+const {RESEARCH_CATEGORIES,companiesInResearch,researchContext}=require('../lib/data/category-research.ts');
 const {COMPANY_INDEX,recentCompanyVisits,searchCompanies}=require('../lib/company-index.ts');
 const node=id=>[...ALL_VENDORS,...SECTOR_NODES,...CATEGORY_NODES].find(n=>n.id===id);
 
@@ -22,6 +23,28 @@ test('invalid and conflicting map parameters cannot place a vendor in the wrong 
  assert.equal(s.sector,'ai');assert.equal(s.category,'frontier-ai');assert.equal(s.lens,'strategic');assert.equal(s.highlight,undefined);
  assert.equal(atlasLevel(readAtlasLocation('?sector=unknown&category=unknown&company=unknown')),'sector');
  for(const c of ALL_VENDORS){const s=readAtlasLocation(`?company=${c.id}`);assert.equal(s.company,c.id);assert.equal(s.category,c.category);}
+});
+test('guides and landscape retain the same companies across supported category boundaries',()=>{
+ for(const category of RESEARCH_CATEGORIES){
+  const expected=companiesInResearch(category.id).map(c=>c.id).sort();
+  const visible=nodesAt('vendor',{category:category.id});
+  assert.deepEqual(visible.map(c=>c.id).sort(),expected,category.id);
+  assert.equal(new Set(visible.map(c=>c.id)).size,visible.length);
+  assert.equal(node(category.id).count,expected.length);
+  for(const company of visible){
+   const selected=transitionAtlas(readAtlasLocation(`?category=${category.id}`),{type:'open',node:company});
+   assert.equal(selected.category,category.id,company.id);
+   assert.equal(selected.sector,node(category.id).sector);
+   const restored=readAtlasLocation(new URL(atlasLocationHref(selected),'https://compound.example').search);
+   assert.deepEqual(restored,selected,'the shared URL must retain a secondary category');
+   assert.equal(transitionAtlas(selected,{type:'clear-company'}).category,category.id);
+  }
+ }
+ assert.equal(readAtlasLocation('?company=databricks&category=ai-inference').category,'ai-inference');
+ assert.equal(readAtlasLocation('?company=databricks&category=hr-compound').category,'warehouse');
+ assert.equal(researchContext('databricks','ai-inference'),'ai-inference');
+ assert.equal(researchContext('databricks','hr-compound'),'enterprise-ai');
+ assert.equal(researchContext('modal','developer-tools'),'developer-tools');
 });
 test('changing a legend filter never leaves a selected company dimmed outside that filter',()=>{
  const selected=ALL_VENDORS.find(c=>ALL_VENDORS.some(other=>other.category===c.category&&other.archetype!==c.archetype));

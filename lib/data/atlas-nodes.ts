@@ -63,8 +63,10 @@ function roll(members: Node[], sizeFloor: number): Record<LensId, Pos> {
   return out;
 }
 
-export const vendorsInCategory = (cat: string) => ALL_VENDORS.filter((v) => v.category === cat);
-export const vendorsInSector = (sec: string) => ALL_VENDORS.filter((v) => v.sector === sec);
+/** One identity can play a documented role in several categories. */
+export const belongsToCategory = (vendor: Node, category: string) => vendor.category === category || !!researchCompany(vendor.id)?.categories.some(id => id === category);
+export const vendorsInCategory = (cat: string) => ALL_VENDORS.filter(v => belongsToCategory(v, cat));
+export const vendorsInSector = (sec: string) => ALL_VENDORS.filter(v => v.sector === sec || CATEGORIES.some(c => c.sector === sec && belongsToCategory(v, c.id)));
 
 export const CATEGORY_NODES: Node[] = CATEGORIES.map((c) => {
   const members = vendorsInCategory(c.id);

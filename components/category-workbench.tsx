@@ -28,7 +28,7 @@ export function CategoryWorkbench({ category }: { category: ResearchCategory }) 
         <h3 className="text-[10px] font-bold uppercase tracking-[.14em] text-[#52725E]">A useful first test</h3>
         <p className="mt-2 text-sm leading-relaxed">{selected.check}</p>
         <p className="mt-5 text-[10px] font-bold uppercase tracking-wider text-ink-500">Companies to examine for this work</p>
-        <div className="mt-2 flex flex-wrap gap-2">{selected.companies.map(id => <Link key={id} href={researchHref(id)} className="inline-flex min-h-11 items-center rounded-lg border border-[#D4DBD0] px-3 text-xs font-semibold hover:bg-white">{researchCompany(id)?.name} ↗</Link>)}</div>
+        <div className="mt-2 flex flex-wrap gap-2">{selected.companies.map(id => <Link key={id} href={researchHref(id, category.id)} className="inline-flex min-h-11 items-center rounded-lg border border-[#D4DBD0] px-3 text-xs font-semibold hover:bg-white">{researchCompany(id)?.name} ↗</Link>)}</div>
       </div>
     </div>
   </section>;

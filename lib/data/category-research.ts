@@ -21,8 +21,12 @@ export type ResearchCategory = {
   forces: {title: string; text: string}[]; situations: CategorySituation[];
 };
 export const RESEARCH_REVIEWED = '11 September 2026';
-export const researchHref = (id: string) => `/research/${id}`;
+export const researchHref = (id: string, category?: ResearchCategoryId) => `/research/${id}${category ? `?category=${category}` : ''}`;
 export const categoryHref = (id: ResearchCategoryId) => `/categories/${id}`;
+export function researchContext(id: string, requested?: string | null): ResearchCategoryId {
+  const company = researchCompany(id);
+  return company?.categories.find(category => category === requested) ?? company?.categories[0] ?? 'ai-inference';
+}
 const s = (title: string, url: string): ResearchSource => ({ title, url });
 
 export const RESEARCH_CATEGORIES: ResearchCategory[] = [

@@ -11,7 +11,7 @@ export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'wo
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const close = (e: MouseEvent) => { if (!menu.current?.contains(e.target as Node)) menu.current?.removeAttribute('open'); };
-    const escape = (e: KeyboardEvent) => { if (e.key === 'Escape' && menu.current?.open) { menu.current.removeAttribute('open'); menu.current.querySelector('summary')?.focus(); } };
+    const escape = (e: KeyboardEvent) => { if (e.key === 'Escape' && menu.current?.open) { e.preventDefault(); e.stopPropagation(); menu.current.removeAttribute('open'); menu.current.querySelector('summary')?.focus(); } };
     document.addEventListener('click', close); document.addEventListener('keydown', escape);
     return () => { document.removeEventListener('click', close); document.removeEventListener('keydown', escape); };
   }, []);
