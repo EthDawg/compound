@@ -181,3 +181,22 @@ substitute just each firm's newest event or pull in every event of a parent.
 recorded people and their company on record; they clear incompatible filters and
 retain native browser history. A person attached to an event may be its source
 author or practice leader, so these links are labelled Career context, not hires.
+
+
+Company connections are a mode of the existing homepage: `/?connections=<id>`.
+`lib/data/company-connections.ts` curates typed, directed relationships using the
+canonical company IDs. Acquisition and career sources reuse the ANZ records;
+physical dependencies reuse Global View sources. Add endpoints deliberately:
+event co-membership, a shared category or a former employer is not an ownership
+relationship. Retain announcement/completion status and each source's date.
+
+`components/company-connections.tsx` shows one company's immediate connections,
+with a stacked layout on small screens. Keep native company and evidence links.
+The shared finder stays in this mode for company selections; explicit person and
+customer matches still lead to their evidence. Known companies without mapped
+relationships remain visible with their existing context. No second company
+registry or graph library is required.
+
+The homepage uses query-specific metadata for company connections. Its rendered
+HTML is tested through a temporary localhost production server in
+`tests/company-page.test.cjs`, rather than assuming a static `index.html`.

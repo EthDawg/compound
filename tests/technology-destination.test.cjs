@@ -80,11 +80,9 @@ print(json.dumps([a,b]))
  assert.deepEqual(inferred.scope,[]);
  assert.ok(declared.services.some(s=>s.name==='Deployment'&&s.basis==='directory'));
 });
-test('new destinations, navigation and source-linked learning records are present in the production build',()=>{
+test('new destinations and source-linked learning records are present in the production build',()=>{
  const routes=JSON.parse(fs.readFileSync('.next/server/app-paths-manifest.json','utf8'));
  for(const route of ['/earth','/technology','/decisions'])assert.ok(routes[`${route}/page`]);
- const home=fs.readFileSync('.next/server/app/index.html','utf8');
- for(const route of ['/earth','/technology','/decisions'])assert.ok(home.includes(`href="${route}"`));
  assert.equal(new Set(MARKETS.map(m=>m.id)).size,MARKETS.length);
  for(const m of MARKETS){assert.ok(Math.abs(m.lat)<=90&&Math.abs(m.lon)<=180);assert.ok(m.fact&&m.reading&&m.date);}
  for(const x of [...TURNING_POINTS,...EXPLORERS,...FUTURES])assert.equal(new URL(x.url).protocol,'https:');

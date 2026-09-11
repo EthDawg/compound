@@ -1,0 +1,19 @@
+.map { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.5fr); align-items: stretch; }
+.identity { position: relative; align-self: center; border: 1px solid #d8d5c9; border-radius: 16px; padding: 24px; background: #f2f0e8; }
+.identity::after { content: ''; position: absolute; top: 50%; left: 100%; width: 32px; border-top: 1px solid #aaa69a; }
+.branch { grid-column: 2; display: grid; grid-template-columns: 64px minmax(0, 1fr); }
+.connector { position: relative; }
+.connector::before { content: ''; position: absolute; top: 50%; left: 50%; right: 0; border-top: 1px solid #aaa69a; }
+.connector::after { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid #aaa69a; }
+.first::after { top: 50%; }
+.last::after { bottom: 50%; }
+.node { margin: 6px 0; padding: 16px 20px 8px; border: 1px solid #dfddd5; border-radius: 14px; background: white; min-width: 0; }
+.action { display: inline-flex; align-items: center; min-height: 44px; border-radius: 8px; padding: 6px 10px; border: 1px solid #d8d5c9; background: white; }
+.action:hover { background: #eae7dc; }
+@media (max-width: 767px) {
+  .map { display: flex; flex-direction: column; gap: 12px; }
+  .identity { width: 100%; padding: 20px; }
+  .identity::after, .connector { display: none; }
+  .branch { display: block; }
+  .node { margin: 0; padding: 16px 16px 8px; }
+}
