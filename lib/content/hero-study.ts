@@ -23,6 +23,7 @@ export const HERO_STUDY: CompanyStudy = {
   brand: { chrome: "#281448", ink: "#FFFFFF", highlight: "#CAEF68" },
   appScreens: ["", "payroll", "talent", "people"], workflowScreen: "payroll",
   backstage: {
+    sourcesChecked: "10–11 September 2026",
     navigation: TALENT_NAVIGATION,
     headline: "Run employment for the business that cannot staff it.",
     thesis: "Employment Hero combines payroll machinery, employment specialists and an employee-facing network. The ambition has expanded from helping a small business administer employment to doing more of that work for it. Its acquisitions explain why the next step is execution and services, rather than simply another HR module.",
