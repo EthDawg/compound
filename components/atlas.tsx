@@ -13,12 +13,7 @@ import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { companyStudy, companyHref } from "@/lib/companies";
 
-function clearCompanyLocation() {
-  const url = new URL(window.location.href);
-  if (!url.searchParams.has("company")) return;
-  url.searchParams.delete("company");
-  window.history.replaceState(window.history.state, "", url);
-}
+import {initialAtlas,readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel,type AtlasAction} from '@/lib/atlas-navigation';
 
 const G = {
   wide:   { W: 1040, H: 620, PAD: 78, fq: 11, fax: 11, flab: 11.5, flabOn: 13, rMin: 5, rMax: 20, cap: 18, floor: 42 },
@@ -37,12 +32,10 @@ export function Atlas() {
   const py = (y: number) => H - PAD - (y / 100) * (H - PAD * 2);
   const rr = (r: number) => g.rMin + (r / 100) * g.rMax;
 
-  const [level, setLevel] = useState<Level>("sector");
-  const [focus, setFocus] = useState<{ sector?: string; category?: string }>({});
-  const [lensId, setLensId] = useState<LensId>("strategic");
-  const [sel, setSel] = useState<string | null>(null);
-  const [hover, setHover] = useState<string | null>(null);
-  const [muted, setMuted] = useState<string | null>(null);   // legend filter
+  const [location,setLocation]=useState(initialAtlas);
+  const level=atlasLevel(location),lensId=location.lens,sel=location.company??null,muted=location.highlight??null;
+  const focus=useMemo(()=>({sector:location.sector,category:location.category}),[location.sector,location.category]);
+  const [hover,setHover]=useState<string|null>(null);
   const [tip, setTip] = useState<{ n: AtlasNode; x: number; y: number } | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -62,46 +55,27 @@ export function Atlas() {
 
   const clearHover = useCallback(() => { setHover(null); setTip(null); }, []);
 
-  const goRoot = useCallback(() => { clearCompanyLocation(); setHover(null); setTip(null); setFocus({}); setLevel("sector"); setSel(null); setMuted(null); }, []);
-  const goSector = useCallback(() => {
-    clearCompanyLocation();
-    setHover(null); setTip(null);
-    setFocus((f) => ({ sector: f.sector })); setLevel("category"); setSel(null); setMuted(null);
-  }, []);
-  const up = useCallback(() => {
-    if (level === "vendor") goSector();
-    else if (level === "category") goRoot();
-  }, [level, goRoot, goSector]);
-
-  const open = useCallback((n: AtlasNode) => {
-    clearCompanyLocation();
-    setHover(null); setTip(null);
-    if (n.level === "sector") { setFocus({ sector: n.id }); setLevel("category"); setSel(null); setMuted(null); }
-    else if (n.level === "category") { setFocus({ sector: n.sector, category: n.id }); setLevel("vendor"); setSel(null); setMuted(null); }
-    else setSel((cur) => (cur === n.id ? null : n.id));   // second click deselects
-  }, []);
-
-  // Search lands you at the right altitude with the node already selected.
-  const jump = useCallback((n: AtlasNode) => {
-    setHover(null); setTip(null);
-    setMuted(null);
-    if (n.level === "sector") { setFocus({ sector: n.id }); setLevel("category"); setSel(null); }
-    else if (n.level === "category") { setFocus({ sector: n.sector, category: n.id }); setLevel("vendor"); setSel(null); }
-    else { setFocus({ sector: n.sector, category: n.category }); setLevel("vendor"); setSel(n.id); }
-  }, []);
-
-  // Native catalogue links can be opened in separate tabs, with a vendor selected.
-  useEffect(() => {
-    const restore = () => {
-      const id = new URLSearchParams(window.location.search).get("company");
-      const company = ALL_VENDORS.find((n) => n.id === id);
-      if (company) jump(company);
-      else goRoot();
-    };
-    restore();
-    window.addEventListener("popstate", restore);
-    return () => window.removeEventListener("popstate", restore);
-  }, [jump, goRoot]);
+  const navigate=useCallback((action:AtlasAction)=>{
+    const before=readAtlasLocation(window.location.search);
+    const next=transitionAtlas(before,action),href=atlasLocationHref(next);
+    if(href!==atlasLocationHref(before))window.history.pushState(null,'',href);
+    setLocation(next);setHover(null);setTip(null);
+  },[]);
+  const goRoot=useCallback(()=>navigate({type:'root'}),[navigate]);
+  const goSector=useCallback(()=>navigate({type:'sector'}),[navigate]);
+  const up=useCallback(()=>navigate({type:'up'}),[navigate]);
+  const clearSelection=useCallback(()=>navigate({type:'clear-company'}),[navigate]);
+  const open=useCallback((n:AtlasNode)=>navigate({type:'open',node:n}),[navigate]);
+  const nodeHref=(n:AtlasNode)=>atlasLocationHref(transitionAtlas({...location,company:undefined},{type:'open',node:n}));
+  const followNode=(e:React.MouseEvent,n:AtlasNode)=>{
+    if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();e.stopPropagation();open(n);
+  };
+  useEffect(()=>{
+    const restore=()=>{setLocation(readAtlasLocation(window.location.search));setHover(null);setTip(null);};
+    restore();window.addEventListener('popstate',restore);
+    return()=>window.removeEventListener('popstate',restore);
+  },[]);
 
   // Esc clears the selection, then walks back up a level.
   useEffect(() => {
@@ -109,16 +83,16 @@ export function Atlas() {
       if (document.querySelector("dialog[open]")) return;
       const t = e.target as HTMLElement | null;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
-      if (e.key === "Escape") { clearHover(); if (sel) { clearCompanyLocation(); setSel(null); } else up(); }
+      if (e.key === "Escape") { clearHover(); if (sel) clearSelection(); else up(); }
       if (e.key === "Backspace") { e.preventDefault(); up(); }
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [sel, up, clearHover]);
+  }, [sel, up, clearHover, clearSelection]);
 
   // On a phone the detail sits below the fold, so bring it into view on select.
   useEffect(() => {
-    if (sel && narrow) detailRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (sel && narrow) detailRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
   }, [sel, narrow]);
 
   useEffect(() => {
@@ -185,7 +159,7 @@ export function Atlas() {
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center lg:ml-auto">
             <div className="flex gap-0.5 rounded-lg p-0.5" style={{ background: PAPER.grid }}>
               {LENSES.map((l) => (
-                <button key={l.id} onClick={() => setLensId(l.id)}
+                <button key={l.id} onClick={() => navigate({type:'lens',id:l.id})}
                   aria-label={l.pill} aria-pressed={l.id === lensId}
                   className="flex-1 whitespace-nowrap rounded-md px-2 py-1.5 text-[12.5px] font-medium transition sm:flex-none sm:px-2.5"
                   style={l.id === lensId
@@ -210,13 +184,13 @@ export function Atlas() {
             <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full touch-manipulation"
               role="group" aria-label={`Atlas — ${lens.pill}, ${level} level`}
               onMouseLeave={clearHover}
-              onClick={(e) => { if (e.target === e.currentTarget) { setSel(null); clearHover(); } }}>
+              onClick={(e) => { if (e.target === e.currentTarget) { clearSelection(); clearHover(); } }}>
               <defs>
                 <pattern id="atlasgrid" width="26" height="26" patternUnits="userSpaceOnUse">
                   <path d="M26 0H0V26" fill="none" stroke={PAPER.grid} strokeWidth="1" />
                 </pattern>
               </defs>
-              <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => { setSel(null); clearHover(); }} />
+              <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => { clearSelection(); clearHover(); }} />
               <rect x={PAD} y={PAD} width={W - PAD * 2} height={H - PAD * 2} fill="url(#atlasgrid)" pointerEvents="none" />
               <g pointerEvents="none">
                 <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke="#E0DDD4" strokeDasharray="2 4" />
@@ -247,18 +221,17 @@ export function Atlas() {
                 const showLabel = on || isSel || nodes.length <= g.cap || p.r >= g.floor;
                 const group = n.level !== "vendor";
                 return (
-                  <g key={n.id} transform={`translate(${px(p.x)} ${py(p.y)})`}
-                    tabIndex={0} role="button"
+                  <g key={n.id} transform={`translate(${px(p.x)} ${py(p.y)})`} opacity={dim ? 0.26 : 1}
+                    style={{ transition: "transform .5s cubic-bezier(.2,.7,.3,1), opacity .2s" }}><a href={nodeHref(n)}
+                    tabIndex={0} role="link"
                     aria-label={`${n.name}${n.archetype ? `, ${n.archetype}` : ""}. ${group ? `Open ${n.count} inside` : isSel ? "Selected" : "Select"}`}
-                    style={{ transition: "transform .5s cubic-bezier(.2,.7,.3,1), opacity .2s", cursor: group ? "zoom-in" : "pointer", outline: "none" }}
-                    opacity={dim ? 0.26 : 1}
+                    style={{ cursor: group ? "zoom-in" : "pointer", outline: "none" }}
                     onMouseEnter={(e) => { setHover(n.id); tipFor(n, e); }}
                     onMouseMove={(e) => tipFor(n, e)}
                     onMouseLeave={() => { setHover(null); setTip(null); }}
                     onFocus={() => setHover(n.id)}
                     onBlur={() => setHover(null)}
-                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(n); } }}
-                    onClick={(e) => { e.stopPropagation(); open(n); }}>
+                    onClick={(e) => followNode(e,n)}>
                     {isSel && <circle r={rr(p.r) + 7} fill="none" stroke={c} strokeWidth="1.5" strokeOpacity=".45" />}
                     <circle r={rr(p.r)} fill={c} fillOpacity={on || isSel ? 0.88 : 0.58}
                       stroke={isSel ? PAPER.ink : c} strokeWidth={isSel ? 2 : on ? 1.6 : 1}
@@ -272,7 +245,7 @@ export function Atlas() {
                         {n.name}
                       </text>
                     )}
-                  </g>
+                  </a></g>
                 );
               })}
             </svg>
@@ -305,7 +278,7 @@ export function Atlas() {
                 <ul className="max-h-[17rem] overflow-y-auto thin-scroll p-1.5">
                   {ordered.map((n, i) => (
                     <li key={n.id}>
-                      <button onClick={() => open(n)}
+                      <a href={nodeHref(n)} onClick={(e)=>followNode(e,n)}
                         className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left"
                         style={sel === n.id ? { background: PAPER.grid } : undefined}>
                         <span className="w-5 shrink-0 text-right text-[11px] tabular-nums" style={{ color: PAPER.ghost }}>{i + 1}</span>
@@ -313,7 +286,7 @@ export function Atlas() {
                         <span className="min-w-0 flex-1 truncate text-[13.5px]">{n.name}</span>
                         {n.count !== undefined && <span className="shrink-0 text-[11.5px] tabular-nums" style={{ color: PAPER.ghost }}>{n.count}</span>}
                         {n.level !== "vendor" && <span style={{ color: PAPER.ghost }}><I.IChevron className="h-3 w-3" /></span>}
-                      </button>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -328,14 +301,14 @@ export function Atlas() {
               </span>
               {legend.map((l) => (
                 <button key={l.key}
-                  onClick={() => setMuted((m) => (m === l.key ? null : l.key))}
+                  onClick={() => navigate({type:'highlight',id:l.key})}
                   className="flex items-center gap-1.5 rounded px-1 py-0.5 transition hover:bg-black/[0.05]"
                   style={{ opacity: muted && muted !== l.key ? 0.4 : 1, fontWeight: muted === l.key ? 600 : 400, color: muted === l.key ? PAPER.ink : undefined }}>
                   <span className="h-2 w-2 rounded-full" style={{ background: l.color }} />{l.label}
                 </button>
               ))}
               {muted && (
-                <button onClick={() => setMuted(null)} className="rounded px-1.5 py-0.5 font-medium" style={{ color: PAPER.ink, background: PAPER.grid }}>
+                <button onClick={() => navigate({type:'highlight'})} className="rounded px-1.5 py-0.5 font-medium" style={{ color: PAPER.ink, background: PAPER.grid }}>
                   clear filter
                 </button>
               )}
@@ -354,7 +327,7 @@ export function Atlas() {
 
           {/* Detail */}
           <div className="min-w-0" ref={detailRef}>
-            {selected ? <Detail n={selected} onClose={() => setSel(null)} />
+            {selected ? <Detail n={selected} onClose={clearSelection} />
               : <Intro level={level} focus={focus} />}
           </div>
         </div>
