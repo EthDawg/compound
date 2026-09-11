@@ -14,6 +14,7 @@ export function XRayProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
+      if (document.querySelector("dialog[open]") || t?.isContentEditable) return;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
       if ((e.key === "x" || e.key === "X") && !e.metaKey && !e.ctrlKey && !e.altKey) {
         e.preventDefault();

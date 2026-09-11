@@ -1,14 +1,19 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ALL_VENDORS, CATEGORY_NODES, SECTOR_NODES, type Node as AtlasNode } from "@/lib/data/atlas-nodes";
 import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
 import { sectorById, categoryById } from "@/lib/data/atlas";
+import { COMPANY_INDEX, matchCompany, atlasCompanyHref } from "@/lib/company-index";
 import * as I from "./icons";
 
 const POOL: AtlasNode[] = [...SECTOR_NODES, ...CATEGORY_NODES, ...ALL_VENDORS];
 
 const score = (n: AtlasNode, q: string) => {
+  if (n.level === "vendor") {
+    const company = COMPANY_INDEX.find((c) => c.id === n.id);
+    return company ? matchCompany(company, q)?.score ?? 99 : 99;
+  }
   const name = n.name.toLowerCase();
   if (name === q) return 0;
   if (name.startsWith(q)) return 1;
@@ -19,6 +24,7 @@ const score = (n: AtlasNode, q: string) => {
 };
 
 export function AtlasSearch({ onPick }: { onPick: (n: AtlasNode) => void }) {
+  const uid = useId();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [cursor, setCursor] = useState(0);
@@ -41,7 +47,7 @@ export function AtlasSearch({ onPick }: { onPick: (n: AtlasNode) => void }) {
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
-      const typing = t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName);
+      const typing = t && (["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName) || t.isContentEditable);
       if (e.key === "/" && !typing) { e.preventDefault(); input.current?.focus(); setOpen(true); }
       if (e.key === "Escape" && typing) { input.current?.blur(); setOpen(false); }
     };
@@ -59,8 +65,13 @@ export function AtlasSearch({ onPick }: { onPick: (n: AtlasNode) => void }) {
 
   const key = (e: React.KeyboardEvent) => {
     if (!results.length) return;
-    if (e.key === "ArrowDown") { e.preventDefault(); setCursor((c) => (c + 1) % results.length); }
-    if (e.key === "ArrowUp") { e.preventDefault(); setCursor((c) => (c - 1 + results.length) % results.length); }
+    const move = (next: number) => {
+      const index = (next + results.length) % results.length;
+      setCursor(index);
+      document.getElementById(`${uid}-${results[index].id}`)?.scrollIntoView({ block: "nearest" });
+    };
+    if (e.key === "ArrowDown") { e.preventDefault(); move(cursor + 1); }
+    if (e.key === "ArrowUp") { e.preventDefault(); move(cursor - 1); }
     if (e.key === "Enter") { e.preventDefault(); pick(results[cursor]); }
   };
 
@@ -81,8 +92,10 @@ export function AtlasSearch({ onPick }: { onPick: (n: AtlasNode) => void }) {
       <input
         ref={input} value={q} onChange={(e) => { setQ(e.target.value); setOpen(true); }}
         onFocus={() => setOpen(true)} onKeyDown={key}
-        placeholder="Search 118 vendors…"
-        aria-label="Search the atlas"
+        placeholder={`Search ${ALL_VENDORS.length} companies, products…`}
+        aria-label="Search the atlas" role="combobox" aria-autocomplete="list" aria-expanded={open && !!q && !!results.length}
+        aria-controls={open && q && results.length ? `${uid}-results` : undefined}
+        aria-activedescendant={open && q && results[cursor] ? `${uid}-${results[cursor].id}` : undefined}
         className="h-9 w-full rounded-lg border pl-8 pr-8 text-[13px] outline-none transition focus:ring-2"
         style={{ borderColor: PAPER.line, background: PAPER.surface, color: PAPER.ink }}
       />
@@ -103,26 +116,34 @@ export function AtlasSearch({ onPick }: { onPick: (n: AtlasNode) => void }) {
           style={{ borderColor: PAPER.line, background: PAPER.surface }}>
           {results.length === 0 ? (
             <p className="px-4 py-3 text-[13px]" style={{ color: PAPER.faint }}>
-              Nothing matches. Try an archetype — &ldquo;connective&rdquo;, &ldquo;compound&rdquo;, &ldquo;rail&rdquo;.
+              Not in this catalogue yet. Try a product or capability — “Claude”, “payroll”, “voice”.
             </p>
           ) : (
-            <ul role="listbox" className="max-h-[19rem] overflow-y-auto thin-scroll py-1">
-              {results.map((n, i) => (
+            <ul id={`${uid}-results`} aria-label="Atlas search results" role="listbox" className="max-h-[19rem] overflow-y-auto thin-scroll py-1">
+              {results.map((n, i) => {
+                const Element = n.level === "vendor" ? "a" : "button";
+                const company = COMPANY_INDEX.find((c) => c.id === n.id);
+                const reason = company ? matchCompany(company, q)?.reason : "";
+                return (
                 <li key={`${n.level}-${n.id}`}>
-                  <button role="option" aria-selected={i === cursor}
-                    onMouseEnter={() => setCursor(i)} onClick={() => pick(n)}
+                  <Element id={`${uid}-${n.id}`} tabIndex={-1} role="option" aria-selected={i === cursor}
+                    href={n.level === "vendor" ? atlasCompanyHref(n.id) : undefined}
+                    onMouseEnter={() => setCursor(i)} onFocus={() => setCursor(i)} onClick={(event: React.MouseEvent) => {
+                      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+                      event.preventDefault(); pick(n);
+                    }}
                     className="flex w-full items-center gap-2.5 px-3 py-2 text-left"
                     style={{ background: i === cursor ? PAPER.grid : "transparent" }}>
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: tint(n) }} />
                     <span className="min-w-0 flex-1">
                       <span className="block truncate text-[13.5px]" style={{ color: PAPER.ink }}>{n.name}</span>
-                      <span className="block truncate text-[11.5px]" style={{ color: PAPER.faint }}>{where(n)}</span>
+                      <span className="block truncate text-[11.5px]" style={{ color: PAPER.faint }}>{reason ? `${reason} · ` : ""}{where(n)}</span>
                     </span>
                     <span className="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-                      style={{ background: PAPER.grid, color: PAPER.faint }}>{n.level}</span>
-                  </button>
+                      style={{ background: PAPER.grid, color: PAPER.faint }}>{company?.availability ?? n.level}</span>
+                  </Element>
                 </li>
-              ))}
+              ); })}
             </ul>
           )}
         </div>

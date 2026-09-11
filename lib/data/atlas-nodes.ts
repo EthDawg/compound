@@ -1,4 +1,4 @@
-import { companyStudy, companyHref } from "@/lib/companies";
+import { companyStudy, companyHref } from "../companies";
 import { ALL_COMPANIES, type LensId, type Pos, type Archetype } from "./ecosystem";
 import { SECTORS, CATEGORIES, VENDORS, WORK_CATEGORY, CROSS_SECTOR, categoriesIn } from "./atlas";
 import { derive, type Vendor } from "./atlas-types";

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LENSES, type LensId, type Archetype } from "@/lib/data/ecosystem";
 import { SECTORS, sectorById, categoryById } from "@/lib/data/atlas";
-import { nodesAt, BOARD_STATS, type Node as AtlasNode, type Level } from "@/lib/data/atlas-nodes";
+import { ALL_VENDORS, nodesAt, BOARD_STATS, type Node as AtlasNode, type Level } from "@/lib/data/atlas-nodes";
 import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
 import { AtlasSearch } from "./atlas-search";
 import { AtlasMaps } from "./atlas-maps";
@@ -12,6 +12,13 @@ import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { StudyLink } from "./study-link";
 import { companyStudy, companyHref } from "@/lib/companies";
+
+function clearCompanyLocation() {
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has("company")) return;
+  url.searchParams.delete("company");
+  window.history.replaceState(window.history.state, "", url);
+}
 
 const G = {
   wide:   { W: 1040, H: 620, PAD: 78, fq: 11, fax: 11, flab: 11.5, flabOn: 13, rMin: 5, rMax: 20, cap: 18, floor: 42 },
@@ -55,8 +62,9 @@ export function Atlas() {
 
   const clearHover = useCallback(() => { setHover(null); setTip(null); }, []);
 
-  const goRoot = useCallback(() => { setHover(null); setTip(null); setFocus({}); setLevel("sector"); setSel(null); setMuted(null); }, []);
+  const goRoot = useCallback(() => { clearCompanyLocation(); setHover(null); setTip(null); setFocus({}); setLevel("sector"); setSel(null); setMuted(null); }, []);
   const goSector = useCallback(() => {
+    clearCompanyLocation();
     setHover(null); setTip(null);
     setFocus((f) => ({ sector: f.sector })); setLevel("category"); setSel(null); setMuted(null);
   }, []);
@@ -66,6 +74,7 @@ export function Atlas() {
   }, [level, goRoot, goSector]);
 
   const open = useCallback((n: AtlasNode) => {
+    clearCompanyLocation();
     setHover(null); setTip(null);
     if (n.level === "sector") { setFocus({ sector: n.id }); setLevel("category"); setSel(null); setMuted(null); }
     else if (n.level === "category") { setFocus({ sector: n.sector, category: n.id }); setLevel("vendor"); setSel(null); setMuted(null); }
@@ -81,12 +90,25 @@ export function Atlas() {
     else { setFocus({ sector: n.sector, category: n.category }); setLevel("vendor"); setSel(n.id); }
   }, []);
 
+  // Native catalogue links can be opened in separate tabs, with a vendor selected.
+  useEffect(() => {
+    const restore = () => {
+      const id = new URLSearchParams(window.location.search).get("company");
+      const company = ALL_VENDORS.find((n) => n.id === id);
+      if (company) jump(company);
+      else goRoot();
+    };
+    restore();
+    window.addEventListener("popstate", restore);
+    return () => window.removeEventListener("popstate", restore);
+  }, [jump, goRoot]);
+
   // Esc clears the selection, then walks back up a level.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
-      if (e.key === "Escape") { clearHover(); if (sel) setSel(null); else up(); }
+      if (e.key === "Escape") { clearHover(); if (sel) { clearCompanyLocation(); setSel(null); } else up(); }
       if (e.key === "Backspace") { e.preventDefault(); up(); }
     };
     window.addEventListener("keydown", h);
@@ -177,7 +199,7 @@ export function Atlas() {
           </div>
 
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center lg:ml-auto">
-            <AtlasSearch onPick={jump} />
+            <AtlasSearch onPick={(n) => { clearCompanyLocation(); jump(n); }} />
             <div className="flex gap-0.5 rounded-lg p-0.5" style={{ background: PAPER.grid }}>
               {LENSES.map((l) => (
                 <button key={l.id} onClick={() => setLensId(l.id)}
