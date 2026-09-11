@@ -16,7 +16,7 @@ const TERMS: Record<string, string[]> = {
   elmo: ["ELMO Software", "Breathe", "HR", "payroll"],
   "employment-hero": ["KeyPay", "Swag", "HR", "payroll"],
   rippling: ["HR", "payroll", "employee graph", "IT management"],
-  workday: ["HCM", "HR", "finance", "Illuminate"],
+  workday: ["HCM", "HR", "finance", "Illuminate", "Sana", "Sana for Workday", "Sana Enterprise", "Adaptive Insights", "Adaptive Planning", "Aneel Bhusri", "Joel Hellermark"],
   servicenow: ["Service Now", "Now Assist", "ITSM", "service management"],
   salesforce: ["Agentforce", "CRM"],
   hubspot: ["CRM", "marketing"],

@@ -35,6 +35,8 @@ export interface CompanyStudy {
     premises: { title: string; body: string; screen?: string }[];
     choices: { choice: string; gain: string; cost: string }[];
     proof: { metric: string; test: string; failure: string }[];
+    sourcesChecked?: string;
+    changes?: { date: string; title: string; fact: string; implication: string; url: string }[];
     sources: { title: string; url: string; supports: string }[];
   };
 }
@@ -94,26 +96,36 @@ export const COMPANIES: CompanyStudy[] = [
     backstage: {
       navigation: [{ label: "The company", sections: BACKSTAGE_SECTIONS }],
       headline: "Every change has a process.",
-      thesis: "The Workday study starts with a business process: who initiates a change, who can approve it, when it takes effect and what is recorded. Its wager: a configurable operating system can make complex organisations governable.",
+      thesis: "Workday’s advantage is the business context around a transaction: the person, organisation, authorised role and effective date. Sana changes how someone enters that system. The harder promise is that a simpler request can still produce a governed, explainable result across the systems that finish the work.",
       object: "Business process + organisation",
       question: "Who is authorised to move this change forward?",
-      sequence: ["Initiate a business process", "Resolve roles and conditions", "Review the authorised steps", "Complete and retain the history"],
+      sequence: ["Inspect the request and its effective date", "Resolve the review roles and conditions", "Approve or return the proposed change", "Track the effective record and downstream receipt"],
       premises: [
-        { title: "The process is a first-class object", body: "Workday documents configurable process definitions, steps, conditions and notifications. Our demo organises attention around work awaiting a named review step." },
-        { title: "Data access and action are distinct", body: "Workday distinguishes domain security from business process security. The study asks both what someone may see and what they may do with a change." },
-        { title: "The platform extends outward", body: "Workday describes extensions and integrations built on its platform. The interpretation here treats connections to other systems as part of the design, with ownership that must remain visible." },
+        { title: "Context decides who can act", body: "Workday’s process framework joins definitions, security and organisation. In the scene, an 8% proposal needs another review role; a revised 4% proposal does not. The configurable condition matters more than the number of approval buttons.", screen: "processes" },
+        { title: "Approved is not yet effective", body: "The proposed change, its approval and the worker’s effective record are different facts. Move the scenario date forward: an unapproved request still changes nothing, while an approved future change becomes effective. An external payroll receipt remains separate.", screen: "compensation" },
+        { title: "The new front door still needs the core", body: "Sana from Workday launched in March 2026 with conversational access and agents grounded in Workday’s controls. Our interpretation: the strategic asset is less the familiar menu than the trusted context behind an action. The scripted home screen leads back to that process.", screen: "" },
       ],
       choices: [
         { choice: "Make governance configurable", gain: "Different organisations can express their roles, conditions and approval sequences.", cost: "Someone must own the configuration. Unnecessary steps can turn control into delay." },
         { choice: "Route work through accountable roles", gain: "A pending change has an explicit reviewer and a reason for waiting.", cost: "An incorrect role assignment or unavailable reviewer can strand work. Escalation needs the same care as the happy path." },
-        { choice: "Extend a governed core", gain: "Customers can adapt workflows and connect adjacent systems.", cost: "A successful core process does not prove every external action completed. Integration status needs separate evidence." },
+        { choice: "Put a conversational interface over the governed core", gain: "People can start with an intent rather than knowing the correct menu and business process.", cost: "A confident answer can conceal the wrong record, date or authority. The interface must expose its basis and the outstanding action; a successful core process does not prove every external action completed." },
       ],
       proof: [
         { metric: "Process age by step", test: "Measure where compensation and hiring requests wait, split by review role and exception type.", failure: "The organisation cannot explain why a request is stuck." },
         { metric: "Configuration maintainability", test: "Change a review rule, test affected cases and identify its accountable owner.", failure: "Routine changes depend on undocumented configuration knowledge." },
-        { metric: "End-to-end completion", test: "Follow one approved hire through the core record and a connected provisioning system.", failure: "The process is marked complete while a downstream system is still waiting." },
+        { metric: "End-to-end completion", test: "Follow one compensation change through approval, its effective date and the external payroll acknowledgement. Introduce a mapping failure and inspect recovery.", failure: "A summary reports success while the provider still has the old value." },
+      ],
+      sourcesChecked: "11 September 2026",
+      changes: [
+        { date: "August 2018", title: "Adaptive brought the planning engine", fact: "Workday completed the Adaptive Insights acquisition on 1 August 2018, adding its business planning platform.", implication: "Planning has its own product lineage. A plan, an approved position and an effective worker transaction remain different objects to connect.", url: "https://newsroom.workday.com/2018-08-01-Workday-Completes-Acquisition-of-Adaptive-Insights" },
+        { date: "November 2025", title: "Sana brought a different interface and team", fact: "Workday completed the Sana acquisition on 4 November 2025. The announced combination covered enterprise search, agents and learning.", implication: "This broadens the ambition beyond making existing forms easier. The question is whether work can start in Workday even when the knowledge and actions span other applications.", url: "https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana" },
+        { date: "February 2026", title: "The founder returned for the AI chapter", fact: "Workday announced Aneel Bhusri’s return as CEO on 9 February; Carl Eschenbach stepped down after its expansion and operating-scale phase.", implication: "The leadership change makes product reinvention explicit. It is a direction signal, not evidence that customers’ configuration and integration work has disappeared.", url: "https://newsroom.workday.com/2026-02-09-Workday-Announces-CEO-Transition-as-Co-Founder-Aneel-Bhusri-Returns-to-Lead-the-Companys-Next-Chapter" },
+        { date: "March 2026", title: "Sana moved from acquisition thesis to available product", fact: "On 17 March, Workday announced availability of Sana for Workday, the Sana Self-Service Agent and Sana Enterprise. Its launch positioned Joel Hellermark as SVP and general manager of AI.", implication: "The acquired team now sits inside the product direction. Test a real workflow’s permissions, effective dates and receipts; a conversational front end is not proof of end-to-end completion.", url: "https://newsroom.workday.com/2026-03-17-Introducing-Sana-from-Workday-Superintelligence-for-Work-That-Finds-Answers,-Takes-Action,-and-Automates-Workflows" },
       ],
       sources: [
+        { title: "Workday · request compensation change", url: "https://doc.workday.com/workday-education/en-us/course-manuals/compensation-for-administrators/request-compensation-change.html?toc=11", supports: "Compensation events, current versus edited compensation, business-process security and effective dates. The scenario does not claim to calculate eligibility, tax or a pay run." },
+        { title: "Workday · business process framework", url: "https://www.workday.com/content/dam/web/en-us/documents/datasheets/workday-business-process-framework.pdf", supports: "How process definitions, condition rules, security and organisational context work together. The study’s salary threshold, roles and provider failure are fictional configuration." },
+        { title: "Workday · Sana launch, 17 March 2026", url: "https://newsroom.workday.com/2026-03-17-Introducing-Sana-from-Workday-Superintelligence-for-Work-That-Finds-Answers,-Takes-Action,-and-Automates-Workflows", supports: "Announced availability, product distinctions, existing permission and audit framework, and Joel Hellermark’s role. The home-screen exchange is our scripted interpretation, not a replica or live assistant." },
         { title: "Workday · business process overview", url: "https://doc.workday.com/workday-education/en-us/course-manuals/financial-management-for-administrators/business-process-overview.html", supports: "Process definitions, steps, condition rules, notifications and administrative ownership." },
         { title: "Workday · configurable security framework", url: "https://doc.workday.com/workday-education/en-us/course-manuals/hcm-core-for-administrators/configurable-security-framework.html?toc=8", supports: "The distinction between domain security and business process security policies." },
         { title: "Workday · platform and product extensions", url: "https://www.workday.com/en-us/products/platform-product-extensions/overview.html", supports: "Extensions and integrations on Workday's platform." },
