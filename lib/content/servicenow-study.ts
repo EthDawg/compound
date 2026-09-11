@@ -7,6 +7,7 @@ const S = {
   founder: "https://www.servicenow.com/company/leadership/frederic-luddy.html",
   csdm: "https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/foundation-domain.html",
   sow: "https://www.servicenow.com/docs/r/it-service-management/service-operations-workspace/view-update-inc-overview-tab.html",
+  dependencies: "https://www.servicenow.com/docs/r/it-service-management/service-operations-workspace/work-on-change-sow.html",
   assist: "https://www.servicenow.com/docs/r/it-service-management/now-assist-for-it-service-management-itsm/now-assist-itsm-incident-assist-workflow.html",
   debt: "https://www.servicenow.com/docs/r/servicenow-platform/service-catalog/customization-vs-configuration-concepts.html",
   bill: "https://www.servicenow.com/company/media/press-room/servicenow-announces-bill-mcdermott-to-become-ceo-succeeding-john-donahoe-who-is-stepping-down-to-become-ceo-of-nike.html",
@@ -49,9 +50,9 @@ export const SERVICENOW_STUDY: CompanyStudy = {
     object: "Accountable work + service relationships", question: "Who owns the next action—and what proves the outcome?",
     sequence: ["Understand the request and affected service", "Assign work with its context and authority", "Carry the obligation across teams and systems", "Confirm the outcome before closing the record"],
     premises: [
-      { title: "Restore the service, not just close the incident", body: "A technical alert becomes a business decision when the affected service, its dependencies, its owner and a relevant change are visible together. ServiceNow's operational depth matters at that connection. The demo keeps a proposed fix, an execution receipt and observed recovery separate.", screen: "operations" },
+      { title: "Restore the service, not just close the incident", body: "A technical alert becomes a business decision when the affected service, its dependencies, its owner and a relevant change are visible together. ServiceNow's operational depth matters at that connection. The demo makes a shared database change consequential: both service owners participate, and both outcomes need fresh checks after execution.", screen: "operations" },
       { title: "Carry intent across departmental boundaries", body: "EmployeeWorks and Otto bring an employee's request into the workflow. Lifecycle tasks carry it through HR, IT and workplace teams while specialist systems retain their own responsibilities. The value is a completed obligation, not a collection of locally closed tickets.", screen: "employees" },
-      { title: "Make AI accountable before it acts", body: "AI Control Tower connects assets, ownership, evidence and lifecycle decisions. Action Fabric extends governed workflows to external AI front doors. Inventory is a starting point; authority and a verified execution result are additional things the system must establish.", screen: "control-tower" },
+      { title: "Make AI accountable before it acts", body: "AI Control Tower connects assets, ownership, evidence and lifecycle decisions. Action Fabric extends governed workflows to external AI front doors. Inventory is a starting point; authority and a verified execution result are additional things the system must establish. The fictional workflow preserves owner revisions, new reviews and rollback receipts in the same record.", screen: "control-tower" },
     ],
     choices: [
       { choice: "Reuse a configurable workflow foundation", gain: "New obligations can inherit assignment, state, approvals, service relationships and an audit trail instead of rebuilding them.", cost: "Someone must maintain the model and process. Bespoke customisation can increase upgrade work and make the next change harder, not easier." },
@@ -68,6 +69,7 @@ export const SERVICENOW_STUDY: CompanyStudy = {
       { title: "Fred Luddy · official biography", url: S.founder, supports: "Founder and 2004 origin." },
       { title: "CSDM foundation and stewardship", url: S.csdm, supports: "Trusted data sources, maintainers and update cadence. A populated CMDB is not inherently current." },
       { title: "Service Operations Workspace incident anatomy", url: S.sow, supports: "Incident context, affected services/CIs, dependency view and related work." },
+      { title: "Change impact and dependency views", url: S.dependencies, supports: "Inspect CIs and services potentially affected by a change. The two-service recovery policy in the app is fictional, not a default ServiceNow approval rule." },
       { title: "Current incident-assist workflow", url: S.assist, supports: "Otto contextual retrieval workflow; the old Incident assist skill is deprecated in Australia Patch 2. Retrieval is not autonomous rollback." },
       { title: "Configuration, customisation and maintenance", url: S.debt, supports: "Upgrade and maintenance consequences of customisation." },
       { title: "McDermott appointment · October 2019", url: S.bill, supports: "CEO succession announcement. The study uses the November 2019 transition month, not announcement as effective date." },

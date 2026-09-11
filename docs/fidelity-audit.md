@@ -234,3 +234,40 @@ Release validation: production build and all 89 tests pass. The full test suite
 reads generated pages and must run after the build finishes. New checks cover
 capability-column continuity; product-name and existing global-context checks
 include the new company briefs.
+
+
+## ServiceNow: recover the obligation, retain the record
+
+Service Operations now shows two business services using the same database.
+The fictional approval policy requires both change evidence and impact review.
+Execution invalidates the earlier healthy fulfilment observation; fresh checkout
+and fulfilment results are both required before incident closure. Failed checks
+remain in Activity after later recovery.
+
+AI Control Tower now separates reviewer, asset owner and runtime operator roles.
+An owner can respond to a return and resubmit a revision, but approval cannot
+carry over. Deployment dispatch, runtime receipt and canary observation are
+separate events. A blocked out-of-scope attempt requires a rollback receipt; the
+asset inventory follows the resulting model state. Subsequent revision and
+review retain the failed canary and earlier decisions.
+
+EmployeeWorks requires a mapping repair before retrying a failed identity task,
+retains provider attempts, and enforces the selected owner in the reducer.
+Workplace readiness can proceed separately because the HR transfer is already
+approved. All three scenes keep recorded actions and draft notes in session
+storage, with an in-memory fallback when storage is unavailable. Restoration
+replays permitted actions; it cannot inject a later state or borrow another
+role's authority. A reset affects its own scene only.
+
+Browser checks covered return → resubmit → fresh review → dispatch → receipt →
+failed canary → rollback → revision three → successful canary; inventory state,
+reload and retained history; a checkout success with fulfilment failure blocking
+closure, then successful recovery and explicit resolution; employee mapping
+repair/retry and reset isolation; App → Backstage → App continuity. Desktop
+1440-pixel and narrow 390-pixel layouts were inspected. Focus moves after the
+updated heading renders, including successive keyboard actions. These are
+responsive browser checks, not physical-device or assistive-technology testing.
+
+Release validation: production build and all 93 tests pass. Browser errors were
+empty. Checks cover role ownership, fresh review, separate receipts and outcomes,
+shared-service recovery, repair before retry, replay validation and reset isolation.
