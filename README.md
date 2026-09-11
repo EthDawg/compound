@@ -1,184 +1,41 @@
-# Compound — company studies
+# Compound
 
-An independent study of software companies, built as an Atlas, an illustrative
-App, and the company-building reasoning in Backstage.
+An open, interactive field guide to software companies: how their products work,
+why they make certain choices, and the people and ecosystems behind them.
 
-Live: https://compound-snowy-pi.vercel.app
+**[Explore Compound →](https://compound-snowy-pi.vercel.app)**
 
-Licensed under the [MIT License](LICENSE). Copyright © 2026 Ethan Harley.
+Use the hosted version in your browser. No installation, account or deployment
+needed. Maintained by [Ethan Harley](https://github.com/EthDawg), with contributions welcome.
 
-## The model
+## Start exploring
 
-**Company → App / Backstage.** Companies include Rippling, Workday, PageUp, ELMO Software, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs. An archetype
-(compound platform, enterprise suite) describes its position; it is not an
-instance to switch to. Meridian Optics is the shared fictional customer used to
-compare the app studies; the talent studies use an explicitly fictional Australian expansion scenario. ServiceNow follows a service incident, an employee move and an AI model-change request.
+| Explore | What you’ll find |
+| --- | --- |
+| [Atlas](https://compound-snowy-pi.vercel.app) | Find companies by name, product or capability and explore the wider market. |
+| [App studies](https://compound-snowy-pi.vercel.app/companies/rippling/app) | Interactive scenarios that make a company’s product logic tangible. Switch companies to compare. |
+| [Backstage](https://compound-snowy-pi.vercel.app/companies/rippling/backstage) | Strategy, acquisitions, leadership, trade-offs and the evidence behind each interpretation. |
+| [Workday’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/workday) | Follow career lineage, local delivery capability and market movement. The global partner directory is also available here. |
 
-| Surface | Route | Purpose |
-| --- | --- | --- |
-| Atlas | `/` | Sectors, categories and vendors under four editorial lenses |
-| Workday partner network | `/atlas/workday` | Explore integrators, specialists and staffing firms by published services, products and regions |
-| Company app | `/companies/{company}/app` | Explore the company's illustrative interface |
-| Company Backstage | `/companies/{company}/backstage` | Understand the company's thesis, design choices and evaluation criteria |
-| Rippling operating manual | `/companies/rippling/backstage/manual` | Full essays on compounding economics, product-building speed and founder decisions |
-| Desk | `/desk` | Research priorities and maintenance prompts |
-| Deep reads | `/ecosystem/{slug}` | Existing company position essays |
-| Pocket | `/pocket` | Existing mobile onboarding, offboarding and ask demos |
-| Brief | `/brief` | Existing 12-minute Rippling/compound-platform argument |
+Compound has its own navigation and identity; each company study keeps its own
+visual language and product behaviour.
 
-The Company selector currently offers **Rippling, Workday, PageUp, ELMO Software, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs** in both App and
-Backstage. The two views share the company's theme and identity, while the
-Backstage content and navigation differ by company. Rippling opens with the full
-compound-company study: economics, product-building speed, founder reasoning,
-essays, decisions, metrics and explorations. Workday opens with its own company
-thesis. Both support shared comparison routes for the operating model, choices
-and trade-offs, proposed tests, and sources. The shared structure must preserve
-each company's depth. The former Rippling `/backstage/library` destination
-redirects to its canonical Backstage home.
+## Help improve it
 
-PageUp, ELMO, Employment Hero, ServiceNow, Anthropic, OpenAI and ElevenLabs each have three linked value propositions,
-three deeper arguments, causal acquisition history, leadership/direction,
-trade-offs, proposed proof and claim-linked sources checked on
-10 September 2026. The App scenes use their own product vocabulary and workflow:
+Found an outdated claim, a missing connection or a broken interaction?
+[Open an issue](https://github.com/EthDawg/compound/issues/new). For research
+corrections, include the source and explain what changes the picture.
 
-- PageUp: committee review, Clinch nurture and Paige source inspection.
-- ELMO: capability/development, constrained remuneration and payroll conflicts.
-- Employment Hero: payroll exceptions, Find Talent and direct/HeroForce responsibilities.
-- Anthropic: Cowork source conflicts, Claude Code Manual permissions and current Playground tool-result continuation.
-- OpenAI: ChatGPT Work deliverables, Codex review scopes and Responses MCP approval/result boundaries.
-- ElevenLabs: playable Studio takes, version-specific dubbing review and voice-agent test/traffic controls.
-- ServiceNow: service-impact investigation and controlled recovery, EmployeeWorks handoffs by role, and AI Control Tower review through a separate deployment receipt. Failed health checks and decision rationales remain visible.
+Research, design and code contributions are welcome. Read
+[Contributing](CONTRIBUTING.md) before proposing a larger addition. The hosted
+version is the shared edition; cloning and running locally is optional.
 
-ServiceNow’s argument connects the Glide/ITSM origin to McDermott and Zavery’s platform direction, Moveworks and EmployeeWorks, Logik and commercial workflows, and the completed Armis/Veza acquisitions. It distinguishes shipping capabilities, roadmap claims and integration boundaries.
+## How to read it
 
-Interactions change local illustrative state only. They reset on screen navigation;
-no messages, hiring decisions, payroll, contracts or live records are changed.
-The AI studies add an AI sector to the Atlas, with model/workspace and voice categories. Their source notes distinguish primary documentation from attributed reporting; OpenAI’s July leadership transition uses reporting of the executive’s announcement. Current target-company readbacks establish completed acquisitions where older deal announcements were conditional.
+This is an independent research and design project, unaffiliated with the
+companies studied. Sources, company claims and editorial interpretations are
+distinguished. App scenarios use fictional records and do not operate real
+company systems. Ecosystem profiles describe real organisations and public
+professional histories; gaps in the evidence remain explicit.
 
-ElevenLabs audio uses original fictional scripts and generic local synthetic voices, explicitly labelled as illustrative rather than ElevenLabs output. Six real clips support playback and downloads; waveform data comes from those clips. Changing script/delivery invalidates export readiness. Dubbing review is an explicit judgment, not inferred from finishing playback.
-
-The sources distinguish acquisitions from integrations/divestitures, current
-features from roadmap, and ownership announcements from completed transactions.
-
-The URL is authoritative, including on direct entry, refresh, Back and Forward.
-Switching companies preserves the view and a shared topic/screen. An unavailable
-screen lands at that company's overview within the same view. Content is never
-borrowed from the other company as a fallback. Atlas and Desk entry links resume
-the most recently viewed supported company; explicit company links always win.
-
-Old `/app/*`, `/backstage/*` and `/instance/workday` bookmarks redirect to the
-company-qualified equivalents. The other legacy instance studies remain
-reachable separately; their depth is not presented as equivalent to the paired
-company studies.
-
-## Ownership
-
-- `lib/companies.ts`: company identity, brand, supported screens, Backstage navigation and data,
-  source provenance, route construction and company-switch fallback rules.
-- `lib/vendors/skins.ts`: the referenced palettes, layout tokens and legacy app
-  study data. Company shells read these tokens rather than maintaining a second
-  theme for Backstage.
-- `app/companies/[company]/`: canonical routes, static page generation and
-  metadata. Unknown companies or unimplemented paths return 404.
-- `components/studies/rippling/`: preserved Rippling screens and essays, with
-  explicit screen registries for server-side rendering.
-- `components/workday-app.tsx`: Workday workspace and working module links.
-- `lib/content/{pageup,elmo,hero,servicenow}-study.ts`: sourced company arguments and causal history.
-- `components/strategy-backstage.tsx`: new thesis, essay, history and leadership surfaces.
-- `components/studies/talent/`: three distinct app studies and shared presentation primitives.
-- `lib/content/ai-companies.ts` and `{anthropic,openai,elevenlabs}-study.json`: reviewed AI company evidence, arguments and history.
-- `components/studies/ai/`: nine company-specific scenes, shared presentation and source/permission/version guards in `lib/data/ai-scenarios.ts`.
-- `public/audio/company-studies/`: original illustrative audio and provenance.
-- `components/studies/servicenow/`: Service Operations, EmployeeWorks and AI Control Tower scenes.
-- `lib/data/servicenow-scenarios.ts`: guarded illustrative workflow states with separate approvals, receipts and outcomes.
-- `lib/data/study-scenarios.ts`: fictional input records and guarded calculation logic.
-- `components/company-backstage.tsx`: shared Backstage comparison pages and the
-  Workday overview. Rippling's full study owns its overview.
-- `components/compound-bar.tsx`: company selection and App/Backstage navigation.
-- `lib/data/`: fictional customer data. Employee IDs join devices, apps, spend
-  and payroll; system assignments derive from those employee records.
-- `lib/content/`: the core compound-platform argument. These constructed
-  essays belong to the Rippling study, not every company on the Atlas.
-
-To add a company, supply its identity/theme, navigation and core Backstage data,
-register screens its app renderer actually supports, then extend the company ID
-and renderer selection. Do not copy Rippling's essays under a new brand.
-
-The Atlas derives breadth positions from archetypes and uses hand-read positions
-where available. `lib/data/atlas-nodes.ts` joins the company registry to playable
-App links. `lib/data/ecosystem.ts` owns editorial lens scores. If scores change,
-check the associated prose remains consistent.
-
-## Framing
-
-This is an independent design study, not an official product or an exact
-reproduction. Public sources support company concepts. Layouts, theses,
-trade-offs and proposed tests are editorial interpretations. The demo customer,
-people, records and figures are fictional. The founder voice and
-decision log are constructed, not quotations or claims about real internals.
-
-## Workday partner network
-
-The map contains the complete 174-entry public Workday **Services** directory
-snapshot gathered on 10 September 2026, plus Cognizant and NTT DATA, whose current
-company sites publish Workday offerings. These two additions are identified
-separately and excluded by the directory-only filter. The directory includes
-staffing, advisory and adjacent firms as well as implementation partners;
-independents outside it are not comprehensively covered.
-
-Every firm has source links. `lib/data/workday-partners.json` contains sanitized
-directory records, declared competencies and regions, and short attributed
-excerpts. `lib/data/workday-partners.ts` owns reviewed additions, aliases, evidence
-labels, filtering and CSV export. The graph groups published service signals;
-positions and dot sizes are not market-share estimates or quality rankings.
-Related firms share product tags, not an asserted commercial relationship.
-
-Structured directory fields and explicit profile-text mentions remain distinct.
-Region filters use declared coverage, including Global, and never infer delivery
-locations from headquarters. The detailed competency table retains the original
-service/product/region relationships. Missing fields remain unspecified.
-
-The roster importer uses the same public search and profile interfaces as
-[Workday's directory](https://marketplace.workday.com/en-US/pages/find-a-partner/listing#f-appdirect_comp_partner_type_id=Services).
-It stores no search tokens, contact addresses, signed logo URLs or private data.
-To prepare a refresh, run `python3 scripts/import-workday-partners.py`, review
-the resulting diff and text-derived tags, recheck the curated sources, then
-build and test. The import fails on missing profiles, partial results or duplicate
-identities. It does not automatically publish anything.
-
-Filters and selected profiles are represented in the URL. Back/Forward and direct
-links preserve the view. CSV export contains the filtered set and evidence labels.
-
-## Running and verifying
-
-```sh
-npm install
-npm run dev
-npm run build
-npm test
-npm run start
-vercel deploy --prod --yes
-```
-
-Next.js 15, React 19, Tailwind and TypeScript. Typed modules hold the data; there
-is no live customer database or transactional backend.
-
-Do not build while the development or preview server is running: they share
-`.next`. Stop it, build, then restart the preview from the exact output.
-
-The routing tests exercise company/view/topic retention and fallback behaviour,
-and verify registered routes exist in the production build. They also protect
-direct access to Rippling's economics, product-building and founder content from
-its Backstage home, and each company's complete navigation. Browser checks
-cover the original desktop popup reproduction, App/Backstage switching, company
-styling, mobile navigation, remembered company links and legacy bookmarks.
-
-The Atlas clears hover and tooltip state on drill-down, search, breadcrumbs,
-lens/filter changes, Escape, scroll, resize and pointer exit. Coordinates use
-the rendered plot size, preventing a removed node from leaving the next map
-faded beneath a stale card.
-
-Existing depth limits remain: several Rippling modules are explicitly empty
-states; Workday modules are illustrative read-only screens. The new company scenes are interactive, scripted demonstrations; their AI panels do not call a live model. X-ray annotates
-supported app surfaces. Pocket animations preserve reduced-motion behaviour
-and pause/resume when tab visibility changes.
+[MIT licensed](LICENSE) · [Contributor setup and project structure](docs/development.md)
