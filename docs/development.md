@@ -81,14 +81,18 @@ it does not publish changes. Preserve unknown coverage and evidence dates.
 
 The wider guide uses `/earth` for selected global markets, `/technology` for
 history, physical-scale labs and external explorers, and `/decisions` for buyer
-perspectives. Source content lives in `lib/data/earth.ts`, `technology.ts` and
-`si-research.ts`. Reproducible teaching models live in `technology-math.ts`.
+decisions. Dated world observations and edges live in `lib/data/world-research.json`;
+`earth.ts` derives both the map and company discovery entries. Technology stories
+live in `technology.ts`. Practice operating briefs and narrowly paired engagement
+claims live in `practice-briefs.json`; do not generalise one paired claim to other
+service/domain combinations. `decision-engine.ts` contains transparent editorial
+rules; public profiles must never pre-fill buyer verification or team availability. Reproducible teaching models live in `technology-math.ts`.
 Keep units and assumptions beside the displayed results; do not recast models
 as measurements. `public/earth-land.svg` is an equirectangular outline derived
 from Natural Earth's public-domain 110m land GeoJSON, not a facility dataset.
 
 Capability cells distinguish named cases, anonymous cases, local offers,
-credentials and regional/global offers. Set `anonymous: true` on unnamed
+credentials, people/hiring signals and regional/global offers. Set `anonymous: true` on unnamed
 customer cases. Domain and service-role columns are independent; their presence
 must not be treated as every possible service/product competency combination.
 

@@ -9,7 +9,7 @@ import { CompanyPicker } from "./company-picker";
 import * as I from "./icons";
 
 /** Company and view are independent route dimensions. The URL always wins. */
-export function CompoundBar({ activeId }: { activeId: string }) {
+export function CompoundBar({ activeId, recentId }: { activeId: string; recentId?: string }) {
   const { on, toggle } = useXRay();
   const path = usePathname();
   const active = companyStudy(activeId);
@@ -30,7 +30,7 @@ export function CompoundBar({ activeId }: { activeId: string }) {
         </Link>
         <div className="flex min-w-0 items-center gap-2 border-l border-ink-200 pl-2 sm:pl-4">
           <span className="hidden text-[10px] font-bold uppercase tracking-wider text-ink-500 sm:block">Company</span>
-          <CompanyPicker activeId={activeId} />
+          <CompanyPicker activeId={activeId} recentId={recentId} />
         </div>
         {active && <nav aria-label="Company views" className="flex items-center gap-0.5 rounded-lg bg-ink-100 p-1 text-[12px] font-semibold">
           {(["app", "backstage"] as const).map((view) => <Link key={view} href={companyHref(active.id, view)}

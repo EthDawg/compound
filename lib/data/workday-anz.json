@@ -104,16 +104,18 @@
         {
           "capability": "Adaptive",
           "scope": "APAC",
-          "text": "Regional Adaptive leadership appointment.",
+          "text": "An April 2025 announcement names Tony Teixeira to lead regional Adaptive projects. This is a dated APAC leadership signal, not a named local delivery reference.",
           "url": "https://www.linkedin.com/posts/mitchcollins_kainos-workday-workdayservices-activity-7318464197707603968-KG7D",
-          "source": "Company source"
+          "source": "Company source",
+          "basis": "people"
         },
         {
           "capability": "Payroll",
           "scope": "APAC",
-          "text": "Named regional lead brings Australian Payroll experience.",
+          "text": "A September 2025 announcement names Suchita as the regional PATTS lead with Australian Payroll experience. Prior expertise supports the capability-build story; local Kainos delivery is a separate claim.",
           "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7377122268298031104/",
-          "source": "Company source"
+          "source": "Company source",
+          "basis": "people"
         },
         {
           "capability": "AMS",

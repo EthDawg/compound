@@ -45,12 +45,13 @@ test('ServiceNow uses its own workflow vocabulary and keeps credentials separate
 });
 
 test('career search connects people to current practices and acquired predecessors without inventing current roles', () => {
-  assert.ok(sn.searchAnz('Tobias Schwartz').some((c) => c.id === 'coforge'));
+  assert.ok(sn.searchAnz('Tobias Schwartz').some((c) => c.id === 'tmlabs'));
   assert.ok(sn.searchAnz('Enable').some((c) => c.id === 'fujitsu'));
   assert.ok(sn.searchAnz('Service Potential').some((c) => c.id === 'novabridge'));
   assert.ok(sn.searchAnz('ND&Co').some((c) => c.id === 'nd-and-co'));
-  assert.ok(sn.peopleInLineage('fujitsu').some((p) => p.id === 'bruce-hara' && p.roleStatus === 'historical'));
-  assert.ok(sn.peopleInLineage('coforge').some((p) => p.id === 'tobias-schwartz' && p.roleStatus === 'source snapshot'));
+  assert.ok(sn.peopleInLineage('enable').some((p) => p.id === 'bruce-hara' && p.roleStatus === 'historical'));
+  assert.ok(sn.peopleInLineage('tmlabs').some((p) => p.id === 'tobias-schwartz' && p.roleStatus === 'source snapshot'));
+  assert.ok(!sn.peopleInLineage('coforge').some((p) => p.id === 'tobias-schwartz'), 'an acquisition is not evidence of an individual Coforge role');
   assert.ok(sn.ANZ_ACTIVE.every((c) => !c.historical));
 });
 

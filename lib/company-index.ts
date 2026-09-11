@@ -1,9 +1,10 @@
-import { ECOSYSTEM_INDEX, practiceLinks, type PracticeLink } from "./ecosystem-index";
+import { ECOSYSTEM_INDEX, practiceLinks, type PracticeLink, type SearchContext } from "./ecosystem-index";
 import type { Node } from "./data/atlas-nodes";
 import type { CompanyId } from "./companies";
 import { ALL_VENDORS } from "./data/atlas-nodes";
 import { categoryById, sectorById } from "./data/atlas";
 import { companyStudy, companyHref, switchCompanyHref } from "./companies";
+import { MARKET_COMPANIES } from './data/earth';
 
 // Search vocabulary supplements the Atlas; it is not a second company registry.
 const TERMS: Record<string, string[]> = {
@@ -23,7 +24,8 @@ const TERMS: Record<string, string[]> = {
 export interface IndexedCompany extends Pick<Node, 'id' | 'name' | 'sector' | 'category' | 'geo' | 'blurb' | 'archetype'> {
   categoryName: string; sectorName: string; terms: string[]; studyId?: CompanyId;
   appHref?: string; backstageHref?: string; readHref?: string; ecosystemHref?: string;
-  availability: string; atlasListed: boolean; ecosystemLinks: PracticeLink[];
+  availability: string; atlasListed: boolean; ecosystemLinks: PracticeLink[]; contexts: SearchContext[];
+  marketLinks?: {label:string;href:string}[];
 }
 const atlasEntries: IndexedCompany[] = ALL_VENDORS.map((node) => {
   const study = companyStudy(node.id);
@@ -38,19 +40,22 @@ const atlasEntries: IndexedCompany[] = ALL_VENDORS.map((node) => {
     backstageHref: study ? companyHref(study.id, "backstage") : undefined,
     readHref: !study ? node.href : undefined,
     ecosystemHref: study?.ecosystem?.href,
-    ecosystemLinks: practiceLinks(node.id), atlasListed: true,
+    ecosystemLinks: practiceLinks(node.id), contexts: practice?.contexts ?? [], atlasListed: true,
     availability: study ? "App + Backstage" : node.instance ? "App study" : node.href ? "Deep read" : practice ? "Ecosystem profile" : "Atlas only",
   };
 });
 const practiceEntries: IndexedCompany[] = ECOSYSTEM_INDEX.filter((c) => !atlasEntries.some((a) => a.id === c.id)).map((c) => ({
   id: c.id, name: c.name, blurb: c.blurb, sector: 'delivery', category: 'ecosystem-practices',
   categoryName: c.links.map((l) => l.ecosystemName).join(' · ') + ' ecosystem',
-  sectorName: 'Delivery & advisory', terms: c.terms, atlasListed: false, ecosystemLinks: c.links,
+  sectorName: 'Delivery & advisory', terms: c.terms, atlasListed: false, ecosystemLinks: c.links, contexts: c.contexts,
   availability: c.historical ? 'Lineage context' : 'Ecosystem profile',
 }));
-export const COMPANY_INDEX = [...atlasEntries, ...practiceEntries].sort((a, b) => a.name.localeCompare(b.name));
+const knownEntries = [...atlasEntries, ...practiceEntries].map(c => ({...c,marketLinks:MARKET_COMPANIES.find(m=>m.id===c.id)?.links}));
+const marketEntries: IndexedCompany[] = MARKET_COMPANIES.filter(c=>!knownEntries.some(k=>k.id===c.id)).map(c=>({id:c.id,name:c.name,blurb:c.blurb,terms:c.terms,sector:'world',category:'market-context',categoryName:'Referenced in global research',sectorName:'Technology in the world',availability:'Market context',atlasListed:false,ecosystemLinks:[],contexts:[],marketLinks:c.links}));
+export const COMPANY_INDEX: IndexedCompany[] = [...knownEntries, ...marketEntries].sort((a, b) => a.name.localeCompare(b.name));
+export const COMPANY_SECTORS = [...new Map(COMPANY_INDEX.map(c=>[c.sector,{id:c.sector,name:c.sectorName}])).values()];
 
-export type CompanyMatch = { company: IndexedCompany; score: number; reason: string };
+export type CompanyMatch = { company: IndexedCompany; score: number; reason: string; context?: SearchContext };
 export const normalizeSearch = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const compact = (value: string) => normalizeSearch(value).replace(/ /g, "");
 
@@ -67,16 +72,36 @@ function distance(a: string, b: string): number {
 export function matchCompany(company: IndexedCompany, query: string): CompanyMatch | undefined {
   const q = normalizeSearch(query), c = compact(query), name = compact(company.name);
   if (!c) return;
-  const hit = (score: number, reason = "") => ({ company, score, reason });
+  const hit = (score: number, reason = "", context?: SearchContext) => ({ company, score, reason, context });
   if (name === c) return hit(0);
   if (name.startsWith(c)) return hit(1);
   if (name.includes(c)) return hit(2);
+  const context = company.contexts.find((x) => [x.term,...(x.aliases??[])].some(t=>compact(t).includes(c) || q.split(' ').every(w=>normalizeSearch(`${company.name} ${t}`).includes(w))));
+  if (context) return hit(compact(context.term) === c ? 2 : 3, `${context.term} · ${context.kind}`, context);
   const term = company.terms.find((t) => compact(t).includes(c));
   if (term) return hit(compact(term) === c ? 2 : 3, term);
-  const metadata = [company.categoryName, company.sectorName, company.archetype ?? "", company.blurb].join(" ");
+  const metadata = [company.name, ...company.terms, ...company.contexts.map((x) => x.term), company.categoryName, company.sectorName, company.archetype ?? "", company.blurb].join(" ");
   if (q.split(" ").every((word) => normalizeSearch(metadata).includes(word))) return hit(5, company.categoryName);
   // Only tolerate small spelling errors in company names, after four characters.
   if (c.length >= 4 && Math.abs(c.length - name.length) <= (c.length > 6 ? 2 : 1) && distance(c, name) <= (c.length > 6 ? 2 : 1)) return hit(7, "Close spelling");
+}
+
+export function relatedCompanies(company: IndexedCompany) {
+  return COMPANY_INDEX.filter((c) => c.id !== company.id && c.availability !== 'Lineage context').flatMap((c) => {
+    if (company.category==='market-context') {
+      const shared=c.marketLinks?.find(l=>company.marketLinks?.some(s=>s.href===l.href));
+      return shared?[{company:c,score:1,reason:`Connected in ${shared.label}`}]:[];
+    }
+    const shared = c.ecosystemLinks.filter((p) => !p.historical && company.ecosystemLinks.some((s) => s.ecosystemId === p.ecosystemId));
+    if (company.ecosystemLinks.length) {
+      if (!shared.length) return [];
+      const role = shared.find((p) => company.ecosystemLinks.some((s) => s.ecosystemId === p.ecosystemId && s.context === p.context));
+      const domains = new Set(company.contexts.filter((x) => x.kind === 'Capability').map((x) => x.term));
+      const overlap = new Set(c.contexts.filter((x) => x.kind === 'Capability' && domains.has(x.term)).map((x) => x.term)).size;
+      return [{ company: c, score: (role ? 20 : 0) + overlap, reason: `${shared.map((p) => p.ecosystemName).join(' / ')}${role ? ` · ${role.context}` : ' · same ecosystem'}` }];
+    }
+    return c.category === company.category ? [{company:c, score:Number(!!c.studyId), reason:c.categoryName}] : [];
+  }).sort((a,b) => b.score-a.score || a.company.name.localeCompare(b.company.name)).slice(0,3);
 }
 
 export function searchCompanies(query: string): CompanyMatch[] {
@@ -93,6 +118,7 @@ export function companyDestination(company: IndexedCompany, pathname: string): s
   if (pathname.startsWith('/atlas/') && practice) return practice.href;
   if (company.studyId) return switchCompanyHref(company.studyId, pathname);
   if (!company.appHref && !company.readHref && practice) return practice.href;
+  if (!company.atlasListed && company.marketLinks?.length) return company.marketLinks[0].href;
   return (pathname.includes("/backstage") ? company.readHref : company.appHref) ?? atlasCompanyHref(company.id);
 }
 

@@ -1,0 +1,497 @@
+{
+  "briefs": [
+    {
+      "ecosystemId": "workday",
+      "companyId": "cognizant",
+      "name": "Cognizant",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "theory-of-mind",
+        "collaborative"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "Local payroll complexity",
+          "text": "Australian higher education gives the practice a concrete reference: Federation University combines HCM and Payroll delivery with later compliance and platform enhancements.",
+          "sourceRefs": [
+            "cognizant-federation"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Boutique roots, global ownership",
+          "text": "Part of the ANZ lineage runs through Duane Goff and Mark Ohlin’s Theory of Mind: acquired by Collaborative in 2018, then incorporated into Cognizant through the 2020 acquisition.",
+          "sourceRefs": [
+            "theory-of-mind-sale",
+            "collaborative-sale"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "Evidence beyond go-live",
+          "text": "Federation’s TAFE EBA work is a useful payroll-complexity reference. Finance and Student remain future phases in that case; verify the proposed team’s continuity with the demonstrated work.",
+          "sourceRefs": [
+            "cognizant-federation"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "workday",
+      "companyId": "kainos",
+      "name": "Kainos",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "cognizant"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "A local practice taking shape",
+          "text": "Kainos’s FY26 report describes ANZ growth from a small base and names Perth Airport. GO membership adds a mid-market route alongside its enterprise work.",
+          "sourceRefs": [
+            "kainos-results",
+            "workday-go"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Built through regional people",
+          "text": "Mitch Collins brings a documented Cognizant and Australian Payroll history. Regional Adaptive and payroll appointments show how Kainos is assembling expertise, with APAC scope retained.",
+          "sourceRefs": [
+            "mitch-career",
+            "kainos-adaptive-hire",
+            "kainos-payroll-hire"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "Separate delivery from hiring",
+          "text": "Perth Airport has a delivery-leader account of HCM and recruitment go-live. The Adaptive and payroll appointments are capability signals; local customer outcomes for those domains still need establishing here.",
+          "sourceRefs": [
+            "kainos-perth",
+            "kainos-adaptive-hire",
+            "kainos-payroll-hire"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "workday",
+      "companyId": "kliqtek",
+      "name": "Kliqtek",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "versor",
+        "fujitsu",
+        "kliqxe"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "A newer route into Workday",
+          "text": "Kliqtek combines advisory, project delivery, support and resourcing with GO participation. Its proposition centres on helping smaller organisations adopt and operate Workday.",
+          "sourceRefs": [
+            "kliqtek-clients",
+            "kliqtek-launch",
+            "workday-go"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Repeat founders, shared delivery",
+          "text": "Dougall and Trish McBurnie founded Kliqtek in 2024 after Versor and Fujitsu. The Kliqxe joint venture adds enterprise-platform experience; the founders’ earlier company-building record is distinct from Workday delivery.",
+          "sourceRefs": [
+            "kliqtek-about",
+            "kliqtek-launch"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "Early evidence, bounded claims",
+          "text": "An anonymous manufacturing client describes Workday-related HR work across Australia, New Zealand and the UK. A named customer, precise delivery scope and repeat support outcomes would make the local practice easier to assess.",
+          "sourceRefs": [
+            "kliqtek-clients"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "workday",
+      "companyId": "fusion5",
+      "name": "Fusion5",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [],
+      "points": [
+        {
+          "key": "why",
+          "label": "Planning beside another ERP",
+          "text": "Fusion5’s differentiator is visible in AFL’s design: Adaptive Planning alongside Dynamics 365 finance, with integration and separate reporting environments for clubs. That is a concrete planning proposition.",
+          "sourceRefs": [
+            "fusion5-afl"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "A regional applications business",
+          "text": "Founded in 2003 and now BGH-backed, Fusion5 brings a wider applications business to Workday planning. The AFL rollout dates to 2022; unrelated group acquisitions should not stand in for Workday depth.",
+          "sourceRefs": [
+            "fusion5-history",
+            "fusion5-owner",
+            "fusion5-afl"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "A named multi-entity rollout",
+          "text": "AFL, 13 clubs and two related entities establish Adaptive implementation and integration experience. They do not establish delivery of Workday’s core Financial Management or HCM products.",
+          "sourceRefs": [
+            "fusion5-afl"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "workday",
+      "companyId": "mivada",
+      "name": "Mivada",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [],
+      "points": [
+        {
+          "key": "why",
+          "label": "Support becoming deployment",
+          "text": "Mivada is expanding from Workday support into GO deployment. That creates a useful proposition to test: whether experience operating customers’ systems improves how it implements new ones.",
+          "sourceRefs": [
+            "mivada-history",
+            "workday-go"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "An established support base",
+          "text": "The company dates its founding to 2014, India delivery centre to 2018 and Workday AMS launch to 2019. Its team names Rama Madivada and program/payroll leader Laura Zlendich.",
+          "sourceRefs": [
+            "mivada-history",
+            "mivada-team"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "A build under way",
+          "text": "Workday’s May 2026 launch quotes Mivada building its deployment practice and adopting GO itself. That substantiates commitment and direction; a named external deployment would demonstrate the expanded delivery model.",
+          "sourceRefs": [
+            "workday-go"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "workday",
+      "companyId": "cloudrock",
+      "name": "CloudRock",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "successday"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "Support for the customer’s side",
+          "text": "CloudRock spans readiness, implementation support, optimisation and AMS. The useful distinction is its role alongside a transformation programme: establish what it owns and what remains with the deployment partner.",
+          "sourceRefs": [
+            "cloudrock-successday"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Two specialist businesses combine",
+          "text": "Founder Minos Ataliotis’s CloudRock acquired Bas Eggelaar’s SuccessDay in January 2026. SuccessDay retains its brand and leadership, adding European advisory and AMS experience to the group.",
+          "sourceRefs": [
+            "cloudrock-successday"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "Presence precedes local proof",
+          "text": "Australia is in CloudRock’s footprint, and its APAC team appeared at Workday Elevate Sydney. Named Australian engagements and team continuity would establish how the enlarged group’s capability reaches local customers.",
+          "sourceRefs": [
+            "cloudrock-successday",
+            "cloudrock-events"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "servicenow",
+      "companyId": "fujitsu",
+      "name": "Fujitsu / Enable",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "enable"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "Specialist lineage with operating reach",
+          "text": "Fujitsu combines Enable’s regional ServiceNow specialism with a larger integration and operations business. AEMO gives the enterprise workflow and risk proposition a named Australian reference.",
+          "sourceRefs": [
+            "enable-sale",
+            "fujitsu-aemo"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Enable is the relevant inheritance",
+          "text": "Enable, founded in 2014, joined Fujitsu in 2022. Bruce Hara was its CEO at the announcement; that historical leadership explains the acquired practice without establishing today’s delivery team.",
+          "sourceRefs": [
+            "enable-sale",
+            "fujitsu-partner"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "An Australian enterprise platform",
+          "text": "AEMO’s case describes Fujitsu implementing a ServiceNow platform with centralised risk and automated workflows. Ask which proposed practitioners carry that experience and which ongoing responsibilities the supplier will own.",
+          "sourceRefs": [
+            "fujitsu-aemo"
+          ]
+        }
+      ]
+    },
+    {
+      "ecosystemId": "servicenow",
+      "companyId": "rgp",
+      "name": "RGP / CloudGo",
+      "editorialLabel": "Our reading",
+      "relatedCompanyIds": [
+        "cloudgo"
+      ],
+      "points": [
+        {
+          "key": "why",
+          "label": "A regional specialist inside RGP",
+          "text": "CloudGo supplies the relevant APAC ServiceNow lineage within RGP’s broader consulting business. Its continuing corporate profile offers workflow consulting from an Australia and Singapore base.",
+          "sourceRefs": [
+            "cloudgo-sale",
+            "cloudgo-current"
+          ]
+        },
+        {
+          "key": "origin",
+          "label": "Built before the parent arrived",
+          "text": "Rahul Garg and Rory Fitzpatrick founded CloudGo in 2016. RGP completed its acquisition in November 2023 to combine it with Veracity and expand digital consulting across APAC.",
+          "sourceRefs": [
+            "cloudgo-sale"
+          ]
+        },
+        {
+          "key": "proof",
+          "label": "Verify the continuing practice",
+          "text": "The sources establish the regional business and current offer, but no named ANZ engagement is captured here. Validate the actual team and scope; the sale-era employee figure covered the region, not Australia alone.",
+          "sourceRefs": [
+            "cloudgo-sale",
+            "cloudgo-current"
+          ]
+        }
+      ]
+    }
+  ],
+  "engagementClaims": [
+    {
+      "id": "federation-implementation-payroll",
+      "ecosystemId": "workday",
+      "companyId": "cognizant",
+      "customerId": "federation-university",
+      "service": "Implementation",
+      "domain": "Payroll",
+      "scope": "ANZ",
+      "geography": "Australia",
+      "basis": "named-case",
+      "text": "Cognizant’s Federation University case explicitly describes completed Workday HCM and Payroll go-live, followed by payroll configuration, testing and deployment work for a new TAFE EBA.",
+      "sourceRef": "cognizant-federation",
+      "engagementDate": null,
+      "dateLabel": "Undated case; go-live and subsequent work described retrospectively",
+      "limit": "Evidence of this Australian Payroll engagement, not every payroll module or the current availability of its delivery team. Finance and Student are future phases in the source."
+    },
+    {
+      "id": "afl-implementation-adaptive",
+      "ecosystemId": "workday",
+      "companyId": "fusion5",
+      "customerId": "afl",
+      "service": "Implementation",
+      "domain": "Adaptive",
+      "scope": "ANZ",
+      "geography": "Australia",
+      "basis": "named-case",
+      "text": "Fusion5 says it rolled out Workday Adaptive Planning in 2022 for AFL, 13 clubs and two related entities, integrated with Dynamics 365 Finance and Operations.",
+      "sourceRef": "fusion5-afl",
+      "engagementDate": "2022",
+      "dateLabel": "2022 rollout",
+      "limit": "Adaptive implementation and integration beside Microsoft finance; not Workday Financial Management implementation."
+    },
+    {
+      "id": "aemo-implementation-risk",
+      "ecosystemId": "servicenow",
+      "companyId": "fujitsu",
+      "customerId": "aemo-fujitsu",
+      "service": "Implementation",
+      "domain": "Risk / Security",
+      "scope": "ANZ",
+      "geography": "Australia",
+      "basis": "named-case",
+      "text": "Fujitsu’s AEMO case states that the partners implemented an integrated ServiceNow enterprise platform and describes centralised risk data and automated workflows.",
+      "sourceRef": "fujitsu-aemo",
+      "engagementDate": null,
+      "dateLabel": "Undated case; completed platform described",
+      "limit": "Broad risk-workflow implementation evidence. The page does not establish a specific IRM or Security Operations SKU, an exact go-live date, or current staffing."
+    }
+  ],
+  "sources": {
+    "cognizant-federation": {
+      "title": "Cognizant — Federation University case",
+      "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+      "publishedAt": null,
+      "review": "Primary case re-read in this session"
+    },
+    "theory-of-mind-sale": {
+      "title": "Collaborative — Theory of Mind acquisition announcement",
+      "url": "https://www.prnewswire.com/news-releases/theory-of-mind-to-join-collaborative-solutions-300678207.html",
+      "publishedAt": "2018-07-10",
+      "review": "Existing sourced event"
+    },
+    "collaborative-sale": {
+      "title": "Cognizant — Collaborative acquisition completion",
+      "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+      "publishedAt": "2020-06-11",
+      "review": "Existing sourced event"
+    },
+    "kainos-results": {
+      "title": "Kainos — FY26 results",
+      "url": "https://get.kainos.com/rs/935-JPR-705/images/FY26%20Final%20Full%20Year%20Results%20Report%20PDF.pdf?version=0",
+      "publishedAt": "2026-05-18",
+      "review": "Existing primary report checked earlier in this session"
+    },
+    "mitch-career": {
+      "title": "Mitch Collins — departure and Australian Payroll account",
+      "url": "https://www.linkedin.com/posts/mitchcollins_after-three-and-a-half-great-years-this-activity-7293055806495723522-LPwB",
+      "publishedAt": null,
+      "review": "Existing first-person career source"
+    },
+    "kainos-perth": {
+      "title": "Mitch Collins — Perth Airport delivery account",
+      "url": "https://www.linkedin.com/posts/mitchcollins_workday-perthairport-kainos-activity-7491289424316497920-HVbh",
+      "publishedAt": null,
+      "review": "Existing delivery-leader account; company/customer relationship also in FY26 report"
+    },
+    "kainos-adaptive-hire": {
+      "title": "Mitch Collins — regional Adaptive appointment",
+      "url": "https://www.linkedin.com/posts/mitchcollins_kainos-workday-workdayservices-activity-7318464197707603968-KG7D",
+      "publishedAt": "2025-04-17",
+      "review": "Existing announcement; not a current-capacity audit"
+    },
+    "kainos-payroll-hire": {
+      "title": "Mitch Collins — regional PATTS appointment",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7377122268298031104/",
+      "publishedAt": "2025-09-25",
+      "review": "Existing announcement; not a delivered customer case"
+    },
+    "workday-go": {
+      "title": "Workday — ANZ GO launch",
+      "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+      "publishedAt": "2026-05-26",
+      "review": "Primary announcement re-read in this session"
+    },
+    "kliqtek-launch": {
+      "title": "Kliqtek — founders and Kliqxe joint venture",
+      "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+      "publishedAt": null,
+      "review": "Primary page re-read; visible page gives August 1, while the company about page establishes 2024 formation"
+    },
+    "kliqtek-about": {
+      "title": "Kliqtek — company and team",
+      "url": "https://www.kliqtek.com/kliqtek-about",
+      "publishedAt": null,
+      "review": "Current primary page verified earlier in this session"
+    },
+    "kliqtek-clients": {
+      "title": "Kliqtek — services and anonymous client testimonials",
+      "url": "https://www.kliqtek.com/",
+      "publishedAt": null,
+      "review": "Primary homepage re-read in this session; customers unnamed"
+    },
+    "fusion5-afl": {
+      "title": "Fusion5 — AFL Adaptive Planning case",
+      "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
+      "publishedAt": null,
+      "review": "Primary case re-read; rollout year explicitly 2022"
+    },
+    "fusion5-history": {
+      "title": "Fusion5 — company history and positioning",
+      "url": "https://www.fusion5.com/au/news/fusion5-repositions-itself-in-market",
+      "publishedAt": null,
+      "review": "Existing sourced company record"
+    },
+    "fusion5-owner": {
+      "title": "VCF Capital — Fusion5/Optimum transaction",
+      "url": "https://www.vcfcapital.com.au/case-studies/optimumconsulting",
+      "publishedAt": null,
+      "review": "Existing transaction-adviser source identifies BGH majority ownership; not local practice scale"
+    },
+    "mivada-history": {
+      "title": "Mivada — company history",
+      "url": "https://mivada.com/the-mivada-story/",
+      "publishedAt": null,
+      "review": "Primary history re-read in this session"
+    },
+    "mivada-team": {
+      "title": "Mivada — current team",
+      "url": "https://mivada.com/our-team/",
+      "publishedAt": null,
+      "review": "Existing sourced current team record"
+    },
+    "cloudrock-successday": {
+      "title": "CloudRock — SuccessDay acquisition",
+      "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+      "publishedAt": "2026-01-06",
+      "review": "Primary announcement re-read in this session"
+    },
+    "cloudrock-events": {
+      "title": "CloudRock — events including Workday Elevate Sydney",
+      "url": "https://www.wearecloudrock.com/events",
+      "publishedAt": null,
+      "review": "Existing company event source; Sydney event dated 26 May 2026"
+    },
+    "enable-sale": {
+      "title": "Fujitsu — planned acquisition of Enable",
+      "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2022/0707-01.html",
+      "publishedAt": "2022-07-07",
+      "review": "Primary announcement re-read; plans, not completion"
+    },
+    "fujitsu-partner": {
+      "title": "ServiceNow — Fujitsu partner profile",
+      "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+      "publishedAt": null,
+      "review": "Existing official profile records August 2022 acquisition"
+    },
+    "fujitsu-aemo": {
+      "title": "Fujitsu — Australian Energy Market Operator case",
+      "url": "https://global.fujitsu/de-CH/customer-stories/pcs-aemo-australia-20260519",
+      "publishedAt": null,
+      "review": "Primary page re-read; dated URL not treated as a verified publication or go-live date"
+    },
+    "cloudgo-sale": {
+      "title": "RGP — CloudGo acquisition completion, SEC exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+      "publishedAt": "2023-11-15",
+      "review": "Primary SEC-filed announcement re-read in this session"
+    },
+    "cloudgo-current": {
+      "title": "CloudGo — corporate profile, now RGP",
+      "url": "https://www.linkedin.com/company/cloudgo",
+      "publishedAt": null,
+      "review": "Existing corporate-profile source; offers and footprint, not a customer reference"
+    }
+  }
+}

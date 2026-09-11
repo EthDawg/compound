@@ -82,3 +82,11 @@ test('new views preserve deep-link state while old directory URLs retain their o
   assert.equal(url.searchParams.get('person'), 'andrew-hill');
   assert.equal(url.searchParams.get('scope'), 'anz');
 });
+
+test('company ownership lineage never invents individual career links', () => {
+  for (const company of ANZ_COMPANIES) {
+    for (const person of peopleInLineage(company.id)) {
+      assert.ok(person.companyId === company.id || person.career.some(s => s.companyId === company.id), `${person.name} / ${company.name}`);
+    }
+  }
+});

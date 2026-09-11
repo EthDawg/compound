@@ -30,9 +30,12 @@ Software landscape → company App / Backstage → ANZ ecosystems.
 Global View, Technology and Decisions provide a connected zoom out, with links
 back to the underlying companies and practices. Native links remain shareable.
 
-## Acceptance record
+## Initial coverage record — not a fidelity acceptance
 
-Implemented on 11 September 2026:
+Initial release on 11 September 2026. See [the active fidelity audit](fidelity-audit.md)
+for the next requirements and outstanding verification.
+
+Coverage at that release:
 
 - Workday: 19 ANZ practices; ServiceNow: 30. Refreshed all existing practices,
   the six broad SI readings and the 174-record public Workday roster. Two
@@ -42,7 +45,8 @@ Implemented on 11 September 2026:
 - Shared capability views now separate service roles and domains and allow
   local-evidence and named-customer filters. Each ecosystem has three concise
   market readings linked to the underlying practices.
-- Global View, Technology and Decisions implement the wider requirements above.
+- Global View, Technology and Decisions introduced these topics. They did not
+  establish the required fidelity; the subsequent audit identified major gaps.
   Company studies retain their own identities; Compound owns the shared guide.
 - Independent source and logic review; 240 generated pages; 59 passing tests.
   Tests include physical invariants, delay/friction semantics, invalid input,
