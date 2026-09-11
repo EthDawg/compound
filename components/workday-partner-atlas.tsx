@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AtlasMaps } from './atlas-maps';
+import { CompoundBar } from './compound-bar';
 import * as I from './icons';
 import {
   WORKDAY_PARTNERS, WORKDAY_PARTNER_META as META, PARTNER_MAP_HREF,
@@ -34,6 +35,7 @@ export function WorkdayPartnerAtlas() {
     // Read the current URL so rapid changes compose before React renders again.
     // Next's native history integration keeps search params and Back/Forward in sync.
     const next=new URLSearchParams(window.location.search);
+    next.set('scope','global');
     for(const [key,value] of Object.entries(values)){if(value)next.set(key,value);else next.delete(key);}
     const url=PARTNER_MAP_HREF+(next.size?'?'+next.toString():'');
     if(push)window.history.pushState(null,'',url);
@@ -42,12 +44,12 @@ export function WorkdayPartnerAtlas() {
   };
   const select=(p:WorkdayPartner)=>update({partner:p.slug},true);
   const setFilter=(key:string,value:string)=>update({[key]:value,partner:null});
-  const reset=()=>{window.history.replaceState(null,'',PARTNER_MAP_HREF);setZoom(1);setHover(null);};
+  const reset=()=>{window.history.replaceState(null,'',PARTNER_MAP_HREF+'?scope=global');setZoom(1);setHover(null);};
   useEffect(()=>{
     if(selected&&window.matchMedia('(max-width: 1023px)').matches)detailRef.current?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
   },[selected?.slug]);
   useEffect(()=>{
-    const handle=(e:KeyboardEvent)=>{if(e.key==='Escape'){setHover(null);const next=new URLSearchParams(window.location.search);if(next.has('partner')){next.delete('partner');window.history.replaceState(null,'',PARTNER_MAP_HREF+(next.size?'?'+next.toString():''));}}};
+    const handle=(e:KeyboardEvent)=>{if(document.querySelector('dialog[open]'))return;if(e.key==='Escape'){setHover(null);const next=new URLSearchParams(window.location.search);if(next.has('partner')){next.delete('partner');next.set('scope','global');window.history.replaceState(null,'',PARTNER_MAP_HREF+(next.size?'?'+next.toString():''));}}};
     window.addEventListener('keydown',handle);return()=>window.removeEventListener('keydown',handle);
   },[]);
   useEffect(()=>{setHover(null);setZoom(1);},[filters.q,filters.service,filters.product,filters.region,filters.group,view]);
@@ -71,18 +73,10 @@ export function WorkdayPartnerAtlas() {
     catch{setCopied(false);}
   };
   return <div className="min-h-screen bg-[#F7F8FA] text-[#192A3B]">
-    <header className="sticky top-0 z-40 border-b border-[#DEE4EB] bg-white/95 backdrop-blur">
-      <div className="mx-auto flex min-h-14 max-w-[1440px] flex-wrap items-center gap-3 px-4 py-2 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 text-[14px] font-semibold"><span className="grid h-7 w-7 place-items-center rounded-md bg-[#182430] text-[#F2C53D]"><I.ILayers className="h-4 w-4"/></span>Atlas</Link>
-        <span className="hidden border-l border-[#DEE4EB] pl-3 text-[12px] text-[#6A7888] sm:block">Workday ecosystem</span>
-        <nav aria-label="Workday study" className="ml-auto flex gap-1 text-[12px] font-medium">
-          <Link href="/companies/workday/app" className="rounded-md px-2.5 py-2 hover:bg-[#EDF3FA]">Workday App</Link>
-          <Link href="/companies/workday/backstage" className="rounded-md px-2.5 py-2 hover:bg-[#EDF3FA]">Backstage</Link>
-        </nav>
-      </div>
-    </header>
+    <CompoundBar activeId="workday" />
     <main className="mx-auto max-w-[1440px] px-4 pb-16 sm:px-6">
       <AtlasMaps active="workday"/>
+      <Link href="/atlas/workday?scope=anz" className="mt-4 inline-block text-xs font-semibold text-[#0755A5] underline underline-offset-4">← ANZ people, capability & movement</Link>
       <section className="flex flex-col justify-between gap-6 py-7 sm:py-9 xl:flex-row xl:items-end">
         <div className="max-w-[760px]">
           <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em] text-[#0755A5]"><span className="h-2 w-2 rounded-full bg-[#EF9B27]"/>The people who make the platform work</div>
