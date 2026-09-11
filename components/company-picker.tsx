@@ -1,0 +1,174 @@
+"use client";
+
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { COMPANY_INDEX, atlasCompanyHref, companyDestination, recentCompanies, searchCompanies, type IndexedCompany } from "@/lib/company-index";
+import { SECTORS } from "@/lib/data/atlas";
+import { Mark } from "./vendor/marks";
+import * as I from "./icons";
+
+const RECENT_KEY = "compound-recent-companies";
+
+export function CompanyPicker({ activeId }: { activeId: string }) {
+  const path = usePathname();
+  const uid = useId();
+  const dialog = useRef<HTMLDialogElement>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const [query, setQuery] = useState("");
+  const [all, setAll] = useState(false);
+  const [sector, setSector] = useState("");
+  const [recent, setRecent] = useState<string[]>([]);
+  const [cursor, setCursor] = useState(0);
+  const [opened, setOpened] = useState(false);
+  const current = COMPANY_INDEX.find((c) => c.id === activeId);
+  const searching = !!query.trim();
+  const matches = useMemo(() => searchCompanies(query), [query]);
+  const groups = useMemo(() => {
+    if (searching) return [{ label: `${matches.length} ${matches.length === 1 ? "match" : "matches"}`, companies: matches.map((m) => m.company) }];
+    const available = COMPANY_INDEX.filter((c) => (all || c.studyId) && (!sector || c.sector === sector));
+    const recentList = recent.flatMap((id) => available.find((c) => c.id === id) ?? []);
+    return [
+      ...(!sector && recentList.length ? [{ label: "Recent", companies: recentList }] : []),
+      ...SECTORS.map((s) => ({ label: s.name, companies: available.filter((c) => c.sector === s.id && (sector || !recentList.includes(c))) })).filter((g) => g.companies.length),
+    ];
+  }, [all, sector, searching, matches, recent]);
+  const rows = groups.flatMap((g) => g.companies);
+  const selected = rows[Math.min(cursor, Math.max(0, rows.length - 1))];
+  const related = selected ? COMPANY_INDEX.filter((c) => c.category === selected.category && c.id !== selected.id).sort((a, b) => Number(!!b.studyId) - Number(!!a.studyId) || a.name.localeCompare(b.name)).slice(0, 3) : [];
+  const close = () => { dialog.current?.close(); setOpened(false); };
+  const show = () => {
+    setQuery(""); setSector(""); setCursor(0);
+    dialog.current?.showModal(); setOpened(true); input.current?.focus();
+  };
+
+  useEffect(() => {
+    try {
+      let saved: unknown;
+      try { saved = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]"); } catch { saved = []; }
+      const next = recentCompanies(saved, activeId);
+      setRecent(next);
+      localStorage.setItem(RECENT_KEY, JSON.stringify(next));
+    } catch { /* Browsing and search do not require storage. */ }
+  }, [activeId]);
+  useEffect(() => { dialog.current?.close(); setOpened(false); }, [path]);
+  useEffect(() => { setCursor(0); resultsRef.current?.scrollTo({ top: 0 }); }, [query, all, sector]);
+  useEffect(() => {
+    if (!opened) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
+  }, [opened]);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        if (document.querySelector("dialog[open]") && !dialog.current?.open) return;
+        event.preventDefault();
+        if (dialog.current?.open) { dialog.current.close(); setOpened(false); }
+        else { setQuery(""); setSector(""); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const move = (next: number) => {
+    const index = (next + rows.length) % rows.length;
+    setCursor(index);
+    document.getElementById(`${uid}-${rows[index].id}`)?.scrollIntoView({ block: "nearest" });
+  };
+  const key = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!rows.length) return;
+    if (event.key === "ArrowDown") { event.preventDefault(); move(cursor + 1); }
+    if (event.key === "ArrowUp") { event.preventDefault(); move(cursor - 1); }
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const anchor = document.getElementById(`${uid}-${selected.id}`) as HTMLAnchorElement | null;
+      if (event.metaKey || event.ctrlKey) window.open(anchor?.href, "_blank", "noopener,noreferrer");
+      else anchor?.click();
+    }
+  };
+  const studyCount = COMPANY_INDEX.filter((c) => c.studyId).length;
+  const mark = (company: IndexedCompany, large = false) => <span className={`grid shrink-0 place-items-center rounded-lg bg-ink-100 font-semibold text-ink ${large ? "h-11 w-11 text-lg" : "h-8 w-8 text-xs"}`}>
+    {company.studyId ? <Mark id={company.id} className={large ? "h-6 w-6" : "h-4 w-4"} /> : company.name.slice(0, 2)}
+  </span>;
+
+  return <>
+    <button type="button" onClick={show} aria-haspopup="dialog" aria-expanded={opened} aria-label={`Find a company. Current: ${current?.name ?? "none"}`} title="Find a company · ⌘K / Ctrl K"
+      className="flex h-9 w-[160px] items-center gap-2 rounded-lg border border-ink-200 bg-ink-50 px-2.5 text-[13px] font-semibold hover:bg-ink-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky sm:w-[200px]">
+      <Mark id={activeId} className="h-3.5 w-3.5 shrink-0" />
+      <span className="truncate">{current?.name ?? "Find a company"}</span>
+      <I.ISearch className="ml-auto h-3.5 w-3.5 shrink-0 text-ink-500" />
+    </button>
+    <dialog ref={dialog} aria-labelledby={`${uid}-title`} onClose={() => setOpened(false)} onCancel={() => setOpened(false)}
+      onClick={(event) => { if (event.target === dialog.current) close(); }}
+      className="company-picker m-auto w-[calc(100%-24px)] max-w-[800px] overflow-hidden rounded-2xl border border-ink-200 bg-white p-0 text-ink shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm">
+      <div className="flex max-h-[88dvh] flex-col" onClick={(event) => event.stopPropagation()}>
+        <div className="flex items-center justify-between px-5 pb-2 pt-4">
+          <h2 id={`${uid}-title`} className="text-sm font-semibold">Find a company</h2>
+          <button type="button" onClick={close} aria-label="Close company finder" className="rounded-md p-2 text-ink-500 hover:bg-ink-100"><I.IClose className="h-4 w-4" /></button>
+        </div>
+        <div className="mx-4 mb-3 flex items-center gap-3 rounded-xl border border-ink-200 bg-ink-50 px-3 focus-within:border-ink-500 focus-within:ring-2 focus-within:ring-ink-100">
+          <I.ISearch className="h-5 w-5 shrink-0 text-ink-500" />
+          <input ref={input} value={query} onChange={(e) => { setQuery(e.target.value); setCursor(0); }} onKeyDown={key}
+            role="combobox" aria-autocomplete="list" aria-expanded={opened} aria-controls={rows.length ? `${uid}-results` : undefined} aria-activedescendant={selected ? `${uid}-${selected.id}` : undefined}
+            aria-label="Search companies, products or capabilities" autoComplete="off" spellCheck={false}
+            placeholder="Company, product, or what it does…" className="h-12 min-w-0 flex-1 bg-transparent text-base outline-none" />
+          {query && <button type="button" onClick={() => { setQuery(""); input.current?.focus(); }} aria-label="Clear search" className="rounded p-1 text-ink-500"><I.IClose className="h-4 w-4" /></button>}
+        </div>
+        {!searching && <div className="flex flex-wrap items-center gap-2 px-4 pb-3">
+          <div className="flex rounded-lg bg-ink-100 p-1 text-xs font-medium">
+            <button type="button" aria-pressed={!all} onClick={() => { setAll(false); setSector(""); }} className={`rounded-md px-3 py-1.5 ${!all ? "bg-white shadow-sm" : "text-ink-500"}`}>Full studies <span className="ml-1 text-ink-500">{studyCount}</span></button>
+            <button type="button" aria-pressed={all} onClick={() => setAll(true)} className={`rounded-md px-3 py-1.5 ${all ? "bg-white shadow-sm" : "text-ink-500"}`}>All companies <span className="ml-1 text-ink-500">{COMPANY_INDEX.length}</span></button>
+          </div>
+          {all && <select aria-label="Browse by sector" value={sector} onChange={(e) => setSector(e.target.value)} className="min-w-0 max-w-full rounded-lg border border-ink-200 bg-white p-2 text-xs">
+            <option value="">All sectors</option>{SECTORS.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+          </select>}
+        </div>}
+        {searching && <p className="px-5 pb-3 text-xs text-ink-500" role="status">{matches.length} {matches.length === 1 ? "match" : "matches"} across {COMPANY_INDEX.length} companies · full studies and Atlas entries</p>}
+        <div className="grid min-h-0 flex-1 grid-cols-1 border-t border-ink-200 sm:grid-cols-[1.15fr_1fr]">
+          <div ref={resultsRef} className="thin-scroll max-h-[31vh] min-h-0 overflow-y-auto overscroll-contain p-2 sm:h-[400px] sm:max-h-[52dvh]">
+            {rows.length ? <div id={`${uid}-results`} role="listbox" aria-label="Companies">
+              {groups.map((group) => <div key={group.label} role="group" aria-label={group.label}>
+                <div className="px-3 pb-1 pt-3 text-[10px] font-bold uppercase tracking-wider text-ink-500">{group.label}</div>
+                {group.companies.map((company) => {
+                  const index = rows.indexOf(company);
+                  const reason = searching ? matches.find((m) => m.company.id === company.id)?.reason : "";
+                  return <a key={company.id} id={`${uid}-${company.id}`} href={companyDestination(company, path)} role="option" tabIndex={-1} aria-selected={selected?.id === company.id}
+                    onMouseEnter={() => setCursor(index)} onFocus={() => setCursor(index)}
+                    className={`flex items-center gap-3 rounded-lg px-3 py-2.5 outline-offset-[-2px] ${selected?.id === company.id ? "bg-ink-100" : "hover:bg-ink-50"}`}>
+                    {mark(company)}<span className="min-w-0 flex-1">
+                      <span className="block text-[13px] font-semibold">{company.name}</span>
+                      <span className="block truncate text-[11px] text-ink-500">{reason && reason !== company.categoryName ? `${reason} · ` : ""}{company.categoryName}</span>
+                      <span className={`block text-[10px] ${company.studyId ? "font-medium text-ink-700" : "text-ink-500"}`}>{company.availability}</span>
+                    </span><I.IChevron className="h-3 w-3 shrink-0 text-ink-400" />
+                  </a>;
+                })}
+              </div>)}
+            </div> : <div className="px-3 py-8 text-sm">
+              <p className="font-semibold">Not in this catalogue yet.</p>
+              <p className="mt-2 text-ink-500">Try a product name or a capability, like “Claude”, “payroll” or “voice”.</p>
+              <button type="button" onClick={() => { setQuery(""); setAll(true); setSector(""); input.current?.focus(); }} className="mt-4 font-semibold underline underline-offset-4">Browse all companies</button>
+            </div>}
+          </div>
+          {selected && <aside aria-label="Company preview" className="thin-scroll min-h-0 overflow-y-auto overscroll-contain border-t border-ink-200 bg-ink-50 p-4 sm:border-l sm:border-t-0 sm:p-5">
+            <div className="flex items-center gap-3">{mark(selected, true)}<div><p className="text-[10px] font-semibold uppercase tracking-wider text-ink-500">{selected.sectorName}</p><h3 className="text-lg font-semibold tracking-tight">{selected.name}</h3></div></div>
+            <p className="mt-3 text-xs text-ink-500">{selected.categoryName}{selected.geo ? ` · ${selected.geo}` : ""}</p>
+            <p className="mt-2 text-[13px] leading-relaxed">{selected.blurb}</p>
+            {!selected.studyId && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">In the Atlas. {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
+            <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              {selected.appHref && <a href={selected.appHref} className="rounded-lg bg-ink px-3 py-2 text-white hover:bg-ink-700">Open App</a>}
+              {selected.backstageHref && <a href={selected.backstageHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Backstage</a>}
+              {selected.readHref && <a href={selected.readHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Read study</a>}
+              <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>
+            </div>
+            {!!related.length && <div className="mt-5 hidden border-t border-ink-200 pt-3 sm:block"><p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-ink-500">Nearby in {selected.categoryName}</p>
+              {related.map((c) => <a key={c.id} href={companyDestination(c, path)} className="flex items-center justify-between gap-2 rounded py-1.5 text-xs hover:underline"><span>{c.name}</span><span className="text-[10px] text-ink-500">{c.availability}</span></a>)}
+            </div>}
+          </aside>}
+        </div>
+        <div className="flex flex-wrap justify-between gap-1 border-t border-ink-200 px-5 py-2.5 text-[10px] text-ink-500"><span>↑ ↓ preview · Enter open · Esc close</span><span>⌘ / Ctrl-click to open another tab</span></div>
+      </div>
+    </dialog>
+  </>;
+}
