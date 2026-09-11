@@ -17,11 +17,12 @@ test('research adds depth to existing identities without duplicating the company
   assert.equal(companyDestination(indexed,'/companies/anthropic/app/code'),researchHref(company.id));
  }
  assert.equal(COMPANY_INDEX.filter(c=>c.name==='Google').length,1);
+ assert.ok(COMPANY_INDEX.find(c=>c.id==='nvidia').marketLinks.length,'NVIDIA serving research preserves global context');
  assert.ok(COMPANY_INDEX.find(c=>c.id==='google').marketLinks.length,'existing global context survives');
  assert.equal(COMPANY_INDEX.find(c=>c.id==='snowflake').category,'warehouse','a second research lens does not rewrite a company primary category');
 });
 test('product and former names resolve to a current company with a usable research destination',()=>{
- for(const [query,id] of [['Fireworks','fireworks'],['Anysphere','cursor'],['Windsurf','cognition'],['Devin Desktop','cognition'],['Vertex AI','google'],['Azure AI Studio','microsoft'],['MosaicML','databricks'],['Neeva','snowflake'],['LangSmith','langchain'],['Weights & Biases','coreweave']]){
+ for(const [query,id] of [['Fireworks','fireworks'],['NIM Certified','nvidia'],['Inference Providers','hugging-face'],['SambaCloud','sambanova'],['Anysphere','cursor'],['Windsurf','cognition'],['Devin Desktop','cognition'],['Vertex AI','google'],['Azure AI Studio','microsoft'],['MosaicML','databricks'],['Neeva','snowflake'],['LangSmith','langchain'],['Weights & Biases','coreweave']]){
   const hit=searchCompanies(query)[0];assert.equal(hit?.company.id,id,query);assert.equal(companyDestination(hit.company,'/'),researchHref(id));
  }
  const fire=COMPANY_INDEX.find(c=>c.id==='fireworks');

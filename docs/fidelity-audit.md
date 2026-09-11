@@ -73,12 +73,12 @@ visits retain the actual destination. Platform-specific queries keep the intende
 practice: `Cognizant ServiceNow IT` reaches the matching ServiceNow evidence.
 
 Three category guides cover AI inference and model serving, developer tools, and
-enterprise AI cloud. Twenty company briefs connect three strengths to their
+enterprise AI cloud. Company briefs connect three strengths to their
 origins, a dated change, a trade-off and a watchpoint. Product and former names
 resolve through the existing company index, including Windsurf, Vertex AI and
 MosaicML. Cross-category membership does not create duplicate companies.
 
-Each guide has three practical situations. The Fireworks walkthrough makes the
+Each guide has practical situations. The Fireworks walkthrough makes the
 custom-model route and idle-capacity trade-off interactive. These are teaching
 scenarios, not live model calls or comparative benchmarks. Company accents remain
 inside Compound's shared navigation; a research brief does not promise a full
@@ -198,3 +198,39 @@ Release validation: production build and all 88 tests pass. New checks cover
 role ownership, send-back and conditional review, effective dates, failed/retried
 provider handoffs, valid URL replay, App/Backstage context and the shared PageUp
 review record. Sana and Adaptive names now resolve to Workday in the finder.
+
+
+## Serving infrastructure and ecosystem navigation — follow-up
+
+Primary-source research adds NVIDIA, Hugging Face and SambaNova. The serving guide
+now separates packaged inference software from managed APIs and custom compute,
+and includes a scenario for choosing the operating boundary. Model support comes
+before latency comparisons. The Australia processing example no longer suggests
+CoreWeave on the basis of wider regional infrastructure coverage.
+
+NVIDIA’s current LLM offering documentation is more specific than its generic
+FAQ: the brief preserves release/support distinctions without making a blanket
+licence claim. Hugging Face’s provider routing and dedicated Endpoints remain
+separate services. SambaNova’s financing and customer selection are dated company
+announcements, not evidence of completed deployment or measured outcomes.
+
+A capability selected outside the current ANZ comparison group stays visible in
+an extra column beside the practice. Switching groups preserves the filter and
+avoids duplicate columns. Career summaries foreground recorded roles at the
+inspected firm while labelling the latest recorded or historical role separately.
+No employment is inferred from ownership. Matrix controls and evidence links
+have 44-pixel targets.
+
+Observed browser journeys: Payroll while comparing Workday service roles,
+keyboard switch to product domains and Back; ServiceNow Implementation while
+comparing workflow domains, then named-customer evidence; Mitch Collins at
+Cognizant with his recorded Kainos role; the new serving scenario to Hugging Face;
+NIM search to NVIDIA with existing Global View links intact; SambaNova with its
+enterprise category and landscape return preserved. Narrow (390 CSS pixels) and
+desktop (1440 CSS pixels) layouts had no page overflow. Browser errors were empty.
+These checks do not establish physical-phone or assistive-technology coverage.
+
+Release validation: production build and all 89 tests pass. The full test suite
+reads generated pages and must run after the build finishes. New checks cover
+capability-column continuity; product-name and existing global-context checks
+include the new company briefs.

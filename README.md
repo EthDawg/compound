@@ -13,7 +13,7 @@ needed. Maintained by [Ethan Harley](https://github.com/EthDawg), with contribut
 | Explore | What you’ll find |
 | --- | --- |
 | [Atlas](https://compound-snowy-pi.vercel.app) | Find companies, products, people, customer references and partner practices and explore the wider market. |
-| [Category guides](https://compound-snowy-pi.vercel.app/categories) | Understand AI inference, developer tools and enterprise AI cloud. Start with a practical problem, then explore 20 company briefs. |
+| [Category guides](https://compound-snowy-pi.vercel.app/categories) | Understand AI inference, developer tools and enterprise AI cloud. Start with a practical problem, then explore company briefs. |
 | [App studies](https://compound-snowy-pi.vercel.app/companies/rippling/app) | Interactive scenarios that make a company’s product logic tangible. Switch companies to compare. |
 | [Backstage](https://compound-snowy-pi.vercel.app/companies/rippling/backstage) | Strategy, acquisitions, leadership, trade-offs and the evidence behind each interpretation. |
 | [ServiceNow’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/servicenow) | Explore deployment teams, workflow capabilities and acquisition trails. |
