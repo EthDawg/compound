@@ -13,6 +13,9 @@ const S = {
   talent: "https://help.employmenthero.com/hc/en-gb/articles/7446340495759-Find-Talent-questions-answered",
   work: "https://help.employmenthero.com/hc/en-au/articles/17426895001743-Swag-Rebrand-Customer-FAQ",
   payroll: "https://employmenthero.com/blog/automated-pay-runs/",
+  replies: "https://help.employmenthero.com/hc/en-au/articles/17426641396751-Understand-Find-Talent-invitation-reminder-emails-as-a-candidate",
+  publish: "https://help.employmenthero.com/hc/en-au/articles/17426618832783-Going-live-with-Employment-Hero-Payroll",
+  finalise: "https://help.employmenthero.com/hc/en-au/articles/17427077214351-Running-a-Pay-Run",
   sync: "https://employmenthero.zendesk.com/hc/en-gb/articles/14516786184591-Sync-your-Employment-Hero-and-payroll-platform",
 };
 export const HERO_STUDY: CompanyStudy = {
@@ -20,14 +23,15 @@ export const HERO_STUDY: CompanyStudy = {
   brand: { chrome: "#281448", ink: "#FFFFFF", highlight: "#CAEF68" },
   appScreens: ["", "payroll", "talent", "people"], workflowScreen: "payroll",
   backstage: {
+    sourcesChecked: "10–11 September 2026",
     navigation: TALENT_NAVIGATION,
     headline: "Run employment for the business that cannot staff it.",
     thesis: "Employment Hero combines payroll machinery, employment specialists and an employee-facing network. The ambition has expanded from helping a small business administer employment to doing more of that work for it. Its acquisitions explain why the next step is execution and services, rather than simply another HR module.",
     object: "Employment relationship + pay run", question: "What still needs the employer's attention?",
     sequence: ["Bring people, time and terms together", "Prepare the recurring employment work", "Surface the exceptions and responsibilities", "Review the decision; complete the operation"],
     premises: [
-      { title: "Get payroll ready; bring me the exceptions", body: "KeyPay supplied the engine and partner channel. Employment Innovations added people who operate payroll and handle difficult employment questions. The useful demo is an almost-ready run with an explainable exception, not an impressive payroll total.", screen: "payroll" },
-      { title: "Begin hiring with a consenting network", body: "Find Talent lets employers start with jobseekers already on the network. EH Work gives employees reasons to return for pay, leave and other utilities. Candidate participation and contact preferences determine whether that distribution advantage remains useful.", screen: "talent" },
+      { title: "Get payroll ready; bring me the exceptions", body: "KeyPay supplied the engine and partner channel. Employment Innovations added people who operate payroll and handle difficult employment questions. The useful demo carries an explainable exception through corrected earnings, final review and a separate employee publication step. A visible summary does not establish payment.", screen: "payroll" },
+      { title: "Begin hiring with a consenting network", body: "Find Talent lets employers start with jobseekers already on the network. EH Work gives employees reasons to return for pay, leave and other utilities. Candidate participation and contact preferences determine whether that distribution advantage remains useful. A role-specific reply establishes interest or a decline; it does not establish job suitability.", screen: "talent" },
       { title: "Choose who actually runs the employment", body: "HeroForce changes the responsibility model: the customer chooses hires and directs daily work while Employment Hero acts as legal employer. Direct employment can coexist. This is a service and operating-model choice, not just another software setting.", screen: "people" },
     ],
     choices: [
@@ -41,6 +45,9 @@ export const HERO_STUDY: CompanyStudy = {
       { metric: "Responsibility understood before activation", test: "Ask a buyer to explain direct versus HeroForce employment for the same proposed role, including who directs work and who is the legal employer.", failure: "The interface makes a service relationship look like a harmless payroll preference." },
     ],
     sources: [
+      { title: "Candidate invitation replies · AU · September 2026", url: S.replies, supports: "Role-specific interested/declined responses and a final reminder. The study uses fixed fictional outcomes and a local follow-up plan; it does not recreate an organisation-interest feed or create applications." },
+      { title: "Finalise a pay run · AU", url: S.finalise, supports: "Finalisation locks the run. The study uses invented gross earnings only; it does not calculate tax, superannuation or net pay." },
+      { title: "Publish payslips after finalisation · AU", url: S.publish, supports: "Employee publication and statutory lodgement are distinct follow-on tasks. The study publishes a gross-only teaching summary, not a real payslip, payment or filing." },
       { title: "Origins and KeyPay acquisition rationale", url: S.origin, supports: "Employment-law origin, founders and small-business focus." },
       { title: "KeyPay becomes Employment Hero · March 2023", url: S.keypay, supports: "Full acquisition completed December 2021, announced in 2022; brand retirement in March 2023; payroll partner channel." },
       { title: "Employment Innovations acquisition · April 2024", url: S.ei, supports: "Managed payroll and advisory expertise acquired with an explicit automation ambition." },

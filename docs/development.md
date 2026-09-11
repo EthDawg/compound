@@ -138,3 +138,15 @@ change have separate components; EmployeeWorks remains in `app.tsx`.
 `lib/data/servicenow-session.ts` replays recorded actions and isolates resets;
 `session.ts` binds that record to the browser session. Keep runtime receipts,
 observed outcomes and governance decisions distinct when extending a scene.
+
+Employment Hero's connected example lives in `components/studies/talent/hero/`.
+`lib/data/hero-session.ts` owns guarded transitions, scripted replies, outcome
+counts and bounded session replay. Payroll, candidate conversations and employment
+model comparisons reset independently. Keep jobseekers distinct from payroll
+employees, and keep finalisation, publication and payment distinct.
+
+`lib/data/study-context.ts` carries registered App screens through Backstage.
+`components/study-context-link.tsx` renders those destinations as native links;
+explicit URLs and company boundaries take precedence. Workday additionally keeps
+its existing scenario query. Neither the return screen nor a saved scenario
+establishes a live system action.
