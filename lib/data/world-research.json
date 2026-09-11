@@ -1,0 +1,1170 @@
+{
+  "checked": "2026-09-11",
+  "sources": [
+    {
+      "id": "nvidia-blackwell",
+      "title": "NVIDIA Blackwell platform announcement",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+      "published": "2024-03-18",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Blackwell design and fabrication specifications; announcement, not delivery volume"
+    },
+    {
+      "id": "zeiss-euv",
+      "title": "Thirty years of EUV lithography optics at ZEISS SMT",
+      "url": "https://www.zeiss.com/semiconductor-manufacturing-technology/news-and-events/smt-press-releases/2025/euv-30-years.html",
+      "published": "2025-04-01",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Oberkochen development history and supply relationship to ASML"
+    },
+    {
+      "id": "asml-2025",
+      "title": "ASML annual report 2025",
+      "url": "https://www.asml.com/en/investors/annual-report/2025",
+      "published": null,
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Company-wide 2025 system sales, not installations in one country"
+    },
+    {
+      "id": "asml-taiwan",
+      "title": "ASML global locations and Taiwan relationship",
+      "url": "https://www.asml.com/en",
+      "published": null,
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "ASML describes working closely with TSMC; does not quantify equipment in an individual fab"
+    },
+    {
+      "id": "tsmc-2025",
+      "title": "TSMC annual report 2025",
+      "url": "https://investor.tsmc.com/sites/ir/annual-report/2025/2025%20TSMC%20Annual%20Report.E.pdf",
+      "published": null,
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "2025 manufacturing milestones, company-wide wafer shipments and packaging; PDF pp 5–6 and 11"
+    },
+    {
+      "id": "tsmc-n7",
+      "title": "TSMC N7+ high-volume EUV process",
+      "url": "https://www.tsmc.com/english/campaign/N7plus",
+      "published": null,
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "N7+ high-volume EUV customer production; historical manufacturing milestone"
+    },
+    {
+      "id": "hynix-2025",
+      "title": "SK hynix 78th annual general meeting",
+      "url": "https://news.skhynix.com/en/78th-annual-general-meeting/",
+      "published": "2026-03-25",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Company-reported 2025 HBM revenue growth, not unit growth or Korean national share"
+    },
+    {
+      "id": "hynix-tsmc",
+      "title": "SK hynix and TSMC HBM4 collaboration",
+      "url": "https://news.skhynix.com/sk-hynix-partners-with-tsmc-to-strengthen-hbm-technological-leadership/",
+      "published": "2024-04-19",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Announced development MOU and intended foundry/packaging collaboration"
+    },
+    {
+      "id": "ifr-2024",
+      "title": "IFR World Robotics 2025 release",
+      "url": "https://ifr.org/ifr-press-releases/news/presidents-report-by-takayuki-ito-3-2025",
+      "published": "2025-09-25",
+      "checked": "2026-09-11",
+      "kind": "original industry-body statistics",
+      "scope": "2024 industrial-robot installations; not AI autonomy or humanoid deployment"
+    },
+    {
+      "id": "sg-infra",
+      "title": "Singapore Digital Infrastructure Bill and capacity context",
+      "url": "https://www.mddi.gov.sg/newsroom/new-digital-infrastructure-bill-to-strengthen-the-foundations-for-singapore-s-digital-economy/",
+      "published": "2026-09-08",
+      "checked": "2026-09-11",
+      "kind": "government primary source",
+      "scope": "Bill at First Reading; reported existing capacity and examples of past disruptions"
+    },
+    {
+      "id": "sg-growth",
+      "title": "Singapore future DC capacity response",
+      "url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-future-data-centre-capacity-plans-in-support-of-ai-adoption/",
+      "published": "2026-09-09",
+      "checked": "2026-09-11",
+      "kind": "government primary source",
+      "scope": "Measured sustainable capacity growth; no newly completed capacity claim"
+    },
+    {
+      "id": "infosys-optimum",
+      "title": "Infosys completes Optimum Healthcare IT acquisition",
+      "url": "https://www.infosys.com/newsroom/press-releases/2026/completes-acquisition-optimum-healthcare-it.html",
+      "published": "2026-05-05",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Completed cross-border acquisition and acquired provider expertise; no ANZ transfer claim"
+    },
+    {
+      "id": "federation",
+      "title": "Cognizant and Federation University Workday case",
+      "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+      "published": null,
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Named Victorian HCM/Payroll delivery and subsequent EBA work; Finance/Student future phases"
+    },
+    {
+      "id": "jn1",
+      "title": "Equinix opens Johannesburg JN1",
+      "url": "https://newsroom.equinix.com/2024-10-24-Equinix-opens-its-first-data-center-in-Johannesburg-enhancing-digital-infrastructure-and-connectivity-in-the-region",
+      "published": "2024-10-24",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Opening and initial phase cabinets; named established network deployments"
+    },
+    {
+      "id": "google-uruguay",
+      "title": "Google starts Canelones data-centre construction",
+      "url": "https://blog.google/company-news/inside-google/around-the-globe/google-latin-america/a-new-data-center-in-latin-america/",
+      "published": "2024-08-29",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Construction announcement and investment; does not prove current operational availability"
+    },
+    {
+      "id": "uruguay-power",
+      "title": "UTE: Uruguay 2025 energy balance",
+      "url": "https://www.ute.com.uy/noticias/balance-energetico-nacional-2025-uruguay-reafirma-su-liderazgo-renovable-con-el-aporte-estrategico",
+      "published": "2026-08-10",
+      "checked": "2026-09-11",
+      "kind": "national utility primary source",
+      "scope": "2025 national annual electricity generation mix, not hourly supply to a specific facility"
+    },
+    {
+      "id": "g42-alliance",
+      "title": "Stargate UAE partnership and roles",
+      "url": "https://www.g42.ai/resources/news/global-tech-alliance-launches-stargate-uae",
+      "published": "2025-05",
+      "checked": "2026-09-11",
+      "kind": "primary company source",
+      "scope": "Announced planned supplier and operator roles; not completed 1 GW capacity"
+    },
+    {
+      "id": "g42-build",
+      "title": "G42 October construction update",
+      "url": "https://www.prnewswire.com/news-releases/g42-provides-update-on-construction-of-stargate-uae-ai-infrastructure-cluster-302586430.html",
+      "published": "2025-10-16",
+      "checked": "2026-09-11",
+      "kind": "issuer press release via distribution service",
+      "scope": "Construction underway; initial 200 MW planned for 2026, completion not established here"
+    },
+    {
+      "id": "transformer",
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "published": "2017-06-12",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "Architecture and translation evaluations"
+    },
+    {
+      "id": "gpt3",
+      "title": "Language Models are Few-Shot Learners",
+      "url": "https://arxiv.org/abs/2005.14165",
+      "published": "2020-05-28",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "175B model and in-context task demonstrations; not dependable general intelligence"
+    },
+    {
+      "id": "chinchilla",
+      "title": "Training Compute-Optimal Large Language Models",
+      "url": "https://arxiv.org/abs/2203.15556",
+      "published": "2022-03-29",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "Compute allocation across model size and training data for the studied regime"
+    },
+    {
+      "id": "instruct",
+      "title": "Training language models to follow instructions with human feedback",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "published": "2022-03-04",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "Human preferences on the evaluated prompt distribution, not universal correctness"
+    },
+    {
+      "id": "react",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "published": "2022-10-06",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "2022 preprint, 2023 ICLR; interactive benchmark results, not arbitrary enterprise autonomy"
+    },
+    {
+      "id": "r1",
+      "title": "DeepSeek-R1",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "published": "2025-01-22",
+      "checked": "2026-09-11",
+      "kind": "original research paper",
+      "scope": "Original release 2025; current manuscript revised 2026-01-04, RL results on verifiable tasks"
+    },
+    {
+      "id": "metr-th11",
+      "title": "METR Time Horizon 1.1 release",
+      "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+      "published": "2026-01-29",
+      "checked": "2026-09-11",
+      "kind": "original research organisation",
+      "scope": "Frozen comparison of TH1.1 estimates; later dashboard updates must not silently overwrite this snapshot"
+    },
+    {
+      "id": "metr-current",
+      "title": "METR task-completion horizons dashboard",
+      "url": "https://metr.org/time-horizons/",
+      "published": "2026-05-08",
+      "checked": "2026-09-11",
+      "kind": "original research organisation",
+      "scope": "Current dashboard states estimates above 16 hours unreliable; P50/P80 refer to human-equivalent task duration"
+    },
+    {
+      "id": "metr-work",
+      "title": "METR productivity experiment design update",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "published": "2026-02-24",
+      "checked": "2026-09-11",
+      "kind": "original empirical research",
+      "scope": "Selection effects make newer productivity estimate unreliable; early study is a narrow experienced-developer sample"
+    },
+    {
+      "id": "census",
+      "title": "US business AI use through May 2026",
+      "url": "https://www.census.gov/library/stories/2026/05/ai-use-businesses.html",
+      "published": "2026-05-26",
+      "checked": "2026-09-11",
+      "kind": "government survey analysis",
+      "scope": "Past-two-week use in any business function; November 2025 question break"
+    },
+    {
+      "id": "iea-2026",
+      "title": "IEA Key Questions on Energy and AI",
+      "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+      "published": "2026",
+      "checked": "2026-09-11",
+      "kind": "intergovernmental original analysis",
+      "scope": "Estimated global 2025 DC electricity and central 2030 projection; all data centres, not AI alone"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "santa-clara",
+      "label": "Santa Clara · accelerator design",
+      "country": "United States",
+      "anchor": {
+        "lat": 37.35,
+        "lon": -121.96,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Design and computing platforms",
+      "headline": "The chip designer is one part of a distributed physical system.",
+      "facts": [
+        {
+          "text": "NVIDIA describes Blackwell GPUs as a 208-billion-transistor design made using TSMC’s custom 4NP process.",
+          "sourceIds": [
+            "nvidia-blackwell"
+          ],
+          "observationPeriod": "2024-03",
+          "status": "announced specification",
+          "metric": {
+            "value": 208,
+            "unit": "billion transistors per Blackwell GPU design",
+            "scope": "Two-die design; not clock rate or end-to-end performance"
+          }
+        }
+      ],
+      "editorialImplication": "A cloud or model supplier may still depend on the same upstream foundry and memory ecosystem. Provider diversity is not automatically physical supply diversity.",
+      "buyerQuestion": "Which dependencies would remain shared if we changed our cloud or model provider?",
+      "companyNames": [
+        "NVIDIA",
+        "TSMC"
+      ],
+      "limits": "Illustrative NVIDIA-centred cluster, not a census of US chip design; specifications do not establish delivered supply."
+    },
+    {
+      "id": "oberkochen",
+      "label": "Oberkochen · precision optics",
+      "country": "Germany",
+      "anchor": {
+        "lat": 48.79,
+        "lon": 10.1,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Specialised manufacturing equipment",
+      "headline": "The accelerator supply chain reaches into precision optics.",
+      "facts": [
+        {
+          "text": "ZEISS supplies the optical systems used in ASML EUV machines; its 2025 account traces this development to an Oberkochen workshop in 1995.",
+          "sourceIds": [
+            "zeiss-euv"
+          ],
+          "observationPeriod": "1995–2025",
+          "status": "reported",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "The visible software boom depends on engineering capabilities accumulated across decades. Adding final assembly capacity does not recreate every specialist input.",
+      "buyerQuestion": "Are several nominal suppliers exposed to the same specialist equipment chain?",
+      "companyNames": [
+        "ZEISS SMT",
+        "ASML"
+      ],
+      "limits": "Use the documented relationship; avoid treating every current ASML system as EUV or repeating old High-NA schedules as completed production."
+    },
+    {
+      "id": "veldhoven",
+      "label": "Veldhoven · lithography",
+      "country": "Netherlands",
+      "anchor": {
+        "lat": 51.42,
+        "lon": 5.41,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Semiconductor manufacturing tools",
+      "headline": "Advanced fabrication depends on the machines that pattern wafers.",
+      "facts": [
+        {
+          "text": "ASML reported sales of 48 EUV lithography systems in 2025.",
+          "sourceIds": [
+            "asml-2025"
+          ],
+          "observationPeriod": "2025",
+          "status": "reported",
+          "metric": {
+            "value": 48,
+            "unit": "EUV systems sold",
+            "scope": "ASML company-wide annual total"
+          }
+        }
+      ],
+      "editorialImplication": "Equipment capacity, installation and customer process readiness are separate steps. A tool shipment does not immediately become qualified chip output.",
+      "buyerQuestion": "Is a capacity claim about equipment sold, installed tools, qualified wafers, or customer-ready chips?",
+      "companyNames": [
+        "ASML",
+        "ZEISS SMT",
+        "TSMC"
+      ],
+      "limits": "System sales are neither installed-base size nor capacity in one geography; do not compare directly to GPUs or megawatts."
+    },
+    {
+      "id": "taiwan-foundry",
+      "label": "Taiwan · fabrication and packaging",
+      "country": "Taiwan",
+      "anchor": {
+        "lat": 24.8,
+        "lon": 120.98,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Foundry and advanced packaging",
+      "headline": "Manufacturing and packaging turn designs into usable compute.",
+      "facts": [
+        {
+          "text": "TSMC reports N2 entered high-volume manufacturing in Q4 2025.",
+          "sourceIds": [
+            "tsmc-2025"
+          ],
+          "observationPeriod": "2025-Q4",
+          "status": "reported",
+          "metric": null
+        },
+        {
+          "text": "It also describes CoWoS and 3D stacking as part of its high-performance computing offering.",
+          "sourceIds": [
+            "tsmc-2025"
+          ],
+          "observationPeriod": "2025",
+          "status": "reported",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "A process-node name is only one part of system performance. Packaging, memory and interconnect determine how useful the fabricated compute becomes.",
+      "buyerQuestion": "Does the roadmap include qualified packaging and memory availability as well as the logic process?",
+      "companyNames": [
+        "TSMC",
+        "NVIDIA",
+        "SK hynix"
+      ],
+      "limits": "Hsinchu map anchor represents a Taiwan manufacturing network. N2 is a process generation name, not a universal literal transistor dimension."
+    },
+    {
+      "id": "korea-memory",
+      "label": "Icheon and Cheongju · AI memory",
+      "country": "South Korea",
+      "anchor": {
+        "lat": 37.27,
+        "lon": 127.44,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "High-bandwidth memory",
+      "headline": "Moving data into the accelerator is a major part of the compute problem.",
+      "facts": [
+        {
+          "text": "At its March 2026 AGM, SK hynix said its HBM revenue doubled in 2025 and described an established HBM4 mass-production system.",
+          "sourceIds": [
+            "hynix-2025"
+          ],
+          "observationPeriod": "2025",
+          "status": "company reported",
+          "metric": {
+            "value": 2,
+            "unit": "times prior-year HBM revenue",
+            "scope": "SK hynix; revenue, not bits shipped or market share"
+          }
+        }
+      ],
+      "editorialImplication": "Memory and logic now require joint planning. More arithmetic throughput alone does not resolve a memory-constrained workload.",
+      "buyerQuestion": "Is the workload limited by arithmetic, memory capacity, memory bandwidth, or communication?",
+      "companyNames": [
+        "SK hynix",
+        "TSMC"
+      ],
+      "limits": "Do not describe SK hynix as the only HBM maker or assign company-wide revenue to one Korean city."
+    },
+    {
+      "id": "china-industry",
+      "label": "China · manufacturing deployment",
+      "country": "China",
+      "anchor": {
+        "lat": 31.23,
+        "lon": 121.47,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Industrial automation demand and deployment",
+      "headline": "A major technology market is the factory floor, not only the model leaderboard.",
+      "facts": [
+        {
+          "text": "IFR recorded about 295,000 new industrial-robot installations in China in 2024, up 7% from 2023.",
+          "sourceIds": [
+            "ifr-2024"
+          ],
+          "observationPeriod": "2024",
+          "status": "industry statistics",
+          "metric": {
+            "value": 295000,
+            "unit": "industrial robots installed per year",
+            "scope": "China national total"
+          }
+        }
+      ],
+      "editorialImplication": "Industrial deployment should be assessed through production constraints, integration and operational performance. A robotics volume measure is a different lens from frontier model rankings.",
+      "buyerQuestion": "What can be integrated into this production process, and how will throughput, defects and downtime be measured?",
+      "companyNames": [],
+      "limits": "Shanghai is an illustrative anchor for a national network. Industrial robot installations do not measure humanoids, generative AI use or autonomous-factory penetration."
+    },
+    {
+      "id": "singapore",
+      "label": "Singapore · regional infrastructure",
+      "country": "Singapore",
+      "anchor": {
+        "lat": 1.35,
+        "lon": 103.82,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Cloud, network, power and resilience",
+      "headline": "A dense digital hub still depends on cooling, power and shared infrastructure.",
+      "facts": [
+        {
+          "text": "MDDI reports Singapore hosts more than 1.6 GW of data-centre capacity.",
+          "sourceIds": [
+            "sg-infra"
+          ],
+          "observationPeriod": "2026-09",
+          "status": "government reported",
+          "metric": {
+            "value": 1.6,
+            "operator": ">",
+            "unit": "GW of data-centre capacity",
+            "scope": "Singapore; not utilised AI compute"
+          }
+        },
+        {
+          "text": "Its September 2026 statement supports further capacity through measured, sustainable new builds and upgrades.",
+          "sourceIds": [
+            "sg-growth"
+          ],
+          "observationPeriod": "2026-09-09",
+          "status": "policy statement",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "A regional failover design needs physical failure-domain evidence; a second service name alone does not establish independence.",
+      "buyerQuestion": "Do our backups share a site, cooling system, power path, or regional dependency?",
+      "companyNames": [],
+      "limits": "Capacity is not energy consumption or available GPU inventory. The cited Digital Infrastructure Bill is at First Reading, not established as enacted by this source."
+    },
+    {
+      "id": "bengaluru",
+      "label": "Bengaluru · global delivery and acquired expertise",
+      "country": "India",
+      "anchor": {
+        "lat": 12.97,
+        "lon": 77.59,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Enterprise engineering and services",
+      "headline": "Scale becomes more useful when it carries domain capability.",
+      "facts": [
+        {
+          "text": "Infosys completed its acquisition of Florida-based Optimum Healthcare IT on 5 May 2026, adding healthcare-provider expertise and delivery relationships.",
+          "sourceIds": [
+            "infosys-optimum"
+          ],
+          "observationPeriod": "2026-05-05",
+          "status": "completed acquisition",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "Trace where a service capability came from and where its experienced team operates. An acquisition can change a firm’s offer before it changes every regional practice.",
+      "buyerQuestion": "Which acquired specialists and local references would actually work on our programme?",
+      "companyNames": [
+        "Infosys",
+        "Optimum Healthcare IT"
+      ],
+      "limits": "This is an Infosys-linked delivery story, not a national services-market metric. US provider capability does not establish ANZ delivery depth."
+    },
+    {
+      "id": "victoria-delivery",
+      "label": "Victoria · local enterprise delivery",
+      "country": "Australia",
+      "anchor": {
+        "lat": -37.56,
+        "lon": 143.85,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Local implementation and operating capability",
+      "headline": "A named local implementation is stronger evidence than a global badge.",
+      "facts": [
+        {
+          "text": "Cognizant’s Federation University case describes live Workday HCM and Payroll, followed by configuration and testing for a new TAFE enterprise agreement.",
+          "sourceIds": [
+            "federation"
+          ],
+          "observationPeriod": null,
+          "status": "published delivery case",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "The useful local capability is the ability to translate an operating rule into a dependable system and maintain it after go-live.",
+      "buyerQuestion": "Who has delivered the relevant local payroll rules, and will that team remain through stabilisation?",
+      "companyNames": [
+        "Cognizant",
+        "Workday",
+        "Federation University"
+      ],
+      "limits": "The case is undated and company-published. It does not prove completed Finance or Student deployment, practice headcount, or an available named project team."
+    },
+    {
+      "id": "johannesburg",
+      "label": "Johannesburg · interconnection",
+      "country": "South Africa",
+      "anchor": {
+        "lat": -26.14,
+        "lon": 28.21,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Colocation and network exchange",
+      "headline": "Local interconnection is a concrete part of Africa’s technology infrastructure.",
+      "facts": [
+        {
+          "text": "Equinix opened JN1 in October 2024 with 700 initial-phase cabinets.",
+          "sourceIds": [
+            "jn1"
+          ],
+          "observationPeriod": "2024-10-24",
+          "status": "opened",
+          "metric": {
+            "value": 700,
+            "unit": "initial-phase cabinets",
+            "scope": "JN1 facility, not all Johannesburg capacity"
+          }
+        },
+        {
+          "text": "The opening release names established deployments by SEACOM, Liquid, WorkOnline and JINX.",
+          "sourceIds": [
+            "jn1"
+          ],
+          "observationPeriod": "2024-10-24",
+          "status": "reported established deployments",
+          "metric": null
+        }
+      ],
+      "editorialImplication": "Geographic proximity and actual interconnection can matter more than a continent-level market label.",
+      "buyerQuestion": "Which local networks and exchange points can the service reach, and where is resilience shared?",
+      "companyNames": [
+        "Equinix",
+        "SEACOM",
+        "Liquid Intelligent Technologies",
+        "WorkOnline Communications",
+        "JINX"
+      ],
+      "limits": "Do not substitute the planned 3,475-cabinet full build-out for the initial operating phase. This is one metro, not an Africa-wide capacity estimate."
+    },
+    {
+      "id": "canelones",
+      "label": "Canelones · infrastructure and electricity",
+      "country": "Uruguay",
+      "anchor": {
+        "lat": -34.52,
+        "lon": -56.28,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Power context and cloud infrastructure investment",
+      "headline": "A small market can matter through the combination of energy and connectivity.",
+      "facts": [
+        {
+          "text": "Google announced construction of a Canelones data centre with more than US$850 million investment in August 2024.",
+          "sourceIds": [
+            "google-uruguay"
+          ],
+          "observationPeriod": "2024-08-29",
+          "status": "construction announced",
+          "metric": {
+            "value": 850,
+            "operator": ">",
+            "unit": "USD million announced investment",
+            "scope": "Project investment, not annual revenue or operating capacity"
+          }
+        },
+        {
+          "text": "UTE’s 2025 energy balance reports that 98% of national electricity generation was renewable.",
+          "sourceIds": [
+            "uruguay-power"
+          ],
+          "observationPeriod": "2025",
+          "status": "reported annual statistics",
+          "metric": {
+            "value": 98,
+            "unit": "percent of electricity generation",
+            "scope": "Uruguay national annual mix"
+          }
+        }
+      ],
+      "editorialImplication": "A low-carbon annual grid mix can be attractive, but capacity availability, hourly supply, network paths and service readiness still need separate evidence.",
+      "buyerQuestion": "Are we evaluating annual energy mix, available firm power, an operating service, or a construction pipeline?",
+      "companyNames": [
+        "Google",
+        "UTE"
+      ],
+      "limits": "No current opening is established by the construction source. National annual renewable share is not a facility’s hourly carbon-free-energy score; it says nothing by itself about spare grid capacity."
+    },
+    {
+      "id": "abu-dhabi",
+      "label": "Abu Dhabi · AI infrastructure build-out",
+      "country": "United Arab Emirates",
+      "anchor": {
+        "lat": 24.45,
+        "lon": 54.38,
+        "precision": "Illustrative city or regional anchor, not an asset location or geographic boundary"
+      },
+      "role": "Capital, construction and planned AI operations",
+      "headline": "The announced AI cluster combines local construction with global suppliers.",
+      "facts": [
+        {
+          "text": "G42’s October 2025 update described Stargate UAE construction underway: a 1 GW cluster within a larger 5 GW campus, with the first 200 MW planned for 2026.",
+          "sourceIds": [
+            "g42-build"
+          ],
+          "observationPeriod": "2025-10-16",
+          "status": "under construction at source date",
+          "metric": {
+            "value": 200,
+            "unit": "MW in planned first phase",
+            "scope": "Target, not confirmed operating capacity"
+          }
+        }
+      ],
+      "editorialImplication": "A sovereign infrastructure programme is a coalition of physical, cloud, model and networking dependencies. Local location does not imply an entirely local technology stack.",
+      "buyerQuestion": "Which parts are operating now, who operates each layer, and what remains conditional on delivery?",
+      "companyNames": [
+        "G42",
+        "Khazna",
+        "OpenAI",
+        "Oracle",
+        "NVIDIA",
+        "Cisco",
+        "SoftBank"
+      ],
+      "limits": "Do not label 200 MW, 1 GW or 5 GW as live without a newer completion source. These are nested phases, not three additive capacities."
+    }
+  ],
+  "edges": [
+    {
+      "id": "optics-to-tools",
+      "fromId": "oberkochen",
+      "toId": "veldhoven",
+      "label": "Supplies lithography optics",
+      "sourceIds": [
+        "zeiss-euv"
+      ],
+      "evidenceKind": "reported relationship",
+      "status": "reported",
+      "meaning": "Documented ZEISS–ASML relationship, not a freight route."
+    },
+    {
+      "id": "tools-to-foundry",
+      "fromId": "veldhoven",
+      "toId": "taiwan-foundry",
+      "label": "Works with TSMC on fabrication tools",
+      "sourceIds": [
+        "asml-taiwan",
+        "tsmc-n7"
+      ],
+      "evidenceKind": "reported relationship",
+      "status": "reported",
+      "meaning": "Reported manufacturer relationship; no model-specific installed-base count implied."
+    },
+    {
+      "id": "foundry-to-design",
+      "fromId": "taiwan-foundry",
+      "toId": "santa-clara",
+      "label": "Fabricates Blackwell on TSMC 4NP",
+      "sourceIds": [
+        "nvidia-blackwell"
+      ],
+      "evidenceKind": "reported relationship",
+      "status": "reported",
+      "meaning": "Arrow means an upstream manufacturing input to the design platform; not geography of all Blackwell output."
+    },
+    {
+      "id": "logic-to-memory",
+      "fromId": "taiwan-foundry",
+      "toId": "korea-memory",
+      "label": "HBM4 base-die and packaging collaboration",
+      "sourceIds": [
+        "hynix-tsmc"
+      ],
+      "evidenceKind": "announced development collaboration",
+      "status": "announced 2024",
+      "meaning": "MOU to combine TSMC foundry processes with SK hynix HBM; not proof all HBM4 shipments use a given fab."
+    },
+    {
+      "id": "compute-to-uae",
+      "fromId": "santa-clara",
+      "toId": "abu-dhabi",
+      "label": "Planned GB300 systems supplier",
+      "sourceIds": [
+        "g42-alliance"
+      ],
+      "evidenceKind": "announced supply role",
+      "status": "planned",
+      "meaning": "NVIDIA role in the announced programme; not a confirmed shipment record."
+    },
+    {
+      "id": "operators-to-uae",
+      "fromId": "uae-operators",
+      "toId": "abu-dhabi",
+      "label": "Planned operation of the compute cluster",
+      "sourceIds": [
+        "g42-alliance"
+      ],
+      "evidenceKind": "announced operator role",
+      "status": "planned",
+      "meaning": null
+    },
+    {
+      "id": "network-to-uae",
+      "fromId": "uae-network",
+      "toId": "abu-dhabi",
+      "label": "Planned networking and security",
+      "sourceIds": [
+        "g42-alliance"
+      ],
+      "evidenceKind": "announced supply role",
+      "status": "planned",
+      "meaning": null
+    },
+    {
+      "id": "acquisition-to-delivery",
+      "fromId": "optimum-florida",
+      "toId": "bengaluru",
+      "label": "Acquired healthcare provider expertise",
+      "sourceIds": [
+        "infosys-optimum"
+      ],
+      "evidenceKind": "completed acquisition",
+      "status": "completed 2026-05-05",
+      "meaning": "Capability lineage for Infosys, not proof the acquired team relocated to India."
+    },
+    {
+      "id": "platform-to-local",
+      "fromId": "workday-platform",
+      "toId": "victoria-delivery",
+      "label": "Implemented with Cognizant at Federation",
+      "sourceIds": [
+        "federation"
+      ],
+      "evidenceKind": "reported relationship",
+      "status": "reported",
+      "meaning": "Named HCM/Payroll implementation; future Finance/Student excluded."
+    },
+    {
+      "id": "networks-to-colocation",
+      "fromId": "jn1-networks",
+      "toId": "johannesburg",
+      "label": "Established network deployments at JN1",
+      "sourceIds": [
+        "jn1"
+      ],
+      "evidenceKind": "reported relationship",
+      "status": "reported",
+      "meaning": "Co-location/interconnection evidence, not a claim about end-to-end internet latency."
+    },
+    {
+      "id": "cooling-to-service",
+      "fromId": "singapore",
+      "toId": "sg-service-users",
+      "label": "Cooling failure disrupted digital services",
+      "sourceIds": [
+        "sg-infra"
+      ],
+      "evidenceKind": "reported incident",
+      "status": "October 2023 incident",
+      "meaning": "MDDI describes a cooling failure affecting banking for over 12 hours and 2.5 million failed payment/ATM transactions; not a claim about every Singapore provider."
+    },
+    {
+      "id": "grid-to-site",
+      "fromId": "uruguay-grid",
+      "toId": "canelones",
+      "label": "National electricity context for a new site",
+      "sourceIds": [
+        "uruguay-power",
+        "google-uruguay"
+      ],
+      "evidenceKind": "technical and geographic context",
+      "status": "context",
+      "meaning": "Not a documented dedicated power purchase agreement or hourly clean-energy guarantee."
+    },
+    {
+      "id": "robots-to-operations",
+      "fromId": "china-industry",
+      "toId": "industrial-process",
+      "label": "Industrial deployment requires integration",
+      "sourceIds": [
+        "ifr-2024"
+      ],
+      "evidenceKind": "editorial technical interpretation",
+      "status": "interpretation",
+      "meaning": "Do not render as a commercial contract or equate industrial robots with autonomous AI."
+    }
+  ],
+  "satelliteNodes": [
+    {
+      "id": "optimum-florida",
+      "label": "Optimum Healthcare IT · Florida",
+      "kind": "company"
+    },
+    {
+      "id": "workday-platform",
+      "label": "Workday platform",
+      "kind": "platform"
+    },
+    {
+      "id": "jn1-networks",
+      "label": "SEACOM · Liquid · WorkOnline · JINX",
+      "kind": "named network deployments"
+    },
+    {
+      "id": "sg-service-users",
+      "label": "Singapore banking and digital services",
+      "kind": "observed downstream services"
+    },
+    {
+      "id": "uae-operators",
+      "label": "OpenAI and Oracle",
+      "kind": "planned operators"
+    },
+    {
+      "id": "uae-network",
+      "label": "Cisco",
+      "kind": "planned network supplier"
+    },
+    {
+      "id": "uruguay-grid",
+      "label": "Uruguay electricity system",
+      "kind": "physical system"
+    },
+    {
+      "id": "industrial-process",
+      "label": "Production process and factory operations",
+      "kind": "technical dependency"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "transformer-2017",
+      "date": "2017",
+      "title": "Attention changes the architecture",
+      "before": "Sequence models often depended on recurrence or convolution.",
+      "whatChanged": "The Transformer demonstrated an attention-based architecture with strong translation results and more parallelisable training.",
+      "whatStillBlockedUse": "Architecture did not by itself provide instruction following, trustworthy tools, business context or cheap deployment.",
+      "teachingInterpretation": "A breakthrough can improve the engine while leaving the rest of the system unfinished.",
+      "sourceIds": [
+        "transformer"
+      ]
+    },
+    {
+      "id": "euv-volume",
+      "date": "2019",
+      "title": "A long equipment programme reaches customer production",
+      "before": "EUV needed usable light sources, optics, process control and an industrial ecosystem.",
+      "whatChanged": "TSMC describes N7+ as a high-volume EUV process delivering customer products.",
+      "whatStillBlockedUse": "A demonstrated process still requires yield, capacity, packaging and customer qualification.",
+      "teachingInterpretation": "Sudden commercial relevance can follow decades of complementary engineering. Use with the 1995 ZEISS origin story, not as a single-inventor tale.",
+      "sourceIds": [
+        "tsmc-n7",
+        "zeiss-euv"
+      ]
+    },
+    {
+      "id": "gpt3-2020",
+      "date": "2020",
+      "title": "A prompt becomes a reusable task interface",
+      "before": "Many NLP systems needed task-specific training.",
+      "whatChanged": "GPT-3 demonstrated broad few-shot performance using task examples in context.",
+      "whatStillBlockedUse": "Success varied by task; fluent output was not dependable reasoning or factual reliability.",
+      "teachingInterpretation": "One trained model can support many interfaces, while evaluation remains task-specific.",
+      "sourceIds": [
+        "gpt3"
+      ]
+    },
+    {
+      "id": "instruct-2022",
+      "date": "2022-03",
+      "title": "Train for what users ask",
+      "before": "A next-token objective did not guarantee helpful responses to instructions.",
+      "whatChanged": "InstructGPT combined demonstrations and preference feedback; human raters preferred a 1.3B version over 175B GPT-3 on the evaluated prompts.",
+      "whatStillBlockedUse": "Preference on a prompt distribution is not universal truth or safety.",
+      "teachingInterpretation": "More parameters and more useful behaviour are different axes.",
+      "sourceIds": [
+        "instruct"
+      ]
+    },
+    {
+      "id": "chinchilla-2022",
+      "date": "2022-03",
+      "title": "Rebalance model size and data",
+      "before": "Some large models were undertrained for their compute budget.",
+      "whatChanged": "Chinchilla showed stronger results by allocating a fixed training budget differently across parameters and data.",
+      "whatStillBlockedUse": "Training-optimal choices need not minimise lifetime serving cost for every workload.",
+      "teachingInterpretation": "Efficiency progress can come from using resources differently, not only buying more.",
+      "sourceIds": [
+        "chinchilla"
+      ]
+    },
+    {
+      "id": "react-2022-23",
+      "date": "2022–2023",
+      "title": "Connect generation to actions and observations",
+      "before": "A text-only response could not inspect or act on a changing external system.",
+      "whatChanged": "ReAct interleaved reasoning and actions in interactive tasks.",
+      "whatStillBlockedUse": "Tool access adds permissions, error recovery, state management and verification needs.",
+      "teachingInterpretation": "The useful unit becomes a controlled workflow, not one model answer.",
+      "sourceIds": [
+        "react"
+      ]
+    },
+    {
+      "id": "r1-2025",
+      "date": "2025",
+      "title": "Post-training strengthens verifiable reasoning",
+      "before": "Pretraining alone left limits on difficult reasoning tasks.",
+      "whatChanged": "DeepSeek-R1 research showed reinforcement learning could strengthen reasoning on tasks with verifiable outcomes.",
+      "whatStillBlockedUse": "A verifiable benchmark reward is easier to specify than many messy business goals.",
+      "teachingInterpretation": "Ask where success can be checked cheaply and reliably before expanding autonomy.",
+      "sourceIds": [
+        "r1"
+      ]
+    },
+    {
+      "id": "measurement-2026",
+      "date": "2026",
+      "title": "Progress creates a measurement problem",
+      "before": "A fixed task suite becomes less informative as systems improve.",
+      "whatChanged": "METR expanded and revised its horizon evaluation; it separately reported bias problems in its newer productivity experiment.",
+      "whatStillBlockedUse": "Benchmark performance and work outcomes remain different quantities.",
+      "teachingInterpretation": "Measure reliability and realised value independently; revise the instrument when it stops distinguishing systems.",
+      "sourceIds": [
+        "metr-th11",
+        "metr-work"
+      ]
+    }
+  ],
+  "trajectories": [
+    {
+      "id": "capability-horizon",
+      "title": "Longer tasks at a stated reliability",
+      "chart": "Points with confidence intervals; optional connecting line across model cohorts, no extrapolated completion date",
+      "metric": "P50 task horizon in human-expert minutes",
+      "observations": [
+        {
+          "cohort": "GPT-4 0314",
+          "modelReleaseYear": 2023,
+          "value": 3.5,
+          "interval95": [
+            1.6,
+            6.9
+          ]
+        },
+        {
+          "cohort": "Claude Sonnet 3.7",
+          "modelReleaseYear": 2025,
+          "value": 60,
+          "interval95": [
+            32,
+            106
+          ]
+        },
+        {
+          "cohort": "Claude Opus 4.5",
+          "modelReleaseYear": 2025,
+          "value": 320,
+          "interval95": [
+            170,
+            729
+          ]
+        }
+      ],
+      "snapshot": "METR TH1.1 comparison published 2026-01-29; deliberately not labelled latest",
+      "sourceIds": [
+        "metr-th11",
+        "metr-current"
+      ],
+      "interpretation": "Capability rises strongly in this instrument. The threshold is 50% success, not unattended dependability.",
+      "limits": "Self-contained software-related tasks; human-equivalent duration, not agent elapsed runtime. Use one evaluation version. The current dashboard warns estimates above 16 hours are unreliable.",
+      "decisionImplication": "Use representative internal tasks and a required reliability threshold before changing workflow authority."
+    },
+    {
+      "id": "workplace-productivity",
+      "title": "Capability growth does not fix the workplace estimate",
+      "chart": "Study evidence cards, not a clean before/after trend line",
+      "metric": "Relative completion time with AI tools in experienced open-source developers",
+      "observations": [
+        {
+          "period": "February–June 2025",
+          "value": 19,
+          "unit": "percent longer task completion time",
+          "interval95": [
+            2,
+            39
+          ],
+          "status": "randomised study estimate"
+        },
+        {
+          "period": "Study started August 2025; update February 2026",
+          "value": null,
+          "status": "Current effect not reliably identified because of selection and measurement changes"
+        }
+      ],
+      "sourceIds": [
+        "metr-work"
+      ],
+      "interpretation": "Do not turn an early slowdown or a biased later speedup into a universal claim.",
+      "limits": "Narrow developer/task population; participant selection and concurrent-agent time measurement complicate the follow-up.",
+      "decisionImplication": "Evaluate completed work, quality and review effort in the actual workflow, with a credible baseline."
+    },
+    {
+      "id": "business-adoption",
+      "title": "Adoption is uneven across real businesses",
+      "chart": "Sector dot plot plus annotated period range; not a fitted S-curve",
+      "metric": "Percent of US businesses using AI in any business function in the preceding two weeks",
+      "observations": [
+        {
+          "periodEnd": "2026-05-03",
+          "cohort": "All businesses",
+          "value": 19.8
+        },
+        {
+          "periodEnd": "2026-05-03",
+          "cohort": "Information",
+          "value": 39.7
+        },
+        {
+          "periodEnd": "2026-05-03",
+          "cohort": "Finance and insurance",
+          "value": 33.9
+        }
+      ],
+      "periodContext": "Overall use ranged around 17–20% across December 2025–May 2026; the source reports no significant sector shift for Information or Finance/Insurance during that period.",
+      "sourceIds": [
+        "census"
+      ],
+      "interpretation": "A sector can be a relatively heavy adopter without its recent usage rate accelerating.",
+      "limits": "Use is not intensity, ROI or employment displacement. The November 2025 wording change prevents a clean join to older series.",
+      "decisionImplication": "Benchmark against relevant tasks and peers rather than a universal adoption clock."
+    },
+    {
+      "id": "physical-buildout",
+      "title": "Electricity demand can rise while individual tasks get cheaper",
+      "chart": "Solid historical estimate and dashed central projection; label each point",
+      "metric": "Global data-centre electricity demand in TWh per year",
+      "observations": [
+        {
+          "year": 2025,
+          "value": 485,
+          "status": "IEA estimate"
+        },
+        {
+          "year": 2030,
+          "value": 950,
+          "status": "IEA central projection"
+        }
+      ],
+      "sourceIds": [
+        "iea-2026"
+      ],
+      "interpretation": "Aggregate demand depends on use volume, workload mix and efficiency together.",
+      "limits": "All data centres, not AI alone; projection is conditional, not an observation or site commitment.",
+      "decisionImplication": "Plan capacity from expected workload and power availability; do not extrapolate cost per text answer to an agentic estate."
+    },
+    {
+      "id": "industrial-deployment",
+      "title": "Deployment grows unevenly across markets",
+      "chart": "Two dated global observations and a separate China 2024 callout",
+      "metric": "New industrial robots installed per year",
+      "observations": [
+        {
+          "year": 2014,
+          "cohort": "Global",
+          "value": 221000,
+          "status": "IFR reported"
+        },
+        {
+          "year": 2024,
+          "cohort": "Global",
+          "value": 542000,
+          "status": "IFR reported"
+        },
+        {
+          "year": 2024,
+          "cohort": "China",
+          "value": 295000,
+          "yearOnYearPercent": 7,
+          "status": "IFR reported"
+        }
+      ],
+      "sourceIds": [
+        "ifr-2024"
+      ],
+      "interpretation": "A decade of expansion coexists with flat global annual installations in 2024 and growth in China.",
+      "limits": "Two global points do not establish an S-curve. This measures industrial robots, not generative AI deployment.",
+      "decisionImplication": "Evaluate installation, integration and operational outcomes as separate stages."
+    }
+  ]
+}

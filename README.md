@@ -12,14 +12,14 @@ needed. Maintained by [Ethan Harley](https://github.com/EthDawg), with contribut
 
 | Explore | What you’ll find |
 | --- | --- |
-| [Atlas](https://compound-snowy-pi.vercel.app) | Find companies, products, people and partner practices and explore the wider market. |
+| [Atlas](https://compound-snowy-pi.vercel.app) | Find companies, products, people, customer references and partner practices and explore the wider market. |
 | [App studies](https://compound-snowy-pi.vercel.app/companies/rippling/app) | Interactive scenarios that make a company’s product logic tangible. Switch companies to compare. |
 | [Backstage](https://compound-snowy-pi.vercel.app/companies/rippling/backstage) | Strategy, acquisitions, leadership, trade-offs and the evidence behind each interpretation. |
 | [ServiceNow’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/servicenow) | Explore deployment teams, workflow capabilities and acquisition trails. |
 | [Workday’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/workday) | Follow career lineage, local delivery capability and market movement. The global partner directory is also available here. |
-| [Global View](https://compound-snowy-pi.vercel.app/earth) | Connect markets, compute, infrastructure and delivery. |
+| [Global View](https://compound-snowy-pi.vercel.app/earth) | Follow sourced connections between chip design, tools, memory, infrastructure and local delivery. |
 | [Technology](https://compound-snowy-pi.vercel.app/technology) | Explore breakthroughs, physical limits and possible futures, with interactive labs and curated trackers. |
-| [Decisions](https://compound-snowy-pi.vercel.app/decisions) | Work through innovation, adoption and commitment from different buyer perspectives. |
+| [Decisions](https://compound-snowy-pi.vercel.app/decisions) | Work through AI authority, suite versus specialist, or SI selection; share the next-step brief. |
 
 Compound has its own navigation and identity; each company study keeps its own
 visual language and product behaviour.

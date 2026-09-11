@@ -1,7 +1,7 @@
 export interface Fact { text: string; url: string; source: string }
 export type Capability = string;
 export type Movement = 'Building' | 'Growing' | 'Contracting' | 'Acquired';
-export interface CapabilityFact extends Fact { capability: Capability; scope: 'ANZ' | 'APAC' | 'Global'; customerId?: string; basis?: 'offer' | 'credentials' }
+export interface CapabilityFact extends Fact { capability: Capability; scope: 'ANZ' | 'APAC' | 'Global'; customerId?: string; basis?: 'offer' | 'credentials' | 'people' }
 export interface AnzCompany {
   id: string; name: string; directorySlug?: string; kind: string; thesis: string; watch: string;
   owner: Fact; founded?: Fact; presence: Fact; size?: Fact; segment: string;
@@ -41,7 +41,8 @@ const ANZ_LINEAGES = config.research.lineages as Lineage[];
 const ANZ_ACTIVE = ANZ_COMPANIES.filter((c) => !c.historical);
 const anzCompany = (id: string) => ANZ_COMPANIES.find((c) => c.id === id);
 const companyPeople = (id: string) => ANZ_PEOPLE.filter((p) => p.companyId === id);
-const peopleInLineage = (id: string) => ANZ_PEOPLE.filter((p) => p.companyId === id || p.career.some((s) => s.companyId === id) || ANZ_LINEAGES.some((l) => l.companyIds.includes(id) && l.companyIds.includes(p.companyId))).sort((a, b) => Number(b.companyId === id) - Number(a.companyId === id));
+// Ownership lineage cannot establish an individual's employment history.
+const peopleInLineage = (id: string) => ANZ_PEOPLE.filter((p) => p.companyId === id || p.career.some((s) => s.companyId === id)).sort((a, b) => Number(b.companyId === id) - Number(a.companyId === id));
 const companyEvents = (id: string) => ANZ_EVENTS.filter((e) => e.companyIds.includes(id)).sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 
 /** A dated signal is a reading of change, not a quality score or an acquisition forecast. */
@@ -63,11 +64,11 @@ function companyMovement(id: string, asOf = config.asOf, events = ANZ_EVENTS): {
 function searchAnz(query: string, capability = '', movement = '') {
   const normal = (s: string) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const terms = normal(query).split(/\s+/).filter(Boolean);
-  return ANZ_ACTIVE.filter((c) => {
+  return (terms.length ? ANZ_COMPANIES : ANZ_ACTIVE).filter((c) => {
     const people = peopleInLineage(c.id);
-    const text = [c.name, ...(c.aliases ?? []), c.kind, c.thesis, c.presence.text, c.owner.text, ...people.flatMap((p) => [p.name, p.domain, ...p.career.map((s) => anzCompany(s.companyId)?.name ?? '')]), ...companyEvents(c.id).map((e) => e.text), ...c.capabilities.map((x) => x.capability)].join(' ');
+    const text = [c.name, ...(c.aliases ?? []), c.kind, c.thesis, c.presence.text, c.owner.text, ...people.flatMap((p) => [p.name, p.domain, ...p.career.map((s) => anzCompany(s.companyId)?.name ?? '')]), ...ANZ_CUSTOMERS.filter((x) => x.companyId === c.id).map((x) => x.name), ...companyEvents(c.id).map((e) => e.text), ...c.capabilities.map((x) => x.capability)].join(' ');
     const searchable = normal(text);
-    return terms.every((term) => searchable.includes(term)) && (!capability || c.capabilities.some((x) => x.capability === capability && x.scope === 'ANZ' && x.basis !== 'credentials') || ANZ_CUSTOMERS.some((x) => x.companyId === c.id && x.capabilities.includes(capability))) && (!movement || companyMovement(c.id).label === movement);
+    return terms.every((term) => searchable.includes(term)) && (!capability || c.capabilities.some((x) => x.capability === capability && x.scope === 'ANZ' && x.basis !== 'credentials' && x.basis !== 'people') || ANZ_CUSTOMERS.some((x) => x.companyId === c.id && x.capabilities.includes(capability))) && (!movement || companyMovement(c.id).label === movement);
   });
 }
 
@@ -94,7 +95,8 @@ function capabilityEvidence(companyId: string, capability: string) {
   const cases = ANZ_CUSTOMERS.filter((c) => c.companyId === companyId && c.capabilities.includes(capability));
   if (cases.some((c) => !c.anonymous)) return { key:'named', mark:'✓', label:'Named ANZ customer case' };
   if (cases.length) return { key:'anonymous', mark:'◐', label:'ANZ case; customer is anonymous' };
-  if (claims.some((c) => c.scope === 'ANZ' && c.basis !== 'credentials')) return { key:'local', mark:'●', label:'Published ANZ offer' };
+  if (claims.some((c) => c.scope === 'ANZ' && c.basis !== 'credentials' && c.basis !== 'people')) return { key:'local', mark:'●', label:'Published ANZ offer' };
+  if (claims.length && claims.every((c) => c.basis === 'people')) return { key:'people', mark:'P', label:'People experience or capability hire; delivery is separate' };
   if (claims.length && claims.every((c) => c.basis === 'credentials')) return { key:'credentials', mark:'◇', label:'Credentials only; see stated geography and service scope' };
   if (claims.length) return { key:'global', mark:'G', label:'APAC or global offer only' };
   return { key:'unknown', mark:'—', label:'Not established in this research' };

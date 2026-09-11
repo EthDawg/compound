@@ -6,12 +6,11 @@ import { LENSES, type LensId, type Archetype } from "@/lib/data/ecosystem";
 import { SECTORS, sectorById, categoryById } from "@/lib/data/atlas";
 import { ALL_VENDORS, nodesAt, BOARD_STATS, type Node as AtlasNode, type Level } from "@/lib/data/atlas-nodes";
 import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
-import { AtlasSearch } from "./atlas-search";
+import { GuideHeader } from "./guide-header";
 import { AtlasMaps } from "./atlas-maps";
 import { SiEvidence } from "./si-evidence";
 import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
-import { StudyLink } from "./study-link";
 import { companyStudy, companyHref } from "@/lib/companies";
 
 function clearCompanyLocation() {
@@ -107,6 +106,7 @@ export function Atlas() {
   // Esc clears the selection, then walks back up a level.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
+      if (document.querySelector("dialog[open]")) return;
       const t = e.target as HTMLElement | null;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
       if (e.key === "Escape") { clearHover(); if (sel) { clearCompanyLocation(); setSel(null); } else up(); }
@@ -155,24 +155,7 @@ export function Atlas() {
 
   return (
     <div className="min-h-screen" style={{ background: PAPER.bg, color: PAPER.ink }}>
-      <header className="sticky top-0 z-40 border-b" style={{ borderColor: PAPER.line, background: `${PAPER.bg}EE`, backdropFilter: "blur(8px)" }}>
-        <div className="mx-auto flex h-14 max-w-[1180px] items-center gap-3 px-4 sm:px-6">
-          <Link href="/" className="flex shrink-0 items-center gap-2" onClick={goRoot}>
-            <span className="grid h-6 w-6 place-items-center rounded-[5px]" style={{ background: PAPER.ink, color: PAPER.highlight }}>
-              <I.ILayers className="h-3.5 w-3.5" />
-            </span>
-            <span className="text-[14px] font-semibold tracking-tight">Compound</span>
-          </Link>
-          <span className="hidden text-[11.5px] lg:block" style={{ color: PAPER.faint }}>
-            {BOARD_STATS.vendors} vendors · {BOARD_STATS.categories} categories · {BOARD_STATS.sectors} sectors
-          </span>
-          <nav className="ml-auto flex items-center gap-1 text-[12.5px]">
-            <StudyLink surface="app" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">App</StudyLink>
-            <Link href="/desk" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">Desk</Link>
-            <StudyLink surface="backstage" className="rounded-md px-2.5 py-1.5 font-medium transition hover:bg-black/[0.05]">Backstage</StudyLink>
-          </nav>
-        </div>
-      </header>
+      <GuideHeader activeId={sel ?? ''} />
 
       <main className="mx-auto max-w-[1180px] px-4 pb-16 sm:px-6">
         <AtlasMaps />
@@ -200,7 +183,6 @@ export function Atlas() {
           </div>
 
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center lg:ml-auto">
-            <AtlasSearch onPick={(n) => { clearCompanyLocation(); jump(n); }} />
             <div className="flex gap-0.5 rounded-lg p-0.5" style={{ background: PAPER.grid }}>
               {LENSES.map((l) => (
                 <button key={l.id} onClick={() => setLensId(l.id)}

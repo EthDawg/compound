@@ -3,14 +3,14 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const ts = require('typescript');
 require.extensions['.ts'] = (module, filename) => module._compile(ts.transpileModule(fs.readFileSync(filename, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true } }).outputText, filename);
-const { COMPANY_INDEX, searchCompanies, companyDestination, atlasCompanyHref, recentCompanies } = require('../lib/company-index.ts');
+const { COMPANY_INDEX, searchCompanies, companyDestination, atlasCompanyHref, recentCompanies, relatedCompanies } = require('../lib/company-index.ts');
 const { ALL_VENDORS } = require('../lib/data/atlas-nodes.ts');
 const { COMPANIES } = require('../lib/companies.ts');
 const first = (q) => searchCompanies(q)[0]?.company.id;
 
 test('one catalogue includes every Atlas company and every full study exactly once', () => {
   assert.ok(ALL_VENDORS.every((c) => COMPANY_INDEX.some((entry) => entry.id === c.id)));
-  assert.ok(COMPANY_INDEX.filter((c) => !c.atlasListed).every((c) => c.ecosystemLinks.length));
+  assert.ok(COMPANY_INDEX.filter((c) => !c.atlasListed).every((c) => c.ecosystemLinks.length || c.marketLinks?.length));
   assert.equal(new Set(COMPANY_INDEX.map((c) => c.id)).size, COMPANY_INDEX.length);
   assert.deepEqual(COMPANY_INDEX.filter((c) => c.studyId).map((c) => c.id).sort(), COMPANIES.map((c) => c.id).sort());
 });
@@ -49,4 +49,28 @@ test('recent history is bounded, deduplicated and rejects stale or malformed ent
   assert.deepEqual(recentCompanies(['openai', 'anthropic', 'openai', 'missing', 12], 'anthropic'), ['anthropic', 'openai']);
   assert.deepEqual(recentCompanies({ id: 'openai' }, 'anthropic'), ['anthropic']);
   assert.equal(recentCompanies(COMPANY_INDEX.map((c) => c.id)).length, 6);
+});
+
+test('person and customer matches preserve the evidence that led to the result', () => {
+  for (const query of ['Perth Airport', 'AFL']) {
+    const result = searchCompanies(query).find(m => m.context?.kind === 'Customer reference');
+    assert.ok(result, query);
+    const url = new URL(result.context.href, 'https://compound.example');
+    assert.equal(url.searchParams.get('lens'), 'capability');
+    assert.ok(url.searchParams.get('customer'));
+    assert.equal(url.searchParams.get('firm'), result.company.id);
+  }
+  const mitch = searchCompanies('Mitch Collins').filter(m => m.context?.kind === 'Person');
+  assert.ok(mitch.some(m => m.company.id === 'cognizant'));
+  assert.ok(mitch.some(m => m.company.id === 'kainos'));
+  assert.ok(mitch.every(m => new URL(m.context.href, 'https://compound.example').searchParams.get('person')));
+  assert.ok(searchCompanies('Kainos payroll').some(m => m.company.id === 'kainos'));
+});
+test('SI suggestions share a real platform, rather than the generic delivery category', () => {
+  for (const id of ['rgp','cloudrock','kliqtek']) {
+    const company = COMPANY_INDEX.find(c => c.id === id);
+    const result = relatedCompanies(company);
+    assert.ok(result.length);
+    assert.ok(result.every(r => r.company.ecosystemLinks.some(p => company.ecosystemLinks.some(s => s.ecosystemId === p.ecosystemId))));
+  }
 });
