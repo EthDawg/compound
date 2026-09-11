@@ -65,27 +65,27 @@
       {
         "title": "ChatGPT Work · current official documentation",
         "url": "https://learn.chatgpt.com/docs/get-started-with-work",
-        "supports": "Work produces reviewable deliverables using files, plugins and approved tools. Local/cloud selection depends on the available environment; non-coding Codex users can use Work's everyday-work experience."
+        "supports": "Work produces reviewable deliverables using files, plugins and approved tools. Local/cloud selection depends on the available environment; non-coding Codex users can use Work's everyday-work experience. Product mechanics rechecked 12 September 2026."
       },
       {
         "title": "Projects and chats · current official documentation",
         "url": "https://learn.chatgpt.com/docs/projects",
-        "supports": "Chats and Sources sections; project instructions and uploaded/connected context; local projects and filesystem projects have different access semantics."
+        "supports": "Chats and Sources sections; project instructions and uploaded/connected context; local projects and filesystem projects have different access semantics. Product mechanics rechecked 12 September 2026."
       },
       {
         "title": "Code review · current official documentation",
         "url": "https://learn.chatgpt.com/docs/code-review?surface=app",
-        "supports": "Review pane scopes, inline comments, staging and reverting. The pane reflects repository state, including changes not made by the agent."
+        "supports": "Review pane scopes, inline comments, staging and reverting. The pane reflects repository state, including changes not made by the agent. Product mechanics rechecked 12 September 2026."
       },
       {
         "title": "Git worktrees · current official documentation",
         "url": "https://learn.chatgpt.com/docs/environments/git-worktrees",
-        "supports": "Isolated Git working directories and local/worktree handoff. Isolation is an execution mechanism, not proof that the change is correct."
+        "supports": "Isolated Git working directories and local/worktree handoff. Isolation is an execution mechanism, not proof that the change is correct. Product mechanics rechecked 12 September 2026."
       },
       {
         "title": "Responses API · MCP and Connectors",
         "url": "https://developers.openai.com/api/docs/guides/tools-connectors-mcp",
-        "supports": "Tool discovery, allowed_tools, configurable approvals and mcp_approval_request / mcp_approval_response / mcp_call output items; call arguments, output and errors. The demo inspector is an interpretation of these primitives."
+        "supports": "Tool discovery, allowed_tools, configurable approvals and mcp_approval_request / mcp_approval_response / mcp_call output items; call arguments, output and errors. The demo inspector is an interpretation of these primitives. Product mechanics rechecked 12 September 2026."
       },
       {
         "title": "OpenAI structure · current governance account",
@@ -177,7 +177,8 @@
         "url": "https://deploy.co/news/the-openai-deployment-company-to-acquire-northslope",
         "supports": "The 8 July company release refers to the recent acquisition of Tomoro, confirming ownership by that date. Northslope is a separate agreed acquisition subject to closing conditions. Neither exact Tomoro closing date nor full operational integration is inferred."
       }
-    ]
+    ],
+    "sourcesChecked": "10–12 September 2026"
   },
   "strategy": {
     "contrast": "ServiceNow begins with accountable work already inside the enterprise. OpenAI begins with a person's intent and tries to assemble the context and tools needed to fulfil it. That makes the starting point unusually broad, while leaving the authority of each connected system important.",
@@ -280,7 +281,7 @@
         "paragraphs": [
           "A conversation is an unusually forgiving starting point. A person can arrive with an incomplete brief, an unfamiliar problem or the wrong vocabulary and still begin. ChatGPT's original launch established that interaction. The strategic question now is how much work can finish within the relationship that began there.",
           "ChatGPT Work and Projects give that relationship more structure. Sources and instructions can survive across related tasks; Work can turn them into a file or other deliverable that the user can inspect. This changes what completion means. A compelling paragraph is no longer sufficient when the requested output is a comparison someone will use or a presentation someone must defend.",
-          "The opportunity is continuity, but its failure mode is borrowed authority. A project can contain an old brief and a newer signed scope without either becoming true merely because it is attached. A confident artifact can conceal that conflict. The scene therefore asks the reader to inspect the competing sources and correct the deliverable while preserving the unresolved decision.",
+          "The opportunity is continuity, but its failure mode is borrowed authority. A project can contain an old brief and a newer signed scope without either becoming true merely because it is attached. A confident artifact can conceal that conflict. The scene therefore asks the reader to inspect the competing sources and correct the deliverable while preserving the unresolved decision. In the follow-up, a support-roster change makes the earlier document stale. The signed scope stays intact while the new readiness gap becomes an explicit launch decision.",
           "The 2025 Applications leadership expansion and Statsig integration fit a shift from demonstration to repeatable use; subsequent leadership changes mean that operating design is still evolving. Product iteration can reveal where people abandon or repair a task, although engagement is an incomplete measure of success. The real test is whether the person leaves with useful work and less verification debt."
         ],
         "test": "Give the same task to the system with a conflicting source. Does the final artifact surface the conflict and preserve the decision boundary, or merely become more polished?",
@@ -298,7 +299,7 @@
         "standfirst": "Codex makes a stronger claim than producing code: a delegated task should come back as a change that can be examined and improved.",
         "paragraphs": [
           "A model can suggest a correct-looking patch without establishing that it belongs in this repository. A useful coding agent needs the surrounding project, tools and feedback. Codex's worktree and review surfaces expose that larger unit of work: an isolated attempt, the files it changed and the evidence available to the reviewer.",
-          "Isolation makes parallel work manageable; it does not validate the result. The review pane can include changes made by the user or another process, so the reviewer still needs a deliberate scope. Tests can also pass while missing the important failure. In the scene, the retry edge case matters more than the first green status, and staging a corrected hunk remains separate from shipping it.",
+          "Isolation makes parallel work manageable; it does not validate the result. The review pane can include changes made by the user or another process, so the reviewer still needs a deliberate scope. Tests can also pass while missing the important failure. In the scene, the retry edge case matters more than the first green status, and the implementation and tests can be reviewed and staged separately. A local commit records the accepted change; it still does not ship it.",
           "Astral’s announced combination and Ona’s arrival make sense at these boundaries. Developer tooling strengthens the path from editing to checking; persistent customer-controlled environments address where longer work can continue. Ona now confirms it is part of OpenAI, while the reviewed Astral announcement establishes an agreement rather than a closing date. These moves map the desired system; they do not prove that every integrated capability is already available.",
           "This changes the economics of attention before it changes the economics of every software team. More generated changes can increase the review queue unless tasks, tests and ownership improve with them. The durable advantage would be a higher proportion of changes accepted with less total correction, not simply a larger volume of agent activity."
         ],
@@ -318,7 +319,7 @@
         "paragraphs": [
           "OpenAI can supply the place a user works and the primitives a developer uses to build a competing place. That dual position is strategically valuable: capabilities can travel through direct applications or somebody else's workflow. The April 2026 Microsoft amendment adds flexibility to distribution while retaining an important partner relationship.",
           "At the product boundary, the Responses API gives this ambition concrete form. A configured MCP interaction can expose a proposed tool call, a separate approval response, and the external tool's output or error. These distinctions are useful precisely because they stop a fluent account of an action from becoming evidence that it occurred.",
-          "The contract still belongs partly to the application. What does creating a refund draft authorise? What happens if the tool times out after receiving the request? Which record proves completion? The illustrative inspector keeps approval, a failed call and a returned draft identifier distinct. It never represents a prepared draft as money refunded.",
+          "The contract still belongs partly to the application. An approval must refer to the actual proposed operation; correcting the amount requires a new proposal. After a timeout, the illustrative inspector uses the provider's operation record to distinguish an existing draft, confirmed non-creation and unresolved evidence. A mismatched record cannot close the loop. This recovery and the provider's operation key are fictional application design, not an exactly-once guarantee supplied by the Responses API. A prepared draft is never represented as money refunded.",
           "Promptfoo’s arrival and the Deployment Company’s acquisition of Tomoro recognise other parts of this problem: testing behaviour and implementing systems inside organisations. Northslope is a further agreed addition, conditional in July’s release. Owning more of the stack may reduce handoffs, but it also concentrates dependencies and expands the integration burden. The promise becomes credible through recoverable execution and useful outcomes, not the number of layers under the same company name."
         ],
         "test": "Deny one call and fail another after approval. The application should preserve both distinctions and recover without inventing a result or repeating an uncertain side effect.",
@@ -335,7 +336,7 @@
       "title": "From broader capability to dependable completion",
       "shipped": "Current documentation supports ChatGPT Work deliverables and project context, Codex review/worktree workflows, and structured MCP tool calls through the Responses API. These have different environments and access conditions.",
       "next": "Watch whether acquired Promptfoo, Ona and Tomoro capabilities become coherent, available customer workflows. The reviewed Astral and Northslope announcements establish agreements, not their current closing status. September management commentary links research, product reach and compute economics; the test is dependable completion at sustainable cost.",
-      "boundary": "The scenes use scripted fictional data. They demonstrate the documented mechanics, not live models, real tool execution, universal plan access or benchmark results. Company accounts establish strategic intent; they are not independent proof of returns.",
+      "boundary": "The scenes use scripted fictional data. They demonstrate the documented mechanics, not live models, real tool execution, universal plan access or benchmark results. Company accounts establish strategic intent; they are not independent proof of returns. The OpenAI examples retain their decisions in this browser session. Source revisions, review and staging rules, business validation and provider reconciliation are teaching scenarios around the documented product mechanics.",
       "source": "https://openai.com/index/the-work-now-within-reach/"
     }
   }
