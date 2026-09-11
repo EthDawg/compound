@@ -37,6 +37,8 @@ layout as appropriate; a passing build alone does not verify them.
 | --- | --- |
 | Company identity, supported screens and route fallbacks | `lib/companies.ts` |
 | Shared company finder and search vocabulary | `components/company-picker.tsx`, `lib/company-index.ts` |
+| Category guides, company research and dated sources | `lib/data/category-research.ts`, `app/categories/`, `app/research/` |
+| Category scenarios and Fireworks serving walkthrough | `components/category-workbench.tsx`, `components/fireworks-serving-lab.tsx`, `lib/fireworks-serving.ts` |
 | Company themes | `lib/vendors/skins.ts`, company study definitions |
 | App scenarios | `components/studies/`, `lib/data/*-scenarios.ts` |
 | Company arguments, history and sources | `lib/content/` |
@@ -57,6 +59,13 @@ topics; unsupported screens fall back to that company’s overview. Never fill a
 gap with another company’s content.
 
 ## Refresh research
+
+Category briefs are a smaller commitment than full App/Backstage studies. Keep
+three practical strengths, the origin of the capability, a dated change, a trade-off
+and a useful watchpoint. Attach primary sources to facts and label interpretation.
+Companies can belong to several research categories while retaining one catalogue
+identity. Search aliases should include products and former names. Announced
+changes, completed acquisitions and future service changes are different states.
 
 Update the affected facts and their sources together. Review acquisition status,
 role dates and regional scope. The ANZ movement view derives recent signals

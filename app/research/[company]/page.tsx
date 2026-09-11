@@ -1,0 +1,33 @@
+import Link from 'next/link';
+import { Suspense } from 'react';
+import { notFound } from 'next/navigation';
+import { GuideHeader } from '@/components/guide-header';
+import { AtlasMaps } from '@/components/atlas-maps';
+import { SourceLink } from '@/components/destination-shell';
+import { FireworksServingLab } from '@/components/fireworks-serving-lab';
+import { RESEARCH_COMPANIES, RESEARCH_REVIEWED, researchCompany, researchCategory, categoryHref, researchHref, type ResearchSource } from '@/lib/data/category-research';
+
+export const generateStaticParams=()=>RESEARCH_COMPANIES.map(c=>({company:c.id}));
+export async function generateMetadata({params}:{params:Promise<{company:string}>}){const c=researchCompany((await params).company);return{title:`${c?.name??'Company'} · Compound research`,description:c?.thesis};}
+function Sources({sources}:{sources:ResearchSource[]}){return <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-ink-500">{sources.map(source=><SourceLink key={source.url} href={source.url}>{source.title}</SourceLink>)}</div>;}
+
+export default async function ResearchPage({params}:{params:Promise<{company:string}>}){
+  const company=researchCompany((await params).company);if(!company)notFound();
+  const category=researchCategory(company.categories[0])!;
+  const peers=RESEARCH_COMPANIES.filter(c=>c.id!==company.id&&c.categories[0]===category.id&&c.group===company.group).slice(0,3);
+  return <div className="destination min-h-screen bg-[#F7F6F1] text-[#17282C]"><GuideHeader activeId={company.id}/><main className="mx-auto max-w-[1100px] px-4 pb-16 sm:px-6"><AtlasMaps active="categories"/>
+    <nav aria-label="Research breadcrumb" className="flex flex-wrap items-center gap-x-3 py-4 text-xs text-ink-500"><Link href="/categories" className="inline-flex min-h-11 items-center hover:underline">Category guides</Link><span>/</span><Link href={categoryHref(category.id)} className="inline-flex min-h-11 items-center hover:underline">{category.name}</Link></nav>
+    <header className="rounded-2xl border border-[#DCDDD5] bg-[#FFFEFA] p-6 sm:p-9" style={{borderTop:`4px solid ${company.accent}`}}>
+      <div className="flex flex-wrap items-center justify-between gap-4"><div className="flex items-center gap-3"><span aria-hidden="true" style={{color:company.accent,background:company.accent+'10'}} className="grid h-12 w-12 place-items-center rounded-xl font-mono text-xl font-semibold">{company.monogram}</span><div><p className="text-[10px] font-semibold uppercase tracking-[.15em] text-ink-500">Company research brief</p><h1 className="mt-1 text-2xl font-semibold tracking-tight">{company.name}</h1></div></div><p className="text-[11px] text-ink-500">Reviewed {RESEARCH_REVIEWED}</p></div>
+      <p className="mt-6 text-xs font-medium" style={{color:company.accent}}>{company.product}</p><p className="font-serif-display mt-3 max-w-3xl text-3xl leading-[1.14] sm:text-4xl">{company.thesis}</p>
+      <div className="mt-5 flex flex-wrap gap-2">{company.categories.map(id=><Link key={id} href={categoryHref(id)} className="inline-flex min-h-11 items-center rounded-lg border border-[#DFE0D8] px-3 text-xs text-ink-600 hover:bg-black/5">{researchCategory(id)?.shortName} →</Link>)}</div>
+    </header>
+    <section aria-labelledby="strengths-title" className="py-8"><h2 id="strengths-title" className="text-[10px] font-bold uppercase tracking-[.17em] text-ink-500">Three reasons it matters</h2><ol className="mt-4 grid gap-5 sm:grid-cols-3">{company.strengths.map((strength,i)=><li key={strength} className="border-t border-[#DADCD2] pt-4"><span style={{color:company.accent}} className="font-mono text-xs">0{i+1}</span><p className="mt-3 text-sm leading-relaxed">{strength}</p></li>)}</ol><Sources sources={[company.productSource,...(company.productSources??[])]}/></section>
+    {company.id==='fireworks'&&<Suspense fallback={<div role="status" className="rounded-2xl bg-[#F5F0FC] p-7">Opening the serving walkthrough…</div>}><FireworksServingLab/></Suspense>}
+    <section className="mt-7 grid gap-6 lg:grid-cols-[.8fr_1.2fr]"><article className="rounded-xl border border-[#DCDDD5] p-5 sm:p-6"><h2 className="text-sm font-semibold">Where the capability came from</h2><p className="mt-3 text-sm leading-relaxed text-ink-600">{company.origin.text}</p><Sources sources={company.origin.sources}/></article><article className="rounded-xl border border-[#DCDDD5] bg-white/70 p-5 sm:p-6"><p className="text-[10px] font-semibold uppercase tracking-wider text-ink-500">{company.movement.date}</p><h2 className="font-serif-display mt-2 text-2xl leading-tight">{company.movement.title}</h2><p className="mt-3 text-sm leading-relaxed text-ink-600">{company.movement.text}</p><Sources sources={company.movement.sources}/><p className="mt-4 border-t border-[#DCDDD5] pt-4 text-xs leading-relaxed text-[#526C5B]">{company.movement.implication}</p></article></section>
+    <section className="my-7 grid gap-6 border-y border-[#DCDDD5] py-6 sm:grid-cols-2"><div><h2 className="text-sm font-semibold">The trade-off</h2><p className="mt-2 text-sm leading-relaxed text-ink-500">{company.tradeoff}</p></div><div><h2 className="text-sm font-semibold">What to watch</h2><p className="mt-2 text-sm leading-relaxed text-ink-500">{company.watch}</p></div></section>
+    {(!!peers.length||!!company.related?.length)&&<section aria-label="Keep exploring"><h2 className="text-sm font-semibold">Keep the context</h2><div className="mt-3 grid gap-3 sm:grid-cols-2">{peers.map(c=><Link key={c.id} href={researchHref(c.id)} className="rounded-xl border border-[#DCDDD5] p-4 hover:bg-white"><span className="text-xs font-semibold">{c.name} ↗</span><span className="mt-1 block text-xs text-ink-500">{c.product}</span></Link>)}{company.related?.map(link=><Link key={link.href} href={link.href} className="rounded-xl border border-[#DCDDD5] p-4 text-xs font-semibold hover:bg-white">{link.label} →</Link>)}</div></section>}
+    <div className="mt-7 flex flex-wrap justify-between gap-4 text-xs text-ink-500"><Link href={`/?company=${company.id}`} className="inline-flex min-h-11 items-center underline underline-offset-4">Locate {company.name} in the landscape</Link><a href={`https://github.com/EthDawg/compound/issues/new?title=${encodeURIComponent(`Research correction: ${company.name}`)}`} className="inline-flex min-h-11 items-center underline underline-offset-4">Suggest a correction ↗</a></div>
+    <p className="mt-5 text-[11px] leading-relaxed text-ink-500">Independent research. Product capabilities and dated changes link to their sources. Strategic readings and watchpoints are Compound’s interpretation.</p>
+  </main></div>;
+}

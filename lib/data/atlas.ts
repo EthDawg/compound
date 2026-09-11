@@ -1,5 +1,6 @@
 import type { Sector, Category, Vendor, Attrs } from "./atlas-types";
 import type { Archetype } from "./ecosystem";
+import { RESEARCH_COMPANIES } from './category-research';
 
 export const SECTORS: Sector[] = [
   { id: "ai", name: "AI & generated media", accent: "#7855CC",
@@ -43,6 +44,9 @@ const cat = (id: string, sector: string, name: string, shape: Archetype, blurb: 
 export const CATEGORIES: Category[] = [
   cat("frontier-ai", "ai", "Models & agent workspaces", "AI-native", "Research capabilities become tools for reasoning, creating and carrying out work."),
   cat("voice-ai", "ai", "Voice & audio platforms", "AI-native", "Generation, localisation and conversational agents around the spoken interface."),
+  cat("ai-inference", "ai", "AI inference & model serving", "AI-native", "The systems that turn models into dependable services, from managed APIs to custom compute."),
+  cat("developer-tools", "ai", "Developer tools", "Connective layer", "Code, delegate, review, ship and evaluate: the handoffs around software work."),
+  cat("enterprise-ai", "ai", "Enterprise AI cloud", "Enterprise suite", "Where models, enterprise data and permission to act meet."),
   // Work & employment
   cat("hr-compound", "work", "Compound HR platforms", "Compound platform", "One employee record, many products stacked on it."),
   cat("hcm-suite", "work", "Enterprise HCM suites", "Enterprise suite", "Configurable systems of record for large, complex employers."),
@@ -112,6 +116,13 @@ const V = (
 
 /** Breadth vendors — placed by archetype and attributes, not individually read. */
 export const VENDORS: Vendor[] = [
+  // Research briefs deepen the content; map positions remain coarse editorial placements.
+  ...RESEARCH_COMPANIES.filter(c => !['databricks','snowflake'].includes(c.id)).map((c): Vendor => ({
+    slug:c.id, name:c.name, sector:'ai', category:c.categories[0],
+    archetype:c.categories[0]==='enterprise-ai'?'Enterprise suite':c.categories[0]==='developer-tools'?'Connective layer':'AI-native',
+    geo:'Global · check deployment regions', bet:c.thesis,
+    attrs:{scale:['microsoft','google','aws'].includes(c.id)?5:['github','cursor','coreweave'].includes(c.id)?4:3,age:['microsoft','google','aws','github'].includes(c.id)?5:2,agentic:4},
+  })),
   // ── Legal & contract ──────────────────────────────────────────────────────
   V("legora", "Legora", "legal", "legal-ai", "AI-native", "Sweden · EU", { scale: 2, age: 1, agentic: 5 },
     "AI as a collaborative workspace inside the firm's own work, rather than a research tool bolted onto the side of it."),

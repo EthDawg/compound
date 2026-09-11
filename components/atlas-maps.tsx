@@ -6,7 +6,7 @@ const maps = [
   { id: 'workday', href: '/atlas/workday', name: 'Workday', detail: 'People, capability and practice formation' },
   { id: 'servicenow', href: '/atlas/servicenow', name: 'ServiceNow', detail: 'Delivery teams and acquisition lineage' },
 ];
-export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'workday' | 'servicenow' | 'earth' | 'technology' | 'decisions' }) {
+export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'workday' | 'servicenow' | 'earth' | 'technology' | 'decisions' | 'categories' }) {
   const ecosystemActive = active === 'workday' || active === 'servicenow';
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
@@ -17,6 +17,7 @@ export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'wo
   }, []);
   return <nav aria-label="Explore Compound" className="relative z-30 flex flex-wrap items-center gap-1 border-b border-[#E4E2DC] py-3 text-xs font-semibold text-ink">
     <Link href="/" aria-current={active === 'landscape' ? 'page' : undefined} className={`rounded-lg px-3 py-2 ${active === 'landscape' ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Company landscape</Link>
+    <Link href="/categories" aria-current={active === 'categories' ? 'page' : undefined} className={`rounded-lg px-3 py-2 ${active === 'categories' ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Category guides</Link>
     <details ref={menu} className="sm:relative">
       <summary className={`cursor-pointer rounded-lg px-3 py-2 ${ecosystemActive ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Delivery ecosystems{ecosystemActive ? ` · ${maps.find((m) => m.id === active)?.name}` : ''}</summary>
       <div className="absolute left-0 top-full mt-2 w-[min(310px,calc(100vw-40px))] rounded-xl border border-ink-200 bg-white p-2 shadow-xl">
