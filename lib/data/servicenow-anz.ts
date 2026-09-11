@@ -11,4 +11,9 @@ export const SERVICENOW_ECOSYSTEM = createEcosystem({
     { label: 'Workflow domain', values: ['IT', 'Employee', 'Customer', 'Risk / Security', 'Platform / Data / AI'] },
   ],
   research: research as EcosystemConfig['research'],
+  insights: [
+    {title:'Implementation and operation are converging.',text:'AC3, Datacom, Nexon and Spark connect platform work with ongoing technology relationships. A provider tenancy and a customer-owned instance create different operating choices.',ask:'Who owns the instance, configuration and support obligations?',companyIds:['ac3','datacom','nexon','spark']},
+    {title:'Local depth often sits inside a larger group.',text:'Enable, Thirdera, RXP, TMLabs and Punch IT explain capability now carried by other brands. The acquisition date explains origin; the assigned team determines current delivery.',ask:'Which acquired specialists remain on this account?',companyIds:['fujitsu','cognizant','capgemini','coforge','gqi']},
+    {title:'There is real local work beyond ITSM.',text:'IKC’s NEC NZ customer workflows, EY’s Lion transformation and Kinetic IT’s utility security work give the platform breadth concrete meaning. An AI roadmap still needs separate production evidence.',ask:'Can you show this workflow, with its exceptions, at a comparable customer?',companyIds:['ikc','ey','kinetic-it','sysintegra']},
+  ],
 });

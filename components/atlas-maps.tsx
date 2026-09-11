@@ -6,7 +6,8 @@ const maps = [
   { id: 'workday', href: '/atlas/workday', name: 'Workday', detail: 'People, capability and practice formation' },
   { id: 'servicenow', href: '/atlas/servicenow', name: 'ServiceNow', detail: 'Delivery teams and acquisition lineage' },
 ];
-export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'workday' | 'servicenow' }) {
+export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'workday' | 'servicenow' | 'earth' | 'technology' | 'decisions' }) {
+  const ecosystemActive = active === 'workday' || active === 'servicenow';
   const menu = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const close = (e: MouseEvent) => { if (!menu.current?.contains(e.target as Node)) menu.current?.removeAttribute('open'); };
@@ -17,12 +18,14 @@ export function AtlasMaps({ active = 'landscape' }: { active?: 'landscape' | 'wo
   return <nav aria-label="Atlas maps" className="relative z-30 flex flex-wrap items-center gap-1 border-b border-[#E4E2DC] py-3 text-xs font-semibold text-ink">
     <Link href="/" aria-current={active === 'landscape' ? 'page' : undefined} className={`rounded-lg px-3 py-2 ${active === 'landscape' ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Software landscape</Link>
     <span className="text-ink-300">/</span>
-    <details ref={menu} className="relative">
-      <summary className={`cursor-pointer rounded-lg px-3 py-2 ${active !== 'landscape' ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Ecosystems{active !== 'landscape' ? ` · ${maps.find((m) => m.id === active)?.name}` : ''}</summary>
-      <div className="absolute left-[-150px] top-full mt-2 w-[min(310px,calc(100vw-40px))] rounded-xl border border-ink-200 bg-white p-2 shadow-xl sm:left-0">
+    <details ref={menu} className="sm:relative">
+      <summary className={`cursor-pointer rounded-lg px-3 py-2 ${ecosystemActive ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>Ecosystems{ecosystemActive ? ` · ${maps.find((m) => m.id === active)?.name}` : ''}</summary>
+      <div className="absolute left-0 top-full mt-2 w-[min(310px,calc(100vw-40px))] rounded-xl border border-ink-200 bg-white p-2 shadow-xl">
         <p className="px-3 py-2 text-[10px] uppercase tracking-wider text-ink-500">Australia & New Zealand</p>
         {maps.map((m) => <Link key={m.id} href={m.href} aria-current={active === m.id ? 'page' : undefined} onClick={() => menu.current?.removeAttribute('open')} className="block rounded-lg p-3 hover:bg-ink-100"><span className="block">{m.name}</span><span className="mt-1 block text-[11px] font-normal text-ink-500">{m.detail}</span></Link>)}
       </div>
     </details>
+    <span className="mx-1 hidden h-4 border-l border-ink-200 sm:block" />
+    {[{id:'earth',name:'Global View'}, {id:'technology',name:'Technology'}, {id:'decisions',name:'Decisions'}].map((item) => <Link key={item.id} href={`/${item.id}`} aria-current={active === item.id ? 'page' : undefined} className={`rounded-lg px-3 py-2 ${active === item.id ? 'bg-ink-100' : 'text-ink-500 hover:bg-black/5'}`}>{item.name}</Link>)}
   </nav>;
 }

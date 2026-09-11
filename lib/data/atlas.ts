@@ -31,7 +31,7 @@ export const SECTORS: Sector[] = [
     thesis: "The compound pattern applied to one industry instead of one function. Owning a vertical's core record produces the same expansion economics and much stronger entrenchment." },
   { id: "delivery", name: "Delivery & advisory", accent: "#8A939B",
     blurb: "The integrators, advisories and platform specialists who make software land.",
-    thesis: "Invisible on every product map and decisive in a large share of enterprise deals — and the group most directly exposed to the thing it is currently selling." },
+    thesis: "The firms that turn software into operating change. AI can compress delivery effort while increasing demand for integration and accountability; pricing decides who captures the gain." },
   { id: "capital", name: "Capital & consolidation", accent: "#5B646C",
     blurb: "Private equity, perpetual holders and the strategic acquirers.",
     thesis: "Where everything else on this board goes when growth stops. If you are asking who acquires whom, or how to dispose of something, this is the layer that answers it." },
@@ -97,8 +97,8 @@ export const CATEGORIES: Category[] = [
   cat("health", "vertical", "Health systems", "Enterprise suite", "The patient record and everything around it."),
 
   // Delivery
-  cat("global-si", "delivery", "Global integrators", "Integrator channel", "Scale delivery across every platform and geography."),
-  cat("platform-si", "delivery", "Platform specialists", "Integrator channel", "Deep practice in one vendor's ecosystem."),
+  cat("global-si", "delivery", "Global integrators", "Integrator channel", "Advisory, implementation and managed operations across multiple platforms and markets."),
+  cat("platform-si", "delivery", "Platform specialists", "Integrator channel", "Concentrated platform expertise, sometimes reinforced by proprietary products and accelerators."),
 
   // Capital
   cat("pe", "capital", "Private equity", "Capital and consolidation", "Buy, improve margin, exit."),
@@ -266,11 +266,11 @@ export const VENDORS: Vendor[] = [
 
   // ── Delivery & advisory ───────────────────────────────────────────────────
   V("capgemini", "Capgemini", "delivery", "global-si", "Integrator channel", "France · global", { scale: 4, age: 5, agentic: 3 },
-    "European-anchored global delivery across every major platform."),
-  V("cognizant", "Cognizant", "delivery", "global-si", "Integrator channel", "US · India", { scale: 4, age: 5, agentic: 3 },
-    "Offshore-anchored delivery scale at a cost base the onshore firms cannot match."),
-  V("kainos", "Kainos", "delivery", "platform-si", "Integrator channel", "UK", { scale: 2, age: 4, agentic: 3 },
-    "Deep practice in a single platform's ecosystem plus public-sector digital delivery."),
+    "Combine consulting and engineering with business operations: WNS and Cloud4C extend the model from transformation projects into running processes and cloud estates."),
+  V("cognizant", "Cognizant", "delivery", "global-si", "Integrator channel", "US · global delivery", { scale: 4, age: 5, agentic: 3 },
+    "Combine global delivery with acquired specialists: 3Cloud deepens Azure and AI work; Astreya adds infrastructure and managed services."),
+  V("kainos", "Kainos", "delivery", "platform-si", "Integrator channel", "UK · global", { scale: 2, age: 4, agentic: 3 },
+    "Three engines: digital delivery, Workday implementation and proprietary Workday products for testing, controls and data protection."),
 
   // ── Capital ───────────────────────────────────────────────────────────────
   V("francisco", "Francisco Partners", "capital", "pe", "Capital and consolidation", "US", { scale: 3, age: 4, agentic: 1 },

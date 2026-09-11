@@ -4,9 +4,9 @@ import { XRayProvider } from "@/components/xray-provider";
 import { PWARegister } from "@/components/pwa-register";
 
 export const metadata: Metadata = {
-  title: "Compound — the founder's view",
+  title: "Compound — a field guide to technology",
   description:
-    "A working product surface and the operating philosophy underneath it. An independent study of the compound-startup thesis, built as software.",
+    "Explore technology companies, delivery ecosystems, global dependencies and the ideas behind them. An independent, interactive field guide.",
   applicationName: "Compound",
   manifest: "/manifest.webmanifest",
   appleWebApp: {

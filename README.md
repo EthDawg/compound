@@ -1,7 +1,7 @@
 # Compound
 
-An open, interactive field guide to software companies: how their products work,
-why they make certain choices, and the people and ecosystems behind them.
+An open, interactive field guide to technology: the companies, people, markets
+and ideas that make it work.
 
 **[Explore Compound →](https://compound-snowy-pi.vercel.app)**
 
@@ -17,6 +17,9 @@ needed. Maintained by [Ethan Harley](https://github.com/EthDawg), with contribut
 | [Backstage](https://compound-snowy-pi.vercel.app/companies/rippling/backstage) | Strategy, acquisitions, leadership, trade-offs and the evidence behind each interpretation. |
 | [ServiceNow’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/servicenow) | Explore deployment teams, workflow capabilities and acquisition trails. |
 | [Workday’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/workday) | Follow career lineage, local delivery capability and market movement. The global partner directory is also available here. |
+| [Global View](https://compound-snowy-pi.vercel.app/earth) | Connect markets, compute, infrastructure and delivery. |
+| [Technology](https://compound-snowy-pi.vercel.app/technology) | Explore breakthroughs, physical limits and possible futures, with interactive labs and curated trackers. |
+| [Decisions](https://compound-snowy-pi.vercel.app/decisions) | Work through innovation, adoption and commitment from different buyer perspectives. |
 
 Compound has its own navigation and identity; each company study keeps its own
 visual language and product behaviour.

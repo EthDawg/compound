@@ -4,8 +4,8 @@
       "id": "xamplify",
       "name": "xAmplify",
       "kind": "ANZ integrator",
-      "thesis": "A repeat operator building another platform: Epicon experience, growth capital and acquired teams make the story more specific than an Elite badge. The test is whether broader reach preserves specialist delivery quality.",
-      "watch": "Retained architects and named national wins would show whether acquisition-led breadth is becoming deeper local delivery.",
+      "thesis": "An Australian platform builder with repeat-operator lineage and a named ADHA engagement. Embedded delivery, platform architecture and reusable integrations give the capital-and-acquisition story a practical foundation.",
+      "watch": "For an expanded national remit, ask which senior architect owns delivery, how acquired teams work together, and what changed for the ADHA reference after the first release.",
       "owner": {
         "text": "Growth investment from Macquarie Capital Principal Finance; the source describes investment, not a full sale.",
         "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
@@ -65,6 +65,22 @@
           "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
           "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Australian architecture, SIAM, roadmap and advisory-led implementation are explicitly offered.",
+          "url": "https://xamplify.com.au/our-services/service-now/",
+          "source": "xAmplify · ServiceNow services and ADHA case",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "ADHA provides a named Australian IT service-management reference.",
+          "url": "https://xamplify.com.au/our-services/service-now/",
+          "source": "xAmplify · ServiceNow services and ADHA case",
+          "customerId": "adha-xamplify"
         }
       ],
       "partnerStatus": {
@@ -83,8 +99,8 @@
       "id": "kinetic-it",
       "name": "Kinetic IT",
       "kind": "ANZ integrator",
-      "thesis": "Operational heritage is the differentiator: a national practice connecting implementation to ongoing service delivery. The 2026 Rising Star award adds recognition; it does not establish local headcount growth.",
-      "watch": "Named enterprise outcomes beyond ITSM would establish whether platform breadth is matching the award recognition.",
+      "thesis": "Operations-led ServiceNow work extends beyond the service desk: transport ITOM/CMDB and an Australian water utility’s vulnerability workflows connect technology data to operational decisions.",
+      "watch": "Ask how the proposed team joins IT, security and operational technology, and who owns prioritisation and platform improvement after go-live.",
       "owner": {
         "text": "Australian enterprise technology provider with national operations.",
         "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
@@ -128,6 +144,22 @@
           "text": "IT service management and service integration are explicit foundations.",
           "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "Australian water-utility delivery covers ServiceNow Vulnerability Response and IT/OT risk prioritisation.",
+          "url": "https://kineticit.com.au/case-study/how-an-australian-water-utility-built-cyber-resilience-across-converging-it-ot-infrastructure/",
+          "source": "Kinetic IT · Australian water utility case",
+          "customerId": "water-kinetic"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "A transport customer case documents ITOM Visibility, App Engine and CMDB integration. This is platform/data evidence, not a claim of deployed generative AI.",
+          "url": "https://kineticit.com.au/case-study/transport-organisation-uplifts-platform-and-process-with-servicenow-kinetic-it/",
+          "source": "Kinetic IT · transport customer, 29 May 2024",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -141,8 +173,8 @@
       "id": "novabridge",
       "name": "Novabridge",
       "kind": "Specialist",
-      "thesis": "Commercial leadership and secure-platform architecture sit together here. Glen Watson’s Defence and federal career makes the public-sector proposition more tangible than a broad list of certifications.",
-      "watch": "Named delivery outcomes and senior architecture hires outside Canberra would strengthen the expansion story.",
+      "thesis": "A secure-platform specialist broadening into New Zealand and full lifecycle support. Architecture and governance are the useful starting point; its local offer now spans employee, customer and risk workflows.",
+      "watch": "Ask for the actual NZ delivery team and a comparable reference in the requested domain, including who handles L2/L3 support and upgrades.",
       "owner": {
         "text": "Australian-founded and owned SME, formed in 2018.",
         "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
@@ -172,36 +204,52 @@
           "source": "ServiceNow Partner Finder"
         },
         {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "The NZ offer explicitly covers advisory and governance plus ITSM, ITOM, HRSD, CSM and IRM. This is a local service offer, not independent evidence of every product deployment.",
+          "url": "https://www.novabridge.com.au/news/novabridge-expands-its-servicenow-implementation-capabilities-into-new-zealand",
+          "source": "Novabridge · New Zealand capability offer",
+          "basis": "offer"
+        },
+        {
           "capability": "IT",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "The NZ offer explicitly covers advisory and governance plus ITSM, ITOM, HRSD, CSM and IRM. This is a local service offer, not independent evidence of every product deployment.",
+          "url": "https://www.novabridge.com.au/news/novabridge-expands-its-servicenow-implementation-capabilities-into-new-zealand",
+          "source": "Novabridge · New Zealand capability offer",
+          "basis": "offer"
         },
         {
           "capability": "Employee",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "The NZ offer explicitly covers advisory and governance plus ITSM, ITOM, HRSD, CSM and IRM. This is a local service offer, not independent evidence of every product deployment.",
+          "url": "https://www.novabridge.com.au/news/novabridge-expands-its-servicenow-implementation-capabilities-into-new-zealand",
+          "source": "Novabridge · New Zealand capability offer",
+          "basis": "offer"
         },
         {
           "capability": "Customer",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "The NZ offer explicitly covers advisory and governance plus ITSM, ITOM, HRSD, CSM and IRM. This is a local service offer, not independent evidence of every product deployment.",
+          "url": "https://www.novabridge.com.au/news/novabridge-expands-its-servicenow-implementation-capabilities-into-new-zealand",
+          "source": "Novabridge · New Zealand capability offer",
+          "basis": "offer"
         },
         {
           "capability": "Risk / Security",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "The NZ offer explicitly covers advisory and governance plus ITSM, ITOM, HRSD, CSM and IRM. This is a local service offer, not independent evidence of every product deployment.",
+          "url": "https://www.novabridge.com.au/news/novabridge-expands-its-servicenow-implementation-capabilities-into-new-zealand",
+          "source": "Novabridge · New Zealand capability offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "L2/L3 support, monitoring, upgrades, release management and an enhancement backlog are explicitly offered.",
+          "url": "https://novabridge.com.au/pages/services-item-managed-services",
+          "source": "Novabridge · managed services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -215,8 +263,8 @@
       "id": "ac3",
       "name": "AC3",
       "kind": "ANZ integrator",
-      "thesis": "JDS brings a second specialist team into an existing managed-services business. The opportunity is continuity from project to operations; the integration question is who retains technical authority.",
-      "watch": "Retention of the JDS leadership cohort and repeatable customer outcomes would matter more than the combined company size.",
+      "thesis": "An operator and implementer with concrete ANZ references: national health ITSM, NRL workflow design and AICD ongoing support. JDS adds lineage; dedicated and shared-instance delivery are distinct buying choices.",
+      "watch": "Clarify whether you own the instance or occupy an AC3 tenancy, which architects remain accountable, and how configuration, data and improvements transfer if the contract changes.",
       "owner": {
         "text": "Privately owned AC3 acquired JDS; the combined workforce spans several technology disciplines.",
         "url": "https://www.ac3.com.au/resources/ac3-announces-acquisition-of-jds",
@@ -252,6 +300,30 @@
           "text": "ServiceNow managed support services.",
           "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "NRL delivery includes service catalogue, incident management, CMDB and SCCM/identity integrations.",
+          "url": "https://www.ac3.com.au/success-stories/nrl-partner-with-ac3-to-implement-servicenow",
+          "source": "AC3 · NRL customer case",
+          "customerId": "nrl-ac3"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "NRL delivery includes service catalogue, incident management, CMDB and SCCM/identity integrations.",
+          "url": "https://www.ac3.com.au/success-stories/nrl-partner-with-ac3-to-implement-servicenow",
+          "source": "AC3 · NRL customer case",
+          "customerId": "nrl-ac3"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "A local education case describes compliance case management and subsequent platform managed services.",
+          "url": "https://www.ac3.com.au/success-stories/from-compliance-to-ongoing-service-now-platform-success",
+          "source": "AC3 · education compliance and managed services case",
+          "customerId": "education-ac3"
         }
       ],
       "partnerStatus": {
@@ -265,12 +337,12 @@
       "id": "nexon",
       "name": "Nexon",
       "kind": "ANZ integrator",
-      "thesis": "Its distinctive signal is a mechanism for creating capacity: recruiting and developing graduates through ServiceNow’s talent programmes. That matters in a market where buying experienced people is only one growth route.",
-      "watch": "Dated recruitment cohorts, retention and customer delivery would show whether training is translating into sustained practice growth.",
+      "thesis": "Advisory-to-operations delivery is more distinctive than its training story alone. Griffith’s co-delivery model and a managed-service base sit inside a business backed by Adamantem since December 2025.",
+      "watch": "Ask how client capability transfer works, which senior consultants supervise developing talent, and how the new owner’s expansion plans affect your delivery team.",
       "owner": {
-        "text": "Published as Nexon. Ownership is not separately established in this research.",
-        "url": "https://www.servicenow.com/partners/partner-finder/nexon-asia-pacific-pty-ltd.html",
-        "source": "ServiceNow Partner Finder"
+        "text": "Adamantem-backed; its portfolio records investment in December 2025. The August 2025 agreement specified a majority stake, partnering with founder Barry Assaf.",
+        "url": "https://adamantem.com.au/portfolio/nexon/",
+        "source": "Adamantem · Nexon portfolio; investment December 2025"
       },
       "presence": {
         "text": "Australian mid-market, enterprise and government provider. Group workforce is not ServiceNow practice size.",
@@ -286,6 +358,38 @@
           "text": "ServiceNow describes an advisory-led consulting practice.",
           "url": "https://www.servicenow.com/au/customers/nexon-riseup.html",
           "source": "ServiceNow · Nexon talent story"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Nexon explicitly offers ServiceNow implementation, managed support and change management.",
+          "url": "https://nexon.com.au/digital-solutions/enterprise-service-management-solutions/",
+          "source": "Nexon · enterprise service management",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Nexon explicitly offers ServiceNow implementation, managed support and change management.",
+          "url": "https://nexon.com.au/digital-solutions/enterprise-service-management-solutions/",
+          "source": "Nexon · enterprise service management",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Griffith University’s ESM case describes co-delivery, service data and portfolio foundations, workflow automation and knowledge transfer.",
+          "url": "https://nexon.com.au/download/44313/?tmstv=1719303357",
+          "source": "Nexon · Griffith University customer case",
+          "customerId": "griffith-nexon"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "Griffith University’s ESM case describes co-delivery, service data and portfolio foundations, workflow automation and knowledge transfer.",
+          "url": "https://nexon.com.au/download/44313/?tmstv=1719303357",
+          "source": "Nexon · Griffith University customer case",
+          "customerId": "griffith-nexon"
         }
       ],
       "partnerStatus": {
@@ -299,8 +403,8 @@
       "id": "gqi",
       "name": "GQI Consulting",
       "kind": "Specialist",
-      "thesis": "An Australian engagement model with an India delivery footprint. The useful question is how the local senior team works with that bench, rather than treating Select as a verdict on quality.",
-      "watch": "Named local practice leaders and delivery references would clarify where architecture and accountability sit.",
+      "thesis": "Telecom and ICT advisory roots meet ServiceNow implementation depth acquired with Punch IT in 2023. Australian engagement and an India footprint make the allocation of architecture and engineering more useful than a tier comparison.",
+      "watch": "Ask which Punch IT experience remains in the team, the actual onshore/offshore work split and a recent reference in the requested domain; website and directory tier claims differ.",
       "owner": {
         "text": "Australian-owned ServiceNow specialist.",
         "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
@@ -330,36 +434,52 @@
           "source": "ServiceNow Partner Finder"
         },
         {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
+        },
+        {
           "capability": "IT",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
         },
         {
           "capability": "Employee",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
         },
         {
           "capability": "Customer",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
         },
         {
           "capability": "Risk / Security",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "GQI’s Australian site offers roadmap, implementation, integration, optimisation and support across IT, HR, customer/telecom and risk/security workflows.",
+          "url": "https://www.gqi.com.au/our-partners",
+          "source": "GQI · ServiceNow partner services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -367,14 +487,18 @@
         "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
         "source": "ServiceNow Partner Finder"
       },
-      "profileUrl": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html"
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+      "aliases": [
+        "Gibson Quai International",
+        "Punch IT"
+      ]
     },
     {
       "id": "p1",
       "name": "P1 Consulting",
       "kind": "Specialist",
-      "thesis": "Long practitioner roots and a focused ServiceNow offer are the proposition. Public founder attribution remains unestablished here; senior access should be evidenced through the proposed team.",
-      "watch": "Current senior practitioners and named delivery references would sharpen the profile.",
+      "thesis": "A focused alternative for technology service providers: TPSM, portals and platform management sit alongside ITSM and HRSD. Its MSP specialism is more useful than a generic partner-tier comparison.",
+      "watch": "Ask for a comparable provider workflow, how customer separation and integrations are designed, and whether the senior specialists on the pitch remain on the project.",
       "owner": {
         "text": "Published as P1 Consulting. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
@@ -410,6 +534,38 @@
           "text": "IT service-management experience underpins the proposition.",
           "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Australian P1 explicitly offers managed ServiceNow, HRSD, TPSM, portals and mobile applications. Homepage customer logos are not attributed to individual products.",
+          "url": "https://p1consulting.com.au/",
+          "source": "P1 Consulting Australia · services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "Australian P1 explicitly offers managed ServiceNow, HRSD, TPSM, portals and mobile applications. Homepage customer logos are not attributed to individual products.",
+          "url": "https://p1consulting.com.au/",
+          "source": "P1 Consulting Australia · services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "Australian P1 explicitly offers managed ServiceNow, HRSD, TPSM, portals and mobile applications. Homepage customer logos are not attributed to individual products.",
+          "url": "https://p1consulting.com.au/",
+          "source": "P1 Consulting Australia · services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "Australian P1 explicitly offers managed ServiceNow, HRSD, TPSM, portals and mobile applications. Homepage customer logos are not attributed to individual products.",
+          "url": "https://p1consulting.com.au/",
+          "source": "P1 Consulting Australia · services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -423,8 +579,8 @@
       "id": "nd-and-co",
       "name": "ND&Co",
       "kind": "Specialist",
-      "thesis": "A long-running founder-created alternative in an acquisition-heavy market. Its integration and ongoing-management focus offers a clearer starting point than a generic full-platform claim.",
-      "watch": "Current founder responsibilities and repeat customer work would test continuity of the original specialist model.",
+      "thesis": "Founder-created continuity and integration-led platform management offer a specialist option for buyers wanting a direct delivery relationship. Public evidence supports the service model more clearly than broad product depth.",
+      "watch": "Confirm the founders’ present delivery roles, who provides ongoing support and which comparable customer can discuss upgrade quality and integration ownership.",
       "owner": {
         "text": "Australian-founded and owned organisation.",
         "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
@@ -468,6 +624,14 @@
           "text": "Integration across the ServiceNow ecosystem.",
           "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Australian service-management and platform-engineering services complement its existing implementation and support offer.",
+          "url": "https://ndnco.com.au/",
+          "source": "ND&Co · company and services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -489,8 +653,8 @@
       "id": "datacom",
       "name": "Datacom",
       "kind": "ANZ integrator",
-      "thesis": "Local commercial reach and ServiceNow practice depth are separate questions. Datacom’s broad ANZ presence is clear; a reseller award is a commercial signal, not evidence of implementation depth.",
-      "watch": "Named ServiceNow deployments and C&I progression would make its local practice easier to assess.",
+      "thesis": "A regional operator with demonstrated ServiceNow implementation, not just resale: the SYC case covers requirements through go-live and support. ServiceNow sits within a broader technology relationship.",
+      "watch": "Ask which services are performed inside ServiceNow, which belong to the wider managed stack, and who owns the platform roadmap beyond incident support.",
       "owner": {
         "text": "Locally owned Australasian technology business.",
         "url": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html",
@@ -502,7 +666,56 @@
         "source": "ServiceNow Partner Finder"
       },
       "segment": "Enterprise and government",
-      "capabilities": [],
+      "capabilities": [
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "SYC provides a named Australian ITSM implementation reference.",
+          "url": "https://datacom.com/au/en/discover/customer-story/it-fleet-insights-boost-syc-s-productivity-and-cut-app-costs",
+          "source": "Datacom · SYC customer case",
+          "customerId": "syc-datacom"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "SYC provides a named Australian ITSM implementation reference.",
+          "url": "https://datacom.com/au/en/discover/customer-story/it-fleet-insights-boost-syc-s-productivity-and-cut-app-costs",
+          "source": "Datacom · SYC customer case",
+          "customerId": "syc-datacom"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "The Australian practice explicitly offers roadmap advice, upgrades, support, continuously delivered managed enhancements, CSM, field service and platform services.",
+          "url": "https://datacom.com/au/en/about-us/partners/servicenow",
+          "source": "Datacom · Australian ServiceNow practice and managed services",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "The Australian practice explicitly offers roadmap advice, upgrades, support, continuously delivered managed enhancements, CSM, field service and platform services.",
+          "url": "https://datacom.com/au/en/about-us/partners/servicenow",
+          "source": "Datacom · Australian ServiceNow practice and managed services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "The Australian practice explicitly offers roadmap advice, upgrades, support, continuously delivered managed enhancements, CSM, field service and platform services.",
+          "url": "https://datacom.com/au/en/about-us/partners/servicenow",
+          "source": "Datacom · Australian ServiceNow practice and managed services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "The Australian practice explicitly offers roadmap advice, upgrades, support, continuously delivered managed enhancements, CSM, field service and platform services.",
+          "url": "https://datacom.com/au/en/about-us/partners/servicenow",
+          "source": "Datacom · Australian ServiceNow practice and managed services",
+          "basis": "offer"
+        }
+      ],
       "partnerStatus": {
         "text": "Select · Consulting & Implementation",
         "url": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html",
@@ -514,8 +727,8 @@
       "id": "ikc",
       "name": "IKC",
       "kind": "NZ specialist",
-      "thesis": "A focused Auckland-based option with cross-Tasman coverage. Architecture credentials support a technical conversation, but neither badges nor accreditations establish an available local bench.",
-      "watch": "Named NZ delivery references and locally attributable senior architects would establish practical depth.",
+      "thesis": "A New Zealand specialist with clear product evidence: NEC NZ customer and field service, plus Southern Cross ITSM/ITOM and roadmap advice. Those references explain its role better than certification totals.",
+      "watch": "Ask which NEC or Southern Cross practitioners are available now, how the roadmap translates into funded releases, and what ongoing support the quoted scope includes.",
       "owner": {
         "text": "Published as IKC. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
@@ -529,26 +742,10 @@
       "segment": "Enterprise and government",
       "capabilities": [
         {
-          "capability": "Advisory",
-          "scope": "ANZ",
-          "basis": "offer",
-          "text": "ServiceNow guidance and tailored project advice.",
-          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
-          "source": "ServiceNow Partner Finder"
-        },
-        {
           "capability": "AMS",
           "scope": "ANZ",
           "basis": "offer",
           "text": "Ongoing support alongside project work.",
-          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
-          "source": "ServiceNow Partner Finder"
-        },
-        {
-          "capability": "IT",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
           "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
           "source": "ServiceNow Partner Finder"
         },
@@ -561,12 +758,44 @@
           "source": "ServiceNow Partner Finder"
         },
         {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "NEC New Zealand provides local CSM and FSM implementation evidence.",
+          "url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-nec-nz.pdf",
+          "source": "ServiceNow · NEC New Zealand customer case",
+          "customerId": "nec-ikc"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "NEC New Zealand provides local CSM and FSM implementation evidence.",
+          "url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-nec-nz.pdf",
+          "source": "ServiceNow · NEC New Zealand customer case",
+          "customerId": "nec-ikc"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Southern Cross provides ITSM/ITOM, Virtual Agent and roadmap evidence.",
+          "url": "https://www.servicenow.com/jp/customers/southern-cross-health-insurance.html",
+          "source": "ServiceNow · Southern Cross Health Insurance customer case",
+          "customerId": "southern-cross-ikc"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Southern Cross provides ITSM/ITOM, Virtual Agent and roadmap evidence.",
+          "url": "https://www.servicenow.com/jp/customers/southern-cross-health-insurance.html",
+          "source": "ServiceNow · Southern Cross Health Insurance customer case",
+          "customerId": "southern-cross-ikc"
+        },
+        {
           "capability": "Platform / Data / AI",
-          "scope": "Global",
-          "basis": "credentials",
-          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
-          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "Southern Cross provides ITSM/ITOM, Virtual Agent and roadmap evidence.",
+          "url": "https://www.servicenow.com/jp/customers/southern-cross-health-insurance.html",
+          "source": "ServiceNow · Southern Cross Health Insurance customer case",
+          "customerId": "southern-cross-ikc"
         }
       ],
       "partnerStatus": {
@@ -576,15 +805,16 @@
       },
       "profileUrl": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
       "aliases": [
-        "Primoris NZ"
+        "Primoris NZ",
+        "Integrated Knowledge Consulting"
       ]
     },
     {
       "id": "service-dynamics",
       "name": "Service Dynamics",
       "kind": "NZ specialist",
-      "thesis": "The leadership is visible: two founders and a named platform head. That makes the senior-team proposition inspectable in a way that a broad regional badge cannot.",
-      "watch": "Cross-Tasman customer outcomes and continuity of the senior team would strengthen the regional story.",
+      "thesis": "A New Zealand service-management specialist offering advisory, build and managed services. A multi-platform background can help with process choices; the ServiceNow delivery team still needs to be explicit.",
+      "watch": "Ask for a recent ServiceNow reference and the named architects assigned to your work, rather than treating broader ITSM or another platform’s experience as equivalent.",
       "owner": {
         "text": "Published as Service Dynamics. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
@@ -598,36 +828,36 @@
       "segment": "Enterprise and government",
       "capabilities": [
         {
-          "capability": "Advisory",
-          "scope": "ANZ",
-          "basis": "offer",
-          "text": "Strategic advice and solution design.",
-          "url": "https://www.servicedynamics.co.nz/about",
-          "source": "Service Dynamics · company and team"
-        },
-        {
-          "capability": "Implementation",
-          "scope": "ANZ",
-          "basis": "offer",
-          "text": "Build and implementation services.",
-          "url": "https://www.servicedynamics.co.nz/about",
-          "source": "Service Dynamics · company and team"
-        },
-        {
-          "capability": "AMS",
-          "scope": "ANZ",
-          "basis": "offer",
-          "text": "Managed services and ongoing partnership.",
-          "url": "https://www.servicedynamics.co.nz/about",
-          "source": "Service Dynamics · company and team"
-        },
-        {
           "capability": "IT",
           "scope": "ANZ",
           "basis": "offer",
           "text": "IT service management and enterprise service management.",
           "url": "https://www.servicedynamics.co.nz/about",
           "source": "Service Dynamics · company and team"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "The dedicated NZ ServiceNow practice explicitly offers strategic advisory, design/build/implementation and customised managed services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+          "source": "ServiceNow · Service Dynamics profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "The dedicated NZ ServiceNow practice explicitly offers strategic advisory, design/build/implementation and customised managed services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+          "source": "ServiceNow · Service Dynamics profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "The dedicated NZ ServiceNow practice explicitly offers strategic advisory, design/build/implementation and customised managed services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+          "source": "ServiceNow · Service Dynamics profile",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -641,8 +871,8 @@
       "id": "spark",
       "name": "Spark NZ",
       "kind": "NZ integrator",
-      "thesis": "ServiceFlex places ServiceNow inside an incumbent managed-services relationship. Its Service Provider designation and C&I designation answer different buying questions.",
-      "watch": "Named deployment evidence and C&I progression would clarify its role beyond the existing managed-services base.",
+      "thesis": "ServiceFlex embeds ServiceNow in an incumbent NZ managed-services relationship. Continued FY2026 customer migration shows an operating platform being rolled out across the base.",
+      "watch": "Clarify whether you are buying Spark’s service experience or a separately governed ServiceNow implementation, and how data, custom workflows and exit rights work.",
       "owner": {
         "text": "Published as Spark NZ. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
@@ -658,18 +888,18 @@
         {
           "capability": "AMS",
           "scope": "ANZ",
-          "basis": "offer",
-          "text": "ServiceFlex is presented as a managed service-management offering.",
-          "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "text": "ServiceFlex is Spark’s NZ managed service-management platform offer; it is distinct from a separately scoped customer implementation.",
+          "url": "https://www.spark.co.nz/online/large-business-govt/products/manage/service-flex",
+          "source": "Spark · ServiceFlex",
+          "basis": "offer"
         },
         {
           "capability": "IT",
           "scope": "ANZ",
-          "basis": "offer",
-          "text": "Enterprise service management and automation.",
-          "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
-          "source": "ServiceNow Partner Finder"
+          "text": "ServiceFlex is Spark’s NZ managed service-management platform offer; it is distinct from a separately scoped customer implementation.",
+          "url": "https://www.spark.co.nz/online/large-business-govt/products/manage/service-flex",
+          "source": "Spark · ServiceFlex",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -683,8 +913,8 @@
       "id": "accenture",
       "name": "Accenture",
       "kind": "Global integrator",
-      "thesis": "Multi-country transformation scale is the proposition. The global alliance is clear; the actual ANZ architects, delivery location and client references still need to be named.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "A global transformation and managed-operations model spanning IT, employee and customer workflows. It is relevant when process change crosses functions and countries; available ANZ specialists must be named.",
+      "watch": "Ask for the ANZ architecture lead, local references and the division of responsibility between consulting, engineering and ongoing operations.",
       "owner": {
         "text": "Published as Accenture. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
@@ -712,6 +942,46 @@
           "text": "Implementation and deployment within the published C&I offer.",
           "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Global offer covers maintained service operations, HR and business services, customer operations, automation and AI. ANZ delivery is not isolated by this source.",
+          "url": "https://www.accenture.com/en/services/ecosystem-partners/servicenow",
+          "source": "Accenture · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "Global offer covers maintained service operations, HR and business services, customer operations, automation and AI. ANZ delivery is not isolated by this source.",
+          "url": "https://www.accenture.com/en/services/ecosystem-partners/servicenow",
+          "source": "Accenture · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "Global offer covers maintained service operations, HR and business services, customer operations, automation and AI. ANZ delivery is not isolated by this source.",
+          "url": "https://www.accenture.com/en/services/ecosystem-partners/servicenow",
+          "source": "Accenture · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "Global offer covers maintained service operations, HR and business services, customer operations, automation and AI. ANZ delivery is not isolated by this source.",
+          "url": "https://www.accenture.com/en/services/ecosystem-partners/servicenow",
+          "source": "Accenture · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "Global offer covers maintained service operations, HR and business services, customer operations, automation and AI. ANZ delivery is not isolated by this source.",
+          "url": "https://www.accenture.com/en/services/ecosystem-partners/servicenow",
+          "source": "Accenture · global ServiceNow services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -725,8 +995,8 @@
       "id": "deloitte",
       "name": "Deloitte",
       "kind": "Global integrator",
-      "thesis": "Industry and operating-model change surround the platform work. Its large global practice supports breadth, but should not be read as the size of the team available in ANZ.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "Business redesign and platform delivery come together in documented Australian government work and named NZ architecture leadership. Its local offer includes operated services as well as implementation.",
+      "watch": "Ask who translates policy and process decisions into platform configuration, which delivery unit carries the work, and how the implementation team connects to Operate.",
       "owner": {
         "text": "Published as Deloitte. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
@@ -741,19 +1011,67 @@
       "capabilities": [
         {
           "capability": "Advisory",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Consulting and transformation within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
         },
         {
           "capability": "Implementation",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Implementation and deployment within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "Deloitte’s NZ practice page offers these service domains and Operate, with named local practice and architecture leadership. Global practice counts on the page are not ANZ capacity.",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -767,8 +1085,8 @@
       "id": "cognizant",
       "name": "Cognizant",
       "kind": "Global integrator",
-      "thesis": "Thirdera explains where specialist ServiceNow capability entered the group. The acquisition expanded global capacity; current ANZ leadership and deployment evidence determine how much of that is locally meaningful.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "Thirdera brings more than an acquisition headline: the Transurban reference connects that lineage to IT service, asset, operations and security workflows at an Australian-headquartered operator.",
+      "watch": "Ask which Thirdera practitioners and methods remain in the proposed team, where delivery sits and how the global operating model supports the local account.",
       "owner": {
         "text": "Published as Cognizant. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
@@ -790,12 +1108,28 @@
           "source": "ServiceNow Partner Finder"
         },
         {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Transurban’s published Thirdera reference covers ITSM, ITOM, ITAM and Security Operations.",
+          "url": "https://www.servicenow.com/customers/transurban.html",
+          "source": "ServiceNow · Transurban / Thirdera customer case",
+          "customerId": "transurban-thirdera"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "Transurban’s published Thirdera reference covers ITSM, ITOM, ITAM and Security Operations.",
+          "url": "https://www.servicenow.com/customers/transurban.html",
+          "source": "ServiceNow · Transurban / Thirdera customer case",
+          "customerId": "transurban-thirdera"
+        },
+        {
           "capability": "Implementation",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Implementation and deployment within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "Transurban’s published Thirdera reference covers ITSM, ITOM, ITAM and Security Operations.",
+          "url": "https://www.servicenow.com/customers/transurban.html",
+          "source": "ServiceNow · Transurban / Thirdera customer case",
+          "customerId": "transurban-thirdera"
         }
       ],
       "partnerStatus": {
@@ -812,8 +1146,8 @@
       "id": "kpmg",
       "name": "KPMG",
       "kind": "Global integrator",
-      "thesis": "Process, controls and functional change are the entry point. For regulated work, the useful distinction is how those advisers connect to the actual local platform delivery team.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "A strong starting point for risk, controls and functional change, with an Australian ServiceNow offer spanning technology, employee and customer workflows. Local offer evidence is broader than the previous directory-only view.",
+      "watch": "Ask how risk and business advisers connect to the named platform engineers, what comparable ANZ delivery proves the design, and who owns the ongoing backlog.",
       "owner": {
         "text": "Published as KPMG. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
@@ -828,19 +1162,59 @@
       "capabilities": [
         {
           "capability": "Advisory",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Consulting and transformation within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
         },
         {
           "capability": "Implementation",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Implementation and deployment within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "KPMG Australia explicitly offers IT service/asset and security operations, HR and finance workflows, customer workflows, IRM and AI governance.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/service-now.html",
+          "source": "KPMG Australia · ServiceNow services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -854,8 +1228,8 @@
       "id": "fujitsu",
       "name": "Fujitsu",
       "kind": "Global integrator",
-      "thesis": "Enable is the important local origin story: an APJ ServiceNow specialist inside a diversified global group. Following its people and delivery continuity is more informative than the parent logo alone.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "Enable’s APJ specialist lineage sits inside Fujitsu’s delivery and managed-services reach. AEMO and Australian protected-platform work give that lineage substance; Enable safety IP also entered ServiceNow’s product portfolio.",
+      "watch": "Ask whether the proposed team carries the relevant Enable experience, which platform and security responsibilities are managed, and how local decision-making works inside Fujitsu.",
       "owner": {
         "text": "Published as Fujitsu. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
@@ -878,11 +1252,35 @@
         },
         {
           "capability": "Implementation",
-          "scope": "Global",
-          "basis": "offer",
-          "text": "Implementation and deployment within the published C&I offer.",
-          "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
-          "source": "ServiceNow Partner Finder"
+          "scope": "ANZ",
+          "text": "AEMO provides Australian enterprise workflow and risk-delivery evidence.",
+          "url": "https://global.fujitsu/de-CH/customer-stories/pcs-aemo-australia-20260519",
+          "source": "Fujitsu · AEMO Australia customer case",
+          "customerId": "aemo-fujitsu"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "AEMO provides Australian enterprise workflow and risk-delivery evidence.",
+          "url": "https://global.fujitsu/de-CH/customer-stories/pcs-aemo-australia-20260519",
+          "source": "Fujitsu · AEMO Australia customer case",
+          "customerId": "aemo-fujitsu"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "AEMO provides Australian enterprise workflow and risk-delivery evidence.",
+          "url": "https://global.fujitsu/de-CH/customer-stories/pcs-aemo-australia-20260519",
+          "source": "Fujitsu · AEMO Australia customer case",
+          "customerId": "aemo-fujitsu"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Fujitsu describes a fully managed ServiceNow environment for an Australian public-sector organisation with a PROTECTED IRAP assessment.",
+          "url": "https://www2.fujitsu.com/dk/customer-stories/cs-public-sector-organisation-20230623/",
+          "source": "Fujitsu · Australian public-sector customer case, June 2023",
+          "customerId": "protected-fujitsu"
         }
       ],
       "partnerStatus": {
@@ -899,12 +1297,12 @@
       "id": "ntt-data",
       "name": "NTT DATA",
       "kind": "Global integrator",
-      "thesis": "Global integration and managed-services reach are the draw. ANZ coverage is published; region-specific architecture and delivery evidence remain a separate question.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "A global integration and managed-services provider with published ANZ coverage. Now wholly owned by NTT, it offers operating scale, but regional product delivery should be separated from global alliance breadth.",
+      "watch": "Ask for ANZ references, the local design authority and the actual managed-service delivery locations; corporate integration alone does not establish additional local capacity.",
       "owner": {
-        "text": "Published as NTT DATA. Ownership is not separately established in this research.",
-        "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
-        "source": "ServiceNow Partner Finder"
+        "text": "Wholly owned subsidiary of NTT, according to NTT DATA’s 2025 corporate profile. The NTT Ltd combination is a separate earlier event.",
+        "url": "https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/about-us/company-profile/cp25_e_all_p.pdf?rev=2ea74c1b42f34e7a86cd6f2e917a048a",
+        "source": "NTT DATA · corporate profile 2025"
       },
       "presence": {
         "text": "Melbourne, Sydney and Wellington locations listed.",
@@ -928,6 +1326,46 @@
           "text": "Implementation and deployment within the published C&I offer.",
           "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Global managed services include daily platform operations, maintenance and new-release deployment.",
+          "url": "https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/about-us/partners/servicenow/nttdata_servicenow_perspective_sep2024.pdf",
+          "source": "NTT DATA · ServiceNow perspective, September 2024",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover operations, customer management, ERP and employee experience.",
+          "url": "https://www.nttdata.com/global/en/about-us/partners/servicenow",
+          "source": "NTT DATA · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover operations, customer management, ERP and employee experience.",
+          "url": "https://www.nttdata.com/global/en/about-us/partners/servicenow",
+          "source": "NTT DATA · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover operations, customer management, ERP and employee experience.",
+          "url": "https://www.nttdata.com/global/en/about-us/partners/servicenow",
+          "source": "NTT DATA · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover operations, customer management, ERP and employee experience.",
+          "url": "https://www.nttdata.com/global/en/about-us/partners/servicenow",
+          "source": "NTT DATA · global ServiceNow services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -941,8 +1379,8 @@
       "id": "capgemini",
       "name": "Capgemini",
       "kind": "Global integrator",
-      "thesis": "A substantial global ServiceNow practice with Australian coverage. Its transformation and supported-instance scale establish a global model, not local team availability.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "RXP’s 2021 acquisition is a concrete Australian capability origin, explicitly strengthening ServiceNow alongside Microsoft and Salesforce. The present offer sits within a broad global delivery model.",
+      "watch": "Ask which Australian ServiceNow leaders and customer relationships continue from RXP and how the proposed team connects to global delivery and support.",
       "owner": {
         "text": "Published as Capgemini. Ownership is not separately established in this research.",
         "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
@@ -970,6 +1408,22 @@
           "text": "Implementation and deployment within the published C&I offer.",
           "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
           "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Capgemini describes global ServiceNow integration, enhancement and managed services. The cited recognition applies to the US and Europe, not ANZ.",
+          "url": "https://www.capgemini.com/au-en/news/analyst-recognition/capgemini-recognized-as-a-leader-in-the-isg-provider-lens-for-servicenow-ecosystem-partners-2024/",
+          "source": "Capgemini · global ServiceNow services, 30 April 2024",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "Capgemini describes global ServiceNow integration, enhancement and managed services. The cited recognition applies to the US and Europe, not ANZ.",
+          "url": "https://www.capgemini.com/au-en/news/analyst-recognition/capgemini-recognized-as-a-leader-in-the-isg-provider-lens-for-servicenow-ecosystem-partners-2024/",
+          "source": "Capgemini · global ServiceNow services, 30 April 2024",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -977,14 +1431,18 @@
         "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
         "source": "ServiceNow Partner Finder"
       },
-      "profileUrl": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html"
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+      "aliases": [
+        "RXP",
+        "RXP Services"
+      ]
     },
     {
       "id": "coforge",
       "name": "Coforge",
       "kind": "Global integrator",
-      "thesis": "TMLabs supplies an identifiable Australian architecture and delivery lineage. The integration test is whether its founder-built quality survives the shift into a larger delivery business.",
-      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "thesis": "TMLabs provides an identifiable Australian architecture, implementation and managed-services practice within Coforge. Risk, HR, IT and customer workflows make the local proposition more specific than the parent’s global scale.",
+      "watch": "Ask which TMLabs senior architects govern your account, how design review and local mentoring continue, and which work moves into the wider Coforge delivery network.",
       "owner": {
         "text": "Coforge acquired TMLabs; the continuing TMLabs website identifies the practice as now Coforge.",
         "url": "https://tmlabs.com.au/about-us/",
@@ -1044,6 +1502,22 @@
           "text": "ITSM, ITOM and integration services.",
           "url": "https://tmlabs.com.au/about-us/",
           "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "The continuing Australian TMLabs site, now Coforge, explicitly offers CSM, integrations and platform architecture.",
+          "url": "https://tmlabs.com.au/",
+          "source": "TMLabs · now Coforge, Australian services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "The continuing Australian TMLabs site, now Coforge, explicitly offers CSM, integrations and platform architecture.",
+          "url": "https://tmlabs.com.au/",
+          "source": "TMLabs · now Coforge, Australian services",
+          "basis": "offer"
         }
       ],
       "partnerStatus": {
@@ -1198,23 +1672,76 @@
     },
     {
       "id": "rgp",
-      "name": "RGP / Veracity",
-      "kind": "Lineage context",
-      "historical": true,
-      "thesis": "CloudGo was acquired to extend Veracity’s APAC digital business.",
-      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "name": "RGP / CloudGo",
+      "kind": "Global integrator",
+      "thesis": "CloudGo is the relevant APAC specialist lineage within RGP, joining workflow consulting to a wider services business. Follow the continuing regional team rather than treating the parent brand as a fresh local practice.",
+      "watch": "Ask which CloudGo leaders and delivery staff remain on the account, which entity contracts the work and how local delivery connects to the wider RGP business.",
       "owner": {
-        "text": "CloudGo was acquired to extend Veracity’s APAC digital business.",
-        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
-        "source": "Company history"
+        "text": "CloudGo was acquired by Resources Connection / RGP in November 2023; its current corporate profile says now RGP.",
+        "url": "https://www.linkedin.com/company/cloudgo",
+        "source": "CloudGo corporate profile · now RGP"
       },
       "presence": {
-        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
-        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
-        "source": "Company history"
+        "text": "CloudGo’s current corporate profile identifies dual Singapore/Australia headquarters and the RGP/Veracity combination.",
+        "url": "https://www.linkedin.com/company/cloudgo",
+        "source": "CloudGo corporate profile · now RGP"
       },
-      "segment": "Historical context",
-      "capabilities": []
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "The continuing CloudGo corporate profile describes ServiceNow consulting, ITSM, employee/customer experience and bespoke platform applications from its Australia/Singapore base.",
+          "url": "https://www.linkedin.com/company/cloudgo",
+          "source": "CloudGo corporate profile · now RGP",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.linkedin.com/company/cloudgo",
+      "aliases": [
+        "CloudGo",
+        "Veracity"
+      ]
     },
     {
       "id": "tcloud",
@@ -1335,6 +1862,746 @@
       },
       "segment": "Historical context",
       "capabilities": []
+    },
+    {
+      "id": "punch-it",
+      "name": "Punch IT",
+      "kind": "Lineage context",
+      "thesis": "ServiceNow implementation capability acquired by GQI in 2023.",
+      "watch": "Historical capability origin; validate present team continuity.",
+      "owner": {
+        "text": "Acquired by GQI in 2023.",
+        "url": "https://www.gqi.com.au/articles/article-b",
+        "source": "GQI · Punch IT acquisition, announced 30 June 2023"
+      },
+      "presence": {
+        "text": "Australian service-management and IT business serving telecommunications and enterprise.",
+        "url": "https://www.gqi.com.au/articles/article-b",
+        "source": "GQI · Punch IT acquisition, announced 30 June 2023"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [],
+      "profileUrl": "https://www.gqi.com.au/articles/article-b",
+      "historical": true
+    },
+    {
+      "id": "rxp",
+      "name": "RXP Services",
+      "kind": "Lineage context",
+      "thesis": "Australian digital-services firm acquired by Capgemini in 2021.",
+      "watch": "Historical acquisition context, not a separately active practice.",
+      "owner": {
+        "text": "Acquired by Capgemini in March 2021.",
+        "url": "https://www.capgemini.com/us-en/news/capgemini-completes-the-acquisition-of-rxp-services/",
+        "source": "Capgemini · completed RXP acquisition, 26 March 2021"
+      },
+      "presence": {
+        "text": "Australian firm with Melbourne headquarters and other Australian offices.",
+        "url": "https://www.capgemini.com/us-en/news/capgemini-completes-the-acquisition-of-rxp-services/",
+        "source": "Capgemini · completed RXP acquisition, 26 March 2021"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [],
+      "profileUrl": "https://www.capgemini.com/us-en/news/capgemini-completes-the-acquisition-of-rxp-services/",
+      "historical": true
+    },
+    {
+      "id": "dxc",
+      "name": "DXC Technology",
+      "kind": "Global integrator",
+      "thesis": "A substantial incumbent ANZ practice with named local customer outcomes and managed operations. Its broad delivery model suits buyers connecting implementation to an existing technology estate.",
+      "watch": "Ask for the actual ANZ team and comparable scope, and separate the stated historical ANZ project total from global staff and managed-instance figures.",
+      "owner": {
+        "text": "DXC Technology is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://dxc.com/au/en/practices/servicenow",
+        "source": "DXC · ANZ ServiceNow practice"
+      },
+      "presence": {
+        "text": "Published ANZ practice with Australian and New Zealand customer references.",
+        "url": "https://dxc.com/au/en/practices/servicenow",
+        "source": "DXC · ANZ ServiceNow practice"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "DXC’s ANZ practice offers transformation, implementation and managed services across technology, employee, customer and government workflows.",
+          "url": "https://dxc.com/au/en/practices/servicenow",
+          "source": "DXC · ANZ ServiceNow practice",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://dxc.com/au/en/practices/servicenow",
+      "aliases": [
+        "DXC"
+      ]
+    },
+    {
+      "id": "infosys",
+      "name": "Infosys",
+      "kind": "Global integrator",
+      "thesis": "One NZ gives the global alliance a concrete regional anchor: service assurance, event correlation and incident triage. The move toward autonomous operations is a roadmap to assess step by step.",
+      "watch": "Ask what is already live at a comparable ANZ customer, which actions remain human-approved, and how the team measures signal quality before automating remediation.",
+      "owner": {
+        "text": "Infosys Limited; publicly listed on NSE, BSE and NYSE as stated in its event-page corporate profile.",
+        "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+        "source": "Infosys · Sydney World Forum, 30 July 2026"
+      },
+      "presence": {
+        "text": "Sydney World Forum activity and a named One NZ service-assurance session establish regional engagement.",
+        "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+        "source": "Infosys · Sydney World Forum, 30 July 2026"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "The July 2026 Sydney agenda names One NZ and Infosys discussing ServiceNow AI service assurance, event correlation and incident triage; autonomous operation is an evolution discussed, not a blanket delivered claim.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "customerId": "one-nz-infosys"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "The July 2026 Sydney agenda names One NZ and Infosys discussing ServiceNow AI service assurance, event correlation and incident triage; autonomous operation is an evolution discussed, not a blanket delivered claim.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "customerId": "one-nz-infosys"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Global event material describes industry workflows, HRSD, CRM and platform modernisation; it does not isolate ANZ deployments for every domain.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "Global event material describes industry workflows, HRSD, CRM and platform modernisation; it does not isolate ANZ deployments for every domain.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "Global event material describes industry workflows, HRSD, CRM and platform modernisation; it does not isolate ANZ deployments for every domain.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "Global event material describes industry workflows, HRSD, CRM and platform modernisation; it does not isolate ANZ deployments for every domain.",
+          "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+          "source": "Infosys · Sydney World Forum, 30 July 2026",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html"
+    },
+    {
+      "id": "ey",
+      "name": "EY",
+      "kind": "Global integrator",
+      "thesis": "Lion demonstrates EY’s combination of employee-journey redesign, IT and risk engineering, and managed improvement. Its proposition starts with how the organisation works and follows through into the platform.",
+      "watch": "Ask which business and technical leads stay through managed services, how the knowledge and CMDB foundations will be maintained, and which AI outcomes are live versus planned.",
+      "owner": {
+        "text": "EY is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.ey.com/en_au/alliances/servicenow",
+        "source": "EY · Australian ServiceNow alliance and Oceania leader"
+      },
+      "presence": {
+        "text": "Oceania ServiceNow leadership and Lion’s Australian/New Zealand operating context are explicitly documented.",
+        "url": "https://www.ey.com/en_au/alliances/servicenow",
+        "source": "EY · Australian ServiceNow alliance and Oceania leader"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "Lion’s case covers employee journeys, ITSM/ITOM, integrations, risk and a transition to managed services; AI foundations and pilots are distinguished from delivered automation.",
+          "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+          "source": "EY customer case",
+          "customerId": "lion-ey"
+        }
+      ],
+      "profileUrl": "https://www.ey.com/en_au/alliances/servicenow"
+    },
+    {
+      "id": "ibm",
+      "name": "IBM Consulting",
+      "kind": "Global integrator",
+      "thesis": "A global service-management and workflow-transformation option with ANZ coverage. Product and operating breadth are clear; a local delivery reference should determine the shortlist for a specific domain.",
+      "watch": "Ask for the ANZ design authority, actual delivery locations and a recent comparable customer; global case studies and certifications do not allocate a local team.",
+      "owner": {
+        "text": "IBM Consulting is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ibm-consulting---global.html",
+        "source": "ServiceNow · IBM Consulting profile"
+      },
+      "presence": {
+        "text": "ServiceNow lists Australian and New Zealand C&I coverage and offices in St Leonards and Petone.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ibm-consulting---global.html",
+        "source": "ServiceNow · IBM Consulting profile"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "IBM’s global consulting offer spans IT, employee and customer workflows with continual service management. These are global capabilities, not independently verified local deployments.",
+          "url": "https://www.ibm.com/consulting/servicenow",
+          "source": "IBM · global ServiceNow consulting",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/ibm-consulting---global.html"
+    },
+    {
+      "id": "tcs",
+      "name": "Tata Consultancy Services",
+      "kind": "Global integrator",
+      "thesis": "A global operating-model and engineering partner expanding its ServiceNow alliance around AI-enabled business functions. ANZ coverage is verified; the new worldwide offer should not be mistaken for a named local deployment.",
+      "watch": "Ask for a relevant ANZ reference and the local/offshore delivery split, then separate established managed operations from the new alliance roadmap.",
+      "owner": {
+        "text": "Tata Consultancy Services is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+        "source": "ServiceNow · TCS profile"
+      },
+      "presence": {
+        "text": "ServiceNow lists North Sydney and Australia/New Zealand implementation coverage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+        "source": "ServiceNow · TCS profile"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "The ServiceNow profile lists consulting, implementation and service-provider offerings globally, with ANZ coverage separately shown.",
+          "url": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+          "source": "ServiceNow · TCS profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "The ServiceNow profile lists consulting, implementation and service-provider offerings globally, with ANZ coverage separately shown.",
+          "url": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+          "source": "ServiceNow · TCS profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "The ServiceNow profile lists consulting, implementation and service-provider offerings globally, with ANZ coverage separately shown.",
+          "url": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+          "source": "ServiceNow · TCS profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "The February 2026 global alliance describes AI-led IT and business operations, HR and customer functions; some solutions are planned.",
+          "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-servicenow-partner-accelerate-large-scale-ai-adoption-enterprises",
+          "source": "TCS · expanded alliance, 23 February 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "The February 2026 global alliance describes AI-led IT and business operations, HR and customer functions; some solutions are planned.",
+          "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-servicenow-partner-accelerate-large-scale-ai-adoption-enterprises",
+          "source": "TCS · expanded alliance, 23 February 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "The February 2026 global alliance describes AI-led IT and business operations, HR and customer functions; some solutions are planned.",
+          "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-servicenow-partner-accelerate-large-scale-ai-adoption-enterprises",
+          "source": "TCS · expanded alliance, 23 February 2026",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "The February 2026 global alliance describes AI-led IT and business operations, HR and customer functions; some solutions are planned.",
+          "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-servicenow-partner-accelerate-large-scale-ai-adoption-enterprises",
+          "source": "TCS · expanded alliance, 23 February 2026",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/tata-america-intl-corp.html",
+      "aliases": [
+        "TCS"
+      ]
+    },
+    {
+      "id": "wipro",
+      "name": "Wipro",
+      "kind": "Global integrator",
+      "thesis": "An engineering and managed-services model with an explicit Australian delivery record. The worldwide offer spans IT, risk, employee and customer workflows, while local product depth still needs a reference.",
+      "watch": "Ask for named ANZ customers in the requested module and the team providing ongoing operations; an undated satisfaction claim cannot establish current quality or growth.",
+      "owner": {
+        "text": "Wipro is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.wipro.com/events/wipro-at-servicenow-world-forum-sydney/",
+        "source": "Wipro · Sydney World Forum / Australian implementation offer"
+      },
+      "presence": {
+        "text": "Wipro’s Sydney event page explicitly refers to Australian ServiceNow implementation customers.",
+        "url": "https://www.wipro.com/events/wipro-at-servicenow-world-forum-sydney/",
+        "source": "Wipro · Sydney World Forum / Australian implementation offer"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Wipro explicitly describes completed Australian ServiceNow implementations, without naming customers or isolating the product mix.",
+          "url": "https://www.wipro.com/events/wipro-at-servicenow-world-forum-sydney/",
+          "source": "Wipro · Sydney World Forum / Australian implementation offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "Global ServiceNow services cover enterprise service operations and workflow transformation; ANZ product depth is not separately established.",
+          "url": "https://www.wipro.com/partners/servicenow/",
+          "source": "Wipro · global ServiceNow services",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.wipro.com/events/wipro-at-servicenow-world-forum-sydney/"
+    },
+    {
+      "id": "hcltech",
+      "name": "HCLTech",
+      "kind": "Global integrator",
+      "thesis": "A global engineering and operations model connecting ServiceNow workflows with other enterprise platforms. Its 2026 Gemini collaboration signals product direction, not proof of autonomous ANZ deployments.",
+      "watch": "Ask for a local production reference, the accountable platform architect, and how data access, approvals and support work across Google Cloud and ServiceNow.",
+      "owner": {
+        "text": "HCLTech is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.servicenow.com/partners/partner-finder/hcl-technologies-ltd.html",
+        "source": "ServiceNow · HCLTech profile"
+      },
+      "presence": {
+        "text": "ServiceNow lists Sydney and ANZ coverage; the June 2026 Google Cloud/ServiceNow launch included Sydney.",
+        "url": "https://www.servicenow.com/partners/partner-finder/hcl-technologies-ltd.html",
+        "source": "ServiceNow · HCLTech profile"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "text": "The global offer spans ITSM, ITOM, HRSD, CSM, risk, operational technology and AI; its headcounts and certification totals are global.",
+          "url": "https://www.hcltech.com/sites/default/files/document/open/Circor-Tech-Day-Booth-1-Service-Now-Offerings.pdf",
+          "source": "HCLTech · global ServiceNow offer",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/hcl-technologies-ltd.html",
+      "aliases": [
+        "HCL",
+        "HCL Technologies"
+      ]
+    },
+    {
+      "id": "sysintegra",
+      "name": "Sysintegra",
+      "kind": "Specialist",
+      "thesis": "A specialist with concrete ANZ evidence in portfolio planning and IT service management, plus its own identity and data-protection products. MMSG and SA government records provide substance beyond the pure-play positioning.",
+      "watch": "Ask for the named delivery architects and a matching customer, how ongoing support preserves configuration quality, and whether proposed products add useful capability or extra dependence.",
+      "owner": {
+        "text": "Sysintegra is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://sysintegra.com.au/about-us/",
+        "source": "Sysintegra · ANZ ServiceNow services"
+      },
+      "presence": {
+        "text": "Australian and New Zealand ServiceNow practice, with local customer and government evidence.",
+        "url": "https://sysintegra.com.au/about-us/",
+        "source": "Sysintegra · ANZ ServiceNow services"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "text": "ANZ services include lifecycle consulting and support, ITSM, asset/configuration management, security/risk and platform extensions. No comparative largest-partner claim is adopted.",
+          "url": "https://sysintegra.com.au/",
+          "source": "Sysintegra · lifecycle support",
+          "basis": "offer"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "text": "The published regional practice description includes HR and customer-service workflow expertise.",
+          "url": "https://sysintegra.com.au/careers/",
+          "source": "Sysintegra · ANZ practice domains",
+          "basis": "offer"
+        },
+        {
+          "capability": "Customer",
+          "scope": "ANZ",
+          "text": "The published regional practice description includes HR and customer-service workflow expertise.",
+          "url": "https://sysintegra.com.au/careers/",
+          "source": "Sysintegra · ANZ practice domains",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://sysintegra.com.au/about-us/"
+    },
+    {
+      "id": "valueflow",
+      "name": "ValueFlow IT",
+      "kind": "Specialist",
+      "thesis": "An advisory-led specialist centred on process design and a staged ServiceNow capability roadmap. It suits buyers who need to connect platform releases to operating improvements.",
+      "watch": "Ask for a recent local reference, the people responsible for architecture and delivery, and what the enhanced customer-service offer includes after go-live.",
+      "owner": {
+        "text": "ValueFlow IT is the published practice brand; a controlling-owner claim is not inferred from partner status.",
+        "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+        "source": "ServiceNow · ValueFlow IT profile"
+      },
+      "presence": {
+        "text": "Sydney-headquartered ServiceNow firm with ANZ C&I coverage and wider regional locations.",
+        "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+        "source": "ServiceNow · ValueFlow IT profile"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "The partner profile describes process design, implementation, capability roadmaps and ongoing enhanced customer services. It does not identify ANZ module-specific outcomes.",
+          "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+          "source": "ServiceNow · ValueFlow IT profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "The partner profile describes process design, implementation, capability roadmaps and ongoing enhanced customer services. It does not identify ANZ module-specific outcomes.",
+          "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+          "source": "ServiceNow · ValueFlow IT profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "The partner profile describes process design, implementation, capability roadmaps and ongoing enhanced customer services. It does not identify ANZ module-specific outcomes.",
+          "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+          "source": "ServiceNow · ValueFlow IT profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "text": "The partner profile describes process design, implementation, capability roadmaps and ongoing enhanced customer services. It does not identify ANZ module-specific outcomes.",
+          "url": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+          "source": "ServiceNow · ValueFlow IT profile",
+          "basis": "offer"
+        }
+      ],
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/valueflow-it-pty-ltd.html",
+      "aliases": [
+        "ValueFlow"
+      ]
     }
   ],
   "people": [
@@ -1437,16 +2704,26 @@
       "id": "dan-spada",
       "name": "Dan Spada",
       "companyId": "kinetic-it",
-      "role": "Principal, ServiceNow",
+      "role": "Head of Service Integration",
       "function": "Practice Builder",
       "domain": "Enterprise service management",
       "reading": "A named practice leader behind the 2026 APAC recognition. The award is evidence of recognition, not an independently measured local growth rate.",
       "current": {
-        "text": "Principal, ServiceNow",
-        "url": "https://kineticit.com.au/news/kinetic-it-2026-rising-star-servicenow-partner-awards-apac/",
-        "source": "Published role / biography"
+        "text": "Named Head of Service Integration in the Australian water-utility case; observed September 2026.",
+        "url": "https://kineticit.com.au/case-study/how-an-australian-water-utility-built-cyber-resilience-across-converging-it-ot-infrastructure/",
+        "source": "Kinetic IT · Australian water utility case"
       },
-      "career": []
+      "career": [
+        {
+          "companyId": "kinetic-it",
+          "role": "Head of Service Integration",
+          "when": "Current case-study attribution · observed September 2026",
+          "text": "Named Head of Service Integration.",
+          "url": "https://kineticit.com.au/case-study/how-an-australian-water-utility-built-cyber-resilience-across-converging-it-ot-infrastructure/",
+          "source": "Kinetic IT · Australian water utility case"
+        }
+      ],
+      "roleStatus": "source snapshot"
     },
     {
       "id": "andrew-homewood",
@@ -1559,7 +2836,7 @@
       "name": "Bruce Hara",
       "companyId": "enable",
       "role": "CEO at the 2022 acquisition announcement",
-      "function": "Founder",
+      "function": "Commercial",
       "domain": "APJ specialist building",
       "reading": "A historical leadership anchor for the Enable-to-Fujitsu transition; this is not a claim about his current employer.",
       "current": {
@@ -1748,6 +3025,102 @@
         }
       ],
       "roleStatus": "historical"
+    },
+    {
+      "id": "harald-heimensen",
+      "name": "Harald Heimensen",
+      "companyId": "deloitte",
+      "role": "Lead ServiceNow Partner, Deloitte New Zealand",
+      "function": "Practice Builder",
+      "domain": "Service management · operating models",
+      "reading": "The current NZ practice page names him as lead partner and describes delivery experience in Europe and New Zealand.",
+      "current": {
+        "text": "Lead ServiceNow Partner, Deloitte New Zealand",
+        "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+        "source": "Deloitte New Zealand · ServiceNow services and leaders"
+      },
+      "career": [
+        {
+          "companyId": "deloitte",
+          "role": "Lead ServiceNow Partner, Deloitte New Zealand",
+          "when": "Current published profile · observed September 2026",
+          "text": "Lead ServiceNow Partner, Deloitte New Zealand",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders"
+        }
+      ]
+    },
+    {
+      "id": "neha-mishra",
+      "name": "Neha Mishra",
+      "companyId": "deloitte",
+      "role": "Director, Technology and Transformation",
+      "function": "Technical",
+      "domain": "ServiceNow architecture",
+      "reading": "The current NZ practice page identifies a ServiceNow specialist and Master Architect; global project totals should not be read as NZ-only.",
+      "current": {
+        "text": "Director, Technology and Transformation",
+        "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+        "source": "Deloitte New Zealand · ServiceNow services and leaders"
+      },
+      "career": [
+        {
+          "companyId": "deloitte",
+          "role": "Director, Technology and Transformation",
+          "when": "Current published profile · observed September 2026",
+          "text": "Director, Technology and Transformation",
+          "url": "https://www.deloitte.com/nz/en/alliances/servicenow.html",
+          "source": "Deloitte New Zealand · ServiceNow services and leaders"
+        }
+      ]
+    },
+    {
+      "id": "kim-brennan",
+      "name": "Kim Brennan",
+      "companyId": "ey",
+      "role": "Regional ServiceNow Practice Leader and Digital Government Leader, Oceania",
+      "function": "Practice Builder",
+      "domain": "ServiceNow · digital government",
+      "reading": "EY’s Australian alliance page names the Oceania practice leader; this is a current observed role, not a dated appointment.",
+      "current": {
+        "text": "Regional ServiceNow Practice Leader and Digital Government Leader, Oceania",
+        "url": "https://www.ey.com/en_au/alliances/servicenow",
+        "source": "EY · Australian ServiceNow alliance and Oceania leader"
+      },
+      "career": [
+        {
+          "companyId": "ey",
+          "role": "Regional ServiceNow Practice Leader and Digital Government Leader, Oceania",
+          "when": "Current published profile · observed September 2026",
+          "text": "Regional ServiceNow Practice Leader and Digital Government Leader, Oceania",
+          "url": "https://www.ey.com/en_au/alliances/servicenow",
+          "source": "EY · Australian ServiceNow alliance and Oceania leader"
+        }
+      ]
+    },
+    {
+      "id": "arun-nair",
+      "name": "Arun Nair",
+      "companyId": "sysintegra",
+      "role": "CEO",
+      "function": "Practice Builder",
+      "domain": "ServiceNow practice",
+      "reading": "Named CEO in Sysintegra’s August 2026 World Forum report; no founder or personal influence claim is inferred.",
+      "current": {
+        "text": "CEO",
+        "url": "https://sysintegra.com.au/servicenow-world-forum-sydney-2026-sysintegra/",
+        "source": "Sysintegra · Yarra Valley Water session, 4 August 2026"
+      },
+      "career": [
+        {
+          "companyId": "sysintegra",
+          "role": "CEO",
+          "when": "Current published profile · observed September 2026",
+          "text": "CEO",
+          "url": "https://sysintegra.com.au/servicenow-world-forum-sydney-2026-sysintegra/",
+          "source": "Sysintegra · Yarra Valley Water session, 4 August 2026"
+        }
+      ]
     }
   ],
   "events": [
@@ -1991,6 +3364,183 @@
       "source": "Company announcement / primary source",
       "type": "Expansion",
       "scope": "ANZ"
+    },
+    {
+      "id": "nexon-adamantem",
+      "date": "2025-12",
+      "dateLabel": "December 2025",
+      "companyIds": [
+        "nexon"
+      ],
+      "personIds": [],
+      "title": "Nexon enters Adamantem’s portfolio",
+      "implication": "A new capital owner can fund expansion; this does not itself establish growth in the ServiceNow practice.",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "text": "Adamantem records its Nexon investment in December 2025, following the August majority-acquisition agreement.",
+      "url": "https://adamantem.com.au/portfolio/nexon/",
+      "source": "Adamantem · Nexon portfolio; investment December 2025",
+      "movement": "Acquired",
+      "targetIds": [
+        "nexon"
+      ]
+    },
+    {
+      "id": "gqi-punch-it",
+      "date": "2023-06-30",
+      "dateLabel": "30 June 2023 · published 3 July",
+      "companyIds": [
+        "gqi",
+        "punch-it"
+      ],
+      "personIds": [],
+      "title": "GQI acquires Punch IT",
+      "implication": "The acquisition explains the service-management capability origin; the whole-firm total is not a current ANZ ServiceNow bench.",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "text": "GQI states that Punch IT brought ServiceNow implementation expertise and 70 staff across the acquired business.",
+      "url": "https://www.gqi.com.au/articles/article-b",
+      "source": "GQI · Punch IT acquisition, announced 30 June 2023",
+      "targetIds": [
+        "punch-it"
+      ]
+    },
+    {
+      "id": "spark-serviceflex-fy26",
+      "date": "2026",
+      "dateLabel": "FY2026 annual report",
+      "companyIds": [
+        "spark"
+      ],
+      "personIds": [],
+      "title": "Spark continues the ServiceFlex migration",
+      "implication": "This is rollout across an existing managed-services base, not a measured increase in ServiceNow consulting headcount.",
+      "type": "Expansion",
+      "scope": "ANZ",
+      "text": "Spark reports continued migration of customers from legacy IT to ServiceFlex, with digital channels, automation and performance insight.",
+      "url": "https://investors.sparknz.co.nz/FormBuilder/_Resource/_module/gXbeer80tkeL4nEaF-kwFA/doc/FY26_Annual_Report.pdf",
+      "source": "Spark · FY2026 annual report"
+    },
+    {
+      "id": "enable-toolbox-ip",
+      "date": "2023-09-26",
+      "dateLabel": "26 September 2023",
+      "companyIds": [
+        "enable",
+        "fujitsu",
+        "servicenow"
+      ],
+      "personIds": [],
+      "title": "Enable safety technology enters ServiceNow’s portfolio",
+      "implication": "Australian specialist IP can influence the vendor’s product direction as well as supply implementation capacity.",
+      "type": "Acquisition",
+      "scope": "Global",
+      "text": "ServiceNow acquired ToolBox occupational-health-and-safety technology assets from Enable, a Fujitsu company. It did not acquire the Enable company.",
+      "url": "https://www.servicenow.com/workflow/news/enable-tech-improve-health-safety.html",
+      "source": "ServiceNow · Enable ToolBox technology acquisition, 26 September 2023"
+    },
+    {
+      "id": "ntt-data-ownership-2025",
+      "date": "2025",
+      "dateLabel": "2025 corporate profile",
+      "companyIds": [
+        "ntt-data"
+      ],
+      "personIds": [],
+      "title": "NTT DATA becomes wholly owned by NTT",
+      "implication": "Corporate consolidation changes the parent structure; it does not prove expansion of the ANZ ServiceNow bench.",
+      "type": "Acquisition",
+      "scope": "Global",
+      "text": "The corporate profile records NTT DATA becoming a wholly owned NTT subsidiary following the tender offer.",
+      "url": "https://www.nttdata.com/global/en/-/media/nttdataglobal/1_files/about-us/company-profile/cp25_e_all_p.pdf?rev=2ea74c1b42f34e7a86cd6f2e917a048a",
+      "source": "NTT DATA · corporate profile 2025",
+      "targetIds": [
+        "ntt-data"
+      ]
+    },
+    {
+      "id": "rxp-capgemini",
+      "date": "2021-03-26",
+      "dateLabel": "26 March 2021",
+      "companyIds": [
+        "rxp",
+        "capgemini"
+      ],
+      "personIds": [],
+      "title": "Capgemini acquires RXP Services",
+      "implication": "This is an identifiable local capability origin, not evidence that all acquired people specialised in ServiceNow or remain today.",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "text": "The completed acquisition strengthened Australian ServiceNow, Microsoft and Salesforce partnerships. The 550-person figure covered all RXP disciplines.",
+      "url": "https://www.capgemini.com/us-en/news/capgemini-completes-the-acquisition-of-rxp-services/",
+      "source": "Capgemini · completed RXP acquisition, 26 March 2021",
+      "targetIds": [
+        "rxp"
+      ]
+    },
+    {
+      "id": "infosys-one-nz-forum",
+      "date": "2026-07-30",
+      "dateLabel": "30 July 2026",
+      "companyIds": [
+        "infosys"
+      ],
+      "personIds": [],
+      "title": "One NZ and Infosys present service assurance",
+      "implication": "A local reference is available for testing what is in production and what remains planned.",
+      "type": "Client delivery",
+      "scope": "ANZ",
+      "text": "A named Sydney session covers event correlation, incident triage and the roadmap toward autonomous operations.",
+      "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+      "source": "Infosys · Sydney World Forum, 30 July 2026"
+    },
+    {
+      "id": "tcs-ai-alliance",
+      "date": "2026-02-23",
+      "dateLabel": "23 February 2026",
+      "companyIds": [
+        "tcs"
+      ],
+      "personIds": [],
+      "title": "TCS expands its ServiceNow alliance",
+      "implication": "Relevant direction for the global offer; no ANZ growth or production outcome is inferred.",
+      "type": "Expansion",
+      "scope": "Global",
+      "text": "A multi-year worldwide agreement targets AI-enabled business functions and joint solution development.",
+      "url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-servicenow-partner-accelerate-large-scale-ai-adoption-enterprises",
+      "source": "TCS · expanded alliance, 23 February 2026"
+    },
+    {
+      "id": "hcl-google-servicenow",
+      "date": "2026-06-25",
+      "dateLabel": "25 June 2026",
+      "companyIds": [
+        "hcltech"
+      ],
+      "personIds": [],
+      "title": "HCLTech connects Gemini Enterprise and ServiceNow",
+      "implication": "The offering direction is documented; the announcement does not establish an ANZ customer go-live or local bench growth.",
+      "type": "Expansion",
+      "scope": "Global",
+      "text": "A Sydney-linked global announcement describes planned AI-agent solutions combining Gemini Enterprise and ServiceNow workflows.",
+      "url": "https://www.hcltech.com/en-us/press-releases/hcltech-and-servicenow-join-forces-scale-enterprise-ai-google-cloud",
+      "source": "HCLTech · Sydney alliance announcement, 25 June 2026"
+    },
+    {
+      "id": "sysintegra-yvw-forum",
+      "date": "2026-07-30",
+      "dateLabel": "30 July 2026 · reported 4 August",
+      "companyIds": [
+        "sysintegra"
+      ],
+      "personIds": [],
+      "title": "Yarra Valley Water presents IT/OT convergence",
+      "implication": "A named local reference supports discussion of operational-technology scope; detailed outcomes remain unpublished in this source.",
+      "type": "Client delivery",
+      "scope": "ANZ",
+      "text": "Sysintegra’s dated Sydney Forum report names Yarra Valley Water in a joint IT/OT ServiceNow session. The full customer case was still in preparation.",
+      "url": "https://sysintegra.com.au/servicenow-world-forum-sydney-2026-sysintegra/",
+      "source": "Sysintegra · Yarra Valley Water session, 4 August 2026"
     }
   ],
   "customers": [
@@ -2019,6 +3569,341 @@
         "text": "AC3’s partner profile carries a Queensland Health custom-app case study. AC3 also publicly identifies its role delivering the Surgery Connect SCAN initiative alongside ServiceNow.",
         "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
         "source": "ServiceNow · AC3 customer collateral"
+      }
+    },
+    {
+      "id": "adha-xamplify",
+      "name": "Australian Digital Health Agency",
+      "companyId": "xamplify",
+      "capabilities": [
+        "IT",
+        "Implementation",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "xAmplify describes embedding a delivery team to remediate and improve ADHA’s ServiceNow IT service platform within an agreed budget. Publication and project dates are not stated.",
+        "url": "https://xamplify.com.au/our-services/service-now/",
+        "source": "xAmplify · ServiceNow services and ADHA case"
+      }
+    },
+    {
+      "id": "water-kinetic",
+      "name": "Australian water utility (unnamed)",
+      "companyId": "kinetic-it",
+      "capabilities": [
+        "Risk / Security",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "Kinetic IT implemented Vulnerability Response workflows across converged IT/OT, integrating vulnerability data, business criticality and governance. The customer is unnamed.",
+        "url": "https://kineticit.com.au/case-study/how-an-australian-water-utility-built-cyber-resilience-across-converging-it-ot-infrastructure/",
+        "source": "Kinetic IT · Australian water utility case"
+      },
+      "anonymous": true
+    },
+    {
+      "id": "transport-kinetic",
+      "name": "Australian transport organisation (unnamed)",
+      "companyId": "kinetic-it",
+      "capabilities": [
+        "IT",
+        "Implementation",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "May 2024 case describes ITSM, ITOM Visibility, App Engine and CMDB work with process redesign and training.",
+        "url": "https://kineticit.com.au/case-study/transport-organisation-uplifts-platform-and-process-with-servicenow-kinetic-it/",
+        "source": "Kinetic IT · transport customer, 29 May 2024"
+      },
+      "anonymous": true
+    },
+    {
+      "id": "qantas-kinetic",
+      "name": "Qantas",
+      "companyId": "kinetic-it",
+      "capabilities": [
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "The February 2022 AVA case describes an AWS conversational agent integrated with Qantas’s ServiceNow environment. It is not Now Assist or evidence of a current generative-AI deployment.",
+        "url": "https://kineticit.com.au/case-study/qantas-operational-support-automated-virtual-agent-ava/",
+        "source": "Kinetic IT · Qantas AVA, 22 February 2022"
+      }
+    },
+    {
+      "id": "nrl-ac3",
+      "name": "National Rugby League",
+      "companyId": "ac3",
+      "capabilities": [
+        "IT",
+        "Implementation",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "AC3 designed workflows and implemented a service catalogue, incident management and CMDB, with Microsoft and identity integrations. The case is undated; its historical team count should not be treated as current.",
+        "url": "https://www.ac3.com.au/success-stories/nrl-partner-with-ac3-to-implement-servicenow",
+        "source": "AC3 · NRL customer case"
+      }
+    },
+    {
+      "id": "aicd-ac3",
+      "name": "Australian Institute of Company Directors",
+      "companyId": "ac3",
+      "capabilities": [
+        "IT",
+        "Implementation",
+        "AMS"
+      ],
+      "fact": {
+        "text": "AC3 describes ServiceNow enterprise service management implementation followed by ongoing platform managed services.",
+        "url": "https://www.ac3.com.au/success-stories/aicd-improve-customer-and-employee-experience-with-itsm",
+        "source": "AC3 · AICD customer case"
+      }
+    },
+    {
+      "id": "te-whatu-ora-ac3",
+      "name": "Te Whatu Ora / Health New Zealand",
+      "companyId": "ac3",
+      "capabilities": [
+        "IT",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "AC3 identifies its role in a national ServiceNow ITSM platform. Subsequent CSM and AI opportunities are roadmap statements, not established deployment facts.",
+        "url": "https://www.ac3.com.au/success-stories/revolutionising-healthcare-it-how-te-whatu-ora-united-90-000-employees-on-a-single-platform-in-just-six-months",
+        "source": "AC3 · Te Whatu Ora customer case"
+      }
+    },
+    {
+      "id": "education-ac3",
+      "name": "Australian educational institution (unnamed)",
+      "companyId": "ac3",
+      "capabilities": [
+        "Risk / Security",
+        "Implementation",
+        "AMS"
+      ],
+      "fact": {
+        "text": "AC3 was engaged in November 2023 for compliance case management with a February 2024 target, followed by maintenance, support, enhancements and platform reviews.",
+        "url": "https://www.ac3.com.au/success-stories/from-compliance-to-ongoing-service-now-platform-success",
+        "source": "AC3 · education compliance and managed services case"
+      },
+      "anonymous": true
+    },
+    {
+      "id": "griffith-nexon",
+      "name": "Griffith University",
+      "companyId": "nexon",
+      "capabilities": [
+        "Advisory",
+        "Implementation",
+        "IT",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "Nexon’s case describes an enterprise service-management strategy and hybrid co-delivery, including service-data foundations and client capability transfer.",
+        "url": "https://nexon.com.au/download/44313/?tmstv=1719303357",
+        "source": "Nexon · Griffith University customer case"
+      }
+    },
+    {
+      "id": "government-gqi",
+      "name": "Australian government entity (unnamed)",
+      "companyId": "gqi",
+      "capabilities": [
+        "Advisory",
+        "Implementation",
+        "AMS",
+        "IT",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "GQI documents ITIL redesign, ITSM, ITAM, CMDB, Microsoft integrations and ongoing platform support. It specifies a two-year duration without project dates.",
+        "url": "https://www.gqi.com.au/case-studies/servicenow-implementation-for-an-australian-government-entity",
+        "source": "GQI · Australian government customer case"
+      },
+      "anonymous": true
+    },
+    {
+      "id": "syc-datacom",
+      "name": "SYC",
+      "companyId": "datacom",
+      "capabilities": [
+        "IT",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "Datacom migrated SYC’s IT service management to ServiceNow, covering requirements, configuration, testing, go-live and post-implementation support. Other case results also involve Microsoft tools.",
+        "url": "https://datacom.com/au/en/discover/customer-story/it-fleet-insights-boost-syc-s-productivity-and-cut-app-costs",
+        "source": "Datacom · SYC customer case"
+      }
+    },
+    {
+      "id": "nec-ikc",
+      "name": "NEC New Zealand",
+      "companyId": "ikc",
+      "capabilities": [
+        "Customer",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "ServiceNow names IKC as NEC NZ’s implementation partner for Customer Service Management and Field Service Management.",
+        "url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-nec-nz.pdf",
+        "source": "ServiceNow · NEC New Zealand customer case"
+      }
+    },
+    {
+      "id": "southern-cross-ikc",
+      "name": "Southern Cross Health Insurance",
+      "companyId": "ikc",
+      "capabilities": [
+        "IT",
+        "Advisory",
+        "Implementation",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "ServiceNow identifies Integrated Knowledge Consulting as the partner for ITSM/ITOM and Virtual Agent, including roadmap advice. Virtual Agent is not by itself proof of generative AI.",
+        "url": "https://www.servicenow.com/jp/customers/southern-cross-health-insurance.html",
+        "source": "ServiceNow · Southern Cross Health Insurance customer case"
+      }
+    },
+    {
+      "id": "diser-deloitte",
+      "name": "Australian DISER (department at time of project)",
+      "companyId": "deloitte",
+      "capabilities": [
+        "IT",
+        "Employee",
+        "Implementation",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "Deloitte describes co-delivery with BT Automation on a Protected Platform: ITSM/ITAM/CMDB in 2021 followed by corporate-service workflows. The department name and programme are historical.",
+        "url": "https://www.deloitte.com/au/en/about/recognition/news/australian-government-department-improves-corpoarte-services-4000-employees-servicenow-010922.html",
+        "source": "Deloitte · DISER Protected Platform case, August 2022"
+      }
+    },
+    {
+      "id": "transurban-thirdera",
+      "name": "Transurban",
+      "companyId": "cognizant",
+      "capabilities": [
+        "IT",
+        "Risk / Security",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "ServiceNow names Thirdera as partner for Transurban’s ITSM, ITOM, ITAM and Security Operations. This is acquired-practice evidence at an Australian-headquartered customer, not proof of current staffing.",
+        "url": "https://www.servicenow.com/customers/transurban.html",
+        "source": "ServiceNow · Transurban / Thirdera customer case"
+      }
+    },
+    {
+      "id": "aemo-fujitsu",
+      "name": "Australian Energy Market Operator",
+      "companyId": "fujitsu",
+      "capabilities": [
+        "Implementation",
+        "Risk / Security",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "Fujitsu’s AEMO case describes a ServiceNow enterprise platform, centralised risk and automated workflows.",
+        "url": "https://global.fujitsu/de-CH/customer-stories/pcs-aemo-australia-20260519",
+        "source": "Fujitsu · AEMO Australia customer case"
+      }
+    },
+    {
+      "id": "protected-fujitsu",
+      "name": "Australian public-sector organisation (unnamed)",
+      "companyId": "fujitsu",
+      "capabilities": [
+        "Implementation",
+        "AMS"
+      ],
+      "fact": {
+        "text": "The June 2023 case describes a fully managed ServiceNow solution for an Australian public-sector customer, including protected-environment requirements.",
+        "url": "https://www2.fujitsu.com/dk/customer-stories/cs-public-sector-organisation-20230623/",
+        "source": "Fujitsu · Australian public-sector customer case, June 2023"
+      },
+      "anonymous": true
+    },
+    {
+      "id": "mediaworks-dxc",
+      "name": "MediaWorks New Zealand",
+      "companyId": "dxc",
+      "capabilities": [
+        "IT",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "DXC documents a ServiceNow ITSM transformation for MediaWorks New Zealand.",
+        "url": "https://dxc.com/insights/customer-stories/mediaworks-on-the-right-wavelength-with-servicenow",
+        "source": "DXC · MediaWorks New Zealand customer case"
+      }
+    },
+    {
+      "id": "one-nz-infosys",
+      "name": "One NZ",
+      "companyId": "infosys",
+      "capabilities": [
+        "IT",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "The 30 July 2026 Sydney session names One NZ and Infosys on ServiceNow AI service assurance. The published agenda separates current AI-supported triage from the roadmap toward autonomous operations.",
+        "url": "https://www.infosys.com/newsroom/events/2026/servicenow-world-forum-2026.html",
+        "source": "Infosys · Sydney World Forum, 30 July 2026"
+      }
+    },
+    {
+      "id": "lion-ey",
+      "name": "Lion",
+      "companyId": "ey",
+      "capabilities": [
+        "Advisory",
+        "Implementation",
+        "AMS",
+        "IT",
+        "Employee",
+        "Risk / Security",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "EY describes employee-journey and IT transformation, ServiceNow integrations and managed improvement at Lion. ServiceNow also names EY for HRSD, IRM, ITSM and Operational Technology Management.",
+        "url": "https://www.ey.com/en_gl/alliances/lion-shapes-employee-journeys-for-ai-future",
+        "source": "EY customer case"
+      }
+    },
+    {
+      "id": "mmsg-sysintegra",
+      "name": "McMillan Shakespeare Group",
+      "companyId": "sysintegra",
+      "capabilities": [
+        "IT",
+        "Advisory",
+        "Implementation",
+        "AMS"
+      ],
+      "fact": {
+        "text": "ServiceNow names Sysintegra for SPM rollout, module advice and ongoing ITSM support at the Australia/New Zealand financial-services group.",
+        "url": "https://www.servicenow.com/au/customers/mcmillan-shakespeare.html",
+        "source": "ServiceNow · McMillan Shakespeare / Sysintegra customer case"
+      }
+    },
+    {
+      "id": "sa-dpc-sysintegra",
+      "name": "South Australian Department of the Premier and Cabinet",
+      "companyId": "sysintegra",
+      "capabilities": [
+        "IT",
+        "Implementation"
+      ],
+      "fact": {
+        "text": "The FY2024–25 departmental report names Sysintegra for implementing its ServiceNow instance and incident, request, licence, problem, change and knowledge functions.",
+        "url": "https://dpc.sa.gov.au/__data/assets/pdf_file/0004/1193620/DPC-Annual-Report-2024-25.pdf",
+        "source": "SA Department of Premier and Cabinet · FY2024–25 annual report"
       }
     }
   ],
@@ -2101,6 +3986,30 @@
         "thirdera-cognizant"
       ],
       "reading": "Global consolidation explains the ownership story; named ANZ practitioners must establish local depth."
+    },
+    {
+      "id": "gqi-punch-it",
+      "title": "Telecom advisory adds a ServiceNow team",
+      "companyIds": [
+        "gqi",
+        "punch-it"
+      ],
+      "eventIds": [
+        "gqi-punch-it"
+      ],
+      "reading": "GQI’s 2023 Punch IT acquisition connects established telecom advisory to service-management implementation. Track the continuing architects rather than carrying forward the acquisition headcount."
+    },
+    {
+      "id": "rxp-capgemini",
+      "title": "Australian digital capability joins Capgemini",
+      "companyIds": [
+        "rxp",
+        "capgemini"
+      ],
+      "eventIds": [
+        "rxp-capgemini"
+      ],
+      "reading": "RXP supplied Australian relationships and platform skills; assess the current ServiceNow cohort separately from the 2021 whole-firm headcount."
     }
   ]
 }

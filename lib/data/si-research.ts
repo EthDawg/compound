@@ -1,0 +1,9 @@
+/** Evidence for the current broad SI readings; regional capabilities live in their ecosystem data. */
+export const SI_RESEARCH: Record<string, { label: string; url: string }[]> = {
+ accenture: [{label:'Q3 FY26 · consulting and managed-services revenue',url:'https://newsroom.accenture.com/content/3qfy26-earnings/accenture-reports-third-quarter-fiscal-2026-results.pdf'},{label:'March 2026 · Reinvention Services leadership',url:'https://newsroom.accenture.com/news/2026/accenture-announces-reinvention-services-leadership'}],
+ cognizant: [{label:'Q2 2026 filing · 3Cloud and Astreya completed acquisitions',url:'https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm'}],
+ capgemini: [{label:'October 2025 · WNS acquisition completed',url:'https://www.capgemini.com/news/press-releases/capgemini-completes-the-acquisition-of-wns-and-creates-a-global-leader-in-agentic-ai-powered-intelligent-operations/'},{label:'November 2025 · Cloud4C acquisition completed',url:'https://www.cloud4c.com/newsroom/capgemini-announces-closing-acquisition-cloud4c'}],
+ kainos: [{label:'FY26 · Digital Services, Workday Services and Workday Products',url:'https://www.kainos.com/investor-relations'}],
+ infosys: [{label:'November 2025 · Topaz Fabric offering',url:'https://www.infosys.com/newsroom/press-releases/2025/launching-topaz-fabric.html'},{label:'May 2026 · Optimum Healthcare IT acquisition completed',url:'https://www.infosys.com/newsroom/press-releases/2026/completes-acquisition-optimum-healthcare-it.html'}],
+ deloitte: [{label:'September 2026 · Open Model Engineering launch',url:'https://www.deloitte.com/global/en/about/press-room/deloitte-launches-open-model-engineering-practice.html'},{label:'Member-firm network structure',url:'https://www.deloitte.com/global/en/about/governance/network-brand-alliances.html'}],
+};

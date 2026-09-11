@@ -30,6 +30,10 @@ fit, evidence and usability.
   and current features from plans.
 - Use fictional records in App scenarios. Research real companies and people
   through relevant public sources.
+- In learning tools, state units and assumptions. Keep calculated examples,
+  measured results, vendor specifications and future scenarios distinct.
+- Link to specialist explorers with their coverage limits. Avoid presenting
+  modelled positions, planned capacity or scheduled events as live observations.
 
 For code changes, follow [the development guide](docs/development.md). Describe
 the resulting behaviour and how you checked it in your pull request. Browser

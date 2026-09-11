@@ -11,7 +11,7 @@ const { practiceLinks } = require('../lib/ecosystem-index.ts');
 test('ServiceNow facts have sources and all career, event, customer and lineage links resolve', () => {
   const ids = new Set(sn.ANZ_COMPANIES.map((c) => c.id));
   assert.equal(ids.size, sn.ANZ_COMPANIES.length);
-  assert.equal(sn.ANZ_ACTIVE.length, 20);
+  assert.equal(sn.ANZ_ACTIVE.length, 30);
   const facts = sn.ANZ_COMPANIES.flatMap((c) => [c.owner,c.presence,c.partnerStatus,c.founded,...c.capabilities].filter(Boolean));
   for (const c of sn.ANZ_COMPANIES) {
     assert.ok(c.capabilities.every((f) => sn.CAPABILITIES.includes(f.capability)));
@@ -40,7 +40,8 @@ test('ServiceNow uses its own workflow vocabulary and keeps credentials separate
   assert.ok(!sn.searchAnz('', 'Employee').some((c) => c.id === 'ikc'));
   assert.ok(sn.searchAnz('', 'Employee').some((c) => c.id === 'coforge'));
   assert.ok(sn.searchAnz('', 'IT').some((c) => c.id === 'novabridge'), 'named work survives the capability filter');
-  assert.ok(!sn.searchAnz('', 'Implementation').some((c) => c.id === 'deloitte'), 'global offer is not local proof');
+  assert.ok(sn.searchAnz('', 'Implementation').some((c) => c.id === 'deloitte'), 'documented DISER co-delivery establishes local scope');
+  assert.ok(!sn.searchAnz('', 'Employee').some((c) => c.id === 'ibm'), 'global offer is not local proof');
 });
 
 test('career search connects people to current practices and acquired predecessors without inventing current roles', () => {
@@ -54,7 +55,8 @@ test('career search connects people to current practices and acquired predecesso
 });
 
 test('awards and undated talent stories do not manufacture growth; historical deals remain discoverable', () => {
-  for (const id of ['kinetic-it', 'nexon', 'datacom', 'cognizant']) assert.equal(sn.companyMovement(id).label, 'No recent signal');
+  for (const id of ['kinetic-it', 'datacom', 'cognizant']) assert.equal(sn.companyMovement(id).label, 'No recent signal');
+  assert.equal(sn.companyMovement('nexon').label, 'Acquired', 'December 2025 investment changes ownership, not local growth');
   assert.equal(sn.companyMovement('xamplify').label, 'Building');
   assert.equal(sn.companyMovement('xamplify', '2030-01-01').label, 'No recent signal');
   assert.ok(!sn.movementEvents().some((e) => e.id === 'epicon-telstra'));
