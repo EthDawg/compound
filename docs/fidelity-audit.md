@@ -127,8 +127,36 @@ not a physical phone or on-screen-keyboard test.
 The broader goal remains active. This is a verified set of journeys, not a full
 accessibility audit or proof that every company scene has equal depth. The new
 research briefs deliberately have a smaller scope than full company studies.
-The landscape briefly showed its default state before restoring a query on a
-local reload; refine initial rendering if this persists in production. Real-device
-touch, virtual-keyboard behaviour and assistive-technology testing remain open.
+Real-device touch, virtual-keyboard behaviour and assistive-technology testing remain open.
 Dated construction announcements still need newer evidence before being described
 as operating capacity.
+
+## Cross-category journeys and stale scripts — follow-up
+
+Live review found that the enterprise guide showed six companies while its
+landscape showed four. The plot also presented CoreWeave as an enterprise suite.
+The three curated categories now use product roles and share their memberships
+with the guides. Databricks and Snowflake remain one company each while appearing
+in every supported context. A company, category, brief and return link preserve
+that context. Unsupported company/category combinations still fall back safely.
+
+Browser testing confirmed the Databricks enterprise → inference → research brief
+→ landscape journey, category counts, and focus returning to the original company
+when a preview closes. Escape closes the delivery menu without also clearing the
+selected company. Desktop (1470 CSS pixels) and narrow (390 CSS pixels) layouts
+were inspected without horizontal overflow. The landscape now waits for its URL
+state rather than briefly rendering an unrelated default view.
+
+The localhost browser also reproduced an older app from cached development
+scripts, including a 202-versus-219 company hydration mismatch. The worker had
+treated every Next.js static path as immutable, although development filenames
+stay the same. The update only retains successful assets explicitly marked
+immutable, unregisters Compound's worker during development, and limits offline
+navigation fallback to Pocket routes. After the worker update and reload, the
+same localhost origin displayed the current category and selected company.
+Regression tests exercise stale scripts, failed asset responses, unrelated routes
+and cache ownership during upgrades. The final production build and all 82 tests pass.
+
+A bounded Claude review was attempted using only files verified against public
+GitHub blobs. It timed out without findings. The evidence above comes from direct
+source inspection, executable checks and browser interaction.

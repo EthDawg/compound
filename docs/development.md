@@ -43,6 +43,7 @@ layout as appropriate; a passing build alone does not verify them.
 | App scenarios | `components/studies/`, `lib/data/*-scenarios.ts` |
 | Company arguments, history and sources | `lib/content/` |
 | Atlas companies, categories and editorial positions | `lib/data/atlas.ts`, `lib/data/ecosystem.ts`, `lib/data/atlas-nodes.ts` |
+| Category roles and preserved navigation context | `components/research-landscape.tsx`, `components/research-wayfinding.tsx`, `lib/atlas-navigation.ts` |
 | ANZ research: people, capabilities, events and customer evidence | `lib/data/workday-anz.json`, `lib/data/servicenow-anz.json` |
 | Shared ecosystem views and derived logic | `components/anz-ecosystem.tsx`, `lib/data/anz-ecosystem.ts` |
 | Ecosystem configuration and discovery | `lib/data/*-anz.ts`, `lib/ecosystem-index.ts` |
@@ -66,6 +67,10 @@ and a useful watchpoint. Attach primary sources to facts and label interpretatio
 Companies can belong to several research categories while retaining one catalogue
 identity. Search aliases should include products and former names. Announced
 changes, completed acquisitions and future service changes are different states.
+The landscape derives those memberships from the same research registry. Keep a
+supported category in the URL when selecting a company; unrelated category/company
+pairs fall back to its primary placement. Curated AI categories use product roles
+instead of implying numerical rankings from generic software archetypes.
 
 Update the affected facts and their sources together. Review acquisition status,
 role dates and regional scope. The ANZ movement view derives recent signals
@@ -112,3 +117,8 @@ validates changes, publishes the release and checks the live routes.
 GitHub is the source; [the live site](https://compound-snowy-pi.vercel.app) is the
 shared experience. App interactions are illustrative and do not call the real
 vendors’ systems or live AI models.
+
+The offline worker serves only the Pocket scenarios as navigation fallbacks. It
+caches successful immutable build assets, never development scripts. Development
+unregisters Compound's existing worker; reload once if an older worker controlled
+the page. A research or company route must never become a Pocket scene offline.

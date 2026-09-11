@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LENSES, type LensId, type Archetype } from "@/lib/data/ecosystem";
 import { SECTORS, sectorById, categoryById } from "@/lib/data/atlas";
@@ -13,8 +14,9 @@ import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { companyStudy, companyHref } from "@/lib/companies";
 import { researchCompany, researchCategory, categoryHref } from '@/lib/data/category-research';
+import { ResearchLandscape } from './research-landscape';
 
-import {initialAtlas,readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel,type AtlasAction} from '@/lib/atlas-navigation';
+import {readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel,type AtlasAction} from '@/lib/atlas-navigation';
 
 const G = {
   wide:   { W: 1040, H: 620, PAD: 78, fq: 11, fax: 11, flab: 11.5, flabOn: 13, rMin: 5, rMax: 20, cap: 18, floor: 42 },
@@ -33,12 +35,15 @@ export function Atlas() {
   const py = (y: number) => H - PAD - (y / 100) * (H - PAD * 2);
   const rr = (r: number) => g.rMin + (r / 100) * g.rMax;
 
-  const [location,setLocation]=useState(initialAtlas);
+  const query = useSearchParams().toString();
+  const location = useMemo(() => readAtlasLocation(query), [query]);
   const level=atlasLevel(location),lensId=location.lens,sel=location.company??null,muted=location.highlight??null;
   const focus=useMemo(()=>({sector:location.sector,category:location.category}),[location.sector,location.category]);
+  const categoryGuide = focus.category ? researchCategory(focus.category) : undefined;
   const [hover,setHover]=useState<string|null>(null);
   const [tip, setTip] = useState<{ n: AtlasNode; x: number; y: number } | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
+  const selectionOrigin = useRef<HTMLElement | SVGElement | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   const lens = LENSES.find((l) => l.id === lensId)!;
@@ -60,28 +65,29 @@ export function Atlas() {
     const before=readAtlasLocation(window.location.search);
     const next=transitionAtlas(before,action),href=atlasLocationHref(next);
     if(href!==atlasLocationHref(before))window.history.pushState(null,'',href);
-    setLocation(next);setHover(null);setTip(null);
+    setHover(null);setTip(null);
   },[]);
   const goRoot=useCallback(()=>navigate({type:'root'}),[navigate]);
   const goSector=useCallback(()=>navigate({type:'sector'}),[navigate]);
   const up=useCallback(()=>navigate({type:'up'}),[navigate]);
-  const clearSelection=useCallback(()=>navigate({type:'clear-company'}),[navigate]);
+  const clearSelection=useCallback(()=>{
+    const company = readAtlasLocation(window.location.search).company;
+    const origin = selectionOrigin.current?.isConnected ? selectionOrigin.current : company ? document.querySelector<HTMLElement | SVGElement>(`[data-atlas-company="${CSS.escape(company)}"]`) : null;
+    navigate({type:'clear-company'});
+    requestAnimationFrame(()=>{ if(origin?.isConnected) origin.focus(); });
+  },[navigate]);
   const open=useCallback((n:AtlasNode)=>navigate({type:'open',node:n}),[navigate]);
   const nodeHref=(n:AtlasNode)=>atlasLocationHref(transitionAtlas({...location,company:undefined},{type:'open',node:n}));
   const followNode=(e:React.MouseEvent,n:AtlasNode)=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    if(n.level === 'vendor') selectionOrigin.current = e.currentTarget as HTMLElement | SVGElement;
     e.preventDefault();e.stopPropagation();open(n);
   };
-  useEffect(()=>{
-    const restore=()=>{setLocation(readAtlasLocation(window.location.search));setHover(null);setTip(null);};
-    restore();window.addEventListener('popstate',restore);
-    return()=>window.removeEventListener('popstate',restore);
-  },[]);
 
   // Esc clears the selection, then walks back up a level.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
-      if (document.querySelector("dialog[open]")) return;
+      if (e.defaultPrevented || document.querySelector("dialog[open], details[open]")) return;
       const t = e.target as HTMLElement | null;
       if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
       if (e.key === "Escape") { clearHover(); if (sel) clearSelection(); else up(); }
@@ -139,7 +145,7 @@ export function Atlas() {
           <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-[13.5px]">
             {level !== "sector" && (
               <button onClick={up} aria-label="Back a level"
-                className="mr-0.5 grid h-7 w-7 place-items-center rounded-md transition hover:bg-black/[0.06]"
+                className="mr-0.5 grid h-11 w-11 place-items-center rounded-md transition hover:bg-black/[0.06]"
                 style={{ color: PAPER.muted }}>
                 <I.IChevron className="h-3.5 w-3.5 rotate-180" />
               </button>
@@ -148,7 +154,7 @@ export function Atlas() {
               <span key={i} className="flex items-center gap-1.5">
                 {i > 0 && <span style={{ color: PAPER.ghost }}>/</span>}
                 <button onClick={c.go} disabled={c.on}
-                  className={`rounded px-1.5 py-0.5 transition ${c.on ? "font-semibold" : "hover:bg-black/[0.06]"}`}
+                  className={`min-h-11 rounded px-1.5 py-0.5 transition ${c.on ? "font-semibold" : "hover:bg-black/[0.06]"}`}
                   style={{ color: c.on ? PAPER.ink : PAPER.muted }}>
                   {c.label}
                 </button>
@@ -157,12 +163,12 @@ export function Atlas() {
             <span className="ml-1 tabular-nums text-[12px]" style={{ color: PAPER.ghost }}>{nodes.length}</span>
           </div>
 
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center lg:ml-auto">
+          {!categoryGuide && <div className="flex flex-col gap-2 sm:flex-row sm:items-center lg:ml-auto">
             <div className="flex gap-0.5 rounded-lg p-0.5" style={{ background: PAPER.grid }}>
               {LENSES.map((l) => (
                 <button key={l.id} onClick={() => navigate({type:'lens',id:l.id})}
                   aria-label={l.pill} aria-pressed={l.id === lensId}
-                  className="flex-1 whitespace-nowrap rounded-md px-2 py-1.5 text-[12.5px] font-medium transition sm:flex-none sm:px-2.5"
+                  className="min-h-11 flex-1 whitespace-nowrap rounded-md px-2 py-1.5 text-[12.5px] font-medium transition sm:flex-none sm:px-2.5"
                   style={l.id === lensId
                     ? { background: PAPER.surface, color: PAPER.ink, boxShadow: "0 1px 2px rgba(0,0,0,.07)" }
                     : { color: PAPER.muted }}>
@@ -172,14 +178,15 @@ export function Atlas() {
                 </button>
               ))}
             </div>
-          </div>
+          </div>}
         </div>
 
-        <p className="max-w-3xl pb-4 text-[14px] leading-[1.6]" style={{ color: PAPER.muted }}>
+        {!categoryGuide && <p className="max-w-3xl pb-4 text-[14px] leading-[1.6]" style={{ color: PAPER.muted }}>
           <span className="font-semibold" style={{ color: PAPER.ink }}>{lens.question}</span> {lens.blurb}
-        </p>
+        </p>}
 
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+          {categoryGuide ? <ResearchLandscape category={categoryGuide} nodes={nodes} selected={sel} href={nodeHref} follow={followNode} /> : <>
           {/* Plot */}
           <div className="relative min-w-0 overflow-hidden rounded-xl border" style={{ borderColor: PAPER.line, background: PAPER.surface }}>
             <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full touch-manipulation"
@@ -200,9 +207,9 @@ export function Atlas() {
                 {lens.quadrants.map((q) => {
                   const p = { tl: [PAD + 8, PAD + 16], tr: [W - PAD - 8, PAD + 16], bl: [PAD + 8, H - PAD - 10], br: [W - PAD - 8, H - PAD - 10] }[q.at];
                   return (
-                    <text key={q.at} x={p[0]} y={p[1]} textAnchor={q.at.endsWith("l") ? "start" : "end"}
+                    <text key={q.at} x={p[0]} y={p[1] - (narrow && q.at.startsWith('b') ? (q.label.split(' ').length - 1) * g.fq * 1.1 : 0)} textAnchor={q.at.endsWith("l") ? "start" : "end"}
                       fill={PAPER.ghost} fontSize={g.fq} fontWeight="600" letterSpacing="0.06em">
-                      {q.label.toUpperCase()}
+                      {narrow ? q.label.toUpperCase().split(' ').map((word, i) => <tspan key={i} x={p[0]} dy={i ? '1.1em' : 0}>{word}</tspan>) : q.label.toUpperCase()}
                     </text>
                   );
                 })}
@@ -224,7 +231,7 @@ export function Atlas() {
                 return (
                   <g key={n.id} transform={`translate(${px(p.x)} ${py(p.y)})`} opacity={dim ? 0.26 : 1}
                     style={{ transition: "transform .5s cubic-bezier(.2,.7,.3,1), opacity .2s" }}><a href={nodeHref(n)}
-                    tabIndex={0} role="link"
+                    tabIndex={0} role="link" data-atlas-company={n.level === 'vendor' ? n.id : undefined}
                     aria-label={`${n.name}${n.archetype ? `, ${n.archetype}` : ""}. ${group ? `Open ${n.count} inside` : isSel ? "Selected" : "Select"}`}
                     style={{ cursor: group ? "zoom-in" : "pointer", outline: "none" }}
                     onMouseEnter={(e) => { setHover(n.id); tipFor(n, e); }}
@@ -279,7 +286,7 @@ export function Atlas() {
                 <ul className="max-h-[17rem] overflow-y-auto thin-scroll p-1.5">
                   {ordered.map((n, i) => (
                     <li key={n.id}>
-                      <a href={nodeHref(n)} onClick={(e)=>followNode(e,n)}
+                      <a href={nodeHref(n)} onClick={(e)=>followNode(e,n)} data-atlas-company={n.level === 'vendor' ? n.id : undefined}
                         className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left"
                         style={sel === n.id ? { background: PAPER.grid } : undefined}>
                         <span className="w-5 shrink-0 text-right text-[11px] tabular-nums" style={{ color: PAPER.ghost }}>{i + 1}</span>
@@ -303,7 +310,8 @@ export function Atlas() {
               {legend.map((l) => (
                 <button key={l.key}
                   onClick={() => navigate({type:'highlight',id:l.key})}
-                  className="flex items-center gap-1.5 rounded px-1 py-0.5 transition hover:bg-black/[0.05]"
+                  aria-pressed={muted === l.key}
+                  className="flex min-h-11 items-center gap-1.5 rounded px-1 py-0.5 transition hover:bg-black/[0.05]"
                   style={{ opacity: muted && muted !== l.key ? 0.4 : 1, fontWeight: muted === l.key ? 600 : 400, color: muted === l.key ? PAPER.ink : undefined }}>
                   <span className="h-2 w-2 rounded-full" style={{ background: l.color }} />{l.label}
                 </button>
@@ -325,10 +333,11 @@ export function Atlas() {
               </div>
             )}
           </div>
+          </>}
 
           {/* Detail */}
           <div className="min-w-0" ref={detailRef}>
-            {selected ? <Detail n={selected} onClose={clearSelection} />
+            {selected ? <Detail n={selected} category={categoryGuide?.id} onClose={clearSelection} />
               : <Intro level={level} focus={focus} />}
           </div>
         </div>
@@ -387,7 +396,7 @@ function Intro({ level, focus }: { level: Level; focus: { sector?: string; categ
           <h2 className="text-[18px] font-semibold tracking-tight">{c.name}</h2>
           <p className="mt-2 text-[14px] leading-[1.65]" style={{ color: PAPER.muted }}>{c.blurb}</p>
           {researchCategory(c.id)&&<Link href={categoryHref(researchCategory(c.id)!.id)} className="mt-4 flex min-h-11 items-center justify-center rounded-lg border px-3 text-xs font-semibold" style={{borderColor:PAPER.line}}>Understand this category →</Link>}
-          <div className="mt-3.5 border-t pt-3.5" style={{ borderColor: PAPER.lineSoft }}>
+          {!researchCategory(c.id) && <div className="mt-3.5 border-t pt-3.5" style={{ borderColor: PAPER.lineSoft }}>
             <div className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: PAPER.ghost }}>Dominant shape</div>
             <div className="mt-1.5 flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: ARCHETYPE_COLOR[c.shape] }} />
@@ -396,43 +405,51 @@ function Intro({ level, focus }: { level: Level; focus: { sector?: string; categ
             <p className="mt-2.5 text-[13px] leading-[1.6]" style={{ color: PAPER.faint }}>
               Pick a vendor to read its bet. Colour is the archetype; the outliers are usually the interesting ones.
             </p>
-          </div>
+          </div>}
         </>
       )}
     </Shell>
   );
 }
 
-function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
+function Detail({ n, category, onClose }: { n: AtlasNode; category?: import('@/lib/data/category-research').ResearchCategoryId; onClose: () => void }) {
   const s = sectorById(n.sector);
+  const research = researchCompany(n.id);
+  const role = research && researchCategory(research.categories[0])?.groups.find(g => g.id === research.group)?.name;
   return (
     <div className="rounded-xl border" style={{ borderColor: PAPER.line, background: PAPER.surface }}>
       <div className="border-b p-5" style={{ borderColor: PAPER.lineSoft }}>
         <div className="flex items-start gap-2.5">
-          <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full" style={{ background: tint(n) }} />
+          <span className="mt-1.5 h-3 w-3 shrink-0 rounded-full" style={{ background: research?.accent ?? tint(n) }} />
           <h2 className="min-w-0 flex-1 text-[19px] font-semibold tracking-tight">{n.name}</h2>
           <button onClick={onClose} aria-label="Clear selection"
-            className="-mr-1 -mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-md transition hover:bg-black/[0.06]"
+            className="-mr-1 -mt-1 grid h-11 w-11 shrink-0 place-items-center rounded-md transition hover:bg-black/[0.06]"
             style={{ color: PAPER.faint }}>
             <I.IClose className="h-3.5 w-3.5" />
           </button>
         </div>
-        <p className="mt-1 text-[11.5px] uppercase tracking-wide" style={{ color: PAPER.ghost }}>
-          {n.archetype}{n.geo ? ` · ${n.geo}` : ""} · {s?.name}
+        <p className="mt-1 text-[11.5px] uppercase tracking-wide" style={{ color: research ? PAPER.muted : PAPER.ghost }}>
+          {research ? `${role} · ${research.product}` : `${n.archetype}${n.geo ? ` · ${n.geo}` : ''} · ${s?.name}`}
         </p>
-        <p className="mt-2.5 text-[14px] leading-[1.62]">{n.blurb}</p>
+        <p className="mt-2.5 text-[14px] leading-[1.62]">{research?.thesis ?? n.blurb}</p>
         <SiEvidence id={n.id} />
       </div>
 
       <div className="flex flex-wrap gap-2 border-b px-5 py-3" style={{ borderColor: PAPER.lineSoft }}>
-        <span className="rounded-full px-2 py-0.5 text-[11px] font-medium"
+        {!research && <span className="rounded-full px-2 py-0.5 text-[11px] font-medium"
           style={{ background: n.handRead ? "#E8F3EC" : PAPER.grid, color: n.handRead ? "#2F6B47" : PAPER.faint }}>
           {n.handRead ? "Read individually" : "Placed by archetype"}
-        </span>
+        </span>}
         {n.deep && <span className="rounded-full px-2 py-0.5 text-[11px] font-medium" style={{ background: "#FBF1D2", color: "#8A6A00" }}>Deep read</span>}
         {researchCompany(n.id)&&<span className="rounded-full bg-[#EEF2E9] px-2 py-0.5 text-[11px] font-medium text-[#486351]">Research brief</span>}
         {n.instance && <span className="rounded-full px-2 py-0.5 text-[11px] font-medium" style={{ background: "#EDE7FB", color: "#5A3FB0" }}>Playable study</span>}
       </div>
+
+      {research && <div className="space-y-5 border-b p-5" style={{borderColor:PAPER.lineSoft}}>
+        <div><h3 className="text-[10px] font-bold uppercase tracking-wider text-ink-500">Three reasons it matters</h3><ol className="mt-3 space-y-3">{research.strengths.map((strength,i)=><li key={strength} className="flex gap-3 text-xs leading-relaxed"><span className="font-mono text-ink-400">0{i+1}</span>{strength}</li>)}</ol></div>
+        <div><p className="text-[10px] font-semibold text-ink-500">{research.movement.date}</p><h3 className="mt-1 text-sm font-semibold">{research.movement.title}</h3><p className="mt-2 text-xs leading-relaxed text-ink-500">{research.movement.text}</p><a href={research.movement.sources[0].url} target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center text-[11px] underline underline-offset-4">{research.movement.sources[0].title} ↗</a></div>
+        <div className="flex flex-wrap gap-2">{research.categories.map(id=><Link key={id} href={`/?company=${n.id}&category=${id}`} className="inline-flex min-h-11 items-center rounded-lg border border-ink-200 px-3 text-[11px]">{researchCategory(id)?.shortName} →</Link>)}</div>
+      </div>}
 
       <div className="space-y-2 p-5">
         {n.instance && (
@@ -449,7 +466,7 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
           <Link href={companyStudy(n.id)!.ecosystem!.href} className="flex min-h-10 items-center justify-center gap-1.5 rounded-lg border px-3 py-2 text-[13px] font-semibold text-[#0755A5]" style={{borderColor:PAPER.line}}>Explore the partner network <I.IGraph className="h-4 w-4" /></Link>
         )}
         {n.href && (
-          <Link href={n.href}
+          <Link href={research && category ? `${n.href}?category=${category}` : n.href}
             className="flex h-10 w-full items-center justify-center gap-1.5 rounded-lg border text-[13.5px] font-semibold transition hover:bg-black/[0.03]"
             style={{ borderColor: "#DDD9CE", color: PAPER.ink }}>
             {researchCompany(n.id)?'Read company brief':'Read the full position'} <I.IArrow className="h-3.5 w-3.5" />

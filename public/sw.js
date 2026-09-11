@@ -4,7 +4,8 @@
 // It deliberately does NOT cache-first any navigation — a stale shell in a
 // Next.js app produces chunk mismatches that look like the app is broken.
 
-const VERSION = "compound-v3";
+const VERSION = "compound-v4";
+const POCKET = new Set(['/pocket', '/pocket/onboard', '/pocket/offboard', '/pocket/ask']);
 const SHELL = [
   "/pocket",
   "/pocket/onboard",
@@ -28,7 +29,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('compound-') && k !== VERSION).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -40,13 +41,17 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Navigations: network first, cached copy only as an offline fallback.
+  // Only the Pocket scenarios have an offline fallback. Other destinations must
+  // never turn into an unrelated Pocket scene when their network request fails.
   if (request.mode === "navigate") {
+    if (!POCKET.has(url.pathname)) return;
     event.respondWith(
       fetch(request)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((c) => c.put(request, copy));
+        .then(async (res) => {
+          if (res.ok) {
+            const copy = res.clone();
+            await caches.open(VERSION).then((c) => c.put(request, copy)).catch(() => undefined);
+          }
           return res;
         })
         .catch(() =>
@@ -56,15 +61,19 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Immutable build assets and icons: cache first, they are content-hashed.
+  // Development files also use /_next/static, but their names are not hashed.
+  // Cache build assets only when the server explicitly marks them immutable.
   if (url.pathname.startsWith("/_next/static/") || url.pathname.endsWith(".png")) {
+    const cacheable = (response) => response?.ok && (url.pathname.endsWith('.png') || /(?:^|,)\s*immutable\s*(?:,|$)/i.test(response.headers.get('cache-control') || ''));
     event.respondWith(
       caches.match(request).then(
         (hit) =>
-          hit ||
-          fetch(request).then((res) => {
-            const copy = res.clone();
-            caches.open(VERSION).then((c) => c.put(request, copy));
+          (cacheable(hit) ? hit : undefined) ||
+          fetch(request).then(async (res) => {
+            if (cacheable(res)) {
+              const copy = res.clone();
+              await caches.open(VERSION).then((c) => c.put(request, copy)).catch(() => undefined);
+            }
             return res;
           })
       )

@@ -1,4 +1,4 @@
-import {ALL_VENDORS, CATEGORY_NODES, SECTOR_NODES, nodesAt, type Node, type Level} from './data/atlas-nodes';
+import {ALL_VENDORS, CATEGORY_NODES, SECTOR_NODES, nodesAt, belongsToCategory, type Node, type Level} from './data/atlas-nodes';
 import {LENSES, type LensId} from './data/ecosystem';
 
 export type AtlasLocation = {lens:LensId; sector?:string; category?:string; company?:string; highlight?:string};
@@ -10,12 +10,13 @@ export type AtlasAction =
 export const initialAtlas:AtlasLocation = {lens:'strategic'};
 export const atlasLevel=(state:AtlasLocation):Level=>state.category?'vendor':state.sector?'category':'sector';
 
-/** A selected company determines its real category and sector, never the reverse. */
+/** Preserve a supported category context; reject unrelated company/category pairs. */
 function normalise(state:AtlasLocation):AtlasLocation {
  const next:AtlasLocation={lens:LENSES.some(l=>l.id===state.lens)?state.lens:'strategic'};
  const company=ALL_VENDORS.find(c=>c.id===state.company);
- const category=CATEGORY_NODES.find(c=>c.id===(company?.category??state.category));
- const sector=SECTOR_NODES.find(s=>s.id===(company?.sector??category?.sector??state.sector));
+ const requested=CATEGORY_NODES.find(c=>c.id===state.category);
+ const category=company ? requested&&belongsToCategory(company,requested.id)?requested:CATEGORY_NODES.find(c=>c.id===company.category) : requested;
+ const sector=SECTOR_NODES.find(s=>s.id===(category?.sector??company?.sector??state.sector));
  if(sector)next.sector=sector.id;
  if(category)next.category=category.id;
  if(company)next.company=company.id;
@@ -30,7 +31,10 @@ export function readAtlasLocation(search:string):AtlasLocation {
 }
 export function atlasLocationHref(state:AtlasLocation):string {
  const n=normalise(state),p=new URLSearchParams();
- if(n.company)p.set('company',n.company);
+ if(n.company){
+  p.set('company',n.company);
+  if(n.category!==ALL_VENDORS.find(c=>c.id===n.company)?.category)p.set('category',n.category!);
+ }
  else if(n.category)p.set('category',n.category);
  else if(n.sector)p.set('sector',n.sector);
  if(n.lens!=='strategic')p.set('lens',n.lens);
@@ -54,7 +58,8 @@ export function transitionAtlas(state:AtlasLocation,action:AtlasAction):AtlasLoc
    const n=action.node;
    if(n.level==='sector')return normalise({lens:current.lens,sector:n.id});
    if(n.level==='category')return normalise({lens:current.lens,sector:n.sector,category:n.id});
-   return normalise({...current,sector:n.sector,category:n.category,company:n.id===current.company?undefined:n.id});
+   const category=current.category&&belongsToCategory(n,current.category)?current.category:n.category;
+   return normalise({...current,sector:n.sector,category,company:n.id===current.company?undefined:n.id});
   }
  }
 }

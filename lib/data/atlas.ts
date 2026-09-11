@@ -119,7 +119,7 @@ export const VENDORS: Vendor[] = [
   // Research briefs deepen the content; map positions remain coarse editorial placements.
   ...RESEARCH_COMPANIES.filter(c => !['databricks','snowflake'].includes(c.id)).map((c): Vendor => ({
     slug:c.id, name:c.name, sector:'ai', category:c.categories[0],
-    archetype:c.categories[0]==='enterprise-ai'?'Enterprise suite':c.categories[0]==='developer-tools'?'Connective layer':'AI-native',
+    archetype:c.group==='gpu-cloud'?'Point specialist':c.categories[0]==='enterprise-ai'?'Enterprise suite':c.categories[0]==='developer-tools'?'Connective layer':'AI-native',
     geo:'Global · check deployment regions', bet:c.thesis,
     attrs:{scale:['microsoft','google','aws'].includes(c.id)?5:['github','cursor','coreweave'].includes(c.id)?4:3,age:['microsoft','google','aws','github'].includes(c.id)?5:2,agentic:4},
   })),
