@@ -23,6 +23,19 @@ export interface AnzEvent extends Fact {
 export interface AnzCustomer { id: string; name: string; companyId: string; capabilities: Capability[]; fact: Fact; anonymous?: boolean }
 export interface Lineage { id: string; title: string; reading: string; companyIds: string[]; eventIds: string[] }
 
+/** Keep a filtered capability visible without changing the user's comparison group. */
+export function capabilityColumns(groups: { label: string; values: string[] }[], mode: string, selected = '') {
+  const base = mode === 'all' ? groups : groups.slice(mode === 'services' ? 0 : -1, mode === 'services' ? 1 : undefined);
+  const extra = selected && groups.some(g => g.values.includes(selected)) && !base.some(g => g.values.includes(selected)) ? selected : null;
+  const shownGroups = extra ? [{ label: 'Selected capability', values: [extra] }, ...base] : base;
+  return { groups: shownGroups, capabilities: [...new Set(shownGroups.flatMap(g => g.values))], extra };
+}
+
+/** Career records establish the connection; a parent company's ownership does not. */
+export function careerAtCompany(person: AnzPerson, companyId: string) {
+  return person.career.filter(step => step.companyId === companyId);
+}
+
 export interface EcosystemConfig {
   id: 'workday' | 'servicenow'; name: string; path: string; asOf: string;
   title: string; intro: string; note: string; capabilities: string[];
