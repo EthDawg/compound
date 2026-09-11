@@ -38,6 +38,7 @@ const skin: VendorSkin = {
 };
 
 export const SERVICENOW_STUDY: CompanyStudy = {
+  ecosystem: { href: "/atlas/servicenow", label: "ANZ ecosystem" },
   id: "servicenow", name: "ServiceNow", archetype: "Enterprise workflow & AI platform", skin,
   brand: { chrome: "#17352C", ink: "#FFFFFF", highlight: "#B8DDB6" },
   appScreens: ["", "operations", "employees", "control-tower"], workflowScreen: "operations",
