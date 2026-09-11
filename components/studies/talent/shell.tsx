@@ -19,7 +19,7 @@ export function StudyAppShell({ company: c, screen, nav, children }: { company: 
         <div className={styles.toprow}><div><div className={styles.customer}>Meridian Optics</div><p className={styles.small}>Australian expansion · fictional demonstration</p></div><Link className={styles.secondary} href={companyHref(c.id, "backstage")}>Why it works this way ↗</Link></div>
         {children}
         {on && <section className={styles.xray}><p className={styles.label}>X-ray · the company argument</p><h2 className="mt-3 text-xl font-semibold">{c.backstage.question}</h2><p className="mt-3">{c.strategy?.contrast}</p><Link className={styles.link} href={companyHref(c.id, "backstage", "essays")}>Read the deeper argument →</Link></section>}
-        <footer className={styles.footer}>Independent interpretation of public product concepts, not an official interface. People, figures and policies are fictional. Actions only change this local demonstration and reset when you leave the screen. <Link href={companyHref(c.id, "backstage", "sources")} className="underline">Sources & boundaries</Link></footer>
+        <footer className={styles.footer}>Independent interpretation of public product concepts, not an official interface. People, figures and policies are fictional. {c.id === "pageup" ? "The review and review list stay in this browser session; other scenes restart when reopened." : "Actions only change this local demonstration and reset when you leave the screen."} <Link href={companyHref(c.id, "backstage", "sources")} className="underline">Sources & boundaries</Link></footer>
       </main>
     </div>
   </div>;

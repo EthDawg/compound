@@ -160,3 +160,41 @@ and cache ownership during upgrades. The final production build and all 82 tests
 A bounded Claude review was attempted using only files verified against public
 GitHub blobs. It timed out without findings. The evidence above comes from direct
 source inspection, executable checks and browser interaction.
+
+## Connected company scenarios — follow-up
+
+Workday’s previously static process and compensation screens now share a
+fictional compensation change. The 8% path requires two review roles; returning
+and revising to 4% restarts review and skips the conditional extra approval.
+Effective values depend on approval and the scenario date. A rejected payroll
+handoff needs a mapping fix, retry and provider acknowledgement. Workday Home
+uses a scripted Sana-style question to enter the same state, and People shows
+the corresponding worker value. Backstage adds sourced Adaptive and Sana
+lineage, Bhusri’s return and the March 2026 product launch.
+
+PageUp now shares its review and review list across Applications, Paige and the
+hiring dashboard for the browser session. ELMO keeps the review budget visible
+when a proposal is incomplete, uses a warning badge, explains the exception-note
+requirement and marks a reviewed mapped-field conflict. Cowork’s initial guidance
+now starts with sharing the demo folder.
+
+Observed browser checks: both Workday approval routes; wrong-role handoff;
+effective-date mismatch; provider failure, fix, retry and acceptance; reload,
+Back, the worker-record return link and App → Backstage → App continuity. PageUp’s review stayed recorded through
+Paige, the dashboard and reload, then reset from Applications. ELMO’s empty-field
+and short-reason states, plus the reviewed conflict row, were checked. Shared App/Backstage targets and mobile section controls are at least 44 CSS pixels. The Workday
+layout was inspected at 390 and 1440 CSS pixels without horizontal overflow.
+This still does not establish physical-device touch or assistive-technology coverage.
+
+Six bounded Claude reviews completed against selected project sources. Findings
+were checked against parent routing, reducers and actual browser behaviour;
+speculative issues and already-enforced gates were not applied. Further research
+leads include NVIDIA’s serving layer, alternative silicon and the boundary between
+enterprise AI infrastructure and workflow-native agents. They require primary-source
+verification before becoming new company claims. ANZ capability-column visibility
+and clearer career-connection summaries remain candidates for the next pass.
+
+Release validation: production build and all 88 tests pass. New checks cover
+role ownership, send-back and conditional review, effective dates, failed/retried
+provider handoffs, valid URL replay, App/Backstage context and the shared PageUp
+review record. Sana and Adaptive names now resolve to Workday in the finder.

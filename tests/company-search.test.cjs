@@ -16,7 +16,7 @@ test('one catalogue includes every Atlas company and every full study exactly on
 });
 
 test('recognises partial names, product names, spacing, case and modest spelling errors', () => {
-  for (const [query, id] of [['anth', 'anthropic'], [' CLAUDE ', 'anthropic'], ['chatg', 'openai'], ['codex', 'openai'], ['page up', 'pageup'], ['eleven labs', 'elevenlabs'], ['ellevenlabs', 'elevenlabs'], ['service now', 'servicenow'], ['KeyPay', 'employment-hero'], ['workdy', 'workday']]) assert.equal(first(query), id, query);
+  for (const [query, id] of [['anth', 'anthropic'], [' CLAUDE ', 'anthropic'], ['chatg', 'openai'], ['codex', 'openai'], ['page up', 'pageup'], ['eleven labs', 'elevenlabs'], ['ellevenlabs', 'elevenlabs'], ['service now', 'servicenow'], ['KeyPay', 'employment-hero'], ['workdy', 'workday'], ['Sana', 'workday'], ['Adaptive Insights', 'workday'], ['Aneel Bhusri', 'workday']]) assert.equal(first(query), id, query);
   assert.equal(searchCompanies('Claude')[0].reason, 'Claude');
   assert.equal(searchCompanies('ellevenlabs')[0].reason, 'Close spelling');
 });

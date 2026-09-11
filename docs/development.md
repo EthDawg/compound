@@ -40,6 +40,8 @@ layout as appropriate; a passing build alone does not verify them.
 | Category guides, company research and dated sources | `lib/data/category-research.ts`, `app/categories/`, `app/research/` |
 | Category scenarios and Fireworks serving walkthrough | `components/category-workbench.tsx`, `components/fireworks-serving-lab.tsx`, `lib/fireworks-serving.ts` |
 | Company themes | `lib/vendors/skins.ts`, company study definitions |
+| Workday process and effective-date scenario | `components/workday-app.tsx`, `components/studies/workday/process.tsx`, `lib/data/workday-scenario.ts` |
+| PageUp shared review | `components/studies/talent/pageup-review.ts`, `lib/data/pageup-review.ts` |
 | App scenarios | `components/studies/`, `lib/data/*-scenarios.ts` |
 | Company arguments, history and sources | `lib/content/` |
 | Atlas companies, categories and editorial positions | `lib/data/atlas.ts`, `lib/data/ecosystem.ts`, `lib/data/atlas-nodes.ts` |
@@ -58,6 +60,12 @@ should preserve company-specific depth.
 URLs own navigation state. Switching companies preserves supported views and
 topics; unsupported screens fall back to that company’s overview. Never fill a
 gap with another company’s content.
+
+Workday’s scenario replays valid actions from the URL; role changes, revisions,
+effective dates and provider receipts must remain separate. Internal App and Backstage links
+carry the scenario query through `components/study-context-link.tsx`. PageUp’s dashboard, application review and Paige read
+one session-local review record, with a memory fallback when storage is unavailable.
+Do not turn a completed review back into outstanding work when changing screens.
 
 ## Refresh research
 

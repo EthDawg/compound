@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "./study-context-link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { companyHref, type CompanyStudy } from "@/lib/companies";
@@ -24,7 +24,7 @@ export function BackstageShell({ company, children }: { company: CompanyStudy; c
     </header>
     <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:flex lg:gap-10">
       <aside className="shrink-0 border-b py-4 lg:w-[205px] lg:border-b-0 lg:py-8" style={{borderColor:t.border}}>
-        <button className="flex w-full items-center justify-between py-1 text-[13px] font-semibold lg:hidden" aria-expanded={open} onClick={()=>setOpen(!open)}>Backstage sections<I.IChevronDown className="h-4 w-4" /></button>
+        <button className="flex min-h-11 w-full items-center justify-between py-1 text-[13px] font-semibold lg:hidden" aria-expanded={open} onClick={()=>setOpen(!open)}>Backstage sections<I.IChevronDown className="h-4 w-4" /></button>
         <nav aria-label="Backstage sections" className={`${open ? "block" : "hidden"} thin-scroll mt-3 space-y-6 lg:sticky lg:top-24 lg:mt-0 lg:block lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto lg:pb-4`}>
           {company.backstage.navigation.map(group=><div key={group.label}>
             <div className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-wider" style={{color:t.inkFaint}}>{group.label}</div>
@@ -32,12 +32,12 @@ export function BackstageShell({ company, children }: { company: CompanyStudy; c
               const href=companyHref(company.id,"backstage",s.id);
               const active=path===href || (s.id!=="" && path.startsWith(`${href}/`));
               return <Link key={s.id} href={href} onClick={()=>setOpen(false)} aria-current={active?"page":undefined}
-                className="block rounded-lg px-3 py-2 text-[13px]" style={{background:active?t.accentSoft:undefined,color:active?t.ink:t.inkMuted,fontWeight:active?650:450,borderLeft:active?`3px solid ${t.accent}`:"3px solid transparent"}}>{s.label}</Link>;
+                className="flex min-h-11 items-center rounded-lg px-3 py-2 text-[13px]" style={{background:active?t.accentSoft:undefined,color:active?t.ink:t.inkMuted,fontWeight:active?650:450,borderLeft:active?`3px solid ${t.accent}`:"3px solid transparent"}}>{s.label}</Link>;
             })}</div>
           </div>)}
           {company.ecosystem && <div>
             <div className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-wider" style={{color:t.inkFaint}}>Around the company</div>
-            <Link href={company.ecosystem.href} className="flex items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium" style={{color:t.inkMuted}}><I.IGraph className="h-4 w-4"/>{company.ecosystem.label}</Link>
+            <Link href={company.ecosystem.href} className="flex min-h-11 items-center gap-2 rounded-lg px-3 py-2 text-[13px] font-medium" style={{color:t.inkMuted}}><I.IGraph className="h-4 w-4"/>{company.ecosystem.label}</Link>
           </div>}
           <p className="!mt-6 px-3 text-[11px] leading-relaxed" style={{color:t.inkFaint}}>Independent analysis and an illustrative interface. No affiliation. Demo records belong to the fictional Meridian Optics.</p>
         </nav>

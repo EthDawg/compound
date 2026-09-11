@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "./study-context-link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { companyStudy, companyHref } from "@/lib/companies";
@@ -35,14 +35,14 @@ export function CompoundBar({ activeId, recentId }: { activeId: string; recentId
         {active && <nav aria-label="Company views" className="flex items-center gap-0.5 rounded-lg bg-ink-100 p-1 text-[12px] font-semibold">
           {(["app", "backstage"] as const).map((view) => <Link key={view} href={companyHref(active.id, view)}
             aria-current={!ecosystem && (view === "backstage") === backstage ? "page" : undefined}
-            className={`rounded-md px-2 py-1.5 sm:px-3 ${!ecosystem && (view === "backstage") === backstage ? "bg-white text-ink shadow-sm" : "text-ink-500 hover:text-ink"}`}>
+            className={`inline-flex min-h-11 items-center rounded-md px-2 py-1.5 sm:px-3 ${!ecosystem && (view === "backstage") === backstage ? "bg-white text-ink shadow-sm" : "text-ink-500 hover:text-ink"}`}>
             {view === "app" ? "App" : "Backstage"}
           </Link>)}
-          {active.ecosystem && <Link href={active.ecosystem.href} aria-current={ecosystem ? 'page' : undefined} className={`rounded-md px-2 py-1.5 sm:px-3 ${ecosystem ? 'bg-white text-ink shadow-sm' : 'text-ink-500 hover:text-ink'}`}>Ecosystem</Link>}
+          {active.ecosystem && <Link href={active.ecosystem.href} aria-current={ecosystem ? 'page' : undefined} className={`inline-flex min-h-11 items-center rounded-md px-2 py-1.5 sm:px-3 ${ecosystem ? 'bg-white text-ink shadow-sm' : 'text-ink-500 hover:text-ink'}`}>Ecosystem</Link>}
         </nav>}
         <div className="ml-auto flex items-center gap-2">
           {!backstage && !ecosystem && <button onClick={toggle} aria-pressed={on} aria-label="Toggle X-ray" title="X-ray · press X"
-            className={`hidden h-8 w-8 sm:grid place-items-center rounded-md ${on ? "bg-signal text-ink" : "text-ink-500 hover:bg-ink-100"}`}><I.IEye className="h-4 w-4" /></button>}
+            className={`hidden h-11 w-11 sm:grid place-items-center rounded-md ${on ? "bg-signal text-ink" : "text-ink-500 hover:bg-ink-100"}`}><I.IEye className="h-4 w-4" /></button>}
           <Link href="/" className="hidden text-[12px] font-medium text-ink-500 hover:text-ink sm:block">Atlas</Link>
           <Link href="/desk" className="hidden text-[12px] font-medium text-ink-500 hover:text-ink md:block">Desk</Link>
         </div>
