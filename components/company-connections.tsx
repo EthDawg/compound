@@ -60,11 +60,6 @@ export function CompanyConnections({ id }: { id: string }) {
   const heading = useRef<HTMLHeadingElement>(null);
   const previous = useRef(id);
   useEffect(() => {
-    const previousTitle = document.title;
-    document.title = company ? `${company.name} connections · Compound` : 'Company connections · Compound';
-    return () => { document.title = previousTitle; };
-  }, [company]);
-  useEffect(() => {
     if (previous.current !== id) heading.current?.focus({ preventScroll: true });
     previous.current = id;
   }, [id]);

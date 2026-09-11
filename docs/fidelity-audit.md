@@ -450,9 +450,11 @@ but unmapped state returning to its landscape entry. Existing sector/category
 navigation still works, with a visible Companies by role label for curated AI
 categories. Inspected 320-, 390- and 1440-pixel layouts did not overflow.
 
-Release validation: the production build and all 123 tests pass. Added checks
+Release validation: the production build and all 124 tests pass. Added checks
 cover canonical endpoints, source dates, direction when traversing either way,
 acquisition versus career semantics, finder destinations and recent-visit identity.
+The homepage is tested as a production HTTP response, including its navigation
+and company-specific metadata for distinct browser tabs.
 
 The record describes observed journeys and limits. Physical-device and
 assistive-technology audits, complete relationship coverage and deeper studies

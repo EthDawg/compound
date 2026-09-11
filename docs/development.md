@@ -196,3 +196,7 @@ The shared finder stays in this mode for company selections; explicit person and
 customer matches still lead to their evidence. Known companies without mapped
 relationships remain visible with their existing context. No second company
 registry or graph library is required.
+
+The homepage uses query-specific metadata for company connections. Its rendered
+HTML is tested through a temporary localhost production server in
+`tests/company-page.test.cjs`, rather than assuming a static `index.html`.

@@ -56,8 +56,8 @@ test('CSV exports the visible set and preserves provenance, escaping spreadsheet
   assert.equal(csv.split('\r\n').length,2);assert.match(csv,/Everforth TopBloc/);assert.match(csv,/Directory field/);assert.match(csv,/https:\/\/marketplace.workday.com/);
   assert.match(partnerCsv([{...visible[0],name:'=1+1'}]),/"'=1\+1"/);
 });
-test('the network is built and discoverable from the Atlas and Workday Backstage',()=>{
+test('the network is built and discoverable from Workday Backstage',()=>{
   const routes=JSON.parse(fs.readFileSync('.next/prerender-manifest.json','utf8')).routes;
   assert.ok(routes['/atlas/workday']);
-  for(const file of ['.next/server/app/index.html','.next/server/app/companies/workday/backstage.html'])assert.match(fs.readFileSync(file,'utf8'),/href="\/atlas\/workday"/);
+  assert.match(fs.readFileSync('.next/server/app/companies/workday/backstage.html','utf8'),/href="\/atlas\/workday"/);
 });
