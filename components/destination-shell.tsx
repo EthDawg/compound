@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AtlasMaps } from './atlas-maps';
 import { GuideHeader } from './guide-header';
 
-export function DestinationShell({ active, children }: { active: 'earth' | 'technology' | 'decisions'; children: React.ReactNode }) {
+export function DestinationShell({ active, children }: { active: 'earth' | 'technology' | 'decisions' | 'categories'; children: React.ReactNode }) {
   return <div className="destination min-h-screen bg-[#F7F6F1] text-[#17282C]">
     <GuideHeader />
     <main className="mx-auto max-w-[1240px] px-4 pb-16 sm:px-6"><AtlasMaps active={active} />{children}</main>

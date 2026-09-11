@@ -5,6 +5,7 @@ import { ALL_VENDORS } from "./data/atlas-nodes";
 import { categoryById, sectorById } from "./data/atlas";
 import { companyStudy, companyHref, switchCompanyHref } from "./companies";
 import { MARKET_COMPANIES } from './data/earth';
+import { researchCompany, researchCategory, researchHref, type ResearchCategoryId } from './data/category-research';
 
 // Search vocabulary supplements the Atlas; it is not a second company registry.
 const TERMS: Record<string, string[]> = {
@@ -26,22 +27,26 @@ export interface IndexedCompany extends Pick<Node, 'id' | 'name' | 'sector' | 'c
   appHref?: string; backstageHref?: string; readHref?: string; ecosystemHref?: string;
   availability: string; atlasListed: boolean; ecosystemLinks: PracticeLink[]; contexts: SearchContext[];
   marketLinks?: {label:string;href:string}[];
+  researchCategories?: ResearchCategoryId[];
 }
 const atlasEntries: IndexedCompany[] = ALL_VENDORS.map((node) => {
   const study = companyStudy(node.id);
   const practice = ECOSYSTEM_INDEX.find((c) => c.id === node.id);
+  const research = researchCompany(node.id);
   return {
     ...node,
+    blurb: research?.thesis ?? node.blurb,
     categoryName: categoryById(node.category ?? "")?.name ?? "",
     sectorName: sectorById(node.sector)?.name ?? "",
-    terms: [...(TERMS[node.id] ?? []), ...(practice?.terms ?? [])],
+    terms: [...(TERMS[node.id] ?? []), ...(practice?.terms ?? []), ...(research ? [research.product,...research.terms,...research.categories.map(id=>researchCategory(id)!.name)] : [])],
+    researchCategories: research?.categories,
     studyId: study?.id,
     appHref: study ? companyHref(study.id, "app") : node.instance,
     backstageHref: study ? companyHref(study.id, "backstage") : undefined,
-    readHref: !study ? node.href : undefined,
+    readHref: research ? researchHref(node.id) : !study ? node.href : undefined,
     ecosystemHref: study?.ecosystem?.href,
     ecosystemLinks: practiceLinks(node.id), contexts: practice?.contexts ?? [], atlasListed: true,
-    availability: study ? "App + Backstage" : node.instance ? "App study" : node.href ? "Deep read" : practice ? "Ecosystem profile" : "Atlas only",
+    availability: study ? "App + Backstage" : research ? "Research brief" : node.instance ? "App study" : node.href ? "Deep read" : practice ? "Ecosystem profile" : "Atlas only",
   };
 });
 const practiceEntries: IndexedCompany[] = ECOSYSTEM_INDEX.filter((c) => !atlasEntries.some((a) => a.id === c.id)).map((c) => ({
@@ -100,6 +105,12 @@ export function matchCompany(company: IndexedCompany, query: string): CompanyMat
 
 export function relatedCompanies(company: IndexedCompany) {
   return COMPANY_INDEX.filter((c) => c.id !== company.id && c.availability !== 'Lineage context').flatMap((c) => {
+    if (company.researchCategories?.length) {
+      const shared = company.researchCategories.filter(id=>c.researchCategories?.includes(id));
+      if (!shared.length) return [];
+      const sameRole=researchCompany(company.id)?.group===researchCompany(c.id)?.group;
+      return [{company:c,score:sameRole?10:1,reason:`${sameRole?'Similar role':'Related layer'} · ${researchCategory(shared[0])!.shortName}`}];
+    }
     if (company.category==='market-context') {
       const shared=c.marketLinks?.find(l=>company.marketLinks?.some(s=>s.href===l.href));
       return shared?[{company:c,score:1,reason:`Connected in ${shared.label}`}]:[];
@@ -129,6 +140,7 @@ export function companyDestination(company: IndexedCompany, pathname: string): s
   const practice = company.ecosystemLinks.find((p) => pathname.startsWith(`/atlas/${p.ecosystemId}`)) ?? company.ecosystemLinks[0];
   if (pathname.startsWith('/atlas/') && practice) return practice.href;
   if (company.studyId) return switchCompanyHref(company.studyId, pathname);
+  if (company.researchCategories?.length && company.readHref) return company.readHref;
   if (!company.appHref && !company.readHref && practice) return practice.href;
   if (!company.atlasListed && company.marketLinks?.length) return company.marketLinks[0].href;
   return (pathname.includes("/backstage") ? company.readHref : company.appHref) ?? atlasCompanyHref(company.id);

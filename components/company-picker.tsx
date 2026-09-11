@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { COMPANY_INDEX, COMPANY_SECTORS as SECTORS, atlasCompanyHref, companyDestination, recentCompanyVisits, relatedCompanies, searchCompanies, type IndexedCompany, type CompanyVisit } from "@/lib/company-index";
 import { Mark } from "./vendor/marks";
 import * as I from "./icons";
+import { researchCompany, researchCategory, categoryHref } from '@/lib/data/category-research';
 
 const RECENT_KEY = "compound-recent-companies";
 
@@ -12,6 +13,8 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   const path = usePathname();
   const uid = useId();
   const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
   const input = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState("");
@@ -42,6 +45,8 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   };
   const close = () => { dialog.current?.close(); setOpened(false); };
   const show = () => {
+    const focused = document.activeElement;
+    returnFocus.current = focused instanceof HTMLElement && focused !== document.body && !dialog.current?.contains(focused) ? focused : trigger.current;
     remember(recentId??activeId);
     setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0);
     dialog.current?.showModal(); setOpened(true); input.current?.focus();
@@ -70,8 +75,8 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
       if (((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") || (event.key === '/' && !typing && !event.metaKey && !event.ctrlKey && !event.altKey)) {
         if (document.querySelector("dialog[open]") && !dialog.current?.open) return;
         event.preventDefault();
-        if (dialog.current?.open) { dialog.current.close(); setOpened(false); }
-        else { remember(recentId??activeId); setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
+        if (dialog.current?.open) close();
+        else show();
       }
     };
     window.addEventListener("keydown", onKey);
@@ -100,20 +105,20 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   </span>;
 
   return <>
-    <button type="button" onClick={show} aria-haspopup="dialog" aria-expanded={opened} aria-label={`Find a company. Current: ${current?.name ?? "none"}`} title="Find a company · ⌘K / Ctrl K"
+    <button ref={trigger} type="button" onClick={show} aria-haspopup="dialog" aria-expanded={opened} aria-label={`Find a company. Current: ${current?.name ?? "none"}`} title="Find a company · ⌘K / Ctrl K"
       className={`flex h-10 items-center gap-2 rounded-lg border border-ink-200 bg-ink-50 px-3 text-[13px] hover:bg-ink-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky ${searchTrigger ? 'w-[min(340px,calc(100vw-155px))] font-normal text-ink-500' : 'w-[160px] font-semibold sm:w-[200px]'}`}>
       {!searchTrigger && <Mark id={activeId} className="h-3.5 w-3.5 shrink-0" />}
       <span className="truncate">{searchTrigger ? 'Company, product or person…' : current?.name ?? "Find a company"}</span>
       <I.ISearch className="ml-auto h-3.5 w-3.5 shrink-0 text-ink-500" />
       {searchTrigger && <kbd className="hidden rounded border border-ink-200 px-1.5 text-[10px] sm:block">⌘ K</kbd>}
     </button>
-    <dialog ref={dialog} aria-labelledby={`${uid}-title`} onClose={() => setOpened(false)} onCancel={() => setOpened(false)}
+    <dialog ref={dialog} aria-labelledby={`${uid}-title`} onClose={() => { setOpened(false); const target = returnFocus.current; if (target?.isConnected) target.focus({preventScroll:true}); returnFocus.current = null; }} onCancel={() => setOpened(false)}
       onClick={(event) => { if (event.target === dialog.current) close(); }}
       className="company-picker m-auto w-[calc(100%-24px)] max-w-[800px] overflow-hidden rounded-2xl border border-ink-200 bg-white p-0 text-ink shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm">
       <div className="flex max-h-[88dvh] flex-col" onClick={(event) => event.stopPropagation()}>
         <div className="flex items-center justify-between px-5 pb-2 pt-4">
           <h2 id={`${uid}-title`} className="text-sm font-semibold">Find a company</h2>
-          <button type="button" onClick={close} aria-label="Close company finder" className="rounded-md p-2 text-ink-500 hover:bg-ink-100"><I.IClose className="h-4 w-4" /></button>
+          <button type="button" onClick={close} aria-label="Close company finder" className="grid h-11 w-11 place-items-center rounded-md text-ink-500 hover:bg-ink-100"><I.IClose className="h-4 w-4" /></button>
         </div>
         <div className="mx-4 mb-3 flex items-center gap-3 rounded-xl border border-ink-200 bg-ink-50 px-3 focus-within:border-ink-500 focus-within:ring-2 focus-within:ring-ink-100">
           <I.ISearch className="h-5 w-5 shrink-0 text-ink-500" />
@@ -121,7 +126,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
             role="combobox" aria-autocomplete="list" aria-expanded={opened} aria-controls={rows.length ? `${uid}-results` : undefined} aria-activedescendant={selected ? `${uid}-${selected.id}` : undefined}
             aria-label="Search companies, products, people, customers or capabilities" autoComplete="off" spellCheck={false}
             placeholder="Company, product, person, customer…" className="h-12 min-w-0 flex-1 bg-transparent text-base outline-none" />
-          {query && <button type="button" onClick={() => { setQuery(""); input.current?.focus(); }} aria-label="Clear search" className="rounded p-1 text-ink-500"><I.IClose className="h-4 w-4" /></button>}
+          {query && <button type="button" onClick={() => { setQuery(""); input.current?.focus(); }} aria-label="Clear search" className="grid h-11 w-11 shrink-0 place-items-center rounded text-ink-500"><I.IClose className="h-4 w-4" /></button>}
         </div>
         {!searching && <div className="flex flex-wrap items-center gap-2 px-4 pb-3">
           <div className="flex flex-wrap rounded-lg bg-ink-100 p-1 text-xs font-medium">
@@ -165,16 +170,17 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
             <p className="mt-2 text-[13px] leading-relaxed">{selected.blurb}</p>
             {!searching&&recent.some(v=>v.id===selected.id)&&<a href={recent.find(v=>v.id===selected.id)!.href} className="mt-3 inline-block rounded-lg bg-ink px-3 py-2 text-xs font-semibold text-white">Resume where you left off →</a>}
             {matchedContext && <a href={matchedContext.href} className="mt-3 block rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-xs"><span className="text-[10px] font-semibold uppercase tracking-wide text-emerald-800">{matchedContext.kind}</span><strong className="mt-1 block text-sm">{matchedContext.term} →</strong><span className="mt-1 block text-ink-500">{matchedContext.detail}</span></a>}
-            {!selected.studyId && !selected.ecosystemLinks.length && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">{selected.atlasListed?'In the company landscape.':'Recognised in the global research.'} {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
+            {researchCompany(selected.id) ? <div className="mt-3 rounded-lg border border-[#D1DBCC] bg-white p-3"><p className="text-[10px] font-bold uppercase tracking-wider text-[#56704E]">Worth knowing</p><p className="mt-1 text-xs leading-relaxed">{researchCompany(selected.id)!.movement.title}</p><p className="mt-1 text-[10px] text-ink-500">{researchCompany(selected.id)!.movement.date}</p></div> : !selected.studyId && !selected.ecosystemLinks.length && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">{selected.atlasListed?'In the company landscape.':'Recognised in the global research.'} {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
             {!!selected.ecosystemLinks.length && <div className="mt-4 space-y-2"><p className="text-[10px] font-bold uppercase tracking-wider text-ink-500">Choose the practice context</p>{selected.ecosystemLinks.map((link) => <a key={link.href} href={link.href} className="block rounded-lg border border-ink-200 bg-white p-3 text-xs hover:bg-ink-100"><span className="font-semibold">{link.ecosystemName} · ANZ ↗</span><span className="mt-1 block text-[11px] text-ink-500">{link.historical ? 'Career / ownership context' : link.context}</span></a>)}</div>}
             {!!selected.marketLinks?.length && <div className="mt-4 space-y-2"><p className="text-[10px] font-bold uppercase tracking-wider text-ink-500">Global context</p>{selected.marketLinks.map(link=><a key={link.href} href={link.href} className="block rounded-lg border border-ink-200 bg-white p-3 text-xs font-semibold">{link.label} →</a>)}</div>}
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
               {selected.appHref && <a href={selected.appHref} className="rounded-lg bg-ink px-3 py-2 text-white hover:bg-ink-700">Open App</a>}
               {selected.backstageHref && <a href={selected.backstageHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Backstage</a>}
-              {selected.readHref && <a href={selected.readHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Read study</a>}
+              {selected.readHref && <a href={selected.readHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">{selected.researchCategories?.length?'Read brief':'Read study'}</a>}
               {selected.ecosystemHref && <a href={selected.ecosystemHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">ANZ ecosystem</a>}
               {selected.atlasListed && <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>}
             </div>
+            {!!selected.researchCategories?.length&&<div className="mt-3 flex flex-wrap gap-2">{selected.researchCategories.map(id=><a key={id} href={categoryHref(id)} className="inline-flex min-h-11 items-center text-[11px] font-medium text-ink-500 underline underline-offset-4">{researchCategory(id)?.shortName} →</a>)}</div>}
             {!!related.length && <div className="mt-5 hidden border-t border-ink-200 pt-3 sm:block"><p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-ink-500">Explore alongside</p>
               {related.map(({company:c,reason}) => <a key={c.id} onClick={e=>{e.stopPropagation();remember(c.id,e.currentTarget.getAttribute('href')??undefined);}} href={companyDestination(c, path)} className="block rounded py-1.5 text-xs hover:underline"><span className="font-semibold">{c.name}</span><span className="mt-1 block text-[10px] text-ink-500">{reason}</span></a>)}
             </div>}

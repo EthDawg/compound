@@ -12,6 +12,7 @@ import { SiEvidence } from "./si-evidence";
 import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { companyStudy, companyHref } from "@/lib/companies";
+import { researchCompany, researchCategory, categoryHref } from '@/lib/data/category-research';
 
 import {initialAtlas,readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel,type AtlasAction} from '@/lib/atlas-navigation';
 
@@ -385,6 +386,7 @@ function Intro({ level, focus }: { level: Level; focus: { sector?: string; categ
         <>
           <h2 className="text-[18px] font-semibold tracking-tight">{c.name}</h2>
           <p className="mt-2 text-[14px] leading-[1.65]" style={{ color: PAPER.muted }}>{c.blurb}</p>
+          {researchCategory(c.id)&&<Link href={categoryHref(researchCategory(c.id)!.id)} className="mt-4 flex min-h-11 items-center justify-center rounded-lg border px-3 text-xs font-semibold" style={{borderColor:PAPER.line}}>Understand this category →</Link>}
           <div className="mt-3.5 border-t pt-3.5" style={{ borderColor: PAPER.lineSoft }}>
             <div className="text-[10.5px] font-bold uppercase tracking-wider" style={{ color: PAPER.ghost }}>Dominant shape</div>
             <div className="mt-1.5 flex items-center gap-2">
@@ -428,6 +430,7 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
           {n.handRead ? "Read individually" : "Placed by archetype"}
         </span>
         {n.deep && <span className="rounded-full px-2 py-0.5 text-[11px] font-medium" style={{ background: "#FBF1D2", color: "#8A6A00" }}>Deep read</span>}
+        {researchCompany(n.id)&&<span className="rounded-full bg-[#EEF2E9] px-2 py-0.5 text-[11px] font-medium text-[#486351]">Research brief</span>}
         {n.instance && <span className="rounded-full px-2 py-0.5 text-[11px] font-medium" style={{ background: "#EDE7FB", color: "#5A3FB0" }}>Playable study</span>}
       </div>
 
@@ -449,7 +452,7 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
           <Link href={n.href}
             className="flex h-10 w-full items-center justify-center gap-1.5 rounded-lg border text-[13.5px] font-semibold transition hover:bg-black/[0.03]"
             style={{ borderColor: "#DDD9CE", color: PAPER.ink }}>
-            Read the full position <I.IArrow className="h-3.5 w-3.5" />
+            {researchCompany(n.id)?'Read company brief':'Read the full position'} <I.IArrow className="h-3.5 w-3.5" />
           </Link>
         )}
         {!n.instance && !n.href && (

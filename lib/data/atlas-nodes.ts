@@ -2,6 +2,7 @@ import { companyStudy, companyHref } from "../companies";
 import { ALL_COMPANIES, type LensId, type Pos, type Archetype } from "./ecosystem";
 import { SECTORS, CATEGORIES, VENDORS, WORK_CATEGORY, CROSS_SECTOR, categoriesIn } from "./atlas";
 import { derive, type Vendor } from "./atlas-types";
+import { researchCompany, researchHref } from './category-research';
 
 export type Level = "sector" | "category" | "vendor";
 
@@ -44,6 +45,7 @@ export const ALL_VENDORS: Node[] = [
     id: v.slug, name: v.name, level: "vendor",
     sector: v.sector, category: v.category, archetype: v.archetype, geo: v.geo,
     blurb: v.bet, lens: derive(v), handRead: false,
+    href: researchCompany(v.slug) ? researchHref(v.slug) : undefined,
   })),
 ];
 

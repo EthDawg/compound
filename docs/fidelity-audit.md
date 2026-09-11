@@ -28,7 +28,7 @@ and data tests establish a much narrower result than a coherent destination.
    the rendered journeys when browser testing is authorised. Do not substitute
    page counts or HTTP responses for usability or visual fidelity.
 
-## Verified gaps in the released version
+## Gaps that motivated the refinement
 
 - Homepage search only includes plotted vendors; the global company picker also
   includes researched SI practices. This creates false "not in catalogue" states.
@@ -40,10 +40,10 @@ and data tests establish a much narrower result than a coherent destination.
 - Shared pages use different headers and route concepts. Some older desk/brief
   content still describes the initial Rippling-only project.
 
-Status: implementation and evidence review in progress. Completion remains
-unproven until the journeys above are exercised and the substantive gaps closed.
+These were the starting gaps, not a list of current defects. The changes below
+address them; the verification record distinguishes implementation from observed use.
 
-## Refinement implemented in this branch
+## Refinement implemented
 
 - The front door and shared destinations use the canonical company finder,
   including world-context organisations. Person, customer and capability matches
@@ -65,35 +65,70 @@ unproven until the journeys above are exercised and the substantive gaps closed.
   Invalid or missing answers do not produce a favourable result. URL state and
   a copyable brief preserve the reasoning. The adoption illustration is secondary.
 
-## Verification boundary
+## Navigation and category research
 
-Production build and 68 tests passed, including the final navigation changes.
-The added checks exercise
-all valid decision-option combinations and important counterfactuals, contextual
-search destinations, exact career links and paired engagement references.
+Landscape sector, category, company, lens and legend selections are addressable.
+Native links preserve browser history and opening several candidates. Recent
+visits retain the actual destination. Platform-specific queries keep the intended
+practice: `Cognizant ServiceNow IT` reaches the matching ServiceNow evidence.
 
-These checks do not prove visual or interaction fidelity. Browser testing was
-requested from the user but has not been authorised in the available replies.
-No screenshots, DOM inspection or browser interaction tests were performed.
-The full goal remains active. Remaining review must cover desktop/mobile layout,
-keyboard and touch journeys, reload/back behaviour, company recognition and
-whether the three complete learning journeys are coherent in use. Current
-operational status of dated construction projects needs newer evidence before
-any stronger capacity claim; current source dates remain explicit.
+Three category guides cover AI inference and model serving, developer tools, and
+enterprise AI cloud. Twenty company briefs connect three strengths to their
+origins, a dated change, a trade-off and a watchpoint. Product and former names
+resolve through the existing company index, including Windsurf, Vertex AI and
+MosaicML. Cross-category membership does not create duplicate companies.
 
-## Returning and comparing — navigation follow-up
+Each guide has three practical situations. The Fireworks walkthrough makes the
+custom-model route and idle-capacity trade-off interactive. These are teaching
+scenarios, not live model calls or comparative benchmarks. Company accents remain
+inside Compound's shared navigation; a research brief does not promise a full
+App/Backstage study.
 
-Source inspection after the first refinement found two further broken journeys:
-landscape clicks did not update the URL, and a mixed company/platform query could
-open another platform's practice. The next change makes sector, category,
-company, lens and legend selection addressable, uses native links for map items,
-and restores those values on browser history events. Recent visits retain the
-actual internal destination, while migrating earlier ID-only history.
+## Browser verification — 11 September 2026
 
-Search now treats platform context explicitly and matches word beginnings, so
-`Cognizant ServiceNow IT` reaches the ServiceNow IT evidence rather than matching
-`IT` inside a person's name. Focused tests exercise these expected destinations,
-state restoration, invalid parameters, and safe recent-history migration.
-The production build and all 73 tests pass with this follow-up.
-Browser interaction and visual verification remain outstanding; source logic is
-not proof of the rendered experience.
+The production build and all 77 tests pass. Added checks cover shared company
+identity, former-name discovery, exact recent destinations, category references,
+and serving-route counterfactuals.
+
+Browser testing was authorised and performed against the preceding production
+release and this update on localhost. Observed journeys:
+
+- Finder shortcut, type-ahead recognition, arrow/Enter navigation, explicit mobile
+  preview, empty state, and Escape. Closing now restores focus to the original
+  control or link, including when the finder opened from a keyboard shortcut.
+- Cognizant ServiceNow IT search to the matching case; switching its Workday
+  context and Back restored the original firm and capability route.
+- Delivery decision with five answers; evidence changes altered the next
+  commitment. Reload retained answers, and Copy produced the matching brief.
+- Landscape company/lens selection and reload restored the intended selection.
+- Windsurf search preview showed Cognition and the Devin Desktop change; Enter
+  opened its brief, then its developer tools category.
+- Category scenario selection by keyboard and pointer updated the case and URL;
+  Back restored the previous case. The Australian-processing case distinguishes
+  exact routing from an APAC label.
+- Fireworks rejected custom models on the shared endpoint, exposed the documented
+  scale-from-zero 503 behaviour, and distinguished keeping capacity warm. Rapid
+  toggles, Back/Forward and reload retained the corresponding choice. Controls
+  now respond without waiting for a server navigation.
+- Claude Code's existing scenario required command permission, failed the
+  repeated-timeout case, then accepted a reviewed bounded retry. Backstage
+  retained Anthropic's distinct identity and argument.
+- Global View linked to the intended EUV history point. Keyboard changes to the
+  computation slider changed the displayed combinations and time.
+
+Screenshots and DOM checks covered desktop and narrow layouts. Observed narrow
+widths included 354 and 390 CSS pixels; checked pages had no horizontal overflow.
+New scenario controls and finder clear/close targets are at least 44 CSS pixels.
+The inspected browser error log was empty. This was responsive browser testing,
+not a physical phone or on-screen-keyboard test.
+
+## Remaining fidelity work
+
+The broader goal remains active. This is a verified set of journeys, not a full
+accessibility audit or proof that every company scene has equal depth. The new
+research briefs deliberately have a smaller scope than full company studies.
+The landscape briefly showed its default state before restoring a query on a
+local reload; refine initial rendering if this persists in production. Real-device
+touch, virtual-keyboard behaviour and assistive-technology testing remain open.
+Dated construction announcements still need newer evidence before being described
+as operating capacity.
