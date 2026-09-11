@@ -15,6 +15,8 @@ import * as I from "./icons";
 import { companyStudy, companyHref } from "@/lib/companies";
 import { researchCompany, researchCategory, categoryHref } from '@/lib/data/category-research';
 import { ResearchLandscape } from './research-landscape';
+import { CompanyConnections, CompanyMapModes } from './company-connections';
+import { COMPANY_INDEX, companyConnectionsHref } from '@/lib/company-index';
 
 import {readAtlasLocation,atlasLocationHref,transitionAtlas,atlasLevel,type AtlasAction} from '@/lib/atlas-navigation';
 
@@ -37,6 +39,7 @@ export function Atlas() {
 
   const query = useSearchParams().toString();
   const location = useMemo(() => readAtlasLocation(query), [query]);
+  const connectionId = new URLSearchParams(query).get('connections');
   const level=atlasLevel(location),lensId=location.lens,sel=location.company??null,muted=location.highlight??null;
   const focus=useMemo(()=>({sector:location.sector,category:location.category}),[location.sector,location.category]);
   const categoryGuide = focus.category ? researchCategory(focus.category) : undefined;
@@ -87,20 +90,20 @@ export function Atlas() {
   // Esc clears the selection, then walks back up a level.
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
-      if (e.defaultPrevented || document.querySelector("dialog[open], details[open]")) return;
+      if (connectionId !== null || e.defaultPrevented || document.querySelector("dialog[open], details[open]")) return;
       const t = e.target as HTMLElement | null;
-      if (t && ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName)) return;
+      if (t && (t.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName))) return;
       if (e.key === "Escape") { clearHover(); if (sel) clearSelection(); else up(); }
       if (e.key === "Backspace") { e.preventDefault(); up(); }
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [sel, up, clearHover, clearSelection]);
+  }, [sel, up, clearHover, clearSelection, connectionId]);
 
   // On a phone the detail sits below the fold, so bring it into view on select.
   useEffect(() => {
-    if (sel && narrow) detailRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
-  }, [sel, narrow]);
+    if (connectionId === null && sel && narrow) detailRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
+  }, [sel, narrow, connectionId]);
 
   useEffect(() => {
     clearHover();
@@ -134,12 +137,19 @@ export function Atlas() {
     setTip({ n, x, y });
   };
 
+  if (connectionId !== null) return <div className="min-h-screen" style={{ background: PAPER.bg, color: PAPER.ink }}>
+    <GuideHeader activeId={connectionId} />
+    <main className="mx-auto max-w-[1180px] px-4 pb-16 sm:px-6"><AtlasMaps /><CompanyConnections id={connectionId} /></main>
+  </div>;
+
   return (
     <div className="min-h-screen" style={{ background: PAPER.bg, color: PAPER.ink }}>
       <GuideHeader activeId={sel ?? ''} />
 
       <main className="mx-auto max-w-[1180px] px-4 pb-16 sm:px-6">
         <AtlasMaps />
+        <CompanyMapModes company={COMPANY_INDEX.find(c => c.id === sel)} landscapeHref={atlasLocationHref(location)} />
+        <p className="text-[10px] font-bold uppercase tracking-wider text-ink-500">{categoryGuide ? 'Companies by role' : 'Editorial positions'}</p>
         {/* Controls */}
         <div className="flex flex-col gap-3 py-4 lg:flex-row lg:items-center">
           <div className="flex min-w-0 flex-wrap items-center gap-1.5 text-[13.5px]">
@@ -357,16 +367,14 @@ function Intro({ level, focus }: { level: Level; focus: { sector?: string; categ
     <Shell>
       {level === "sector" && (
         <>
-          <h2 className="font-serif-display text-[22px] leading-tight">Relevant to whom?</h2>
+          <h2 className="font-serif-display text-[22px] leading-tight">Find the company. Follow what matters.</h2>
           <p className="mt-2.5 text-[14px] leading-[1.65]" style={{ color: PAPER.muted }}>
-            Every map of software picks one definition of relevance and hides it. This one refuses to pick — the same
-            board, drawn four times, under four incompatible definitions of what makes something matter.
+            Search a company, product or person above. Or open a sector, then a category, to see who does what.
           </p>
           <p className="mt-3 text-[14px] leading-[1.65]" style={{ color: PAPER.muted }}>
-            Click a sector to open its categories, then a category for its vendors. The organising claim is that the
-            same archetypes recur everywhere: legal has its compound platform and its connective layer just as
-            employment does.
+            Switch the lens to compare company positions. Open Connections to trace the suppliers, acquisitions and people behind a company.
           </p>
+          <Link href={companyConnectionsHref('fireworks')} className="mt-4 inline-flex min-h-11 items-center rounded-lg border px-3 text-xs font-semibold" style={{ borderColor: PAPER.line }}>Start with Fireworks AI connections →</Link>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 border-t pt-3 text-[11.5px]" style={{ borderColor: PAPER.lineSoft, color: PAPER.faint }}>
             <span><kbd className="rounded px-1 font-mono" style={{ background: PAPER.grid }}>/</kbd> search</span>
             <span><kbd className="rounded px-1 font-mono" style={{ background: PAPER.grid }}>Esc</kbd> clear</span>
@@ -429,7 +437,7 @@ function Detail({ n, category, onClose }: { n: AtlasNode; category?: import('@/l
           </button>
         </div>
         <p className="mt-1 text-[11.5px] uppercase tracking-wide" style={{ color: research ? PAPER.muted : PAPER.ghost }}>
-          {research ? `${role} · ${research.product}` : `${n.archetype}${n.geo ? ` · ${n.geo}` : ''} · ${s?.name}`}
+          {research ? `${role ?? 'Research company'} · ${research.product}` : `${n.archetype}${n.geo ? ` · ${n.geo}` : ''} · ${s?.name}`}
         </p>
         <p className="mt-2.5 text-[14px] leading-[1.62]">{research?.thesis ?? n.blurb}</p>
         <SiEvidence id={n.id} />
@@ -452,6 +460,7 @@ function Detail({ n, category, onClose }: { n: AtlasNode; category?: import('@/l
       </div>}
 
       <div className="space-y-2 p-5">
+        <Link href={companyConnectionsHref(n.id)} className="flex min-h-11 items-center justify-center rounded-lg border px-3 py-2 text-[13px] font-semibold" style={{ borderColor: PAPER.line }}>Explore company connections →</Link>
         {n.instance && (
           <Link href={n.instance}
             className="flex h-10 w-full items-center justify-center gap-1.5 rounded-lg text-[13.5px] font-bold transition"

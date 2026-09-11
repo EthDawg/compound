@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { COMPANY_INDEX, COMPANY_SECTORS as SECTORS, atlasCompanyHref, companyDestination, recentCompanyVisits, relatedCompanies, searchCompanies, type IndexedCompany, type CompanyVisit } from "@/lib/company-index";
+import { COMPANY_INDEX, COMPANY_SECTORS as SECTORS, atlasCompanyHref, companyConnectionsHref, companyDestination, recentCompanyVisits, relatedCompanies, searchCompanies, type IndexedCompany, type CompanyVisit } from "@/lib/company-index";
 import { Mark } from "./vendor/marks";
 import * as I from "./icons";
 import { researchCompany, researchCategory, categoryHref } from '@/lib/data/category-research';
@@ -24,6 +24,8 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
   const [recent, setRecent] = useState<CompanyVisit[]>([]);
   const [cursor, setCursor] = useState(0);
   const [opened, setOpened] = useState(false);
+  const [routeSearch, setRouteSearch] = useState('');
+  const inConnections = path === '/' && new URLSearchParams(routeSearch).has('connections');
   const current = COMPANY_INDEX.find((c) => c.id === activeId);
   const searching = !!query.trim();
   const matches = useMemo(() => searchCompanies(query), [query]);
@@ -48,6 +50,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
     const focused = document.activeElement;
     returnFocus.current = focused instanceof HTMLElement && focused !== document.body && !dialog.current?.contains(focused) ? focused : trigger.current;
     remember(recentId??activeId);
+    setRouteSearch(window.location.search);
     setQuery(""); setSector(""); setEcosystemsOnly(false); setAll(true); setCursor(0);
     dialog.current?.showModal(); setOpened(true); input.current?.focus();
   };
@@ -106,7 +109,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
 
   return <>
     <button ref={trigger} type="button" onClick={show} aria-haspopup="dialog" aria-expanded={opened} aria-label={`Find a company. Current: ${current?.name ?? "none"}`} title="Find a company · ⌘K / Ctrl K"
-      className={`flex h-10 items-center gap-2 rounded-lg border border-ink-200 bg-ink-50 px-3 text-[13px] hover:bg-ink-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky ${searchTrigger ? 'w-[min(340px,calc(100vw-155px))] font-normal text-ink-500' : 'w-[160px] font-semibold sm:w-[200px]'}`}>
+      className={`flex h-11 items-center gap-2 rounded-lg border border-ink-200 bg-ink-50 px-3 text-[13px] hover:bg-ink-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-sky ${searchTrigger ? 'w-[min(340px,calc(100vw-155px))] font-normal text-ink-500' : 'w-[160px] font-semibold sm:w-[200px]'}`}>
       {!searchTrigger && <Mark id={activeId} className="h-3.5 w-3.5 shrink-0" />}
       <span className="truncate">{searchTrigger ? 'Company, product or person…' : current?.name ?? "Find a company"}</span>
       <I.ISearch className="ml-auto h-3.5 w-3.5 shrink-0 text-ink-500" />
@@ -147,7 +150,7 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
                 {group.companies.map((company) => {
                   const index = rows.indexOf(company);
                   const reason = searching ? matches.find((m) => m.company.id === company.id)?.reason : "";
-                  return <div key={company.id} className="flex items-stretch"><a id={`${uid}-${company.id}`} href={(searching && matches.find((m) => m.company.id === company.id)?.context?.href) || (!searching&&group.label==='Recent'&&recent.find(v=>v.id===company.id)?.href) || companyDestination(company, path)} role="option" tabIndex={-1} aria-selected={selected?.id === company.id}
+                  return <div key={company.id} className="flex items-stretch"><a id={`${uid}-${company.id}`} href={(searching && matches.find((m) => m.company.id === company.id)?.context?.href) || (!searching&&!inConnections&&group.label==='Recent'&&recent.find(v=>v.id===company.id)?.href) || companyDestination(company, path, routeSearch)} role="option" tabIndex={-1} aria-selected={selected?.id === company.id}
                     onMouseEnter={() => setCursor(index)} onFocus={() => setCursor(index)} onClick={(e)=>remember(company.id,e.currentTarget.getAttribute('href')??undefined)}
                     className={`flex min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2.5 outline-offset-[-2px] ${selected?.id === company.id ? "bg-ink-100" : "hover:bg-ink-50"}`}>
                     {mark(company)}<span className="min-w-0 flex-1">
@@ -178,11 +181,12 @@ export function CompanyPicker({ activeId, recentId, searchTrigger = false }: { a
               {selected.backstageHref && <a href={selected.backstageHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Backstage</a>}
               {selected.readHref && <a href={selected.readHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">{selected.researchCategories?.length?'Read brief':'Read study'}</a>}
               {selected.ecosystemHref && <a href={selected.ecosystemHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">ANZ ecosystem</a>}
+              <a href={companyConnectionsHref(selected.id)} className="inline-flex min-h-11 items-center rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Connections</a>
               {selected.atlasListed && <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>}
             </div>
             {!!selected.researchCategories?.length&&<div className="mt-3 flex flex-wrap gap-2">{selected.researchCategories.map(id=><a key={id} href={categoryHref(id)} className="inline-flex min-h-11 items-center text-[11px] font-medium text-ink-500 underline underline-offset-4">{researchCategory(id)?.shortName} →</a>)}</div>}
             {!!related.length && <div className="mt-5 hidden border-t border-ink-200 pt-3 sm:block"><p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-ink-500">Explore alongside</p>
-              {related.map(({company:c,reason}) => <a key={c.id} onClick={e=>{e.stopPropagation();remember(c.id,e.currentTarget.getAttribute('href')??undefined);}} href={companyDestination(c, path)} className="block rounded py-1.5 text-xs hover:underline"><span className="font-semibold">{c.name}</span><span className="mt-1 block text-[10px] text-ink-500">{reason}</span></a>)}
+              {related.map(({company:c,reason}) => <a key={c.id} onClick={e=>{e.stopPropagation();remember(c.id,e.currentTarget.getAttribute('href')??undefined);}} href={companyDestination(c, path, routeSearch)} className="block rounded py-1.5 text-xs hover:underline"><span className="font-semibold">{c.name}</span><span className="mt-1 block text-[10px] text-ink-500">{reason}</span></a>)}
             </div>}
           </aside>}
         </div>

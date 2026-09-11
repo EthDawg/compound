@@ -1,4 +1,4 @@
-# Fidelity refinement — active
+# Fidelity refinement — release record
 
 The previous release established topic coverage and some evidence boundaries.
 It did not prove the complete experience met the user's ambition. Passing builds
@@ -418,3 +418,42 @@ Release validation: production build and all 118 tests pass. New cases cover
 source freshness, preserved scope, review invalidation, file-level staging,
 approval identity, distinct call outcomes, reconciliation, safe fresh attempts,
 invalid stored data and reset isolation.
+
+
+## English company connections — 12 September 2026
+
+This pass returns the focus to companies and their relationships. The homepage
+now offers Landscape and Connections. Editorial positions, category roles and
+sourced company relationships are labelled as different views. The English
+connections map starts with 18 relationships across distribution, manufacturing,
+acquisitions, delivery and career lineage. It is a selected research set, not a
+complete company graph.
+
+One selected company and its immediate neighbours keep the map readable. Every
+neighbour opens its own connections; every relationship has a directional
+sentence, dated evidence and a scope limit. The same canonical company index
+includes suppliers and historical firms that have no plotted landscape node.
+ANZ event membership is never expanded into pairwise ownership links. A named
+person's later employer remains a career link, not an acquisition or team transfer.
+
+The shared company finder preserves connections mode, including modified-Enter
+opening another company in a separate tab. Explicit person and customer matches
+retain their evidence destination. Known but unmapped companies have an honest
+empty state and their existing study, practice, global or landscape links.
+Company accents remain inside Compound's shared navigation.
+
+Browser checks covered Cognizant → Collaborative Solutions → Theory of Mind →
+Duane Goff's expanded career; Back and Forward; Fireworks → Hugging Face → Groq;
+the NVIDIA → TSMC supply chain; keyboard activation and heading focus; evidence
+fragment focus; type-ahead and a separate-tab company; and Salesforce's known
+but unmapped state returning to its landscape entry. Existing sector/category
+navigation still works, with a visible Companies by role label for curated AI
+categories. Inspected 320-, 390- and 1440-pixel layouts did not overflow.
+
+Release validation: the production build and all 123 tests pass. Added checks
+cover canonical endpoints, source dates, direction when traversing either way,
+acquisition versus career semantics, finder destinations and recent-visit identity.
+
+The record describes observed journeys and limits. Physical-device and
+assistive-technology audits, complete relationship coverage and deeper studies
+for the wider catalogue remain future project work.

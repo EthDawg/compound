@@ -135,7 +135,9 @@ export function searchCompanies(query: string): CompanyMatch[] {
 }
 
 export const atlasCompanyHref = (id: string) => `/?company=${encodeURIComponent(id)}`;
-export function companyDestination(company: IndexedCompany, pathname: string): string {
+export const companyConnectionsHref = (id: string) => `/?connections=${encodeURIComponent(id)}`;
+export function companyDestination(company: IndexedCompany, pathname: string, search = ''): string {
+  if (pathname === '/' && new URLSearchParams(search).has('connections')) return companyConnectionsHref(company.id);
   if (pathname.startsWith('/atlas/') && company.ecosystemHref) return company.ecosystemHref;
   const practice = company.ecosystemLinks.find((p) => pathname.startsWith(`/atlas/${p.ecosystemId}`)) ?? company.ecosystemLinks[0];
   if (pathname.startsWith('/atlas/') && practice) return practice.href;
@@ -166,12 +168,13 @@ export function recentCompanyVisits(value:unknown,visit?:CompanyVisit):CompanyVi
   if(url.origin!=='https://compound.invalid')return [];
   const p=url.pathname,query=url.searchParams;
   const study=company.studyId&&p.startsWith(`/companies/${company.id}/`)&&(p===company.appHref||p===company.backstageHref||p.startsWith(`/companies/${company.id}/app/`)||p.startsWith(`/companies/${company.id}/backstage/`));
-  const map=company.atlasListed&&p==='/'&&query.get('company')===company.id;
+  const map=company.atlasListed&&p==='/'&&!query.has('connections')&&query.get('company')===company.id;
+  const connections=p==='/'&&query.get('connections')===company.id;
   const practice=company.ecosystemLinks.some(l=>p===new URL(l.href,'https://compound.invalid').pathname&&query.get('firm')===company.id);
   const ecosystem=company.ecosystemHref&&p===company.ecosystemHref&&!query.get('firm');
   const market=company.marketLinks?.some(l=>{const target=new URL(l.href,'https://compound.invalid');return p===target.pathname&&query.get('market')===target.searchParams.get('market');});
   const other=p===company.appHref||p===company.readHref;
-  if(!study&&!map&&!practice&&!ecosystem&&!market&&!other)return [];
+  if(!study&&!map&&!connections&&!practice&&!ecosystem&&!market&&!other)return [];
   seen.add(company.id);return [{id:company.id,href:url.pathname+url.search+url.hash}];
  }).slice(0,6);
 }
