@@ -15,7 +15,7 @@ export const WORKDAY_ECOSYSTEM = createEcosystem({
   {title:'Ownership creates options. Delivery shows conversion.',text:'UST/Intecrowd and CloudRock/SuccessDay change access to resources. Kainos and Cognizant have named local work to inspect. Parent scale alone does not establish a bigger ANZ bench.',ask:'Which people and references support the proposed team today?',companyIds:['intecrowd','cloudrock','kainos','cognizant']},
  ],
 });
-export const { ANZ_COMPANIES, ANZ_PEOPLE, ANZ_EVENTS, ANZ_CUSTOMERS, ANZ_LINEAGES, ANZ_ACTIVE, CAPABILITIES, anzCompany, companyPeople, peopleInLineage, companyEvents, companyMovement, searchAnz, movementEvents, ecosystemHref } = WORKDAY_ECOSYSTEM;
+export const { ANZ_COMPANIES, ANZ_PEOPLE, ANZ_EVENTS, ANZ_CUSTOMERS, ANZ_LINEAGES, ANZ_ACTIVE, CAPABILITIES, anzCompany, companyPeople, peopleInLineage, companyEvents, companyMovement, searchAnz, movementEvents, movementTimeline, ecosystemHref } = WORKDAY_ECOSYSTEM;
 
 export function directoryRequested(params: URLSearchParams) {
   if (params.get('scope') === 'anz') return false;

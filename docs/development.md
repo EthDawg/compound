@@ -150,3 +150,23 @@ employees, and keep finalisation, publication and payment distinct.
 explicit URLs and company boundaries take precedence. Workday additionally keeps
 its existing scenario query. Neither the return screen nor a saved scenario
 establishes a live system action.
+
+Market movement is derived in `lib/data/market-movement.ts`. Curated event
+`movement` values must already be supported by the attached source: a hire,
+award, investment or deal announcement alone does not establish growth or a
+completed acquisition. ANZ operating direction, APAC context and target ownership
+remain separate. Opposing local signals produce Mixed signals; regional or global
+expansion cannot create an ANZ direction. The window is 18 months to the dataset's
+`asOf`, not the visitor's current date.
+
+Retain the source's event-date precision. Undated records and dates spanning the
+recent-window boundary are shown separately from Recent signals. Full history
+can place coarse historic dates; it still separates undated records and excludes
+future events. `movementTimeline` selects firms by their current reading, then
+applies the chosen period to their events and explicit lineage event IDs. Do not
+substitute just each firm's newest event or pull in every event of a parent.
+
+`components/anz-movement.tsx` presents the readings and evidence. Career links use
+recorded people and their company on record; they clear incompatible filters and
+retain native browser history. A person attached to an event may be its source
+author or practice leader, so these links are labelled Career context, not hires.

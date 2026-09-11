@@ -62,7 +62,8 @@ test('awards and undated talent stories do not manufacture growth; historical de
   assert.equal(sn.companyMovement('xamplify', '2030-01-01').label, 'No recent signal');
   assert.ok(!sn.movementEvents().some((e) => e.id === 'epicon-telstra'));
   const history = sn.movementEvents('', '', '', true);
-  assert.equal(history.length, sn.ANZ_EVENTS.length);
+  assert.equal(history.length + sn.movementTimeline('', '', '', true).unplaced.length, sn.ANZ_EVENTS.length);
+  assert.ok(history.every(e => e.date !== null));
   assert.ok(history.some((e) => e.id === 'cloudgo-rgp'));
   assert.ok(sn.movementEvents('xAmplify', '', '', true).some((e) => e.id === 'epicon-telstra'));
   assert.equal(sn.ANZ_EVENTS.find((e) => e.id === 'tcloud-xamplify').date, null);

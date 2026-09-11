@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const ts = require('typescript');
 require.extensions['.ts'] = (module, filename) => module._compile(ts.transpileModule(fs.readFileSync(filename, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true } }).outputText, filename);
-const { ANZ_COMPANIES, ANZ_ACTIVE, ANZ_PEOPLE, ANZ_EVENTS, ANZ_CUSTOMERS, ANZ_LINEAGES, CAPABILITIES, searchAnz, companyMovement, movementEvents, peopleInLineage, ecosystemHref, directoryRequested } = require('../lib/data/workday-anz.ts');
+const { ANZ_COMPANIES, ANZ_ACTIVE, ANZ_PEOPLE, ANZ_EVENTS, ANZ_CUSTOMERS, ANZ_LINEAGES, CAPABILITIES, searchAnz, companyMovement, movementEvents, movementTimeline, peopleInLineage, ecosystemHref, directoryRequested } = require('../lib/data/workday-anz.ts');
 const { WORKDAY_PARTNERS } = require('../lib/data/workday-partners.ts');
 
 test('all intelligence links resolve to real companies, people, capabilities, customers and directory entries', () => {
@@ -60,16 +60,19 @@ test('movement uses dated evidence, expires and labels the acquired target rathe
   assert.equal(companyMovement('kainos', undefined, [{ ...event, movement: 'Contracting' }]).label, 'Contracting');
 });
 
-test('movement filters and firm counts refer to the same recent signals, with history retained in lineage', () => {
+test('movement filters select firms while period selection retains their wider dated context', () => {
   const acquired = movementEvents('', '', 'Acquired');
-  assert.deepEqual(acquired.map((e) => e.id), ['intecrowd-ust']);
-  for (const state of ['Building', 'Growing', 'Acquired', 'Contracting']) {
-    const expected = new Set(searchAnz('', '', state).map((c) => companyMovement(c.id).event.id));
-    assert.deepEqual(new Set(movementEvents('', '', state).map((e) => e.id)), expected);
+  assert.ok(acquired.some(e => e.id === 'intecrowd-ust'));
+  assert.ok(acquired.some(e => e.companyIds.includes('intecrowd') && !e.movement), 'non-directional context remains');
+  for (const state of ['Building', 'Growing', 'Acquired', 'Contracting', 'Mixed signals']) {
+    for (const company of searchAnz('', '', state)) {
+      assert.ok(movementEvents('', '', state).some(e => e.id === companyMovement(company.id).event.id), `${company.name} keeps its evidence`);
+    }
   }
-  assert.ok(!movementEvents().some((e) => e.id === 'tom-acquisition'));
-  assert.ok(ANZ_LINEAGES.some((l) => l.eventIds.includes('tom-acquisition')));
-  assert.ok(movementEvents().some((e) => e.id === 'bosley-go' && e.date === null));
+  assert.ok(!movementEvents().some(e => e.id === 'tom-acquisition'));
+  assert.ok(movementEvents('', '', 'Building', true).some(e => e.id === 'tom-acquisition'), 'a current build retains the recorded origin');
+  assert.ok(!movementEvents().some(e => e.date === null));
+  assert.ok(movementTimeline().unplaced.some(e => e.id === 'bosley-go'));
 });
 
 test('new views preserve deep-link state while old directory URLs retain their original destination', () => {
