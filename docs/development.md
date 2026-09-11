@@ -130,3 +130,11 @@ The offline worker serves only the Pocket scenarios as navigation fallbacks. It
 caches successful immutable build assets, never development scripts. Development
 unregisters Compound's existing worker; reload once if an older worker controlled
 the page. A research or company route must never become a Pocket scene offline.
+
+
+ServiceNow scenes live in `components/studies/servicenow/`. The incident and AI
+change have separate components; EmployeeWorks remains in `app.tsx`.
+`lib/data/servicenow-scenarios.ts` owns the fictional transitions and role guards.
+`lib/data/servicenow-session.ts` replays recorded actions and isolates resets;
+`session.ts` binds that record to the browser session. Keep runtime receipts,
+observed outcomes and governance decisions distinct when extending a scene.
