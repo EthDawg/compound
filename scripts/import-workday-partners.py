@@ -90,6 +90,7 @@ def normalize(record, profile):
     attrs = {a['name']: a.get('value') if a.get('value') is not None else a.get('valueKeys') for a in profile['customAttributes']}
     name = clean(attrs.get('company_nick_name') or raw.get('appdirect_company_nick_name') or profile['name'])
     description = clean(attrs.get('partner_full_description'))
+    product_text = ' '.join((description, clean(attrs.get('partner_short_description'))))
     declared_services = strings(attrs.get('service_type'))
     # Do not infer the services of a staffing firm from its description of clients' projects.
     staffing_firm = bool(re.search(r'(?:Staffing [Pp]artner|staffing (?:firm|provider)|recruitment firm|staff augmentation)', description))
@@ -107,6 +108,7 @@ def normalize(record, profile):
         'Alexander Mann Solutions Limited (AMS)': ['Application Management Services'],
         'TeamBuilder, LLC': ['Staffing'],
         'WDMarketdesk, LLC': ['Deployment'],
+        'The Squires Group, Inc.': ['Deployment', 'Application Management Services'],
     }.get(profile['name'], [])
     tags = [tag for tag in tags if tag['basis']=='directory' or tag['name'] not in excluded]
     scope = []
@@ -118,7 +120,7 @@ def normalize(record, profile):
     for label, pattern in PRODUCTS.items():
         if any(item['product'] == label for item in scope):
             product_tags.append({'name':label,'basis':'directory'})
-        elif re.search(pattern, description, re.I):
+        elif re.search(pattern, product_text, re.I):
             product_tags.append({'name':label,'basis':'profile'})
     # These are declared coverage fields, never headquarters or guessed delivery locations.
     regions = strings(attrs.get('service_supported_regions'))

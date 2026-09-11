@@ -20,13 +20,14 @@ export interface AnzEvent extends Fact {
   // An acquisition can affect both companies but changes ownership only for the target.
   targetIds?: string[];
 }
-export interface AnzCustomer { id: string; name: string; companyId: string; capabilities: Capability[]; fact: Fact }
+export interface AnzCustomer { id: string; name: string; companyId: string; capabilities: Capability[]; fact: Fact; anonymous?: boolean }
 export interface Lineage { id: string; title: string; reading: string; companyIds: string[]; eventIds: string[] }
 
 export interface EcosystemConfig {
   id: 'workday' | 'servicenow'; name: string; path: string; asOf: string;
   title: string; intro: string; note: string; capabilities: string[];
   capabilityGroups?: { label: string; values: string[] }[];
+  insights?: { title: string; text: string; ask: string; companyIds: string[] }[];
   research: { companies: AnzCompany[]; people: AnzPerson[]; events: AnzEvent[]; customers: AnzCustomer[]; lineages: Lineage[] };
 }
 // Month/year precision stays visible; use the start of the period conservatively for recency.
@@ -88,9 +89,20 @@ function ecosystemHref(values: Record<string, string | undefined>, current = '')
   return `${config.path}?${params}`;
 }
 
+function capabilityEvidence(companyId: string, capability: string) {
+  const claims = anzCompany(companyId)?.capabilities.filter((c) => c.capability === capability) ?? [];
+  const cases = ANZ_CUSTOMERS.filter((c) => c.companyId === companyId && c.capabilities.includes(capability));
+  if (cases.some((c) => !c.anonymous)) return { key:'named', mark:'✓', label:'Named ANZ customer case' };
+  if (cases.length) return { key:'anonymous', mark:'◐', label:'ANZ case; customer is anonymous' };
+  if (claims.some((c) => c.scope === 'ANZ' && c.basis !== 'credentials')) return { key:'local', mark:'●', label:'Published ANZ offer' };
+  if (claims.length && claims.every((c) => c.basis === 'credentials')) return { key:'credentials', mark:'◇', label:'Credentials only; see stated geography and service scope' };
+  if (claims.length) return { key:'global', mark:'G', label:'APAC or global offer only' };
+  return { key:'unknown', mark:'—', label:'Not established in this research' };
+}
+
 
 return { ...config, ANZ_COMPANIES, ANZ_PEOPLE, ANZ_EVENTS, ANZ_CUSTOMERS, ANZ_LINEAGES, ANZ_ACTIVE,
   CAPABILITIES: config.capabilities, anzCompany, companyPeople, peopleInLineage, companyEvents,
-  companyMovement, searchAnz, movementEvents, ecosystemHref };
+  companyMovement, searchAnz, movementEvents, ecosystemHref, capabilityEvidence };
 }
 export type Ecosystem = ReturnType<typeof createEcosystem>;

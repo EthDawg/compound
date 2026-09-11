@@ -8,6 +8,7 @@ import { ALL_VENDORS, nodesAt, BOARD_STATS, type Node as AtlasNode, type Level }
 import { ARCHETYPE_COLOR, SECTOR_COLOR, PAPER } from "@/lib/data/palette";
 import { AtlasSearch } from "./atlas-search";
 import { AtlasMaps } from "./atlas-maps";
+import { SiEvidence } from "./si-evidence";
 import { useNarrow } from "./use-narrow";
 import * as I from "./icons";
 import { StudyLink } from "./study-link";
@@ -160,7 +161,7 @@ export function Atlas() {
             <span className="grid h-6 w-6 place-items-center rounded-[5px]" style={{ background: PAPER.ink, color: PAPER.highlight }}>
               <I.ILayers className="h-3.5 w-3.5" />
             </span>
-            <span className="text-[14px] font-semibold tracking-tight">Atlas</span>
+            <span className="text-[14px] font-semibold tracking-tight">Compound</span>
           </Link>
           <span className="hidden text-[11.5px] lg:block" style={{ color: PAPER.faint }}>
             {BOARD_STATS.vendors} vendors · {BOARD_STATS.categories} categories · {BOARD_STATS.sectors} sectors
@@ -463,6 +464,7 @@ function Detail({ n, onClose }: { n: AtlasNode; onClose: () => void }) {
           {n.archetype}{n.geo ? ` · ${n.geo}` : ""} · {s?.name}
         </p>
         <p className="mt-2.5 text-[14px] leading-[1.62]">{n.blurb}</p>
+        <SiEvidence id={n.id} />
       </div>
 
       <div className="flex flex-wrap gap-2 border-b px-5 py-3" style={{ borderColor: PAPER.lineSoft }}>

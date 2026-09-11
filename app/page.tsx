@@ -1,9 +1,9 @@
 import { Atlas } from "@/components/atlas";
 
 export const metadata = {
-  title: "Atlas — the software board, drawn four ways",
+  title: "Compound — the technology field guide",
   description:
-    "Ten sectors, forty-odd categories and a hundred-plus vendors, plotted under four incompatible definitions of relevance. Zoom from sector to category to vendor.",
+    "Find software companies and delivery partners, then explore their products, people, global dependencies and technical foundations.",
 };
 
 export default function Page() {

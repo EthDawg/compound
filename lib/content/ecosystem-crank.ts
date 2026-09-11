@@ -138,18 +138,18 @@ export const CRANK: Record<string, Crank> = {
   },
 
   accenture: {
-    skills: [
-      { name: "Managing the vendor ecosystem", why: "Practice economics depend on partnerships with the platforms being implemented. Being simultaneously the largest partner and a quasi-competitor requires constant management." },
-      { name: "Talent pyramid economics", why: "The model turns on leverage — junior hours sold at a multiple. It is the source of the margin and the source of the exposure." },
-      { name: "Repositioning ahead of your own automation", why: "The hardest thing on this map. A large share of the revenue is implementation hours that agents are aimed squarely at, and the transition has to be made while the old model still pays for it." },
-    ],
-    trajectory: [
-      { vector: "Outcome pricing instead of hours", note: "The obvious answer and a genuinely difficult one — it moves delivery risk onto the firm." },
-      { vector: "Agent-augmented delivery", note: "Doing the same work with fewer hours protects margin and shrinks revenue at the same time." },
-      { vector: "Owned IP and assets", note: "Every services firm attempts this. Few succeed, because the incentives inside a leveraged model fight it." },
-    ],
-    watch: "Whether contract structures shift from time-and-materials toward outcomes. That is the visible signal that the exposure is being managed rather than absorbed.",
-  },
+  skills: [
+    { name: "Ecosystem and domain integration", why: "Make platform capabilities work with a client's data, processes and obligations; keep responsibility clear across partners." },
+    { name: "Delivery economics", why: "Allocate people and automation to the engagement, and understand how its contract shares productivity gains and risk." },
+    { name: "Operating-model change", why: "Bring specialist capabilities into repeatable delivery without weakening quality, handoffs or client accountability." },
+  ],
+  trajectory: [
+    { vector: "Integrated services", note: "Accenture's 2026 Reinvention Services redesign is a concrete organisational move. Test whether delivery becomes more coherent for the client." },
+    { vector: "AI-enabled delivery", note: "Lower effort can support margin, lower client cost or more output. None follows automatically without appropriate scope and commercial terms." },
+    { vector: "Reusable products and assets", note: "Look for repeat use and lower delivery cost, while checking maintenance responsibility and client portability." },
+  ],
+  watch: "Cost and quality per completed outcome, the contract's allocation of risk, and whether clients renew or expand the resulting service.",
+},
 
   constellation: {
     skills: [

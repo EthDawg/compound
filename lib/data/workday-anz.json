@@ -23,6 +23,38 @@
           "text": "Included in the local deployment network.",
           "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
           "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "APAC",
+          "text": "Workday directory publishes APAC AMS competencies covering Payroll, Financial Management and Extend; this is not a named ANZ deployment.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=f46d2a28-f139-4c18-bfdb-1f3db029423f",
+          "source": "Workday directory",
+          "basis": "credentials"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "APAC",
+          "text": "Workday directory publishes APAC AMS competencies covering Payroll, Financial Management and Extend; this is not a named ANZ deployment.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=f46d2a28-f139-4c18-bfdb-1f3db029423f",
+          "source": "Workday directory",
+          "basis": "credentials"
+        },
+        {
+          "capability": "Finance",
+          "scope": "APAC",
+          "text": "Workday directory publishes APAC AMS competencies covering Payroll, Financial Management and Extend; this is not a named ANZ deployment.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=f46d2a28-f139-4c18-bfdb-1f3db029423f",
+          "source": "Workday directory",
+          "basis": "credentials"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "APAC",
+          "text": "Workday directory publishes APAC AMS competencies covering Payroll, Financial Management and Extend; this is not a named ANZ deployment.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=f46d2a28-f139-4c18-bfdb-1f3db029423f",
+          "source": "Workday directory",
+          "basis": "credentials"
         }
       ],
       "watch": "Named government delivery outcomes and the retention of the incoming team would show whether leadership appointments have become durable delivery capacity.",
@@ -31,6 +63,11 @@
         "text": "Named in the May 2026 launch.",
         "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
         "source": "Workday"
+      },
+      "partnerStatus": {
+        "text": "Workday lists Deployment and AMS; published product-region competencies here are for APAC AMS.",
+        "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=f46d2a28-f139-4c18-bfdb-1f3db029423f",
+        "source": "Workday directory"
       }
     },
     {
@@ -173,6 +210,22 @@
           "text": "Federation University case describes HCM and Payroll go-live followed by ongoing enhancements; Finance and Student remain future phases.",
           "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
           "source": "Company source"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Federation University case describes advisory for integrations and workload migration to AWS in preparation for a future Financials phase. Finance and Student remain future phases in this source.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source",
+          "customerId": "federation-university"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Federation University case describes advisory for integrations and workload migration to AWS in preparation for a future Financials phase. Finance and Student remain future phases in this source.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source",
+          "customerId": "federation-university"
         }
       ],
       "watch": "Current ANZ leadership, local delivery and retained capability matter more than assuming that an individual departure means practice contraction.",
@@ -228,7 +281,7 @@
       "directorySlug": "kliqtek-pty-ltd",
       "founded": {
         "text": "Founded in 2024 by Dougall and Trish McBurnie.",
-        "url": "https://www.kliqtek.com/about-kliqtek",
+        "url": "https://www.kliqtek.com/kliqtek-about",
         "source": "Company source"
       },
       "go": {
@@ -512,7 +565,10 @@
         "text": "Named in the current cohort; joining date not established.",
         "url": "https://blog.workday.com/en-au/outgrowing-your-tech-a-guide-for-aussie-business-leaders.html",
         "source": "Workday"
-      }
+      },
+      "aliases": [
+        "Bosley AI"
+      ]
     },
     {
       "id": "datacom",
@@ -757,6 +813,30 @@
           "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
           "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
           "source": "Company source"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "KPMG names its University of Queensland HR transformation and Workday implementation; no Student go-live is claimed.",
+          "url": "https://kpmg.com/au/en/why-kpmg/clients/transforming-hr-with-workday-university-of-queensland-client-story.html",
+          "source": "Company source",
+          "customerId": "university-of-queensland"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "KPMG names its University of Queensland HR transformation and Workday implementation; no Student go-live is claimed.",
+          "url": "https://kpmg.com/au/en/why-kpmg/clients/transforming-hr-with-workday-university-of-queensland-client-story.html",
+          "source": "Company source",
+          "customerId": "university-of-queensland"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "KPMG names its University of Queensland HR transformation and Workday implementation; no Student go-live is claimed.",
+          "url": "https://kpmg.com/au/en/why-kpmg/clients/transforming-hr-with-workday-university-of-queensland-client-story.html",
+          "source": "Company source",
+          "customerId": "university-of-queensland"
         }
       ],
       "watch": "Named Student outcomes and continued delivery across the advertised scope would establish which parts of the offer are locally repeatable.",
@@ -766,7 +846,7 @@
       "id": "deloitte",
       "name": "Deloitte",
       "kind": "Large transformation practice",
-      "thesis": "Australia’s Workday practice has named alliance and transformation leadership. The distinction to preserve is local leadership and scope versus the breadth of the international network.",
+      "thesis": "Deloitte combines Australian transformation leadership with a preconfigured implementation offer across HR and Finance. The practical distinction is how much operating-model change a client needs alongside the system deployment.",
       "owner": {
         "text": "Australian practice within the Deloitte network.",
         "url": "https://www.deloitte.com/au/en/alliances/workday.html",
@@ -792,6 +872,22 @@
           "text": "Australian alliance page describes HR transformation and operating-model work.",
           "url": "https://www.deloitte.com/au/en/alliances/workday.html",
           "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Australian alliance page offers Finance transformation and preconfigured Workday FastForward implementation; no local customer outcome is inferred from the offer.",
+          "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "Australian alliance page offers Finance transformation and preconfigured Workday FastForward implementation; no local customer outcome is inferred from the offer.",
+          "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+          "source": "Company source",
+          "basis": "offer"
         }
       ],
       "watch": "Named local scope, outcomes and current practice appointments would make the broad transformation proposition more assessable.",
@@ -843,7 +939,7 @@
       "id": "capgemini",
       "name": "Capgemini",
       "kind": "Global SI; local scope less visible",
-      "thesis": "Workday is a named technology partner on Capgemini’s Australian site. That establishes an alliance signal, but does not by itself establish local module capacity or an ANZ practice ranking.",
+      "thesis": "Capgemini has an active global Workday HCM implementation and support business. Its Australian alliance visibility is clearer than its publicly named local delivery team, so the global operating model and ANZ evidence need separate treatment.",
       "owner": {
         "text": "Workday alliance within Capgemini.",
         "url": "https://www.capgemini.com/au-en/about-us/technology-partners/",
@@ -855,7 +951,32 @@
         "source": "Company source"
       },
       "segment": "ANZ Workday segment not established",
-      "capabilities": [],
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "An August 2026 company role describes HCM implementation, enhancement and production support for global clients. This establishes activity outside ANZ, not local delivery.",
+          "url": "https://careers.capgemini.com/job/Bangalore-Workday-Functional-HCM/1383020633/",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "HCM",
+          "scope": "Global",
+          "text": "An August 2026 company role describes HCM implementation, enhancement and production support for global clients. This establishes activity outside ANZ, not local delivery.",
+          "url": "https://careers.capgemini.com/job/Bangalore-Workday-Functional-HCM/1383020633/",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "An August 2026 company role describes HCM implementation, enhancement and production support for global clients. This establishes activity outside ANZ, not local delivery.",
+          "url": "https://careers.capgemini.com/job/Bangalore-Workday-Functional-HCM/1383020633/",
+          "source": "Company source",
+          "basis": "offer"
+        }
+      ],
       "watch": "Named local Workday leaders and customer delivery would resolve the gap between alliance visibility and ANZ practice depth.",
       "directorySlug": "capgemini"
     },
@@ -1018,6 +1139,312 @@
       "capabilities": [],
       "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
       "historical": true
+    },
+    {
+      "id": "cloudrock",
+      "name": "CloudRock",
+      "kind": "Advisory and AMS consolidator",
+      "thesis": "CloudRock grows from the customer side of transformation: readiness, implementation support and ongoing optimisation. Its SuccessDay acquisition adds a European specialist to a group already operating in Australia; it does not establish a larger local delivery bench.",
+      "owner": {
+        "text": "Founder-led group; acquired SuccessDay in January 2026. Ultimate ownership percentages are not established here.",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "The company names Australia in its footprint and its APAC team participated at Workday Elevate Sydney in May 2026.",
+        "url": "https://www.wearecloudrock.com/events",
+        "source": "Company source"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "HCM",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "Finance",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "Global",
+          "text": "Published group offer spans readiness, implementation support, AMS and application development. Australia is in its footprint; local module outcomes are not established by this source.",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source",
+          "basis": "offer"
+        }
+      ],
+      "partnerStatus": {
+        "text": "CloudRock describes itself as a Workday Advisory, Services, Extend and Innovation Partner. Not returned in the current 174-record Services feed.",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "profileUrl": "https://www.wearecloudrock.com/workday/",
+      "aliases": [
+        "Cloud Rock"
+      ],
+      "watch": "Named Australian delivery and how SuccessDay expertise reaches local clients would test the regional benefit of the combination."
+    },
+    {
+      "id": "successday",
+      "name": "SuccessDay",
+      "kind": "Lineage context",
+      "thesis": "Acquired by CloudRock in January 2026; retains its own brand, culture and leadership. Its separate Workday listing remains visible.",
+      "owner": {
+        "text": "Acquired by CloudRock in January 2026; retains its own brand, culture and leadership. Its separate Workday listing remains visible.",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not a separately assessed ANZ practice.",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "historical": true,
+      "watch": "This node explains ownership and career lineage, not a separate local delivery assessment.",
+      "directorySlug": "successday-b-v"
+    },
+    {
+      "id": "strada",
+      "name": "Strada",
+      "directorySlug": "strada",
+      "aliases": [
+        "Alight payroll and professional services"
+      ],
+      "kind": "Payroll operations and Workday delivery",
+      "thesis": "Strada combines Workday delivery with the operating knowledge of a payroll and HCM services business. Its 2024 separation from Alight matters: the capability continued under a new owner and brand, with Australian customer delivery now published under Strada.",
+      "owner": {
+        "text": "Alight sold its Payroll and Professional Services business to an H.I.G. Capital affiliate; completion announced 12 July 2024. The business was renamed Strada.",
+        "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Published HCM deployment for Brisbane-based Wesley Mission Queensland.",
+        "url": "https://stradaglobal.com/au/insights/how-wmq-transformed-hr-for-reduced-costs-with-strada-workday/",
+        "source": "Company source"
+      },
+      "segment": "Mid-market / Enterprise",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Strada names its Wesley Mission Queensland deployment across HCM, Recruiting, Learning, Talent, Peakon and Journeys; this is not evidence of native Australian Payroll implementation.",
+          "url": "https://stradaglobal.com/au/insights/how-wmq-transformed-hr-for-reduced-costs-with-strada-workday/",
+          "source": "Company source",
+          "customerId": "wesley-mission-queensland"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Strada names its Wesley Mission Queensland deployment across HCM, Recruiting, Learning, Talent, Peakon and Journeys; this is not evidence of native Australian Payroll implementation.",
+          "url": "https://stradaglobal.com/au/insights/how-wmq-transformed-hr-for-reduced-costs-with-strada-workday/",
+          "source": "Company source",
+          "customerId": "wesley-mission-queensland"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Australian Workday HCM offer includes advisory, deployment and ongoing optimisation/support.",
+          "url": "https://stradaglobal.com/au/partners/workday/wd-hcm/",
+          "source": "Company source",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Australian Workday HCM offer includes advisory, deployment and ongoing optimisation/support.",
+          "url": "https://stradaglobal.com/au/partners/workday/wd-hcm/",
+          "source": "Company source",
+          "basis": "offer"
+        }
+      ],
+      "watch": "The useful boundary is between implementing Workday, connecting payroll providers and running payroll operations; inspect the actual scope and accountable team for each client."
+    },
+    {
+      "id": "alight",
+      "name": "Alight",
+      "kind": "Lineage context",
+      "thesis": "Divested its Payroll and Professional Services business in July 2024; Alight itself continued as a separate benefits-focused business.",
+      "owner": {
+        "text": "Divested its Payroll and Professional Services business in July 2024; Alight itself continued as a separate benefits-focused business.",
+        "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not a separately assessed ANZ practice.",
+        "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "historical": true,
+      "watch": "This node explains ownership and career lineage, not a separate local delivery assessment."
+    },
+    {
+      "id": "hig-capital",
+      "name": "H.I.G. Capital",
+      "kind": "Lineage context",
+      "thesis": "An affiliate acquired Alight’s Payroll and Professional Services business, which became Strada.",
+      "owner": {
+        "text": "An affiliate acquired Alight’s Payroll and Professional Services business, which became Strada.",
+        "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not a separately assessed ANZ practice.",
+        "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "historical": true,
+      "watch": "This node explains ownership and career lineage, not a separate local delivery assessment."
+    },
+    {
+      "id": "evoke",
+      "name": "EvokeHR",
+      "aliases": [
+        "Evoke",
+        "Evoke HR Limited"
+      ],
+      "directorySlug": "evoke",
+      "kind": "HR-led advisory, support and talent",
+      "thesis": "EvokeHR starts from HR practitioners’ knowledge of the customer organisation and combines advisory, delivery support and talent sourcing. That is a different buying proposition from a large implementation factory; its role on a project needs to be explicit.",
+      "owner": {
+        "text": "Founded and led by director Chris Casanelia; equity ownership percentages are not established here.",
+        "url": "https://evoke-hr.com/about/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Official site serves New Zealand and Australia; founder is based in Matakana.",
+        "url": "https://evoke-hr.com/about/",
+        "source": "Company source"
+      },
+      "segment": "Customer segment not quantified",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Workday profile describes HRIS advisory and implementation services plus talent sourcing; project role and local customer outcome are not independently detailed.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=5f902bb7-8b2d-4ffb-8419-1186d8fbea28",
+          "source": "Workday directory profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Workday profile describes HRIS advisory and implementation services plus talent sourcing; project role and local customer outcome are not independently detailed.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=5f902bb7-8b2d-4ffb-8419-1186d8fbea28",
+          "source": "Workday directory profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "Resourcing",
+          "scope": "ANZ",
+          "text": "Workday profile describes HRIS advisory and implementation services plus talent sourcing; project role and local customer outcome are not independently detailed.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=5f902bb7-8b2d-4ffb-8419-1186d8fbea28",
+          "source": "Workday directory profile",
+          "basis": "offer"
+        },
+        {
+          "capability": "AMS",
+          "scope": "APAC",
+          "text": "Workday lists AMS and APAC for Evoke HR Limited; no product-region competency tuple is exposed.",
+          "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=5f902bb7-8b2d-4ffb-8419-1186d8fbea28",
+          "source": "Workday directory",
+          "basis": "credentials"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Listed by Workday under Services and Innovation. Training access is a separate offer, not evidence of every implementation accreditation.",
+        "url": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=5f902bb7-8b2d-4ffb-8419-1186d8fbea28",
+        "source": "Workday directory"
+      },
+      "watch": "Named Workday outcomes and the split between advisory, embedded talent and accountable delivery would clarify its local depth."
+    },
+    {
+      "id": "fusion5",
+      "name": "Fusion5",
+      "directorySlug": "fusion5",
+      "kind": "Adaptive specialist inside a broader SI",
+      "thesis": "Fusion5 proves why product boundaries matter: its Workday strength is Adaptive Planning, including delivery alongside Microsoft finance systems. Wider acquisitions broaden the group without automatically creating a core Workday HCM or Financial Management practice.",
+      "owner": {
+        "text": "BGH-backed; majority ownership is identified by the transaction adviser on Fusion5’s 2024 Optimum acquisition.",
+        "url": "https://www.vcfcapital.com.au/case-studies/optimumconsulting",
+        "source": "Transaction adviser"
+      },
+      "founded": {
+        "text": "Company formed in 2003.",
+        "url": "https://www.fusion5.com/au/news/fusion5-repositions-itself-in-market",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Published Adaptive Planning delivery in Australia and New Zealand.",
+        "url": "https://www.fusion5.com/au/planning-and-analytics/workday-adaptive-planning/",
+        "source": "Company source"
+      },
+      "segment": "Mid-market / Enterprise",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Fusion5 implemented Adaptive Planning for the AFL, 13 clubs and two related entities in 2022, connected to Microsoft Dynamics 365 Finance and Operations. This is not Workday Financial Management implementation.",
+          "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
+          "source": "Company source",
+          "customerId": "afl"
+        },
+        {
+          "capability": "Adaptive",
+          "scope": "ANZ",
+          "text": "Fusion5 implemented Adaptive Planning for the AFL, 13 clubs and two related entities in 2022, connected to Microsoft Dynamics 365 Finance and Operations. This is not Workday Financial Management implementation.",
+          "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
+          "source": "Company source",
+          "customerId": "afl"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Fusion5 implemented Adaptive Planning for the AFL, 13 clubs and two related entities in 2022, connected to Microsoft Dynamics 365 Finance and Operations. This is not Workday Financial Management implementation.",
+          "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
+          "source": "Company source",
+          "customerId": "afl"
+        }
+      ],
+      "watch": "Repeatable Adaptive delivery and integration depth matter more here than the parent’s total size or its unrelated ERP acquisitions."
     }
   ],
   "people": [
@@ -1185,13 +1612,13 @@
       "id": "dougall-mcburnie",
       "name": "Dougall McBurnie",
       "companyId": "kliqtek",
-      "role": "Co-founder",
+      "role": "Co-founder & CEO",
       "function": "Founder",
       "domain": "Consulting company building",
       "reading": "The earlier Versor/Fujitsu cycle supplies company-building experience. It is not a prior Kliqtek Workday delivery record.",
       "current": {
-        "text": "Co-founder",
-        "url": "https://www.kliqtek.com/about-kliqtek",
+        "text": "Co-founder & CEO",
+        "url": "https://www.kliqtek.com/kliqtek-about",
         "source": "Company source"
       },
       "career": [
@@ -1216,7 +1643,7 @@
           "role": "Co-founder",
           "when": "2024",
           "text": "Co-founder",
-          "url": "https://www.kliqtek.com/about-kliqtek",
+          "url": "https://www.kliqtek.com/kliqtek-about",
           "source": "Company source"
         }
       ]
@@ -1225,13 +1652,13 @@
       "id": "trish-mcburnie",
       "name": "Trish McBurnie",
       "companyId": "kliqtek",
-      "role": "Co-founder",
+      "role": "Co-founder & Chief People & Purpose Officer",
       "function": "Founder",
       "domain": "Consulting company building",
       "reading": "The earlier Versor/Fujitsu cycle supplies company-building experience. It is not a prior Kliqtek Workday delivery record.",
       "current": {
-        "text": "Co-founder",
-        "url": "https://www.kliqtek.com/about-kliqtek",
+        "text": "Co-founder & Chief People & Purpose Officer",
+        "url": "https://www.kliqtek.com/kliqtek-about",
         "source": "Company source"
       },
       "career": [
@@ -1256,7 +1683,7 @@
           "role": "Co-founder",
           "when": "2024",
           "text": "Co-founder",
-          "url": "https://www.kliqtek.com/about-kliqtek",
+          "url": "https://www.kliqtek.com/kliqtek-about",
           "source": "Company source"
         }
       ]
@@ -1554,6 +1981,78 @@
           "text": "Sales recognition account.",
           "url": "https://www.linkedin.com/posts/michael-shnider-9956303_excited-to-share-that-i-have-won-the-sales-activity-7171663998835175424-5wU9",
           "source": "Personal account"
+        }
+      ]
+    },
+    {
+      "id": "minos-ataliotis",
+      "name": "Minos Ataliotis",
+      "companyId": "cloudrock",
+      "role": "Founder and CEO",
+      "function": "Founder",
+      "domain": "HR / Finance transformation",
+      "reading": "The acquisition joins advisory and AMS businesses rather than erasing their separate brands.",
+      "current": {
+        "text": "Founder and CEO",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "cloudrock",
+          "role": "Founder and CEO",
+          "when": "January 2026 acquisition announcement",
+          "text": "Founder and CEO",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "bas-eggelaar",
+      "name": "Bas Eggelaar",
+      "companyId": "successday",
+      "role": "Founder and CEO",
+      "function": "Founder",
+      "domain": "HRIT / AMS",
+      "reading": "SuccessDay retains its leadership under CloudRock. His role belongs to the acquired brand, not automatically to the Australian practice.",
+      "current": {
+        "text": "Founder and CEO",
+        "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "successday",
+          "role": "Founder and CEO",
+          "when": "January 2026 acquisition announcement",
+          "text": "Founder and CEO",
+          "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "chris-casanelia",
+      "name": "Chris Casanelia",
+      "companyId": "evoke",
+      "role": "Founder and Director",
+      "function": "Founder",
+      "domain": "HR technology / advisory",
+      "reading": "HR line experience preceded HR technology consulting; the company also carries recruitment and sourcing capability. Prior employers are not named by the source.",
+      "current": {
+        "text": "Founder and Director",
+        "url": "https://evoke-hr.com/about/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "evoke",
+          "role": "Founder and Director",
+          "when": "Current company page, checked September 2026",
+          "text": "Founder and Director",
+          "url": "https://evoke-hr.com/about/",
+          "source": "Company source"
         }
       ]
     }
@@ -1914,6 +2413,84 @@
       "text": "Workday names Accenture as the advisory and implementation partner.",
       "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
       "source": "Company source"
+    },
+    {
+      "id": "cloudrock-successday",
+      "date": "2026-01-06",
+      "dateLabel": "6 January 2026 · announced",
+      "companyIds": [
+        "cloudrock",
+        "successday"
+      ],
+      "personIds": [
+        "minos-ataliotis",
+        "bas-eggelaar"
+      ],
+      "type": "Acquisition",
+      "title": "CloudRock acquires SuccessDay",
+      "implication": "Advisory, readiness and AMS consolidate while the acquired brand and leaders stay visible. Local growth is not quantified.",
+      "scope": "Global",
+      "text": "CloudRock announced its acquisition of SuccessDay, which retains its brand and leadership.",
+      "url": "https://www.wearecloudrock.com/insights/cloudrock-announces-acquisition-of-successday",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "successday"
+      ]
+    },
+    {
+      "id": "alight-strada-carveout",
+      "date": "2024-07-12",
+      "dateLabel": "12 July 2024 · completed",
+      "companyIds": [
+        "alight",
+        "strada",
+        "hig-capital"
+      ],
+      "personIds": [],
+      "type": "Acquisition",
+      "title": "Alight services business becomes Strada",
+      "implication": "A business carve-out changes ownership and brand; it is not a sale of the whole Alight company.",
+      "scope": "Global",
+      "text": "Alight announced completion of its Payroll and Professional Services divestiture to an H.I.G. affiliate.",
+      "url": "https://www.alight.com/about/newsroom/alight-completes-sale-payroll-proserve-business",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "strada"
+      ]
+    },
+    {
+      "id": "strada-wmq-case",
+      "date": "2025-09-18",
+      "dateLabel": "18 September 2025 · case published",
+      "companyIds": [
+        "strada"
+      ],
+      "personIds": [],
+      "type": "Client delivery",
+      "title": "WMQ HCM deployment documented",
+      "implication": "A named Australian non-profit provides delivery evidence behind the new brand, without establishing a practice growth rate.",
+      "scope": "ANZ",
+      "text": "Strada published its Wesley Mission Queensland HCM deployment case.",
+      "url": "https://stradaglobal.com/au/insights/how-wmq-transformed-hr-for-reduced-costs-with-strada-workday/",
+      "source": "Company source"
+    },
+    {
+      "id": "fusion5-afl-delivery",
+      "date": "2022",
+      "dateLabel": "2022 · rollout year",
+      "companyIds": [
+        "fusion5"
+      ],
+      "personIds": [],
+      "type": "Client delivery",
+      "title": "AFL combines Adaptive with Microsoft finance",
+      "implication": "Workday planning can sit beside another ERP. Adaptive delivery should not be counted as a core Financial Management implementation.",
+      "scope": "ANZ",
+      "text": "Fusion5’s case identifies its Adaptive Planning deployment and Dynamics integration for the AFL group.",
+      "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
+      "source": "Company source"
     }
   ],
   "customers": [
@@ -1984,11 +2561,68 @@
         "Implementation",
         "HCM",
         "Payroll",
-        "AMS"
+        "AMS",
+        "Advisory",
+        "Data / Integration / AI"
       ],
       "fact": {
         "text": "Published HCM and Payroll delivery with subsequent enhancements. The case does not establish completed Finance or Student deployment.",
         "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "university-of-queensland",
+      "name": "The University of Queensland",
+      "companyId": "kpmg",
+      "capabilities": [
+        "Advisory",
+        "Implementation",
+        "HCM"
+      ],
+      "fact": {
+        "text": "KPMG describes a multi-year HR transformation and Workday implementation in Brisbane. The page does not date go-live or establish Workday Student delivery.",
+        "url": "https://kpmg.com/au/en/why-kpmg/clients/transforming-hr-with-workday-university-of-queensland-client-story.html",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "starlight-foundation",
+      "name": "Starlight Children's Foundation",
+      "companyId": "kainos",
+      "capabilities": [],
+      "fact": {
+        "text": "Workday names Starlight and Kainos together in its ANZ partner story. This page does not expose module scope or a go-live date.",
+        "url": "https://www.workday.com/en-au/company/partners/overview.html",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "wesley-mission-queensland",
+      "name": "Wesley Mission Queensland",
+      "companyId": "strada",
+      "capabilities": [
+        "Implementation",
+        "HCM"
+      ],
+      "fact": {
+        "text": "Case published 18 September 2025 names Strada as implementation partner for Brisbane-based WMQ. HCM, recruiting, learning and engagement are documented; exact go-live date is not given.",
+        "url": "https://stradaglobal.com/au/insights/how-wmq-transformed-hr-for-reduced-costs-with-strada-workday/",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "afl",
+      "name": "Australian Football League",
+      "companyId": "fusion5",
+      "capabilities": [
+        "Implementation",
+        "Adaptive",
+        "Data / Integration / AI"
+      ],
+      "fact": {
+        "text": "Fusion5’s case dates the Adaptive rollout to 2022 for the AFL, 13 clubs and two related entities, with Dynamics 365 integration.",
+        "url": "https://www.fusion5.com/nz/planning-and-analytics/case-studies/afl/",
         "source": "Company source"
       }
     }
@@ -2064,6 +2698,32 @@
       ],
       "eventIds": [
         "intecrowd-ust"
+      ]
+    },
+    {
+      "id": "cloudrock-successday-lineage",
+      "title": "An acquisition that preserves the specialist brand",
+      "reading": "CloudRock and SuccessDay share ownership after January 2026. Their separate identities still explain who a customer works with and where experience sits.",
+      "companyIds": [
+        "cloudrock",
+        "successday"
+      ],
+      "eventIds": [
+        "cloudrock-successday"
+      ]
+    },
+    {
+      "id": "alight-strada-lineage",
+      "title": "The delivery business continues after a carve-out",
+      "reading": "Strada carries the sold payroll and professional-services business. Alight remains a different company; old references need their business boundary preserved.",
+      "companyIds": [
+        "alight",
+        "strada",
+        "hig-capital"
+      ],
+      "eventIds": [
+        "alight-strada-carveout",
+        "strada-wmq-case"
       ]
     }
   ]

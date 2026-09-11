@@ -311,39 +311,34 @@ export const DEEP: DeepRead[] = [
       "The control case. If your definition of relevance cannot account for this company, your definition is doing less work than you think.",
   },
   {
-    slug: "accenture",
-    title: "Accenture and the integrator channel",
-    headline: "The hands that make enterprise software land — pointed at by the automation they are selling",
-    bet: "Enterprise software does not deploy itself. Own the implementation, the change management and the accreditation, and capture a multiple on every licence the vendors sell.",
-    premise:
-      "The integrator is invisible on every product map and decisive in a large share of enterprise deals. For a category bought by committee with an RFP and a multi-year programme, the firm writing the evaluation criteria often matters more than the feature grid being evaluated.",
-    mustBeTrue: [
-      "Enterprise software keeps requiring substantial human implementation. This is the assumption agents are aimed directly at.",
-      "Partnership economics hold while the firm is simultaneously the platforms' largest channel and an occasional competitor to them.",
-      "The leverage model — junior hours sold at a multiple — survives a transition to work that needs fewer hours.",
-      "Clients keep buying capability they could in principle build, which has been reliably true for forty years.",
-    ],
-    agentic: {
-      position:
-        "The most structurally exposed group on the entire map, and the least discussed as such. A meaningful share of the revenue is implementation and support hours, which is precisely what agentic delivery is designed to remove.",
-      tell: "Watch contract structure, not marketing. A firm genuinely managing this exposure moves toward outcome-based pricing, because that is the only structure where doing the work in fewer hours is an increase in margin rather than a decrease in revenue.",
-    },
-    wins: [
-      "Large, complex, multi-country programmes where accountability is the purchase",
-      "Any evaluation where the client lacks the internal capability to run it",
-      "Situations where somebody senior needs a defensible recommendation",
-    ],
-    loses: [
-      "Mid-market buyers who cannot absorb the cost and do not need the ceremony",
-      "Products designed to deploy without an integrator, which is most of the compound platforms by intent",
-    ],
-    falsifier:
-      "Implementation hours per licence dollar falling materially across the industry. That is the number that decides whether this is a transition or a contraction.",
-    paradox:
-      "The channel is one of the largest forces in enterprise HR software and appears on no map of it — including, until now, this one. That omission is itself a lesson about what product-centric maps systematically miss.",
-    vsCompound:
-      "The compound platforms are partly an attack on this layer: software that does not need an integrator is software whose total cost of ownership is structurally lower. Every deployment that lands without a services programme is a small subtraction from this model.",
+  slug: "accenture",
+  title: "Accenture and the integrator channel",
+  headline: "Who owns the outcome when the work takes fewer hours?",
+  bet: "Connect advice, technology and operations around a business change, with the client buying delivery capability and continuing accountability.",
+  premise: "Accenture's consulting and managed-services businesses give it several relationships with the same client. The relevant AI question is how each service and contract changes, rather than whether every engagement depends on implementation hours.",
+  mustBeTrue: [
+    "Clients continue to need integration, domain knowledge and accountable delivery as the tools improve.",
+    "The firm turns automation into reliable outcomes rather than shifting unresolved work to the client.",
+    "Pricing, scope and delivery costs allow productivity gains to support viable economics for both parties.",
+    "The operating model can bring specialised teams together without losing responsibility at handoffs.",
+  ],
+  agentic: {
+    position: "Automation can compress routine effort while creating work in integration, evaluation, process redesign and managed operations. The balance depends on the engagement; a category-wide collapse or expansion is not established.",
+    tell: "Read the contract and the measured outcome together. Time-and-materials, fixed-price, usage and outcome-linked arrangements distribute productivity gains and delivery risk differently.",
   },
+  wins: [
+    "Complex programmes where the client needs accountable delivery across organisational boundaries",
+    "Business processes that require continuing operational support as well as a technology change",
+    "Work requiring specialised capability the client cannot readily assemble internally",
+  ],
+  loses: [
+    "Bounded changes where internal teams or a focused specialist can deliver the required outcome economically",
+    "Engagements where coordination and transition costs exceed the benefit of a broad service scope",
+  ],
+  falsifier: "Track cost per correct outcome, quality, demand and contract economics together. Falling effort accompanied by sustained outcomes and viable economics supports adaptation; shrinking demand and deteriorating economics challenge it.",
+  paradox: "The same automation can reduce delivery effort and increase the importance of whoever integrates, governs and supports the result.",
+  vsCompound: "A more integrated product can remove some implementation work. Migration, exceptions, organisational change and ongoing operations still need an owner; compare the whole outcome and cost.",
+},
   {
     slug: "constellation",
     title: "Constellation Software",

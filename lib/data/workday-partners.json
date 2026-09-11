@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-10T07:44:11+00:00",
+  "checkedAt": "2026-09-11T07:15:36+00:00",
   "directoryUrl": "https://marketplace.workday.com/en-US/pages/find-a-partner/listing#f-appdirect_comp_partner_type_id=Services",
   "directoryTotal": 174,
   "scope": "All publicly listed Services partners in the Workday Marketplace directory. Includes integrators, advisory and staffing firms. Independent firms outside this directory are not covered.",
@@ -828,7 +828,12 @@
           "basis": "directory"
         }
       ],
-      "products": [],
+      "products": [
+        {
+          "name": "Workday Adaptive Planning",
+          "basis": "profile"
+        }
+      ],
       "regions": [
         "North America"
       ],
@@ -3700,6 +3705,10 @@
       ],
       "products": [
         {
+          "name": "Human Capital Management",
+          "basis": "profile"
+        },
+        {
           "name": "Extend",
           "basis": "directory"
         }
@@ -6099,7 +6108,12 @@
           "basis": "profile"
         }
       ],
-      "products": [],
+      "products": [
+        {
+          "name": "Human Capital Management",
+          "basis": "profile"
+        }
+      ],
       "regions": [
         "APAC",
         "EMEA",
@@ -9746,10 +9760,23 @@
       "partnerTypes": [
         "Services"
       ],
-      "services": [],
+      "services": [
+        {
+          "name": "Staffing",
+          "basis": "profile"
+        }
+      ],
       "products": [
         {
           "name": "Human Capital Management",
+          "basis": "profile"
+        },
+        {
+          "name": "Financial Management",
+          "basis": "profile"
+        },
+        {
+          "name": "Workday Adaptive Planning",
           "basis": "profile"
         }
       ],
@@ -9757,7 +9784,7 @@
       "regionLabels": [],
       "industries": [],
       "scope": [],
-      "excerpt": "The Squires Group is a leading provider of ERP solutions helping our Federal, Commercial, Not-for-Profit, Utilities and SLED clients implement,…",
+      "excerpt": "The Squires Group is a Workday Services Partner providing specialized staffing and talent solutions across Workday HCM, Financials, Integrations, Adaptive…",
       "website": "",
       "sourceUrl": "https://marketplace.workday.com/pages/find-a-partner/partner-profile?vendor=fad08259-14b3-4a3e-a10b-9e58b45d74f9",
       "dataUrl": "https://marketplace.workday.com/api/custom/workday/v1/company/fad08259-14b3-4a3e-a10b-9e58b45d74f9"

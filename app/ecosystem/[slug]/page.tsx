@@ -5,6 +5,7 @@ import { ALL_COMPANIES, LENSES, volatility, companyBySlug, staleness } from "@/l
 import { crankFor } from "@/lib/content/ecosystem-crank";
 import { companyStudy, companyHref, COMPANIES } from "@/lib/companies";
 import * as I from "@/components/icons";
+import { SiEvidence } from '@/components/si-evidence';
 
 export function generateStaticParams() { return [...new Set([...DEEP.map(d=>d.slug), ...COMPANIES.filter(c=>c.strategy).map(c=>c.id)])].map(slug=>({slug})); }
 
@@ -65,6 +66,7 @@ export default async function Position({ params }: { params: Promise<{ slug: str
 
         <Block label="The bet" body={d.bet} accent />
         <Block label="The premise it rests on" body={d.premise} />
+        <SiEvidence id={slug} />
 
         <section className="mt-7">
           <h2 className="text-[11px] font-bold uppercase tracking-wider text-ink-500">What has to be true</h2>
