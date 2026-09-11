@@ -145,6 +145,17 @@ counts and bounded session replay. Payroll, candidate conversations and employme
 model comparisons reset independently. Keep jobseekers distinct from payroll
 employees, and keep finalisation, publication and payment distinct.
 
+OpenAI's three examples live in `components/studies/ai/openai/`.
+`lib/data/openai-session.ts` owns their transitions and bounded session replay;
+`session.ts` binds them to session storage with a memory fallback. They retain
+independent progress rather than implying an automated workflow between products.
+A changed Work source makes the previous artifact stale without rewriting signed
+scope. Codex separates file review, checks, staging and a fictional local commit.
+Responses keeps each proposal's approval identity and original call result;
+provider reconciliation is separate evidence. Its recovery key and definitive
+non-creation reply belong to the fictional provider contract, not an exactly-once
+guarantee from OpenAI or MCP. Keep those distinctions when extending the fixtures.
+
 `lib/data/study-context.ts` carries registered App screens through Backstage.
 `components/study-context-link.tsx` renders those destinations as native links;
 explicit URLs and company boundaries take precedence. Workday additionally keeps

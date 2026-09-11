@@ -363,3 +363,58 @@ Release validation: production build and all 109 tests pass. New cases cover
 calendar/date precision, signal expiry, mixed local direction, ownership targets,
 APAC isolation, full-history filtering, explicit lineage, unplaced evidence and
 career destinations that clear incompatible filters.
+
+## OpenAI: retain the work and make recovery inspectable
+
+The audit found three scenes that lost decisions when visitors left, a Work
+artifact that stopped at its first correction, a one-file Codex completion flag,
+and an API approval flow that did not demonstrate uncertain outcomes. The three
+examples now retain independent progress in a browser session, with per-example
+reset and tab summaries. They remain separate product interpretations.
+
+Work reconciles the old brief, signed scope and support readiness. A later roster
+change retains the previous artifact but marks it stale and removes its download
+until the updated source is inspected and the document revised. New Zealand's
+coverage gap becomes a release blocker; it does not silently narrow the signed
+ANZ scope. The revised download preserves that distinction.
+
+Codex separates implementation and tests. A failed retry fixture leads to a
+revision that clears review and check status. Visitors review and stage each
+file, inspect Branch, Last turn, Staged and Unstaged, and make a fictional local
+commit. Unstaging preserves tested working code. Committing empties the index
+while the branch diff remains. The four checks are fixed teaching fixtures,
+not tests executed in a visitor's repository.
+
+Responses starts with an excessive draft amount. Correction produces a new
+proposal and approval identity. Denial, pre-execution rejection, a returned
+receipt and a lost reply produce distinct states. An uncertain call cannot be
+repeated after an unavailable or mismatched provider record. Finding the matching
+draft resolves the business outcome without inventing a second create call or
+rewriting the original timeout. Only explicit provider confirmation that the
+operation finished without creating a draft permits a freshly approved attempt.
+The provider's recovery contract is fictional; the study does not imply that
+OpenAI or MCP guarantees exactly-once writes. A refund draft never becomes payment.
+
+Official Work, Projects, code-review, worktree and MCP documentation was checked
+on 12 September. Backstage now explains these mechanisms and their boundaries;
+the earlier company-history source dates are retained. Shared AI source and
+X-ray links carry the current screen through Backstage.
+
+Browser checks covered both Work revision cycles, stale downloads, inline source
+guidance and keyboard focus; Codex failure, revision, partial staging, unstaging,
+commit and scope changes; API correction, denial, rejection, timeout, mismatched
+and unavailable records, existing-draft reconciliation and confirmed non-creation
+followed by a fresh approval. Reload, App/Backstage continuity and independent
+reset retained the expected work. Expanded API items kept the original timeout
+and exact approval IDs. The shared Anthropic return path and ElevenLabs frame
+were also checked.
+
+Inspected 320-, 390- and 1440-pixel layouts did not overflow. Tested OpenAI controls
+meet 44 pixels, and a clean reload produced no browser errors. These are responsive
+and keyboard browser checks; physical devices and assistive technology remain
+outside this release's verification.
+
+Release validation: production build and all 118 tests pass. New cases cover
+source freshness, preserved scope, review invalidation, file-level staging,
+approval identity, distinct call outcomes, reconciliation, safe fresh attempts,
+invalid stored data and reset isolation.

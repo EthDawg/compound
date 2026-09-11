@@ -1,0 +1,58 @@
+'use client';
+import { useEffect, useState } from 'react';
+import { apiItems, attemptIds, canRetryAttempt, currentAttempt, refundArguments, refundReceipt, type Attempt, type Lookup } from '@/lib/data/openai-session';
+import { SceneTitle, Insight } from '../frame';
+import { useOpenAIFocus, type OpenAISceneProps } from './session';
+import s from '../studies.module.css';
+const money = (amount: number) => `AUD ${(amount / 100).toFixed(2)}`;
+function outcome(attempt: Attempt) {
+  if (attempt.phase === 'proposal') return attempt.amount === 4800 ? 'The proposed amount includes both the valid charge and its duplicate. Inspect the invoice before approving anything.' : 'The corrected proposal is for the duplicate only. This new request needs its own inspection and approval.';
+  if (attempt.phase === 'approved') return 'The application approved this exact draft operation. No provider result has returned.';
+  if (attempt.phase === 'denied') return 'The application denied the proposal. No call was made.';
+  if (attempt.phase === 'rejected') return 'The provider explicitly rejected this request before execution. No draft was created in this fixture.';
+  if (attempt.phase === 'superseded') return 'The amount was corrected before approval. This proposal was never executed.';
+  if (attempt.phase === 'complete') return attempt.lookup === 'found' ? 'The provider’s operation record confirms the existing draft. Recovery found it without making a second create call.' : 'The provider returned a draft receipt. A draft exists in the simulation; no money has been refunded.';
+  return attempt.lookup === 'absent' ? 'The provider confirms this operation completed without creating a draft. A fresh approved attempt is now possible.' : attempt.lookup === 'conflict' ? 'The returned record has the wrong amount. It cannot reconcile this request; the outcome remains uncertain.' : attempt.lookup === 'unavailable' ? 'The provider record is unavailable. Keep the operation unresolved and do not repeat the write.' : 'The call timed out. It may have created a draft before the reply was lost. Neither success nor failure is established.';
+}
+function Protocol({ attempt }: { attempt: Attempt }) {
+  const items = apiItems(attempt);
+  return <details className={s.protocol}><summary>Inspect API items · attempt {attempt.number}</summary><p className={s.small}>Relevant documented fields. IDs, arguments, outputs and errors are fictional. Model selection and connection credentials are omitted.</p>
+    <h4>Response output · proposed operation</h4><pre className={s.code}>{JSON.stringify(items.proposalOutput, null, 2)}</pre>
+    {items.continuationInput && <><h4>New Response input · application decision</h4><pre className={s.code}>{JSON.stringify(items.continuationInput, null, 2)}</pre><p className={s.small}>The continuation refers to the response and approval request that contained this exact proposal.</p></>}
+    {items.callOutput && <><h4>Response output · MCP call</h4><pre className={s.code}>{JSON.stringify(items.callOutput, null, 2)}</pre></>}
+    {attempt.lookup && <p className={s.small}>Provider reconciliation appears separately above. The application does not rewrite a timed-out MCP call into a successful API output.</p>}
+  </details>;
+}
+export function OpenAIResponses({ session }: OpenAISceneProps) {
+  const { state, ready, dispatch } = session, attempt = currentAttempt(state), ids = attemptIds(attempt);
+  const [lookup, setLookup] = useState<Lookup | null>(null);
+  useEffect(() => setLookup(null), [attempt.number]);
+  const chosenLookup = lookup ?? attempt.lookup ?? 'found';
+  const focus = useOpenAIFocus(state, 'response-operation');
+  const act = (action: Parameters<typeof dispatch>[0]) => focus(() => dispatch(action));
+  return <><SceneTitle product="OpenAI API · Responses inspector" title="Prepare a refund draft. Do not refund the customer." detail="Follow one proposed operation through exact approval, a provider result and recovery. A lost reply should not turn into a duplicate write." />
+    {!ready ? <p className={s.muted}>Restoring this browser’s example…</p> : <div className={s.responseGrid}>
+      <section className={`${s.card} ${s.responseContext}`}><p className={s.eyebrow}>Application context · fictional invoice</p><h2>One valid charge. One duplicate.</h2><div className={s.tableWrap}><table className={s.table}><caption className="sr-only">Invoice INV-104 for account MER-104</caption><thead><tr><th>Line</th><th>Amount</th><th>Finding</th></tr></thead><tbody><tr><td>Service charge</td><td>AUD 24.00</td><td>Valid</td></tr><tr><td>Repeated service charge</td><td>AUD 24.00</td><td>Duplicate</td></tr></tbody></table></div><p>The application may prepare a <strong>AUD 24.00 draft</strong> for account MER-104. It has no payment tool.</p>
+        <details className={s.protocol}><summary>Configured MCP boundary</summary><pre className={s.code}>{JSON.stringify({ type: 'mcp', server_label: 'meridian_support', allowed_tools: ['create_refund_draft'], require_approval: 'always' }, null, 2)}</pre><p className={s.small}>Tool discovery exposes create_refund_draft. The server connection is fictional. A configurable approval policy does not validate the business meaning of the arguments.</p></details>
+      </section>
+      <section className={`${s.card} ${s.responseOperation}`}><div className={s.row}><h2 id="response-operation" tabIndex={-1} className={s.focusTarget}>create_refund_draft</h2><span className={`${s.badge} ${attempt.phase === 'complete' ? s.good : attempt.phase === 'uncertain' ? s.warn : ''}`}>Attempt {attempt.number}</span></div>
+        <dl className={s.operation}><div><dt>Account</dt><dd>MER-104</dd></div><div><dt>Proposed amount</dt><dd>{money(attempt.amount)}</dd></div><div><dt>Operation</dt><dd>Prepare a draft</dd></div><div><dt>Approval request</dt><dd>{ids.approval}</dd></div></dl>
+        <p role="status" className={s.operationStatus}>{outcome(attempt)}</p>
+        {attempt.phase === 'proposal' && <div className={s.actions}><button className={s.secondary} disabled={attempt.inspected} onClick={() => act({ type: 'responses-inspect' })}>Inspect account, amount & scope</button>{attempt.amount === 4800 ? <button className={s.button} disabled={!attempt.inspected} onClick={() => act({ type: 'responses-correct' })}>Request the duplicate-only amount</button> : <button className={s.button} disabled={!attempt.inspected} onClick={() => act({ type: 'responses-approve' })}>Approve this demo call</button>}<button className={s.secondary} onClick={() => act({ type: 'responses-deny' })}>Deny this proposal</button></div>}
+        {attempt.phase === 'proposal' && attempt.inspected && attempt.amount === 4800 && <p className={s.small}>AUD 48.00 exceeds the supported draft amount. Feedback creates a new proposal; it cannot silently edit an approved request.</p>}
+        {attempt.phase === 'approved' && <div className={s.nextEvent}><h3>Choose the simulated provider outcome</h3><div className={s.actions}><button className={s.button} onClick={() => act({ type: 'responses-result', result: 'success' })}>Return the draft receipt</button><button className={s.secondary} onClick={() => act({ type: 'responses-result', result: 'rejection' })}>Reject before execution</button><button className={s.secondary} onClick={() => act({ type: 'responses-result', result: 'timeout' })}>Lose the reply after dispatch</button></div></div>}
+        {attempt.phase === 'uncertain' && <div className={s.nextEvent}><p className={s.eyebrow}>Application recovery · provider record</p><h3>Reconcile before repeating the write.</h3><label className={s.label}>Provider lookup fixture<select className={s.input} value={chosenLookup} onChange={e => setLookup(e.target.value as Lookup)}><option value="found">Matching draft exists</option><option value="absent">Operation finished · no draft created</option><option value="unavailable">Provider record unavailable</option><option value="conflict">Returned draft has a different amount</option></select></label><button className={s.button} onClick={() => act({ type: 'responses-lookup', result: chosenLookup })}>Read the provider’s operation record</button><p className={s.small}>This read is performed by the application in the example. It is not another create_refund_draft call or an invented API receipt.</p></div>}
+        {attempt.lookup && <div className={s.document}><p className={s.fileTitle}>Provider reconciliation · separate application evidence</p><p>{attempt.lookup === 'found' ? 'DRAFT-204 matches account MER-104, AUD 24.00 and operation demo-refund-104.' : attempt.lookup === 'absent' ? 'Operation demo-refund-104 is finished; no draft was created. The provider permits another attempt for this same operation.' : attempt.lookup === 'conflict' ? 'Returned DRAFT-999: MER-104, AUD 48.00. Amount mismatch; this record does not establish the requested AUD 24.00 draft.' : 'No authoritative operation record is available.'}</p></div>}
+        {attempt.phase === 'complete' && <div className={`${s.document} mt-5`}><h3>DRAFT-204 · awaiting review</h3><p>{money(attempt.amount)} for account MER-104. {attempt.lookup === 'found' ? 'Found through provider reconciliation.' : 'Returned by the create call.'}</p><p><strong>Refunded: no.</strong> There is no payment action in this study.</p><details className={s.protocol}><summary>Inspect the draft record</summary><pre className={s.code}>{JSON.stringify(refundReceipt(attempt), null, 2)}</pre></details></div>}
+        {canRetryAttempt(attempt) && state.responses.attempts.length < 8 && <div className={s.actions}><button className={s.secondary} onClick={() => act({ type: 'responses-retry' })}>Prepare a fresh approval request</button></div>}
+        {state.responses.attempts.length >= 8 && canRetryAttempt(attempt) && <p className={s.small}>Eight attempts recorded. Reset this example to explore another path.</p>}
+        <Protocol attempt={attempt} />
+        <details className={s.protocol}><summary>Exact tool arguments</summary><pre className={s.code}>{JSON.stringify(refundArguments(attempt), null, 2)}</pre></details>
+      </section>
+      <section className={`${s.card} ${s.responseHistory}`}><h2>Exchange history</h2><p className={s.muted}>Each proposal keeps its own identity. The same business operation stays recognisable across attempts.</p><ol className={s.checks}>{state.responses.attempts.map(item => <li key={item.number}><div><strong>Attempt {item.number} · {money(item.amount)}</strong><p className={s.small}>{outcome(item)}</p><span className={s.small}>{attemptIds(item).approval}</span></div><span className={`${s.badge} ${item.phase === 'complete' ? s.good : item.phase === 'uncertain' && item.lookup !== 'absent' ? s.warn : ''}`}>{item.lookup === 'absent' ? 'No draft' : item.phase}</span></li>)}</ol></section>
+      <section className={`${s.card} ${s.responseMethod}`}><h2>The provider owns the recovery contract.</h2><p>This example’s provider tracks <code>demo-refund-104</code> and can reconcile its operation record. The key is a field of this fictional tool, not a guarantee that OpenAI or MCP executes every write exactly once.</p><p className={s.small}>A missing record is only sufficient here when the provider explicitly confirms the operation finished without creating a draft. A timeout or an inconclusive search is not that confirmation.</p></section>
+
+    </div>}
+    <Insight><strong>Intelligence needs an execution contract.</strong> The Responses API carries a proposal, an approval decision and a tool result through another company’s product. The application still owns business validation, uncertain outcomes and the record that proves what actually happened.</Insight>
+  </>;
+}
