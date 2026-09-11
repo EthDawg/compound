@@ -41,8 +41,9 @@ layout as appropriate; a passing build alone does not verify them.
 | App scenarios | `components/studies/`, `lib/data/*-scenarios.ts` |
 | Company arguments, history and sources | `lib/content/` |
 | Atlas companies, categories and editorial positions | `lib/data/atlas.ts`, `lib/data/ecosystem.ts`, `lib/data/atlas-nodes.ts` |
-| Workday ANZ people, capabilities, events and customer evidence | `lib/data/workday-anz.json`, `lib/data/workday-anz.ts` |
-| Workday ANZ views | `components/workday-ecosystem.tsx` |
+| ANZ research: people, capabilities, events and customer evidence | `lib/data/workday-anz.json`, `lib/data/servicenow-anz.json` |
+| Shared ecosystem views and derived logic | `components/anz-ecosystem.tsx`, `lib/data/anz-ecosystem.ts` |
+| Ecosystem configuration and discovery | `lib/data/*-anz.ts`, `lib/ecosystem-index.ts` |
 | Global Workday directory snapshot and enrichment | `lib/data/workday-partners.json`, `lib/data/workday-partners.ts` |
 | Canonical company routes | `app/companies/[company]/` |
 
@@ -59,8 +60,17 @@ gap with another company’s content.
 
 Update the affected facts and their sources together. Review acquisition status,
 role dates and regional scope. The ANZ movement view derives recent signals
-relative to `ANZ_AS_OF`; advance that date only after reviewing the evidence.
-Its local-size fields must not borrow company-wide headcounts.
+relative to each ecosystem’s `asOf` date; advance it only after reviewing the evidence.
+Its local-size fields must not borrow company-wide headcounts. Keep month/year
+precision instead of inventing exact dates. Historical roles must stay labelled;
+a credential does not establish local delivery, and an award does not by itself
+establish practice growth.
+
+The finder derives partner entries from the research and merges shared company
+IDs. Keep one ID across platforms when the company is the same, with separate
+practice links. Historical firms remain addressable as lineage context. Add
+platform-specific capabilities in configuration rather than changing another
+platform’s vocabulary.
 
 For the global directory, `python3 scripts/import-workday-partners.py` prepares
 a snapshot update. Review the diff, profile-derived tags and curated additions

@@ -13,6 +13,7 @@ export function CompoundBar({ activeId }: { activeId: string }) {
   const { on, toggle } = useXRay();
   const path = usePathname();
   const active = companyStudy(activeId);
+  const ecosystem = path.startsWith("/atlas/");
   const backstage = path.includes("/backstage");
   useEffect(() => {
     if (active) {
@@ -33,13 +34,14 @@ export function CompoundBar({ activeId }: { activeId: string }) {
         </div>
         {active && <nav aria-label="Company views" className="flex items-center gap-0.5 rounded-lg bg-ink-100 p-1 text-[12px] font-semibold">
           {(["app", "backstage"] as const).map((view) => <Link key={view} href={companyHref(active.id, view)}
-            aria-current={(view === "backstage") === backstage ? "page" : undefined}
-            className={`rounded-md px-2 py-1.5 sm:px-3 ${(view === "backstage") === backstage ? "bg-white text-ink shadow-sm" : "text-ink-500 hover:text-ink"}`}>
+            aria-current={!ecosystem && (view === "backstage") === backstage ? "page" : undefined}
+            className={`rounded-md px-2 py-1.5 sm:px-3 ${!ecosystem && (view === "backstage") === backstage ? "bg-white text-ink shadow-sm" : "text-ink-500 hover:text-ink"}`}>
             {view === "app" ? "App" : "Backstage"}
           </Link>)}
+          {active.ecosystem && <Link href={active.ecosystem.href} aria-current={ecosystem ? 'page' : undefined} className={`rounded-md px-2 py-1.5 sm:px-3 ${ecosystem ? 'bg-white text-ink shadow-sm' : 'text-ink-500 hover:text-ink'}`}>Ecosystem</Link>}
         </nav>}
         <div className="ml-auto flex items-center gap-2">
-          {!backstage && <button onClick={toggle} aria-pressed={on} aria-label="Toggle X-ray" title="X-ray · press X"
+          {!backstage && !ecosystem && <button onClick={toggle} aria-pressed={on} aria-label="Toggle X-ray" title="X-ray · press X"
             className={`hidden h-8 w-8 sm:grid place-items-center rounded-md ${on ? "bg-signal text-ink" : "text-ink-500 hover:bg-ink-100"}`}><I.IEye className="h-4 w-4" /></button>}
           <Link href="/" className="hidden text-[12px] font-medium text-ink-500 hover:text-ink sm:block">Atlas</Link>
           <Link href="/desk" className="hidden text-[12px] font-medium text-ink-500 hover:text-ink md:block">Desk</Link>

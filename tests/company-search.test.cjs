@@ -9,7 +9,8 @@ const { COMPANIES } = require('../lib/companies.ts');
 const first = (q) => searchCompanies(q)[0]?.company.id;
 
 test('one catalogue includes every Atlas company and every full study exactly once', () => {
-  assert.equal(COMPANY_INDEX.length, ALL_VENDORS.length);
+  assert.ok(ALL_VENDORS.every((c) => COMPANY_INDEX.some((entry) => entry.id === c.id)));
+  assert.ok(COMPANY_INDEX.filter((c) => !c.atlasListed).every((c) => c.ecosystemLinks.length));
   assert.equal(new Set(COMPANY_INDEX.map((c) => c.id)).size, COMPANY_INDEX.length);
   assert.deepEqual(COMPANY_INDEX.filter((c) => c.studyId).map((c) => c.id).sort(), COMPANIES.map((c) => c.id).sort());
 });

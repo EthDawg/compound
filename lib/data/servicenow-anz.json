@@ -1,0 +1,2106 @@
+{
+  "companies": [
+    {
+      "id": "xamplify",
+      "name": "xAmplify",
+      "kind": "ANZ integrator",
+      "thesis": "A repeat operator building another platform: Epicon experience, growth capital and acquired teams make the story more specific than an Elite badge. The test is whether broader reach preserves specialist delivery quality.",
+      "watch": "Retained architects and named national wins would show whether acquisition-led breadth is becoming deeper local delivery.",
+      "owner": {
+        "text": "Growth investment from Macquarie Capital Principal Finance; the source describes investment, not a full sale.",
+        "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
+        "source": "xAmplify · expansion announcement"
+      },
+      "presence": {
+        "text": "Canberra base; Australian delivery and published NZ coverage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow implementation is a stated core service.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Ongoing platform sustainment is explicitly offered.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Workflow automation and continued platform development are central to the offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+      "founded": {
+        "text": "Founded in 2018.",
+        "url": "https://www.servicenow.com/partners/partner-finder/xamplify-services-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      }
+    },
+    {
+      "id": "kinetic-it",
+      "name": "Kinetic IT",
+      "kind": "ANZ integrator",
+      "thesis": "Operational heritage is the differentiator: a national practice connecting implementation to ongoing service delivery. The 2026 Rising Star award adds recognition; it does not establish local headcount growth.",
+      "watch": "Named enterprise outcomes beyond ITSM would establish whether platform breadth is matching the award recognition.",
+      "owner": {
+        "text": "Australian enterprise technology provider with national operations.",
+        "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Perth headquarters and a national Australian ServiceNow practice; platform work since 2012.",
+        "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Strategic consulting and design across the Now Platform.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "National practice offering implementation.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Support alongside ITSM, SIAM and security services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "IT service management and service integration are explicit foundations.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/kinetic-it-pty-ltd.html"
+    },
+    {
+      "id": "novabridge",
+      "name": "Novabridge",
+      "kind": "Specialist",
+      "thesis": "Commercial leadership and secure-platform architecture sit together here. Glen Watson’s Defence and federal career makes the public-sector proposition more tangible than a broad list of certifications.",
+      "watch": "Named delivery outcomes and senior architecture hires outside Canberra would strengthen the expansion story.",
+      "owner": {
+        "text": "Australian-founded and owned SME, formed in 2018.",
+        "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Australian-founded specialist with Kingston and Wellington offices listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Focused enterprise engagements",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Greenfield deployments and tailored solutions.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Integration and client-specific platform development.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/novabridge-pty-ltd.html"
+    },
+    {
+      "id": "ac3",
+      "name": "AC3",
+      "kind": "ANZ integrator",
+      "thesis": "JDS brings a second specialist team into an existing managed-services business. The opportunity is continuity from project to operations; the integration question is who retains technical authority.",
+      "watch": "Retention of the JDS leadership cohort and repeatable customer outcomes would matter more than the combined company size.",
+      "owner": {
+        "text": "Privately owned AC3 acquired JDS; the combined workforce spans several technology disciplines.",
+        "url": "https://www.ac3.com.au/resources/ac3-announces-acquisition-of-jds",
+        "source": "AC3 · acquisition announcement"
+      },
+      "presence": {
+        "text": "Sydney-led provider with Australian and New Zealand coverage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Platform and service-delivery maturity assessment.",
+          "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Greenfield projects, upgrades and enterprise service-management enablement.",
+          "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow managed support services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html"
+    },
+    {
+      "id": "nexon",
+      "name": "Nexon",
+      "kind": "ANZ integrator",
+      "thesis": "Its distinctive signal is a mechanism for creating capacity: recruiting and developing graduates through ServiceNow’s talent programmes. That matters in a market where buying experienced people is only one growth route.",
+      "watch": "Dated recruitment cohorts, retention and customer delivery would show whether training is translating into sustained practice growth.",
+      "owner": {
+        "text": "Published as Nexon. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/nexon-asia-pacific-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Australian mid-market, enterprise and government provider. Group workforce is not ServiceNow practice size.",
+        "url": "https://www.servicenow.com/partners/partner-finder/nexon-asia-pacific-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow describes an advisory-led consulting practice.",
+          "url": "https://www.servicenow.com/au/customers/nexon-riseup.html",
+          "source": "ServiceNow · Nexon talent story"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Premier · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/nexon-asia-pacific-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/nexon-asia-pacific-pty-ltd.html"
+    },
+    {
+      "id": "gqi",
+      "name": "GQI Consulting",
+      "kind": "Specialist",
+      "thesis": "An Australian engagement model with an India delivery footprint. The useful question is how the local senior team works with that bench, rather than treating Select as a verdict on quality.",
+      "watch": "Named local practice leaders and delivery references would clarify where architecture and accountability sit.",
+      "owner": {
+        "text": "Australian-owned ServiceNow specialist.",
+        "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Offices in Melbourne, Sydney, Brisbane, Perth and Bengaluru.",
+        "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Focused enterprise engagements",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow consulting and process optimisation.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Custom workflows and platform solutions.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Customer",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Select · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/gqi-consulting-pty-ltd.html"
+    },
+    {
+      "id": "p1",
+      "name": "P1 Consulting",
+      "kind": "Specialist",
+      "thesis": "Long practitioner roots and a focused ServiceNow offer are the proposition. Public founder attribution remains unestablished here; senior access should be evidenced through the proposed team.",
+      "watch": "Current senior practitioners and named delivery references would sharpen the profile.",
+      "owner": {
+        "text": "Published as P1 Consulting. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Australian specialist with Sydney presence.",
+        "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Focused enterprise engagements",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "IT service-management consulting.",
+          "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow delivery is the stated specialism.",
+          "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "IT service-management experience underpins the proposition.",
+          "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Premier · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/p1-consulting-pty-ltd.html"
+    },
+    {
+      "id": "nd-and-co",
+      "name": "ND&Co",
+      "kind": "Specialist",
+      "thesis": "A long-running founder-created alternative in an acquisition-heavy market. Its integration and ongoing-management focus offers a clearer starting point than a generic full-platform claim.",
+      "watch": "Current founder responsibilities and repeat customer work would test continuity of the original specialist model.",
+      "owner": {
+        "text": "Australian-founded and owned organisation.",
+        "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Australia, New Zealand and APAC customer coverage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Focused enterprise engagements",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Consulting and professional services.",
+          "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Design, build and implementation.",
+          "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Ongoing platform management and maintenance.",
+          "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Integration across the ServiceNow ecosystem.",
+          "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Select · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/nd-and-co-pty-ltd.html",
+      "aliases": [
+        "ND and Co"
+      ],
+      "founded": {
+        "text": "Bernie Drobac and Josip Nekic founded ND&Co in 2012.",
+        "url": "https://ndnco.com.au/our-company/",
+        "source": "ND&Co · company history"
+      }
+    },
+    {
+      "id": "datacom",
+      "name": "Datacom",
+      "kind": "ANZ integrator",
+      "thesis": "Local commercial reach and ServiceNow practice depth are separate questions. Datacom’s broad ANZ presence is clear; a reseller award is a commercial signal, not evidence of implementation depth.",
+      "watch": "Named ServiceNow deployments and C&I progression would make its local practice easier to assess.",
+      "owner": {
+        "text": "Locally owned Australasian technology business.",
+        "url": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Locally owned ANZ technology business serving government, SMEs and enterprise.",
+        "url": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [],
+      "partnerStatus": {
+        "text": "Select · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/datacom-systems-limited.html"
+    },
+    {
+      "id": "ikc",
+      "name": "IKC",
+      "kind": "NZ specialist",
+      "thesis": "A focused Auckland-based option with cross-Tasman coverage. Architecture credentials support a technical conversation, but neither badges nor accreditations establish an available local bench.",
+      "watch": "Named NZ delivery references and locally attributable senior architects would establish practical depth.",
+      "owner": {
+        "text": "Published as IKC. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Auckland and Seoul offices; Australia and NZ coverage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow guidance and tailored project advice.",
+          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Ongoing support alongside project work.",
+          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Employee",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Platform / Data / AI",
+          "scope": "Global",
+          "basis": "credentials",
+          "text": "Relevant product credentials appear on the partner profile; their holders are not allocated to ANZ in this source.",
+          "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/primoris-nz-limited.html",
+      "aliases": [
+        "Primoris NZ"
+      ]
+    },
+    {
+      "id": "service-dynamics",
+      "name": "Service Dynamics",
+      "kind": "NZ specialist",
+      "thesis": "The leadership is visible: two founders and a named platform head. That makes the senior-team proposition inspectable in a way that a broad regional badge cannot.",
+      "watch": "Cross-Tasman customer outcomes and continuity of the senior team would strengthen the regional story.",
+      "owner": {
+        "text": "Published as Service Dynamics. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "NZ specialist serving New Zealand and Australian organisations.",
+        "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Strategic advice and solution design.",
+          "url": "https://www.servicedynamics.co.nz/about",
+          "source": "Service Dynamics · company and team"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Build and implementation services.",
+          "url": "https://www.servicedynamics.co.nz/about",
+          "source": "Service Dynamics · company and team"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Managed services and ongoing partnership.",
+          "url": "https://www.servicedynamics.co.nz/about",
+          "source": "Service Dynamics · company and team"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "IT service management and enterprise service management.",
+          "url": "https://www.servicedynamics.co.nz/about",
+          "source": "Service Dynamics · company and team"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Select · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/service-dynamics-ltd.html"
+    },
+    {
+      "id": "spark",
+      "name": "Spark NZ",
+      "kind": "NZ integrator",
+      "thesis": "ServiceFlex places ServiceNow inside an incumbent managed-services relationship. Its Service Provider designation and C&I designation answer different buying questions.",
+      "watch": "Named deployment evidence and C&I progression would clarify its role beyond the existing managed-services base.",
+      "owner": {
+        "text": "Published as Spark NZ. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "National New Zealand telecommunications and digital-services provider.",
+        "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceFlex is presented as a managed service-management offering.",
+          "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Enterprise service management and automation.",
+          "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Registered · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/spark-new-zealand-ltd.html"
+    },
+    {
+      "id": "accenture",
+      "name": "Accenture",
+      "kind": "Global integrator",
+      "thesis": "Multi-country transformation scale is the proposition. The global alliance is clear; the actual ANZ architects, delivery location and client references still need to be named.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as Accenture. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Pyrmont and Auckland locations listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Global Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/accenture-llp.html"
+    },
+    {
+      "id": "deloitte",
+      "name": "Deloitte",
+      "kind": "Global integrator",
+      "thesis": "Industry and operating-model change surround the platform work. Its large global practice supports breadth, but should not be read as the size of the team available in ANZ.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as Deloitte. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Melbourne and Auckland locations listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Global Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/deloitte-consulting-llp.html"
+    },
+    {
+      "id": "cognizant",
+      "name": "Cognizant",
+      "kind": "Global integrator",
+      "thesis": "Thirdera explains where specialist ServiceNow capability entered the group. The acquisition expanded global capacity; current ANZ leadership and deployment evidence determine how much of that is locally meaningful.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as Cognizant. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Sydney, Auckland and Wellington locations listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Global Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/cognizant-technology-solutions-us-corporation.html",
+      "aliases": [
+        "Thirdera"
+      ]
+    },
+    {
+      "id": "kpmg",
+      "name": "KPMG",
+      "kind": "Global integrator",
+      "thesis": "Process, controls and functional change are the entry point. For regulated work, the useful distinction is how those advisers connect to the actual local platform delivery team.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as KPMG. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Melbourne, Sydney and Wellington locations listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Global Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/kpmg-llp-partner-account.html"
+    },
+    {
+      "id": "fujitsu",
+      "name": "Fujitsu",
+      "kind": "Global integrator",
+      "thesis": "Enable is the important local origin story: an APJ ServiceNow specialist inside a diversified global group. Following its people and delivery continuity is more informative than the parent logo alone.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as Fujitsu. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Australian and New Zealand offices; Enable adds APJ specialist lineage.",
+        "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+      "aliases": [
+        "Enable"
+      ]
+    },
+    {
+      "id": "ntt-data",
+      "name": "NTT DATA",
+      "kind": "Global integrator",
+      "thesis": "Global integration and managed-services reach are the draw. ANZ coverage is published; region-specific architecture and delivery evidence remain a separate question.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as NTT DATA. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Melbourne, Sydney and Wellington locations listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/ntt-data-corp.html"
+    },
+    {
+      "id": "capgemini",
+      "name": "Capgemini",
+      "kind": "Global integrator",
+      "thesis": "A substantial global ServiceNow practice with Australian coverage. Its transformation and supported-instance scale establish a global model, not local team availability.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Published as Capgemini. Ownership is not separately established in this research.",
+        "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "presence": {
+        "text": "Sydney location and Australia/New Zealand coverage listed.",
+        "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Consulting and transformation within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+          "source": "ServiceNow Partner Finder"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "basis": "offer",
+          "text": "Implementation and deployment within the published C&I offer.",
+          "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+          "source": "ServiceNow Partner Finder"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/capgemini-america-inc.html"
+    },
+    {
+      "id": "coforge",
+      "name": "Coforge",
+      "kind": "Global integrator",
+      "thesis": "TMLabs supplies an identifiable Australian architecture and delivery lineage. The integration test is whether its founder-built quality survives the shift into a larger delivery business.",
+      "watch": "Named ANZ practice leaders, retained senior practitioners and current local customer outcomes would change this reading.",
+      "owner": {
+        "text": "Coforge acquired TMLabs; the continuing TMLabs website identifies the practice as now Coforge.",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "TMLabs · company and founders"
+      },
+      "presence": {
+        "text": "Sydney and Randwick locations; Australian TMLabs practice.",
+        "url": "https://www.servicenow.com/partners/partner-finder/coforge-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "segment": "Enterprise and government",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Architecture advisory.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ServiceNow implementation.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Managed services.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "Risk / Security",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "Integrated risk and cyber-security services.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "Employee",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "HR service delivery.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        },
+        {
+          "capability": "IT",
+          "scope": "ANZ",
+          "basis": "offer",
+          "text": "ITSM, ITOM and integration services.",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "TMLabs · capabilities"
+        }
+      ],
+      "partnerStatus": {
+        "text": "Elite · Consulting & Implementation",
+        "url": "https://www.servicenow.com/partners/partner-finder/coforge-limited.html",
+        "source": "ServiceNow Partner Finder"
+      },
+      "profileUrl": "https://www.servicenow.com/partners/partner-finder/coforge-limited.html",
+      "aliases": [
+        "TMLabs"
+      ]
+    },
+    {
+      "id": "epicon",
+      "name": "Epicon",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Australian specialist acquired by Telstra Purple in 2020.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Australian specialist acquired by Telstra Purple in 2020.",
+        "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "telstra-purple",
+      "name": "Telstra Purple",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Buyer of Epicon; shown as ownership context.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Buyer of Epicon; shown as ownership context.",
+        "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "enable",
+      "name": "Enable",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "APJ ServiceNow specialist acquired by Fujitsu in 2022.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "APJ ServiceNow specialist acquired by Fujitsu in 2022.",
+        "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2022/0707-01.html",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2022/0707-01.html",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "tmlabs",
+      "name": "TMLabs",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Founded by former ServiceNow employees in 2018; now part of Coforge.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Founded by former ServiceNow employees in 2018; now part of Coforge.",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "thirdera",
+      "name": "Thirdera",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Acquired by Cognizant in January 2024; the transaction is global.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Acquired by Cognizant in January 2024; the transaction is global.",
+        "url": "https://news.cognizant.com/cognizant-thirdera-acquisition-complete2",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://news.cognizant.com/cognizant-thirdera-acquisition-complete2",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "jds",
+      "name": "JDS",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Acquired by AC3; ServiceNow was part of a broader technology-services business.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Acquired by AC3; ServiceNow was part of a broader technology-services business.",
+        "url": "https://www.ac3.com.au/resources/ac3-announces-acquisition-of-jds",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://www.ac3.com.au/resources/ac3-announces-acquisition-of-jds",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "cloudgo",
+      "name": "CloudGo",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "APAC specialist acquired by RGP in 2023.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "APAC specialist acquired by RGP in 2023.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "rgp",
+      "name": "RGP / Veracity",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "CloudGo was acquired to extend Veracity’s APAC digital business.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "CloudGo was acquired to extend Veracity’s APAC digital business.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "tcloud",
+      "name": "TCloud",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "TCloud now directs its audience to xAmplify; an exact acquisition date is not established here.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "TCloud now directs its audience to xAmplify; an exact acquisition date is not established here.",
+        "url": "https://au.linkedin.com/company/tcloudconsulting",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://au.linkedin.com/company/tcloudconsulting",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "cto-group",
+      "name": "CTO Group",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Acquired by xAmplify to broaden transformation capability; not solely a ServiceNow team.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Acquired by xAmplify to broaden transformation capability; not solely a ServiceNow team.",
+        "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "servicenow",
+      "name": "ServiceNow",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Former employer of the TMLabs founders; included as a career step.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Former employer of the TMLabs founders; included as a career step.",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "asg",
+      "name": "ASG Group",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Wayne Gowland previously built federal-government practices here.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Wayne Gowland previously built federal-government practices here.",
+        "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "service-potential",
+      "name": "Service Potential",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Earlier federal ServiceNow consulting experience in Glen Watson’s career.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Earlier federal ServiceNow consulting experience in Glen Watson’s career.",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    },
+    {
+      "id": "leidos",
+      "name": "Leidos",
+      "kind": "Lineage context",
+      "historical": true,
+      "thesis": "Earlier Defence technical-team leadership in Glen Watson’s career.",
+      "watch": "Current employment or a new ownership event would need fresh evidence.",
+      "owner": {
+        "text": "Earlier Defence technical-team leadership in Glen Watson’s career.",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Company history"
+      },
+      "presence": {
+        "text": "Included to explain capability or career lineage; no standalone current practice claim.",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Company history"
+      },
+      "segment": "Historical context",
+      "capabilities": []
+    }
+  ],
+  "people": [
+    {
+      "id": "wayne-gowland",
+      "name": "Wayne Gowland",
+      "companyId": "xamplify",
+      "role": "CEO & co-founder",
+      "function": "Founder",
+      "domain": "Practice building",
+      "reading": "His path connects a specialist sale with the building of another Australian integrator.",
+      "current": {
+        "text": "CEO & co-founder",
+        "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "asg",
+          "role": "General Manager; federal practice building",
+          "when": "Earlier career",
+          "text": "General Manager; federal practice building",
+          "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+          "source": "Career source"
+        },
+        {
+          "companyId": "epicon",
+          "role": "CEO through the Telstra acquisition",
+          "when": "Before / at 2020 sale",
+          "text": "CEO through the Telstra acquisition",
+          "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+          "source": "Career source"
+        },
+        {
+          "companyId": "xamplify",
+          "role": "CEO & co-founder",
+          "when": "Current published biography",
+          "text": "CEO & co-founder",
+          "url": "https://xamplify.com.au/people-and-careers/wayne-gowland/",
+          "source": "Career source"
+        }
+      ]
+    },
+    {
+      "id": "glen-watson",
+      "name": "Glen Watson",
+      "companyId": "novabridge",
+      "role": "Director of Technical Services",
+      "function": "Technical",
+      "domain": "Defence · architecture · CMDB / CSDM",
+      "reading": "The career trail explains the secure-platform capability: Defence operations, federal consulting, then architecture and governance leadership.",
+      "current": {
+        "text": "Director of Technical Services",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "leidos",
+          "role": "Technical Team Lead in Defence environments",
+          "when": "Earlier career",
+          "text": "Technical Team Lead in Defence environments",
+          "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+          "source": "Career source"
+        },
+        {
+          "companyId": "service-potential",
+          "role": "Senior Technical Consultant; federal ServiceNow work",
+          "when": "Earlier career",
+          "text": "Senior Technical Consultant; federal ServiceNow work",
+          "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+          "source": "Career source"
+        },
+        {
+          "companyId": "novabridge",
+          "role": "Solutions Architect → Director of Technical Services",
+          "when": "Current published biography",
+          "text": "Solutions Architect → Director of Technical Services",
+          "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+          "source": "Career source"
+        }
+      ]
+    },
+    {
+      "id": "anne-maree-lowe",
+      "name": "Anne-Maree Lowe",
+      "companyId": "novabridge",
+      "role": "CEO",
+      "function": "Commercial",
+      "domain": "Technology services growth",
+      "reading": "Commercial and operational leadership complements the technical practice. The biography supports the current role; a new appointment date is not established.",
+      "current": {
+        "text": "CEO",
+        "url": "https://novabridge.com.au/about",
+        "source": "Published role / biography"
+      },
+      "career": []
+    },
+    {
+      "id": "dan-spada",
+      "name": "Dan Spada",
+      "companyId": "kinetic-it",
+      "role": "Principal, ServiceNow",
+      "function": "Practice Builder",
+      "domain": "Enterprise service management",
+      "reading": "A named practice leader behind the 2026 APAC recognition. The award is evidence of recognition, not an independently measured local growth rate.",
+      "current": {
+        "text": "Principal, ServiceNow",
+        "url": "https://kineticit.com.au/news/kinetic-it-2026-rising-star-servicenow-partner-awards-apac/",
+        "source": "Published role / biography"
+      },
+      "career": []
+    },
+    {
+      "id": "andrew-homewood",
+      "name": "Andrew Homewood",
+      "companyId": "ac3",
+      "role": "Head of ServiceNow",
+      "function": "Practice Builder",
+      "domain": "Practice integration",
+      "reading": "AC3’s own podcast places him at the centre of combining the AC3 and JDS ServiceNow teams.",
+      "current": {
+        "text": "Head of ServiceNow",
+        "url": "https://www.ac3.com.au/resources/Podcast",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "ac3",
+          "role": "Head of ServiceNow following JDS integration",
+          "when": "Published podcast",
+          "text": "Head of ServiceNow following JDS integration",
+          "url": "https://www.ac3.com.au/resources/Podcast",
+          "source": "Career source"
+        }
+      ]
+    },
+    {
+      "id": "stephen-bosworth",
+      "name": "Stephen Bosworth",
+      "companyId": "nexon",
+      "role": "GM, ServiceNow Consulting in the published customer story",
+      "function": "Talent",
+      "domain": "Graduate development",
+      "reading": "The source describes five graduate hires through the talent programme. Its publication date is not established, so this is a capacity-building mechanism, not a fresh hiring surge.",
+      "current": {
+        "text": "GM, ServiceNow Consulting in the published customer story",
+        "url": "https://www.servicenow.com/au/customers/nexon-riseup.html",
+        "source": "Published role / biography"
+      },
+      "career": [],
+      "roleStatus": "source snapshot"
+    },
+    {
+      "id": "tobias-schwartz",
+      "name": "Tobias Schwartz",
+      "companyId": "tmlabs",
+      "role": "TMLabs co-founder",
+      "function": "Founder",
+      "domain": "Architecture & delivery",
+      "reading": "The practice’s current site preserves the founding lineage. It does not establish a new executive title at Coforge.",
+      "current": {
+        "text": "TMLabs co-founder",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "servicenow",
+          "role": "Employee before founding TMLabs",
+          "when": "Before 2018",
+          "text": "Employee before founding TMLabs",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "Career source"
+        },
+        {
+          "companyId": "tmlabs",
+          "role": "Co-founder",
+          "when": "2018",
+          "text": "Co-founder",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "source snapshot"
+    },
+    {
+      "id": "michael-starkey",
+      "name": "Michael Starkey",
+      "companyId": "tmlabs",
+      "role": "TMLabs co-founder",
+      "function": "Founder",
+      "domain": "Architecture & delivery",
+      "reading": "The practice’s current site preserves the founding lineage. It does not establish a new executive title at Coforge.",
+      "current": {
+        "text": "TMLabs co-founder",
+        "url": "https://tmlabs.com.au/about-us/",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "servicenow",
+          "role": "Employee before founding TMLabs",
+          "when": "Before 2018",
+          "text": "Employee before founding TMLabs",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "Career source"
+        },
+        {
+          "companyId": "tmlabs",
+          "role": "Co-founder",
+          "when": "2018",
+          "text": "Co-founder",
+          "url": "https://tmlabs.com.au/about-us/",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "source snapshot"
+    },
+    {
+      "id": "bruce-hara",
+      "name": "Bruce Hara",
+      "companyId": "enable",
+      "role": "CEO at the 2022 acquisition announcement",
+      "function": "Founder",
+      "domain": "APJ specialist building",
+      "reading": "A historical leadership anchor for the Enable-to-Fujitsu transition; this is not a claim about his current employer.",
+      "current": {
+        "text": "CEO at the 2022 acquisition announcement",
+        "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2022/0707-01.html",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "enable",
+          "role": "CEO; continued leadership planned at acquisition",
+          "when": "2022 announcement",
+          "text": "CEO; continued leadership planned at acquisition",
+          "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2022/0707-01.html",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "historical"
+    },
+    {
+      "id": "yair-tzur",
+      "name": "Yair Tzur",
+      "companyId": "epicon",
+      "role": "Founder named at the 2020 sale",
+      "function": "Founder",
+      "domain": "IT service management",
+      "reading": "Explains the origin of a specialist later absorbed into Telstra Purple. Current employment is not established.",
+      "current": {
+        "text": "Founder named at the 2020 sale",
+        "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "epicon",
+          "role": "Founder",
+          "when": "2020 sale announcement",
+          "text": "Founder",
+          "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "historical"
+    },
+    {
+      "id": "bernie-drobac",
+      "name": "Bernie Drobac",
+      "companyId": "nd-and-co",
+      "role": "Co-founder",
+      "function": "Founder",
+      "domain": "Independent specialist",
+      "reading": "Founding attribution is published; current executive responsibilities are not specified.",
+      "current": {
+        "text": "Co-founder",
+        "url": "https://ndnco.com.au/our-company/",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "nd-and-co",
+          "role": "Co-founder",
+          "when": "2012",
+          "text": "Co-founder",
+          "url": "https://ndnco.com.au/our-company/",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "source snapshot"
+    },
+    {
+      "id": "josip-nekic",
+      "name": "Josip Nekic",
+      "companyId": "nd-and-co",
+      "role": "Co-founder",
+      "function": "Founder",
+      "domain": "Independent specialist",
+      "reading": "Founding attribution is published; current executive responsibilities are not specified.",
+      "current": {
+        "text": "Co-founder",
+        "url": "https://ndnco.com.au/our-company/",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "nd-and-co",
+          "role": "Co-founder",
+          "when": "2012",
+          "text": "Co-founder",
+          "url": "https://ndnco.com.au/our-company/",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "source snapshot"
+    },
+    {
+      "id": "phil-venables",
+      "name": "Phil Venables",
+      "companyId": "service-dynamics",
+      "role": "Co-founder & General Manager",
+      "function": "Founder",
+      "domain": "NZ service management",
+      "reading": "A named member of the published senior team; earlier employers are not inferred.",
+      "current": {
+        "text": "Co-founder & General Manager",
+        "url": "https://www.servicedynamics.co.nz/about",
+        "source": "Published role / biography"
+      },
+      "career": []
+    },
+    {
+      "id": "derek-leitch",
+      "name": "Derek Leitch",
+      "companyId": "service-dynamics",
+      "role": "Co-founder & Director",
+      "function": "Founder",
+      "domain": "NZ service management",
+      "reading": "A named member of the published senior team; earlier employers are not inferred.",
+      "current": {
+        "text": "Co-founder & Director",
+        "url": "https://www.servicedynamics.co.nz/about",
+        "source": "Published role / biography"
+      },
+      "career": []
+    },
+    {
+      "id": "damien-versluis",
+      "name": "Damien Versluis",
+      "companyId": "service-dynamics",
+      "role": "Head of Platform",
+      "function": "Technical",
+      "domain": "NZ service management",
+      "reading": "A named member of the published senior team; earlier employers are not inferred.",
+      "current": {
+        "text": "Head of Platform",
+        "url": "https://www.servicedynamics.co.nz/about",
+        "source": "Published role / biography"
+      },
+      "career": []
+    },
+    {
+      "id": "rahul-garg",
+      "name": "Rahul Garg",
+      "companyId": "cloudgo",
+      "role": "Co-founder named at the 2023 sale",
+      "function": "Founder",
+      "domain": "APAC expansion",
+      "reading": "Historical founding lineage. The acquisition-era role does not establish current employment.",
+      "current": {
+        "text": "Co-founder named at the 2023 sale",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "cloudgo",
+          "role": "Co-founder",
+          "when": "2016",
+          "text": "Co-founder",
+          "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "historical"
+    },
+    {
+      "id": "rory-fitzpatrick",
+      "name": "Rory Fitzpatrick",
+      "companyId": "cloudgo",
+      "role": "Co-founder named at the 2023 sale",
+      "function": "Founder",
+      "domain": "APAC expansion",
+      "reading": "Historical founding lineage. The acquisition-era role does not establish current employment.",
+      "current": {
+        "text": "Co-founder named at the 2023 sale",
+        "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+        "source": "Published role / biography"
+      },
+      "career": [
+        {
+          "companyId": "cloudgo",
+          "role": "Co-founder",
+          "when": "2016",
+          "text": "Co-founder",
+          "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+          "source": "Career source"
+        }
+      ],
+      "roleStatus": "historical"
+    }
+  ],
+  "events": [
+    {
+      "id": "epicon-telstra",
+      "date": "2020-11-30",
+      "dateLabel": "30 November 2020",
+      "companyIds": [
+        "epicon",
+        "telstra-purple"
+      ],
+      "personIds": [],
+      "title": "Epicon joins Telstra Purple",
+      "text": "Telstra acquired the Australian ITSM/ITOM provider. Its 100+ technical specialists covered the business, not a separately counted ServiceNow bench.",
+      "implication": "Local expertise entered a broader services platform; the deal does not prove current cohort retention.",
+      "url": "https://www.telstra.com.au/aboutus/media/media-releases/telstra-purple-acquires-epicon",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "targetIds": [
+        "epicon"
+      ]
+    },
+    {
+      "id": "enable-fujitsu",
+      "date": "2022-08",
+      "dateLabel": "August 2022",
+      "companyIds": [
+        "enable",
+        "fujitsu"
+      ],
+      "personIds": [],
+      "title": "Enable becomes part of Fujitsu",
+      "text": "Fujitsu’s partner profile records the August acquisition, following the July announcement.",
+      "implication": "The APJ specialist lineage remains relevant to local delivery even after the parent brand changes.",
+      "url": "https://www.servicenow.com/partners/partner-finder/fujitsu-services-limited.html",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "APAC",
+      "targetIds": [
+        "enable"
+      ]
+    },
+    {
+      "id": "cloudgo-rgp",
+      "date": "2023-11-15",
+      "dateLabel": "15 November 2023 announcement",
+      "companyIds": [
+        "cloudgo",
+        "rgp"
+      ],
+      "personIds": [],
+      "title": "CloudGo joins RGP’s Veracity business",
+      "text": "RGP announced the acquisition of the Singapore, Australia and India specialist. Nearly 80 employees was an APAC-wide figure.",
+      "implication": "A regional delivery platform was the asset, not an 80-person Australian team.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1084765/000115752323001741/a53837049_ex991.htm",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "APAC",
+      "targetIds": [
+        "cloudgo"
+      ]
+    },
+    {
+      "id": "thirdera-cognizant",
+      "date": "2024-01-22",
+      "dateLabel": "22 January 2024",
+      "companyIds": [
+        "thirdera",
+        "cognizant"
+      ],
+      "personIds": [],
+      "title": "Cognizant completes Thirdera acquisition",
+      "text": "The transaction added more than 940 employees globally.",
+      "implication": "Global credentials increased; ANZ capacity still needs local evidence.",
+      "url": "https://news.cognizant.com/cognizant-thirdera-acquisition-complete2",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "Global",
+      "targetIds": [
+        "thirdera"
+      ]
+    },
+    {
+      "id": "jds-ac3",
+      "date": "2024-12",
+      "dateLabel": "December 2024",
+      "companyIds": [
+        "jds",
+        "ac3"
+      ],
+      "personIds": [],
+      "title": "AC3 brings JDS into its services business",
+      "text": "The two companies combined broader technology teams, including ServiceNow capability.",
+      "implication": "The managed-services relationship and the specialist team can reinforce each other; integration quality remains the key question.",
+      "url": "https://www.ac3.com.au/resources/ac3-announces-acquisition-of-jds",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "targetIds": [
+        "jds"
+      ]
+    },
+    {
+      "id": "tmlabs-coforge",
+      "date": "2025-03-05",
+      "dateLabel": "5 March 2025 agreement",
+      "companyIds": [
+        "tmlabs",
+        "coforge"
+      ],
+      "personIds": [],
+      "title": "Coforge agrees to acquire TMLabs",
+      "text": "The disclosure specifies 100% ownership and A$20m upfront plus contingent consideration. TMLabs now identifies itself as Coforge.",
+      "implication": "The Australian architecture-led practice gives the buyer a specific local capability origin.",
+      "url": "https://www.coforge.com/hubfs/Intimation-for-Acquisition-March-05-2025.pdf",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "targetIds": [
+        "tmlabs"
+      ]
+    },
+    {
+      "id": "xamplify-capital",
+      "date": "2025-08-12",
+      "dateLabel": "12 August 2025 company update",
+      "companyIds": [
+        "xamplify"
+      ],
+      "personIds": [],
+      "title": "Growth capital backs national expansion",
+      "text": "xAmplify confirms Macquarie Capital Principal Finance investment alongside its expansion plans.",
+      "implication": "Capital supports a build-and-buy strategy. It does not establish a full sale or ServiceNow headcount growth.",
+      "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
+      "source": "Company announcement / primary source",
+      "type": "Investment",
+      "scope": "ANZ",
+      "movement": "Building"
+    },
+    {
+      "id": "cto-xamplify",
+      "date": "2025-08-12",
+      "dateLabel": "12 August 2025 company update",
+      "companyIds": [
+        "cto-group",
+        "xamplify"
+      ],
+      "personIds": [],
+      "title": "CTO Group broadens xAmplify’s advisory capability",
+      "text": "The company update confirms the acquisition across cloud, enterprise platforms and transformation.",
+      "implication": "This expands the surrounding services proposition; it is not proof of a larger ServiceNow-certified cohort.",
+      "url": "https://xamplify.com.au/xamplify-expands-to-support-australias-next-phase-of-digital-transformation/",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "targetIds": [
+        "cto-group"
+      ]
+    },
+    {
+      "id": "tcloud-xamplify",
+      "date": null,
+      "dateLabel": "Ownership observed · acquisition date unestablished",
+      "companyIds": [
+        "tcloud",
+        "xamplify"
+      ],
+      "personIds": [],
+      "title": "TCloud’s team moves under xAmplify’s public identity",
+      "text": "TCloud directs its audience to xAmplify and describes its capability as part of the wider business.",
+      "implication": "The lineage is supported. The brief’s 2025 deal date is not carried forward because earlier public material already shows the relationship.",
+      "url": "https://au.linkedin.com/company/tcloudconsulting",
+      "source": "Company announcement / primary source",
+      "type": "Acquisition",
+      "scope": "ANZ",
+      "targetIds": [
+        "tcloud"
+      ]
+    },
+    {
+      "id": "kinetic-award",
+      "date": "2026",
+      "dateLabel": "2026 awards",
+      "companyIds": [
+        "kinetic-it"
+      ],
+      "personIds": [],
+      "title": "Kinetic IT receives APAC C&I Rising Star",
+      "text": "Listed in ServiceNow’s 2026 partner awards.",
+      "implication": "Recognition is visible. The award category and region stay explicit; it does not create an ANZ growth label.",
+      "url": "https://www.servicenow.com/au/partners/awards.html",
+      "source": "Company announcement / primary source",
+      "type": "Award",
+      "scope": "APAC"
+    },
+    {
+      "id": "xamplify-award",
+      "date": "2026",
+      "dateLabel": "2026 awards",
+      "companyIds": [
+        "xamplify"
+      ],
+      "personIds": [],
+      "title": "xAmplify receives APAC Core Business Partner award",
+      "text": "Listed in ServiceNow’s 2026 partner awards.",
+      "implication": "Recognition is visible. The award category and region stay explicit; it does not create an ANZ growth label.",
+      "url": "https://www.servicenow.com/au/partners/awards.html",
+      "source": "Company announcement / primary source",
+      "type": "Award",
+      "scope": "APAC"
+    },
+    {
+      "id": "datacom-award",
+      "date": "2026",
+      "dateLabel": "2026 awards",
+      "companyIds": [
+        "datacom"
+      ],
+      "personIds": [],
+      "title": "Datacom receives APAC Reseller Rising Star",
+      "text": "Listed in ServiceNow’s 2026 partner awards.",
+      "implication": "Recognition is visible. The award category and region stay explicit; it does not create an ANZ growth label.",
+      "url": "https://www.servicenow.com/au/partners/awards.html",
+      "source": "Company announcement / primary source",
+      "type": "Award",
+      "scope": "APAC"
+    },
+    {
+      "id": "nexon-talent",
+      "date": null,
+      "dateLabel": "Published story · date unestablished",
+      "companyIds": [
+        "nexon"
+      ],
+      "personIds": [],
+      "title": "Nexon develops a talent pipeline",
+      "text": "ServiceNow’s story describes graduate recruitment and transferable-skills development.",
+      "implication": "A useful mechanism for building delivery capacity; the undated story is not treated as recent hiring velocity.",
+      "url": "https://www.servicenow.com/au/customers/nexon-riseup.html",
+      "source": "Company announcement / primary source",
+      "type": "Expansion",
+      "scope": "ANZ"
+    }
+  ],
+  "customers": [
+    {
+      "id": "defence-novabridge",
+      "name": "Australian Defence",
+      "companyId": "novabridge",
+      "capabilities": [
+        "IT",
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "Glen Watson’s Novabridge biography describes architecture and governance work on the Defence ServiceNow Protected Platform. This is practitioner-reported evidence; the prime-contract role and delivery dates are not specified.",
+        "url": "https://novabridge.com.au/pages/about-team-glen-watson",
+        "source": "Novabridge · practitioner biography"
+      }
+    },
+    {
+      "id": "qhealth-ac3",
+      "name": "Queensland Health",
+      "companyId": "ac3",
+      "capabilities": [
+        "Platform / Data / AI"
+      ],
+      "fact": {
+        "text": "AC3’s partner profile carries a Queensland Health custom-app case study. AC3 also publicly identifies its role delivering the Surgery Connect SCAN initiative alongside ServiceNow.",
+        "url": "https://www.servicenow.com/partners/partner-finder/ac3-pty-ltd.html",
+        "source": "ServiceNow · AC3 customer collateral"
+      }
+    }
+  ],
+  "lineages": [
+    {
+      "id": "epicon-xamplify",
+      "title": "From Epicon to another build",
+      "companyIds": [
+        "epicon",
+        "telstra-purple",
+        "xamplify",
+        "tcloud",
+        "cto-group"
+      ],
+      "eventIds": [
+        "epicon-telstra",
+        "tcloud-xamplify",
+        "xamplify-capital",
+        "cto-xamplify"
+      ],
+      "reading": "The company transactions and Wayne Gowland’s career are separate links: a prior operator can carry experience into a new platform without transferring the whole old team."
+    },
+    {
+      "id": "enable-fujitsu",
+      "title": "Specialist capability inside a global group",
+      "companyIds": [
+        "enable",
+        "fujitsu"
+      ],
+      "eventIds": [
+        "enable-fujitsu"
+      ],
+      "reading": "Follow the Enable people and delivery continuity to understand the local practice."
+    },
+    {
+      "id": "tmlabs-coforge",
+      "title": "From platform employees to founders to a buyer",
+      "companyIds": [
+        "servicenow",
+        "tmlabs",
+        "coforge"
+      ],
+      "eventIds": [
+        "tmlabs-coforge"
+      ],
+      "reading": "The founding team explains the architecture emphasis; the deal explains access to a larger delivery organisation."
+    },
+    {
+      "id": "jds-ac3",
+      "title": "Two practices become one service proposition",
+      "companyIds": [
+        "jds",
+        "ac3"
+      ],
+      "eventIds": [
+        "jds-ac3"
+      ],
+      "reading": "The combined team needs coherent technical leadership across new implementations and ongoing operations."
+    },
+    {
+      "id": "cloudgo-rgp",
+      "title": "An APAC specialist becomes a regional platform",
+      "companyIds": [
+        "cloudgo",
+        "rgp"
+      ],
+      "eventIds": [
+        "cloudgo-rgp"
+      ],
+      "reading": "Regional scale figures remain regional. They do not isolate Australian capacity."
+    },
+    {
+      "id": "thirdera-cognizant",
+      "title": "Global acquisition with local questions",
+      "companyIds": [
+        "thirdera",
+        "cognizant"
+      ],
+      "eventIds": [
+        "thirdera-cognizant"
+      ],
+      "reading": "Global consolidation explains the ownership story; named ANZ practitioners must establish local depth."
+    }
+  ]
+}

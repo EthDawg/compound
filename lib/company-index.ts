@@ -1,3 +1,6 @@
+import { ECOSYSTEM_INDEX, practiceLinks, type PracticeLink } from "./ecosystem-index";
+import type { Node } from "./data/atlas-nodes";
+import type { CompanyId } from "./companies";
 import { ALL_VENDORS } from "./data/atlas-nodes";
 import { categoryById, sectorById } from "./data/atlas";
 import { companyStudy, companyHref, switchCompanyHref } from "./companies";
@@ -17,22 +20,36 @@ const TERMS: Record<string, string[]> = {
   hubspot: ["CRM", "marketing"],
 };
 
-export const COMPANY_INDEX = ALL_VENDORS.map((node) => {
+export interface IndexedCompany extends Pick<Node, 'id' | 'name' | 'sector' | 'category' | 'geo' | 'blurb' | 'archetype'> {
+  categoryName: string; sectorName: string; terms: string[]; studyId?: CompanyId;
+  appHref?: string; backstageHref?: string; readHref?: string; ecosystemHref?: string;
+  availability: string; atlasListed: boolean; ecosystemLinks: PracticeLink[];
+}
+const atlasEntries: IndexedCompany[] = ALL_VENDORS.map((node) => {
   const study = companyStudy(node.id);
+  const practice = ECOSYSTEM_INDEX.find((c) => c.id === node.id);
   return {
     ...node,
     categoryName: categoryById(node.category ?? "")?.name ?? "",
     sectorName: sectorById(node.sector)?.name ?? "",
-    terms: TERMS[node.id] ?? [],
+    terms: [...(TERMS[node.id] ?? []), ...(practice?.terms ?? [])],
     studyId: study?.id,
     appHref: study ? companyHref(study.id, "app") : node.instance,
     backstageHref: study ? companyHref(study.id, "backstage") : undefined,
     readHref: !study ? node.href : undefined,
-    availability: study ? "App + Backstage" : node.instance ? "App study" : node.href ? "Deep read" : "Atlas only",
+    ecosystemHref: study?.ecosystem?.href,
+    ecosystemLinks: practiceLinks(node.id), atlasListed: true,
+    availability: study ? "App + Backstage" : node.instance ? "App study" : node.href ? "Deep read" : practice ? "Ecosystem profile" : "Atlas only",
   };
-}).sort((a, b) => a.name.localeCompare(b.name));
+});
+const practiceEntries: IndexedCompany[] = ECOSYSTEM_INDEX.filter((c) => !atlasEntries.some((a) => a.id === c.id)).map((c) => ({
+  id: c.id, name: c.name, blurb: c.blurb, sector: 'delivery', category: 'ecosystem-practices',
+  categoryName: c.links.map((l) => l.ecosystemName).join(' · ') + ' ecosystem',
+  sectorName: 'Delivery & advisory', terms: c.terms, atlasListed: false, ecosystemLinks: c.links,
+  availability: c.historical ? 'Lineage context' : 'Ecosystem profile',
+}));
+export const COMPANY_INDEX = [...atlasEntries, ...practiceEntries].sort((a, b) => a.name.localeCompare(b.name));
 
-export type IndexedCompany = (typeof COMPANY_INDEX)[number];
 export type CompanyMatch = { company: IndexedCompany; score: number; reason: string };
 export const normalizeSearch = (value: string) => value.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const compact = (value: string) => normalizeSearch(value).replace(/ /g, "");
@@ -71,7 +88,11 @@ export function searchCompanies(query: string): CompanyMatch[] {
 
 export const atlasCompanyHref = (id: string) => `/?company=${encodeURIComponent(id)}`;
 export function companyDestination(company: IndexedCompany, pathname: string): string {
+  if (pathname.startsWith('/atlas/') && company.ecosystemHref) return company.ecosystemHref;
+  const practice = company.ecosystemLinks.find((p) => pathname.startsWith(`/atlas/${p.ecosystemId}`)) ?? company.ecosystemLinks[0];
+  if (pathname.startsWith('/atlas/') && practice) return practice.href;
   if (company.studyId) return switchCompanyHref(company.studyId, pathname);
+  if (!company.appHref && !company.readHref && practice) return practice.href;
   return (pathname.includes("/backstage") ? company.readHref : company.appHref) ?? atlasCompanyHref(company.id);
 }
 

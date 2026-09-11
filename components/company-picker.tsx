@@ -17,6 +17,7 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
   const resultsRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState("");
   const [all, setAll] = useState(false);
+  const [ecosystemsOnly, setEcosystemsOnly] = useState(false);
   const [sector, setSector] = useState("");
   const [recent, setRecent] = useState<string[]>([]);
   const [cursor, setCursor] = useState(0);
@@ -26,19 +27,19 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
   const matches = useMemo(() => searchCompanies(query), [query]);
   const groups = useMemo(() => {
     if (searching) return [{ label: `${matches.length} ${matches.length === 1 ? "match" : "matches"}`, companies: matches.map((m) => m.company) }];
-    const available = COMPANY_INDEX.filter((c) => (all || c.studyId) && (!sector || c.sector === sector));
+    const available = COMPANY_INDEX.filter((c) => (all || c.studyId) && (!ecosystemsOnly || c.ecosystemHref || c.ecosystemLinks.length) && (!sector || c.sector === sector));
     const recentList = recent.flatMap((id) => available.find((c) => c.id === id) ?? []);
     return [
       ...(!sector && recentList.length ? [{ label: "Recent", companies: recentList }] : []),
       ...SECTORS.map((s) => ({ label: s.name, companies: available.filter((c) => c.sector === s.id && (sector || !recentList.includes(c))) })).filter((g) => g.companies.length),
     ];
-  }, [all, sector, searching, matches, recent]);
+  }, [all, sector, searching, matches, recent, ecosystemsOnly]);
   const rows = groups.flatMap((g) => g.companies);
   const selected = rows[Math.min(cursor, Math.max(0, rows.length - 1))];
   const related = selected ? COMPANY_INDEX.filter((c) => c.category === selected.category && c.id !== selected.id).sort((a, b) => Number(!!b.studyId) - Number(!!a.studyId) || a.name.localeCompare(b.name)).slice(0, 3) : [];
   const close = () => { dialog.current?.close(); setOpened(false); };
   const show = () => {
-    setQuery(""); setSector(""); setCursor(0);
+    setQuery(""); setSector(""); setEcosystemsOnly(false); setCursor(0);
     dialog.current?.showModal(); setOpened(true); input.current?.focus();
   };
 
@@ -52,7 +53,7 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
     } catch { /* Browsing and search do not require storage. */ }
   }, [activeId]);
   useEffect(() => { dialog.current?.close(); setOpened(false); }, [path]);
-  useEffect(() => { setCursor(0); resultsRef.current?.scrollTo({ top: 0 }); }, [query, all, sector]);
+  useEffect(() => { setCursor(0); resultsRef.current?.scrollTo({ top: 0 }); }, [query, all, sector, ecosystemsOnly]);
   useEffect(() => {
     if (!opened) return;
     const previous = document.body.style.overflow;
@@ -65,7 +66,7 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
         if (document.querySelector("dialog[open]") && !dialog.current?.open) return;
         event.preventDefault();
         if (dialog.current?.open) { dialog.current.close(); setOpened(false); }
-        else { setQuery(""); setSector(""); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
+        else { setQuery(""); setSector(""); setEcosystemsOnly(false); setCursor(0); dialog.current?.showModal(); setOpened(true); input.current?.focus(); }
       }
     };
     window.addEventListener("keydown", onKey);
@@ -112,20 +113,21 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
           <I.ISearch className="h-5 w-5 shrink-0 text-ink-500" />
           <input ref={input} value={query} onChange={(e) => { setQuery(e.target.value); setCursor(0); }} onKeyDown={key}
             role="combobox" aria-autocomplete="list" aria-expanded={opened} aria-controls={rows.length ? `${uid}-results` : undefined} aria-activedescendant={selected ? `${uid}-${selected.id}` : undefined}
-            aria-label="Search companies, products or capabilities" autoComplete="off" spellCheck={false}
-            placeholder="Company, product, or what it does…" className="h-12 min-w-0 flex-1 bg-transparent text-base outline-none" />
+            aria-label="Search companies, products, people or capabilities" autoComplete="off" spellCheck={false}
+            placeholder="Company, product, person or capability…" className="h-12 min-w-0 flex-1 bg-transparent text-base outline-none" />
           {query && <button type="button" onClick={() => { setQuery(""); input.current?.focus(); }} aria-label="Clear search" className="rounded p-1 text-ink-500"><I.IClose className="h-4 w-4" /></button>}
         </div>
         {!searching && <div className="flex flex-wrap items-center gap-2 px-4 pb-3">
-          <div className="flex rounded-lg bg-ink-100 p-1 text-xs font-medium">
-            <button type="button" aria-pressed={!all} onClick={() => { setAll(false); setSector(""); }} className={`rounded-md px-3 py-1.5 ${!all ? "bg-white shadow-sm" : "text-ink-500"}`}>Full studies <span className="ml-1 text-ink-500">{studyCount}</span></button>
-            <button type="button" aria-pressed={all} onClick={() => setAll(true)} className={`rounded-md px-3 py-1.5 ${all ? "bg-white shadow-sm" : "text-ink-500"}`}>All companies <span className="ml-1 text-ink-500">{COMPANY_INDEX.length}</span></button>
+          <div className="flex flex-wrap rounded-lg bg-ink-100 p-1 text-xs font-medium">
+            <button type="button" aria-pressed={!all} onClick={() => { setAll(false); setEcosystemsOnly(false); setSector(""); }} className={`rounded-md px-3 py-1.5 ${!all ? "bg-white shadow-sm" : "text-ink-500"}`}>Full studies <span className="ml-1 text-ink-500">{studyCount}</span></button>
+            <button type="button" aria-pressed={ecosystemsOnly} onClick={() => { setAll(true); setEcosystemsOnly(true); setSector(''); }} className={`rounded-md px-3 py-1.5 ${ecosystemsOnly ? 'bg-white shadow-sm' : 'text-ink-500'}`}>Ecosystems</button>
+            <button type="button" aria-pressed={all && !ecosystemsOnly} onClick={() => { setAll(true); setEcosystemsOnly(false); }} className={`rounded-md px-3 py-1.5 ${all && !ecosystemsOnly ? "bg-white shadow-sm" : "text-ink-500"}`}>All companies <span className="ml-1 text-ink-500">{COMPANY_INDEX.length}</span></button>
           </div>
-          {all && <select aria-label="Browse by sector" value={sector} onChange={(e) => setSector(e.target.value)} className="min-w-0 max-w-full rounded-lg border border-ink-200 bg-white p-2 text-xs">
+          {all && !ecosystemsOnly && <select aria-label="Browse by sector" value={sector} onChange={(e) => setSector(e.target.value)} className="min-w-0 max-w-full rounded-lg border border-ink-200 bg-white p-2 text-xs">
             <option value="">All sectors</option>{SECTORS.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
           </select>}
         </div>}
-        {searching && <p className="px-5 pb-3 text-xs text-ink-500" role="status">{matches.length} {matches.length === 1 ? "match" : "matches"} across {COMPANY_INDEX.length} companies · full studies and Atlas entries</p>}
+        {searching && <p className="px-5 pb-3 text-xs text-ink-500" role="status">{matches.length} {matches.length === 1 ? "match" : "matches"} across {COMPANY_INDEX.length} companies · studies, Atlas entries and ecosystem profiles</p>}
         <div className="grid min-h-0 flex-1 grid-cols-1 border-t border-ink-200 sm:grid-cols-[1.15fr_1fr]">
           <div ref={resultsRef} className="thin-scroll max-h-[31vh] min-h-0 overflow-y-auto overscroll-contain p-2 sm:h-[400px] sm:max-h-[52dvh]">
             {rows.length ? <div id={`${uid}-results`} role="listbox" aria-label="Companies">
@@ -155,12 +157,14 @@ export function CompanyPicker({ activeId }: { activeId: string }) {
             <div className="flex items-center gap-3">{mark(selected, true)}<div><p className="text-[10px] font-semibold uppercase tracking-wider text-ink-500">{selected.sectorName}</p><h3 className="text-lg font-semibold tracking-tight">{selected.name}</h3></div></div>
             <p className="mt-3 text-xs text-ink-500">{selected.categoryName}{selected.geo ? ` · ${selected.geo}` : ""}</p>
             <p className="mt-2 text-[13px] leading-relaxed">{selected.blurb}</p>
-            {!selected.studyId && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">In the Atlas. {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
+            {!selected.studyId && !selected.ecosystemLinks.length && <p className="mt-3 rounded-lg border border-ink-200 bg-white p-3 text-xs leading-relaxed text-ink-500">In the Atlas. {selected.appHref || selected.readHref ? "A focused study is available below; the full App + Backstage pair hasn’t been added yet." : "The App + Backstage study hasn’t been added yet."}</p>}
+            {!!selected.ecosystemLinks.length && <div className="mt-4 space-y-2"><p className="text-[10px] font-bold uppercase tracking-wider text-ink-500">Choose the practice context</p>{selected.ecosystemLinks.map((link) => <a key={link.href} href={link.href} className="block rounded-lg border border-ink-200 bg-white p-3 text-xs hover:bg-ink-100"><span className="font-semibold">{link.ecosystemName} · ANZ ↗</span><span className="mt-1 block text-[11px] text-ink-500">{link.historical ? 'Career / ownership context' : link.context}</span></a>)}</div>}
             <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
               {selected.appHref && <a href={selected.appHref} className="rounded-lg bg-ink px-3 py-2 text-white hover:bg-ink-700">Open App</a>}
               {selected.backstageHref && <a href={selected.backstageHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Backstage</a>}
               {selected.readHref && <a href={selected.readHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Read study</a>}
-              <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>
+              {selected.ecosystemHref && <a href={selected.ecosystemHref} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">ANZ ecosystem</a>}
+              {selected.atlasListed && <a href={atlasCompanyHref(selected.id)} className="rounded-lg border border-ink-200 bg-white px-3 py-2 hover:bg-ink-100">Locate in Atlas</a>}
             </div>
             {!!related.length && <div className="mt-5 hidden border-t border-ink-200 pt-3 sm:block"><p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-ink-500">Nearby in {selected.categoryName}</p>
               {related.map((c) => <a key={c.id} href={companyDestination(c, path)} className="flex items-center justify-between gap-2 rounded py-1.5 text-xs hover:underline"><span>{c.name}</span><span className="text-[10px] text-ink-500">{c.availability}</span></a>)}
