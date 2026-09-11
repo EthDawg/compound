@@ -1,0 +1,2070 @@
+{
+  "companies": [
+    {
+      "id": "synergy",
+      "name": "Synergy Group",
+      "kind": "Government consultancy building a Workday practice",
+      "thesis": "An established government consultancy can add Workday depth by recruiting a leadership nucleus. The incoming team’s earlier work is portable experience, not Synergy’s own project count.",
+      "owner": {
+        "text": "Australian-owned consultancy.",
+        "url": "https://synergygroup.net.au/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Named local GO delivery partner.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      },
+      "segment": "Government / Enterprise / GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Included in the local deployment network.",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named government delivery outcomes and the retention of the incoming team would show whether leadership appointments have become durable delivery capacity.",
+      "directorySlug": "synergy-group",
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "kainos",
+      "name": "Kainos",
+      "kind": "Global specialist, locally scaling",
+      "thesis": "Global Workday depth and a still-small ANZ operation can both be true. Named local delivery and capability hires make the expansion more tangible than the parent’s total headcount.",
+      "owner": {
+        "text": "ANZ operation within Kainos.",
+        "url": "https://get.kainos.com/rs/935-JPR-705/images/FY26%20Final%20Full%20Year%20Results%20Report%20PDF.pdf?version=0",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian operation since 2020.",
+        "url": "https://careers.kainos.com/gb/en/australia",
+        "source": "Company source"
+      },
+      "segment": "Enterprise / GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Delivery leader reports Perth Airport HCM and recruitment go-live.",
+          "url": "https://www.linkedin.com/posts/mitchcollins_workday-perthairport-kainos-activity-7491289424316497920-HVbh",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Delivery leader reports Perth Airport HCM and recruitment go-live.",
+          "url": "https://www.linkedin.com/posts/mitchcollins_workday-perthairport-kainos-activity-7491289424316497920-HVbh",
+          "source": "Company source"
+        },
+        {
+          "capability": "Adaptive",
+          "scope": "APAC",
+          "text": "Regional Adaptive leadership appointment.",
+          "url": "https://www.linkedin.com/posts/mitchcollins_kainos-workday-workdayservices-activity-7318464197707603968-KG7D",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "APAC",
+          "text": "Named regional lead brings Australian Payroll experience.",
+          "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7377122268298031104/",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "Published global Workday services; local capacity not quantified.",
+          "url": "https://www.kainos.com/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Published global Workday services; local capacity not quantified.",
+          "url": "https://www.kainos.com/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "Global",
+          "text": "Published global Workday services; local capacity not quantified.",
+          "url": "https://www.kainos.com/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "Global",
+          "text": "Published global Workday services; local capacity not quantified.",
+          "url": "https://www.kainos.com/workday",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Sustained local client delivery across the newer capabilities would show that the regional build is becoming a repeatable practice.",
+      "directorySlug": "kainos",
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "cognizant",
+      "name": "Cognizant",
+      "kind": "Global practice with local boutique roots",
+      "thesis": "Part of the ANZ story began with Theory of Mind, before two acquisitions and a later brand transition. That local origin is more informative than treating the practice as generic global-SI capacity.",
+      "owner": {
+        "text": "Collaborative became Cognizant’s Workday practice.",
+        "url": "https://www.collaborativesolutions.com/cog-wdp-launchfaq",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Named Australian university delivery and local practice history.",
+        "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+        "source": "Company source"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Acquired advisory and implementation capability; this release is global.",
+          "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "Global",
+          "text": "Acquired advisory and implementation capability; this release is global.",
+          "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Federation University case describes HCM and Payroll go-live followed by ongoing enhancements; Finance and Student remain future phases.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Federation University case describes HCM and Payroll go-live followed by ongoing enhancements; Finance and Student remain future phases.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "ANZ",
+          "text": "Federation University case describes HCM and Payroll go-live followed by ongoing enhancements; Finance and Student remain future phases.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Federation University case describes HCM and Payroll go-live followed by ongoing enhancements; Finance and Student remain future phases.",
+          "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Current ANZ leadership, local delivery and retained capability matter more than assuming that an individual departure means practice contraction.",
+      "directorySlug": "cognizant"
+    },
+    {
+      "id": "kliqtek",
+      "name": "Kliqtek",
+      "kind": "Repeat founders + joint-venture delivery",
+      "thesis": "The McBurnies bring a prior build-and-sale cycle into a newer Workday business. Kliqxe also matters: the launch combined founder experience with an existing enterprise-platform partner.",
+      "owner": {
+        "text": "Launched as a joint venture with Kliqxe; ownership percentages not established.",
+        "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian Workday specialist.",
+        "url": "https://www.kliqtek.com/",
+        "source": "Company source"
+      },
+      "segment": "GO mid-market / Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Published advisory, project, support and resourcing offer.",
+          "url": "https://www.kliqtek.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Published advisory, project, support and resourcing offer.",
+          "url": "https://www.kliqtek.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Published advisory, project, support and resourcing offer.",
+          "url": "https://www.kliqtek.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Resourcing",
+          "scope": "ANZ",
+          "text": "Published advisory, project, support and resourcing offer.",
+          "url": "https://www.kliqtek.com/",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named Workday delivery and repeatable support would test whether founder experience and the joint venture translate into a durable local practice.",
+      "directorySlug": "kliqtek-pty-ltd",
+      "founded": {
+        "text": "Founded in 2024 by Dougall and Trish McBurnie.",
+        "url": "https://www.kliqtek.com/about-kliqtek",
+        "source": "Company source"
+      },
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "kind": "Practice built inside an advisory group",
+      "thesis": "Echo is a new delivery business inside Tenet. Its formation model differs from a standalone founder boutique: an experienced team is being assembled within an existing advisory platform.",
+      "owner": {
+        "text": "Technology delivery business of Tenet Advisory & Investments.",
+        "url": "https://echo.delivery/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Published Australian onshore delivery offer.",
+        "url": "https://echo.delivery/",
+        "source": "Company source"
+      },
+      "segment": "GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Adaptive",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Published local delivery offer; indicative website testimonials are not client proof.",
+          "url": "https://echo.delivery/",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named, attributable Workday outcomes and the integration of Data & AI into client delivery would strengthen the practice-building story.",
+      "directorySlug": "echo",
+      "founded": {
+        "text": "Brand launched in June 2025 after a year of development.",
+        "url": "https://www.linkedin.com/posts/mcelhinneyjames_twelve-months-ago-john-pickering-and-i-noticed-activity-7340353740274614272-EjLH",
+        "source": "Launch account"
+      },
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "mivada",
+      "name": "Mivada",
+      "kind": "Support roots expanding into deployment",
+      "thesis": "Mivada’s useful trajectory is AMS to implementation: post-go-live knowledge becomes a base for entering the GO deployment channel. That is more specific than a broad local-size tier.",
+      "owner": {
+        "text": "Australian-owned; founded by Rama Madivada.",
+        "url": "https://mivada.com/the-mivada-story/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Sydney headquarters with local and offshore delivery.",
+        "url": "https://mivada.com/workday-erp/",
+        "source": "Company source"
+      },
+      "segment": "Enterprise / GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Published Workday ERP, support and local payroll/integration expertise.",
+          "url": "https://mivada.com/workday-erp/",
+          "source": "Company source"
+        }
+      ],
+      "watch": "New deployment references and how support knowledge improves implementation would test the expansion beyond its AMS roots.",
+      "directorySlug": "mivada",
+      "founded": {
+        "text": "Founded in 2014; Workday AMS launched in 2019.",
+        "url": "https://mivada.com/the-mivada-story/",
+        "source": "Company source"
+      },
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "intecrowd",
+      "name": "Intecrowd",
+      "kind": "Acquired Workday specialist",
+      "thesis": "UST bought specialist Workday capability. The new parent changes reach and resources; it does not establish that the ANZ bench has already grown.",
+      "owner": {
+        "text": "Acquired by UST in April 2026.",
+        "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "The acquired business includes Australia and New Zealand staff.",
+        "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+        "source": "Company source"
+      },
+      "segment": "Enterprise / GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Named local deployment partner.",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "Global",
+          "text": "HCM, Finance and Extend lifecycle expertise described for the global business.",
+          "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "Global",
+          "text": "HCM, Finance and Extend lifecycle expertise described for the global business.",
+          "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "Global",
+          "text": "HCM, Finance and Extend lifecycle expertise described for the global business.",
+          "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "Global",
+          "text": "HCM, Finance and Extend lifecycle expertise described for the global business.",
+          "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Local delivery appointments, retained leadership and ANZ client outcomes would show what the UST combination changes on the ground.",
+      "directorySlug": "intecrowd",
+      "founded": {
+        "text": "Founded in 2014 by Don McDougal.",
+        "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+        "source": "Company source"
+      },
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "bosley",
+      "name": "Bosley",
+      "kind": "Transformation founder, broader AI proposition",
+      "thesis": "Andrew Hill’s firm now spans AI, compliance and workforce intelligence. Workday GO is one route into the market, not the whole company identity.",
+      "owner": {
+        "text": "Founded and led by Andrew Hill.",
+        "url": "https://www.bosley.com.au/about",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Melbourne/Sydney business with an Australian Workday GO offer.",
+        "url": "https://www.bosley.com.au/solutions/workday",
+        "source": "Company source"
+      },
+      "segment": "GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Published Australian GO and ongoing support offer.",
+          "url": "https://www.bosley.com.au/solutions/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Published Australian GO and ongoing support offer.",
+          "url": "https://www.bosley.com.au/solutions/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Published Australian GO and ongoing support offer.",
+          "url": "https://www.bosley.com.au/solutions/workday",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "ANZ",
+          "text": "Published Australian GO and ongoing support offer.",
+          "url": "https://www.bosley.com.au/solutions/workday",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named Workday implementations would distinguish a new delivery record from the founders’ prior transformation experience.",
+      "founded": {
+        "text": "Founded in 2024.",
+        "url": "https://www.bosley.com.au/about",
+        "source": "Company source"
+      },
+      "go": {
+        "text": "Named in the current cohort; joining date not established.",
+        "url": "https://blog.workday.com/en-au/outgrowing-your-tech-a-guide-for-aussie-business-leaders.html",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "datacom",
+      "name": "Datacom",
+      "kind": "Local payroll infrastructure + services",
+      "thesis": "The concrete local differentiator is the Datapay connection and NZ services capability. A payroll connector and being the implementation prime are different claims.",
+      "owner": {
+        "text": "Workday practice within the broader Datacom group.",
+        "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Published New Zealand Workday services capability.",
+        "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+        "source": "Company source"
+      },
+      "segment": "Enterprise / GO mid-market",
+      "capabilities": [
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "New Zealand Services partnership states these capabilities.",
+          "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "New Zealand Services partnership states these capabilities.",
+          "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "New Zealand Services partnership states these capabilities.",
+          "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+          "source": "Company source"
+        },
+        {
+          "capability": "Adaptive",
+          "scope": "ANZ",
+          "text": "New Zealand Services partnership states these capabilities.",
+          "url": "https://datacom.com/au/en/discover/press-release/datacom-named-workday-services-partner-one-of-four-locally",
+          "source": "Company source"
+        },
+        {
+          "capability": "Payroll",
+          "scope": "ANZ",
+          "text": "Certified Workday–Datapay integration; this is not proof of Australian native Payroll delivery.",
+          "url": "https://datacom.com/nz/en/products/datapay/integrations",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Certified Workday–Datapay integration; this is not proof of Australian native Payroll delivery.",
+          "url": "https://datacom.com/nz/en/products/datapay/integrations",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named local deployments and the division of responsibility between Datapay and Workday would make the delivery boundary clearer.",
+      "go": {
+        "text": "Named in the May 2026 launch.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Workday"
+      }
+    },
+    {
+      "id": "group-elephant",
+      "name": "Group Elephant / Glyde",
+      "kind": "Local entry to watch; global capability established",
+      "thesis": "Glyde gives the group a real Workday base. Its South African implementation milestone should not be carried across the map as evidence of an established ANZ practice.",
+      "owner": {
+        "text": "Glyde is part of Group Elephant.",
+        "url": "https://www.glydeconsulting.com/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian company profile lists Workday; local delivery depth remains unestablished.",
+        "url": "https://au.linkedin.com/company/group-elephant-australia",
+        "source": "Company source"
+      },
+      "segment": "ANZ segment not established",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "Global",
+          "text": "Glyde’s published group offer; not local ANZ delivery evidence.",
+          "url": "https://www.glydeconsulting.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "Global",
+          "text": "Glyde’s published group offer; not local ANZ delivery evidence.",
+          "url": "https://www.glydeconsulting.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "Global",
+          "text": "Glyde’s published group offer; not local ANZ delivery evidence.",
+          "url": "https://www.glydeconsulting.com/",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "Global",
+          "text": "Glyde’s published group offer; not local ANZ delivery evidence.",
+          "url": "https://www.glydeconsulting.com/",
+          "source": "Company source"
+        }
+      ],
+      "watch": "A named ANZ practice leader, local Workday delivery reference or region-specific partner announcement would materially strengthen this reading."
+    },
+    {
+      "id": "accenture",
+      "name": "Accenture",
+      "kind": "Global transformation practice",
+      "thesis": "Named local client work is the useful anchor: Genesis Energy’s finance transformation and Macquarie University’s HCM and planning work show more than a global certified-person total.",
+      "owner": {
+        "text": "Delivery sits within Accenture.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+        "source": "Workday"
+      },
+      "presence": {
+        "text": "Named Australian and New Zealand client engagements.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+        "source": "Workday"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Workday identifies Accenture as Genesis Energy’s finance adviser and implementation partner.",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Workday identifies Accenture as Genesis Energy’s finance adviser and implementation partner.",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "Workday identifies Accenture as Genesis Energy’s finance adviser and implementation partner.",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Macquarie University case documents HCM, Adaptive and Prism delivery.",
+          "url": "https://www.accenture.com/content/dam/accenture/final/capabilities/technology/technology-innovation/document/Accenture-Macquarie-University-Workday-Stories-2022.pdf",
+          "source": "Company source"
+        },
+        {
+          "capability": "Adaptive",
+          "scope": "ANZ",
+          "text": "Macquarie University case documents HCM, Adaptive and Prism delivery.",
+          "url": "https://www.accenture.com/content/dam/accenture/final/capabilities/technology/technology-innovation/document/Accenture-Macquarie-University-Workday-Stories-2022.pdf",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Macquarie University case documents HCM, Adaptive and Prism delivery.",
+          "url": "https://www.accenture.com/content/dam/accenture/final/capabilities/technology/technology-innovation/document/Accenture-Macquarie-University-Workday-Stories-2022.pdf",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Further local outcomes and the balance of delivery versus recurring support would sharpen its ANZ practice picture.",
+      "directorySlug": "accenture-llp"
+    },
+    {
+      "id": "kpmg",
+      "name": "KPMG",
+      "kind": "Finance, HR and sector transformation",
+      "thesis": "The Australian practice links HR and finance transformation with controls, managed services and education. Named leadership and client outcomes are a stronger starting point than a global tier.",
+      "owner": {
+        "text": "Workday practice within KPMG Australia.",
+        "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian alliance page identifies a national practice leader.",
+        "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+        "source": "Company source"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "AMS",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "Finance",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "Student",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "Data / Integration / AI",
+          "scope": "ANZ",
+          "text": "Australian practice publishes these offers; Student is an offer, not a named local go-live.",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named Student outcomes and continued delivery across the advertised scope would establish which parts of the offer are locally repeatable.",
+      "directorySlug": "kpmg"
+    },
+    {
+      "id": "deloitte",
+      "name": "Deloitte",
+      "kind": "Large transformation practice",
+      "thesis": "Australia’s Workday practice has named alliance and transformation leadership. The distinction to preserve is local leadership and scope versus the breadth of the international network.",
+      "owner": {
+        "text": "Australian practice within the Deloitte network.",
+        "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australia Workday Practice and APJ Alliance leadership named.",
+        "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+        "source": "Company source"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Australian alliance page describes HR transformation and operating-model work.",
+          "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Australian alliance page describes HR transformation and operating-model work.",
+          "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Named local scope, outcomes and current practice appointments would make the broad transformation proposition more assessable.",
+      "directorySlug": "deloitte"
+    },
+    {
+      "id": "pwc",
+      "name": "PwC",
+      "kind": "Workforce transformation practice",
+      "thesis": "PwC’s Australian Workday offer puts workforce change alongside implementation. The company’s broad advisory identity does not establish a local bench in every Workday product.",
+      "owner": {
+        "text": "Workday offer within PwC Australia.",
+        "url": "https://www.pwc.com.au/workforce/workday.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian workforce page publishes local contact and lifecycle offer.",
+        "url": "https://www.pwc.com.au/workforce/workday.html",
+        "source": "Company source"
+      },
+      "segment": "Enterprise",
+      "capabilities": [
+        {
+          "capability": "Advisory",
+          "scope": "ANZ",
+          "text": "Australian page describes HR transformation, implementation and lifecycle support.",
+          "url": "https://www.pwc.com.au/workforce/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "Implementation",
+          "scope": "ANZ",
+          "text": "Australian page describes HR transformation, implementation and lifecycle support.",
+          "url": "https://www.pwc.com.au/workforce/workday.html",
+          "source": "Company source"
+        },
+        {
+          "capability": "HCM",
+          "scope": "ANZ",
+          "text": "Australian page describes HR transformation, implementation and lifecycle support.",
+          "url": "https://www.pwc.com.au/workforce/workday.html",
+          "source": "Company source"
+        }
+      ],
+      "watch": "Local named engagements and specific capability leaders would add evidence beyond the broad workforce offer.",
+      "directorySlug": "pwc"
+    },
+    {
+      "id": "capgemini",
+      "name": "Capgemini",
+      "kind": "Global SI; local scope less visible",
+      "thesis": "Workday is a named technology partner on Capgemini’s Australian site. That establishes an alliance signal, but does not by itself establish local module capacity or an ANZ practice ranking.",
+      "owner": {
+        "text": "Workday alliance within Capgemini.",
+        "url": "https://www.capgemini.com/au-en/about-us/technology-partners/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Australian partner page names Workday.",
+        "url": "https://www.capgemini.com/au-en/about-us/technology-partners/",
+        "source": "Company source"
+      },
+      "segment": "ANZ Workday segment not established",
+      "capabilities": [],
+      "watch": "Named local Workday leaders and customer delivery would resolve the gap between alliance visibility and ANZ practice depth.",
+      "directorySlug": "capgemini"
+    },
+    {
+      "id": "theory-of-mind",
+      "name": "Theory of Mind",
+      "kind": "Lineage context",
+      "thesis": "APAC Workday specialist founded in 2012 by Duane Goff and Mark Ohlin.",
+      "owner": {
+        "text": "APAC Workday specialist founded in 2012 by Duane Goff and Mark Ohlin.",
+        "url": "https://www.prnewswire.com/news-releases/theory-of-mind-to-join-collaborative-solutions-300678207.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://www.prnewswire.com/news-releases/theory-of-mind-to-join-collaborative-solutions-300678207.html",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "collaborative",
+      "name": "Collaborative Solutions",
+      "kind": "Lineage context",
+      "thesis": "Workday specialist founded in 2003; acquired by Cognizant in 2020.",
+      "owner": {
+        "text": "Workday specialist founded in 2003; acquired by Cognizant in 2020.",
+        "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "versor",
+      "name": "Versor",
+      "kind": "Lineage context",
+      "thesis": "Australian data and analytics consultancy acquired by Fujitsu in 2021.",
+      "owner": {
+        "text": "Australian data and analytics consultancy acquired by Fujitsu in 2021.",
+        "url": "https://info.archives.global.fujitsu/au/about/resources/news/press-releases/2021/fujitsu-australia-acquires-data-analytics-management-consultancy-versor.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://info.archives.global.fujitsu/au/about/resources/news/press-releases/2021/fujitsu-australia-acquires-data-analytics-management-consultancy-versor.html",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "fujitsu",
+      "name": "Fujitsu",
+      "kind": "Lineage context",
+      "thesis": "Acquirer of Versor; this lineage concerns data/AI consulting, not acquired Workday delivery.",
+      "owner": {
+        "text": "Acquirer of Versor; this lineage concerns data/AI consulting, not acquired Workday delivery.",
+        "url": "https://info.archives.global.fujitsu/au/about/resources/news/press-releases/2021/fujitsu-australia-acquires-data-analytics-management-consultancy-versor.html",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://info.archives.global.fujitsu/au/about/resources/news/press-releases/2021/fujitsu-australia-acquires-data-analytics-management-consultancy-versor.html",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "kliqxe",
+      "name": "Kliqxe",
+      "kind": "Lineage context",
+      "thesis": "Malaysian Salesforce specialist and Kliqtek joint-venture partner at launch.",
+      "owner": {
+        "text": "Malaysian Salesforce specialist and Kliqtek joint-venture partner at launch.",
+        "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "tenet",
+      "name": "Tenet Advisory & Investments",
+      "kind": "Lineage context",
+      "thesis": "Advisory platform within which Echo operates.",
+      "owner": {
+        "text": "Advisory platform within which Echo operates.",
+        "url": "https://echo.delivery/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://echo.delivery/",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "ust",
+      "name": "UST",
+      "kind": "Lineage context",
+      "thesis": "Acquirer of Intecrowd in April 2026.",
+      "owner": {
+        "text": "Acquirer of Intecrowd in April 2026.",
+        "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    },
+    {
+      "id": "tyco",
+      "name": "Tyco",
+      "kind": "Lineage context",
+      "thesis": "Don McDougal led HR systems and a Workday implementation from the customer side.",
+      "owner": {
+        "text": "Don McDougal led HR systems and a Workday implementation from the customer side.",
+        "url": "https://intecrowd.com/team/don-mcdougal/",
+        "source": "Company source"
+      },
+      "presence": {
+        "text": "Context node; not an assessed ANZ Workday practice.",
+        "url": "https://intecrowd.com/team/don-mcdougal/",
+        "source": "Company source"
+      },
+      "segment": "Not assessed",
+      "capabilities": [],
+      "watch": "This node explains a sourced relationship; it is not a separate local capability assessment.",
+      "historical": true
+    }
+  ],
+  "people": [
+    {
+      "id": "duane-goff",
+      "name": "Duane Goff",
+      "companyId": "synergy",
+      "role": "Partner",
+      "function": "Founder",
+      "domain": "Workday practice",
+      "reading": "An original local founder now part of another practice build. Acquisition history and a later appointment are distinct events.",
+      "current": {
+        "text": "Partner",
+        "url": "https://synergygroup.net.au/meet-our-team/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "theory-of-mind",
+          "role": "Co-founder",
+          "when": "2012",
+          "text": "Co-founder",
+          "url": "https://www.prnewswire.com/news-releases/theory-of-mind-to-join-collaborative-solutions-300678207.html",
+          "source": "Company source"
+        },
+        {
+          "companyId": "synergy",
+          "role": "Partner appointment",
+          "when": "December 2025",
+          "text": "Partner appointment",
+          "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "eva-bellaire",
+      "name": "Eva Bellaire",
+      "companyId": "synergy",
+      "role": "Partner",
+      "function": "Practice Builder",
+      "domain": "Workday ERP",
+      "reading": "Part of Synergy’s incoming leadership group. Earlier experience is not a Synergy implementation count.",
+      "current": {
+        "text": "Partner",
+        "url": "https://synergygroup.net.au/meet-our-team/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "synergy",
+          "role": "Partner appointment",
+          "when": "December 2025",
+          "text": "Partner appointment",
+          "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "prad-prabhakar",
+      "name": "Prad Prabhakar",
+      "companyId": "synergy",
+      "role": "Executive Director",
+      "function": "Delivery",
+      "domain": "Workday ERP",
+      "reading": "Named in the same leadership appointment. Prior employment intervals are not reconstructed without individual evidence.",
+      "current": {
+        "text": "Executive Director",
+        "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "synergy",
+          "role": "Executive Director appointment",
+          "when": "December 2025",
+          "text": "Executive Director appointment",
+          "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "giles-wei",
+      "name": "Giles Wei",
+      "companyId": "synergy",
+      "role": "Executive Director",
+      "function": "Delivery",
+      "domain": "Workday ERP",
+      "reading": "Named in the same leadership appointment. Prior employment intervals are not reconstructed without individual evidence.",
+      "current": {
+        "text": "Executive Director",
+        "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "synergy",
+          "role": "Executive Director appointment",
+          "when": "December 2025",
+          "text": "Executive Director appointment",
+          "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "mitch-collins",
+      "name": "Mitch Collins",
+      "companyId": "kainos",
+      "role": "VP, Delivery – APAC",
+      "function": "Practice Builder",
+      "domain": "Payroll / delivery",
+      "reading": "His own account connects Australian Payroll experience at Cognizant with a later Kainos delivery role; named hires show the practice-building mechanism.",
+      "current": {
+        "text": "VP, Delivery – APAC",
+        "url": "https://au.linkedin.com/in/mitchcollins",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "cognizant",
+          "role": "Workday and Australian Payroll delivery",
+          "when": "2021–2025 · personal account",
+          "text": "Workday and Australian Payroll delivery",
+          "url": "https://www.linkedin.com/posts/mitchcollins_after-three-and-a-half-great-years-this-activity-7293055806495723522-LPwB",
+          "source": "Company source"
+        },
+        {
+          "companyId": "kainos",
+          "role": "VP, Delivery – APAC",
+          "when": "Current profile, checked September 2026",
+          "text": "VP, Delivery – APAC",
+          "url": "https://au.linkedin.com/in/mitchcollins",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "will-aubrey-jones",
+      "name": "Will Aubrey-Jones",
+      "companyId": "kainos",
+      "role": "VP APAC",
+      "function": "Commercial",
+      "domain": "Regional Workday business",
+      "reading": "Regional market leadership complements the delivery and capability-building roles.",
+      "current": {
+        "text": "VP APAC",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "kainos",
+          "role": "VP APAC, quoted in GO announcement",
+          "when": "May 2026",
+          "text": "VP APAC, quoted in GO announcement",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "dougall-mcburnie",
+      "name": "Dougall McBurnie",
+      "companyId": "kliqtek",
+      "role": "Co-founder",
+      "function": "Founder",
+      "domain": "Consulting company building",
+      "reading": "The earlier Versor/Fujitsu cycle supplies company-building experience. It is not a prior Kliqtek Workday delivery record.",
+      "current": {
+        "text": "Co-founder",
+        "url": "https://www.kliqtek.com/about-kliqtek",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "versor",
+          "role": "Co-founder",
+          "when": "Before 2021",
+          "text": "Co-founder",
+          "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+          "source": "Company source"
+        },
+        {
+          "companyId": "fujitsu",
+          "role": "Joined after Versor sale",
+          "when": "2021",
+          "text": "Joined after Versor sale",
+          "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+          "source": "Company source"
+        },
+        {
+          "companyId": "kliqtek",
+          "role": "Co-founder",
+          "when": "2024",
+          "text": "Co-founder",
+          "url": "https://www.kliqtek.com/about-kliqtek",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "trish-mcburnie",
+      "name": "Trish McBurnie",
+      "companyId": "kliqtek",
+      "role": "Co-founder",
+      "function": "Founder",
+      "domain": "Consulting company building",
+      "reading": "The earlier Versor/Fujitsu cycle supplies company-building experience. It is not a prior Kliqtek Workday delivery record.",
+      "current": {
+        "text": "Co-founder",
+        "url": "https://www.kliqtek.com/about-kliqtek",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "versor",
+          "role": "Co-founder",
+          "when": "Before 2021",
+          "text": "Co-founder",
+          "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+          "source": "Company source"
+        },
+        {
+          "companyId": "fujitsu",
+          "role": "Joined after Versor sale",
+          "when": "2021",
+          "text": "Joined after Versor sale",
+          "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+          "source": "Company source"
+        },
+        {
+          "companyId": "kliqtek",
+          "role": "Co-founder",
+          "when": "2024",
+          "text": "Co-founder",
+          "url": "https://www.kliqtek.com/about-kliqtek",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "john-pickering",
+      "name": "John Pickering",
+      "companyId": "echo",
+      "role": "Practice Lead",
+      "function": "Practice Builder",
+      "domain": "Workday delivery",
+      "reading": "Built the new business with James McElhinney inside the wider advisory platform. This establishes practice formation, not personal equity ownership.",
+      "current": {
+        "text": "Practice Lead",
+        "url": "https://au.linkedin.com/in/pickeringjohn",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "echo",
+          "role": "Co-developed and launched the business",
+          "when": "June 2025 launch account",
+          "text": "Co-developed and launched the business",
+          "url": "https://www.linkedin.com/posts/mcelhinneyjames_twelve-months-ago-john-pickering-and-i-noticed-activity-7340353740274614272-EjLH",
+          "source": "Company source"
+        },
+        {
+          "companyId": "echo",
+          "role": "Practice Lead",
+          "when": "Current profile, checked September 2026",
+          "text": "Practice Lead",
+          "url": "https://au.linkedin.com/in/pickeringjohn",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "brian-wong",
+      "name": "Brian Wong",
+      "companyId": "echo",
+      "role": "Partner",
+      "function": "Delivery",
+      "domain": "Workday",
+      "reading": "A named internal promotion is a leadership-development signal; it does not establish net headcount growth.",
+      "current": {
+        "text": "Partner",
+        "url": "https://www.linkedin.com/posts/sayersgroup_promotion-echo-workday-activity-7444911439934566400-OOJk",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "echo",
+          "role": "Promoted to Partner",
+          "when": "April 2026",
+          "text": "Promoted to Partner",
+          "url": "https://www.linkedin.com/posts/sayersgroup_promotion-echo-workday-activity-7444911439934566400-OOJk",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "andrew-hill",
+      "name": "Andrew Hill",
+      "companyId": "bosley",
+      "role": "Founder and CEO",
+      "function": "Founder",
+      "domain": "HR transformation",
+      "reading": "Carries senior HR transformation experience into a broader AI, compliance and workforce-intelligence business.",
+      "current": {
+        "text": "Founder and CEO",
+        "url": "https://www.bosley.com.au/about",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "deloitte",
+          "role": "Global HR Transformation Leader",
+          "when": "Before Bosley",
+          "text": "Global HR Transformation Leader",
+          "url": "https://www.bosley.com.au/about",
+          "source": "Company source"
+        },
+        {
+          "companyId": "bosley",
+          "role": "Founder and CEO",
+          "when": "2024",
+          "text": "Founder and CEO",
+          "url": "https://www.bosley.com.au/about",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "rama-madivada",
+      "name": "Rama Madivada",
+      "companyId": "mivada",
+      "role": "Co-founder and CEO",
+      "function": "Founder",
+      "domain": "Consulting / Workday",
+      "reading": "The company story links its support base to a later deployment expansion. Earlier unnamed employers are left unnamed.",
+      "current": {
+        "text": "Co-founder and CEO",
+        "url": "https://mivada.com/team_member/rama-madivada/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "mivada",
+          "role": "Co-founder and CEO",
+          "when": "2014",
+          "text": "Co-founder and CEO",
+          "url": "https://mivada.com/team_member/rama-madivada/",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "daniel-zrno",
+      "name": "Daniel Zrno",
+      "companyId": "mivada",
+      "role": "National Sales Director, Workday Solutions",
+      "function": "Commercial",
+      "domain": "Workday GO",
+      "reading": "Named by Workday in its launch release, describing Mivada’s deployment buildout. Role is attributed to that dated announcement.",
+      "current": {
+        "text": "National Sales Director, Workday Solutions",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "mivada",
+          "role": "Role quoted by Workday",
+          "when": "May 2026",
+          "text": "Role quoted by Workday",
+          "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "laura-zlendich",
+      "name": "Laura Zlendich",
+      "companyId": "mivada",
+      "role": "Head of Program and Payroll Delivery",
+      "function": "Delivery",
+      "domain": "Payroll",
+      "reading": "A named programme/payroll leader makes the delivery proposition more specific than a company-level capability tag.",
+      "current": {
+        "text": "Head of Program and Payroll Delivery",
+        "url": "https://mivada.com/our-team/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "mivada",
+          "role": "Head of Program and Payroll Delivery",
+          "when": "Team page checked September 2026",
+          "text": "Head of Program and Payroll Delivery",
+          "url": "https://mivada.com/our-team/",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "don-mcdougal",
+      "name": "Don McDougal",
+      "companyId": "intecrowd",
+      "role": "Founder and CEO",
+      "function": "Founder",
+      "domain": "HCM / implementation",
+      "reading": "Customer-side HR systems experience preceded building a Workday specialist that UST later acquired.",
+      "current": {
+        "text": "Founder and CEO",
+        "url": "https://intecrowd.com/team/don-mcdougal/",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "tyco",
+          "role": "VP HR Systems and Workforce Analytics",
+          "when": "Before Intecrowd",
+          "text": "VP HR Systems and Workforce Analytics",
+          "url": "https://intecrowd.com/team/don-mcdougal/",
+          "source": "Company source"
+        },
+        {
+          "companyId": "intecrowd",
+          "role": "Founder and CEO",
+          "when": "Founded 2014",
+          "text": "Founder and CEO",
+          "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "lisa-dunne",
+      "name": "Lisa Dunne",
+      "companyId": "kpmg",
+      "role": "National Workday Lead Partner",
+      "function": "Practice Builder",
+      "domain": "HR / Finance",
+      "reading": "The Australian alliance page places a named leader over HR, finance and technology professionals.",
+      "current": {
+        "text": "National Workday Lead Partner",
+        "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "kpmg",
+          "role": "National Workday Lead Partner",
+          "when": "Current alliance page",
+          "text": "National Workday Lead Partner",
+          "url": "https://kpmg.com/au/en/why-kpmg/alliances/workday.html",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "kurt-proctor-parker",
+      "name": "Kurt Proctor-Parker",
+      "companyId": "deloitte",
+      "role": "Australia Workday Practice Leader / APJ Alliance Leader",
+      "function": "Commercial",
+      "domain": "HR transformation",
+      "reading": "The published role links local practice responsibility with regional alliance leadership.",
+      "current": {
+        "text": "Australia Workday Practice Leader / APJ Alliance Leader",
+        "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+        "source": "Company source"
+      },
+      "career": [
+        {
+          "companyId": "deloitte",
+          "role": "Practice and alliance leader",
+          "when": "Current Australian alliance page",
+          "text": "Practice and alliance leader",
+          "url": "https://www.deloitte.com/au/en/alliances/workday.html",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "chris-smith",
+      "name": "Chris Smith",
+      "companyId": "cognizant",
+      "role": "APAC Regional Head, Workday · confirmed Sep 2025",
+      "function": "Commercial",
+      "domain": "Workday regional business",
+      "reading": "Cognizant named this regional role in September 2025; his current public profile still names Cognizant. His commercial role is separate from founding the practice.",
+      "current": {
+        "text": "APAC Regional Head, Workday; last title confirmation September 2025.",
+        "url": "https://www.linkedin.com/posts/cognizantpartners_workday-rising-activity-7371901444091723776-hcsn",
+        "source": "Cognizant announcement"
+      },
+      "career": [
+        {
+          "companyId": "collaborative",
+          "role": "Workday Regional Sales Director, APAC",
+          "when": "2023 · joining announcement",
+          "text": "Joining announcement.",
+          "url": "https://www.linkedin.com/posts/chris-smith-1808668_collabielife-newhire-collaborativesolutions-activity-7047508066325397504-GQFI",
+          "source": "Company source"
+        },
+        {
+          "companyId": "cognizant",
+          "role": "APAC Regional Head, Workday",
+          "when": "September 2025 · title confirmed",
+          "text": "Corporate role attribution.",
+          "url": "https://www.linkedin.com/posts/cognizantpartners_workday-rising-activity-7371901444091723776-hcsn",
+          "source": "Company source"
+        }
+      ]
+    },
+    {
+      "id": "michael-shnider",
+      "name": "Michael Shnider",
+      "companyId": "cognizant",
+      "role": "Commercial function · exact title unverified",
+      "function": "Commercial",
+      "domain": "Workday sales",
+      "reading": "His sales-award account supports a commercial function. It does not establish an exact current title or a measurable influence ranking.",
+      "current": {
+        "text": "Current professional profile names Cognizant; exact title not exposed.",
+        "url": "https://au.linkedin.com/in/michael-shnider-9956303",
+        "source": "Professional profile"
+      },
+      "career": [
+        {
+          "companyId": "cognizant",
+          "role": "Workday Practice Sales Excellence recognition",
+          "when": "2024 · personal account",
+          "text": "Sales recognition account.",
+          "url": "https://www.linkedin.com/posts/michael-shnider-9956303_excited-to-share-that-i-have-won-the-sales-activity-7171663998835175424-5wU9",
+          "source": "Personal account"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "tom-acquisition",
+      "date": "2018-07-10",
+      "dateLabel": "July 2018 · announced",
+      "companyIds": [
+        "theory-of-mind",
+        "collaborative",
+        "cognizant"
+      ],
+      "personIds": [
+        "duane-goff"
+      ],
+      "type": "Acquisition",
+      "title": "Theory of Mind → Collaborative",
+      "implication": "Local delivery roots became part of a larger specialist.",
+      "scope": "ANZ",
+      "text": "Collaborative announced the acquisition of the APAC specialist founded by Duane Goff and Mark Ohlin.",
+      "url": "https://www.prnewswire.com/news-releases/theory-of-mind-to-join-collaborative-solutions-300678207.html",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "theory-of-mind"
+      ]
+    },
+    {
+      "id": "cog-acquisition",
+      "date": "2020-06-11",
+      "dateLabel": "June 2020 · completion announced",
+      "companyIds": [
+        "collaborative",
+        "cognizant"
+      ],
+      "personIds": [],
+      "type": "Acquisition",
+      "title": "Collaborative → Cognizant",
+      "implication": "Ownership changed before the later brand transition.",
+      "scope": "Global",
+      "text": "Cognizant announced completion of the Workday specialist acquisition.",
+      "url": "https://news.cognizant.com/2020-06-11-Cognizant-Completes-Acquisition-of-Collaborative-Solutions-One-of-the-Worlds-Largest-Workday-Services-Partners2",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "collaborative"
+      ]
+    },
+    {
+      "id": "cog-brand",
+      "date": "2023-09-01",
+      "dateLabel": "September 2023",
+      "companyIds": [
+        "collaborative",
+        "cognizant"
+      ],
+      "personIds": [],
+      "type": "Partner change",
+      "title": "One Cognizant Workday practice",
+      "implication": "A rebrand is not a second acquisition.",
+      "scope": "Global",
+      "text": "Collaborative’s transition FAQ dates the new practice brand to Workday Rising.",
+      "url": "https://www.collaborativesolutions.com/cog-wdp-launchfaq",
+      "source": "Company source"
+    },
+    {
+      "id": "synergy-hires",
+      "date": "2025-12-18",
+      "dateLabel": "December 2025 · appointments announced",
+      "companyIds": [
+        "synergy"
+      ],
+      "personIds": [
+        "duane-goff",
+        "eva-bellaire",
+        "prad-prabhakar",
+        "giles-wei"
+      ],
+      "type": "Senior hire",
+      "title": "Synergy adds a leadership nucleus",
+      "implication": "The announcement establishes incoming experience, not the acquisition of their former employers.",
+      "scope": "ANZ",
+      "text": "Duane and Eva joined as Partners; Prad and Giles as Executive Directors.",
+      "url": "https://www.linkedin.com/posts/synergy-group-australia_synergygroup-workdaypartners-playwithimpact-activity-7407256216009183233-WK4n",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "versor-sale",
+      "date": "2021-04-01",
+      "dateLabel": "April 2021 · effective",
+      "companyIds": [
+        "versor",
+        "fujitsu",
+        "kliqtek"
+      ],
+      "personIds": [
+        "dougall-mcburnie",
+        "trish-mcburnie"
+      ],
+      "type": "Acquisition",
+      "title": "Versor → Fujitsu",
+      "implication": "This is the founders’ earlier consulting cycle, not Workday lineage.",
+      "scope": "ANZ",
+      "text": "Fujitsu acquired the data and analytics consultancy; Dougall continued to lead it.",
+      "url": "https://info.archives.global.fujitsu/au/about/resources/news/press-releases/2021/fujitsu-australia-acquires-data-analytics-management-consultancy-versor.html",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "versor"
+      ]
+    },
+    {
+      "id": "kliqtek-launch",
+      "date": "2024-08-01",
+      "dateLabel": "August 2024 · launch announced",
+      "companyIds": [
+        "kliqtek",
+        "kliqxe"
+      ],
+      "personIds": [
+        "dougall-mcburnie",
+        "trish-mcburnie"
+      ],
+      "type": "Practice launch",
+      "title": "The McBurnies launch Kliqtek with Kliqxe",
+      "implication": "Repeat founders and a platform partner supply different ingredients.",
+      "scope": "ANZ",
+      "text": "The launch described a Workday joint venture with the Malaysian Salesforce specialist.",
+      "url": "https://www.kliqtek.com/kliqtek-news/exciting-news-introducing-kliqtek-a-workday-partner",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "echo-launch",
+      "date": "2025-06-16",
+      "dateLabel": "June 2025 · brand launch account",
+      "companyIds": [
+        "echo",
+        "tenet"
+      ],
+      "personIds": [
+        "john-pickering"
+      ],
+      "type": "Practice launch",
+      "title": "A new delivery business inside Tenet",
+      "implication": "Practice formation inside a broader firm differs from an independent startup.",
+      "scope": "ANZ",
+      "text": "James McElhinney described developing Echo with John Pickering during the preceding year.",
+      "url": "https://www.linkedin.com/posts/mcelhinneyjames_twelve-months-ago-john-pickering-and-i-noticed-activity-7340353740274614272-EjLH",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "echo-promotion",
+      "date": "2026-04-01",
+      "dateLabel": "April 2026 · promotion announced",
+      "companyIds": [
+        "echo"
+      ],
+      "personIds": [
+        "brian-wong"
+      ],
+      "type": "Leadership change",
+      "title": "Brian Wong becomes Partner",
+      "implication": "Leadership development is observable; net hiring growth is not established by a promotion.",
+      "scope": "ANZ",
+      "text": "Tenet announced Brian’s promotion within Echo.",
+      "url": "https://www.linkedin.com/posts/sayersgroup_promotion-echo-workday-activity-7444911439934566400-OOJk",
+      "source": "Company source"
+    },
+    {
+      "id": "kainos-adaptive",
+      "date": "2025-04-17",
+      "dateLabel": "April 2025 · hire announced",
+      "companyIds": [
+        "kainos"
+      ],
+      "personIds": [
+        "mitch-collins"
+      ],
+      "type": "Senior hire",
+      "title": "Kainos adds regional Adaptive leadership",
+      "implication": "A named capability leader is a more precise signal than a company-wide employee band.",
+      "scope": "APAC",
+      "text": "Mitch Collins announced Tony Teixeira’s arrival to lead regional Adaptive projects.",
+      "url": "https://www.linkedin.com/posts/mitchcollins_kainos-workday-workdayservices-activity-7318464197707603968-KG7D",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "kainos-payroll",
+      "date": "2025-09-25",
+      "dateLabel": "September 2025 · hire announced",
+      "companyIds": [
+        "kainos"
+      ],
+      "personIds": [
+        "mitch-collins"
+      ],
+      "type": "Senior hire",
+      "title": "Payroll expertise joins Kainos’s regional build",
+      "implication": "Capability is being assembled around local payroll and workforce requirements.",
+      "scope": "APAC",
+      "text": "Suchita was named as the regional PATTS lead with Australian Payroll experience.",
+      "url": "https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7377122268298031104/",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "kainos-hires",
+      "date": "2026-01-12",
+      "dateLabel": "January 2026 · additions announced",
+      "companyIds": [
+        "kainos"
+      ],
+      "personIds": [
+        "mitch-collins"
+      ],
+      "type": "Senior hire",
+      "title": "Kainos adds Sydney and Perth delivery people",
+      "implication": "This includes an internal relocation; do not count every appointment as external hiring.",
+      "scope": "ANZ",
+      "text": "The announcement names Pratyush Canpadee, Ronan Donnelly and Will White.",
+      "url": "https://www.linkedin.com/posts/mitchcollins_excited-to-start-2026-with-some-great-new-activity-7416406645196410880-4cSK",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "kainos-growth",
+      "date": "2026-05-18",
+      "dateLabel": "May 2026 · FY26 results",
+      "companyIds": [
+        "kainos"
+      ],
+      "personIds": [],
+      "type": "Expansion",
+      "title": "ANZ grows from a small base",
+      "implication": "Local growth and global scale should be described separately.",
+      "scope": "ANZ",
+      "text": "Kainos’s FY26 report describes rapid ANZ growth and names Perth Airport among Workday Services customers.",
+      "url": "https://get.kainos.com/rs/935-JPR-705/images/FY26%20Final%20Full%20Year%20Results%20Report%20PDF.pdf?version=0",
+      "source": "Company source",
+      "movement": "Growing"
+    },
+    {
+      "id": "intecrowd-ust",
+      "date": "2026-04-07",
+      "dateLabel": "April 2026 · acquisition announced",
+      "companyIds": [
+        "intecrowd",
+        "ust"
+      ],
+      "personIds": [
+        "don-mcdougal"
+      ],
+      "type": "Acquisition",
+      "title": "UST acquires Intecrowd",
+      "implication": "New parent resources are established; ANZ headcount expansion is not.",
+      "scope": "Global",
+      "text": "The completed acquisition brings Intecrowd’s Workday business into UST.",
+      "url": "https://intecrowd.com/ust-acquires-award-winning-workday-partner-intecrowd/",
+      "source": "Company source",
+      "movement": "Acquired",
+      "targetIds": [
+        "intecrowd"
+      ]
+    },
+    {
+      "id": "mivada-build",
+      "date": "2026-05-26",
+      "dateLabel": "May 2026 · Workday announcement",
+      "companyIds": [
+        "mivada"
+      ],
+      "personIds": [
+        "daniel-zrno"
+      ],
+      "type": "Expansion",
+      "title": "Mivada builds out deployment",
+      "implication": "The mechanism is support experience extending into a new implementation channel.",
+      "scope": "ANZ",
+      "text": "Workday quotes Mivada describing its GO deployment-practice expansion.",
+      "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+      "source": "Company source",
+      "movement": "Building"
+    },
+    {
+      "id": "go-launch",
+      "date": "2026-05-26",
+      "dateLabel": "May 2026 · ANZ launch",
+      "companyIds": [
+        "datacom",
+        "echo",
+        "intecrowd",
+        "kainos",
+        "kliqtek",
+        "mivada",
+        "synergy"
+      ],
+      "personIds": [],
+      "type": "Partner change",
+      "title": "GO widens the local deployment channel",
+      "implication": "A route to market changes; inclusion is not a quality tier or proof of every module.",
+      "scope": "ANZ",
+      "text": "Workday’s launch names seven ANZ delivery partners.",
+      "url": "https://en-au.newsroom.workday.com/press-releases?item=122867",
+      "source": "Company source"
+    },
+    {
+      "id": "bosley-go",
+      "date": null,
+      "dateLabel": "Current listing · checked September 2026",
+      "companyIds": [
+        "bosley"
+      ],
+      "personIds": [
+        "andrew-hill"
+      ],
+      "type": "Partner change",
+      "title": "Bosley appears in the current GO cohort",
+      "implication": "Keep current membership without retroactively adding it to the May launch.",
+      "scope": "ANZ",
+      "text": "Workday’s current guide names Bosley alongside the launch partners; a joining date is not supplied.",
+      "url": "https://blog.workday.com/en-au/outgrowing-your-tech-a-guide-for-aussie-business-leaders.html",
+      "source": "Company source"
+    },
+    {
+      "id": "glyde-sa",
+      "date": "2024-10-11",
+      "dateLabel": "October 2024",
+      "companyIds": [
+        "group-elephant"
+      ],
+      "personIds": [],
+      "type": "Partner change",
+      "title": "Glyde can lead HCM deployments in South Africa",
+      "implication": "Regional accreditation is useful evidence, but does not establish ANZ implementation scope.",
+      "scope": "Global",
+      "text": "Group Elephant announced Glyde’s implementation qualification for South Africa.",
+      "url": "https://www.groupelephant.com/posts/glyde-consulting-qualified-to-lead-workday-hcm-implementations-in-south-africa",
+      "source": "Company source"
+    },
+    {
+      "id": "genesis-live",
+      "date": "2026-05-11",
+      "dateLabel": "May 2026 · customer announcement",
+      "companyIds": [
+        "accenture"
+      ],
+      "personIds": [],
+      "type": "Client delivery",
+      "title": "Genesis Energy completes finance deployment",
+      "implication": "A named New Zealand customer anchors local Finance capability.",
+      "scope": "ANZ",
+      "text": "Workday names Accenture as the advisory and implementation partner.",
+      "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+      "source": "Company source"
+    }
+  ],
+  "customers": [
+    {
+      "id": "genesis-energy",
+      "name": "Genesis Energy",
+      "companyId": "accenture",
+      "capabilities": [
+        "Advisory",
+        "Implementation",
+        "Finance"
+      ],
+      "fact": {
+        "text": "Workday identifies Accenture’s advisory and implementation role in its completed finance deployment.",
+        "url": "https://en-au.newsroom.workday.com/press-releases?item=122868",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "macquarie-university",
+      "name": "Macquarie University",
+      "companyId": "accenture",
+      "capabilities": [
+        "Implementation",
+        "HCM",
+        "Adaptive",
+        "Data / Integration / AI"
+      ],
+      "fact": {
+        "text": "The 2022 case describes HCM, Adaptive Planning and Prism work. It is a historical delivery reference.",
+        "url": "https://www.accenture.com/content/dam/accenture/final/capabilities/technology/technology-innovation/document/Accenture-Macquarie-University-Workday-Stories-2022.pdf",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "bega-cheese",
+      "name": "Bega Cheese",
+      "companyId": "kpmg",
+      "capabilities": [
+        "Implementation",
+        "HCM"
+      ],
+      "fact": {
+        "text": "KPMG describes the company’s Workday talent and HR transformation.",
+        "url": "https://kpmg.com/au/en/why-kpmg/clients/workday-talent-management-bega-cheese-client-story.html",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "perth-airport",
+      "name": "Perth Airport",
+      "companyId": "kainos",
+      "capabilities": [
+        "Implementation",
+        "HCM"
+      ],
+      "fact": {
+        "text": "The delivery leader reports HCM and recruitment go-live; Kainos’s FY26 report also names the customer.",
+        "url": "https://www.linkedin.com/posts/mitchcollins_workday-perthairport-kainos-activity-7491289424316497920-HVbh",
+        "source": "Company source"
+      }
+    },
+    {
+      "id": "federation-university",
+      "name": "Federation University",
+      "companyId": "cognizant",
+      "capabilities": [
+        "Implementation",
+        "HCM",
+        "Payroll",
+        "AMS"
+      ],
+      "fact": {
+        "text": "Published HCM and Payroll delivery with subsequent enhancements. The case does not establish completed Finance or Student deployment.",
+        "url": "https://www.cognizant.com/us/en/case-studies/federation-university-transforms-hcm-systems-to-enable-a-unified-platform",
+        "source": "Company source"
+      }
+    }
+  ],
+  "lineages": [
+    {
+      "id": "local-roots",
+      "title": "Local roots, two acquisitions, a new practice build",
+      "reading": "Company ownership travels along one path. Duane’s later appointment is a people move, not another acquisition.",
+      "companyIds": [
+        "synergy",
+        "cognizant",
+        "theory-of-mind",
+        "collaborative"
+      ],
+      "eventIds": [
+        "tom-acquisition",
+        "cog-acquisition",
+        "cog-brand",
+        "synergy-hires"
+      ]
+    },
+    {
+      "id": "repeat-founders",
+      "title": "Build, sell, then build in a different ecosystem",
+      "reading": "The continuity is in the founders. Versor’s data/AI track record does not become a Workday delivery claim.",
+      "companyIds": [
+        "kliqtek",
+        "versor",
+        "fujitsu",
+        "kliqxe"
+      ],
+      "eventIds": [
+        "versor-sale",
+        "kliqtek-launch"
+      ]
+    },
+    {
+      "id": "payroll-travels",
+      "title": "A regional practice assembled through named capabilities",
+      "reading": "Payroll, Adaptive and local delivery appointments show how the practice is being assembled. They do not measure another firm’s losses.",
+      "companyIds": [
+        "kainos"
+      ],
+      "eventIds": [
+        "kainos-adaptive",
+        "kainos-payroll",
+        "kainos-hires",
+        "kainos-growth"
+      ]
+    },
+    {
+      "id": "platform-launch",
+      "title": "A business built within an existing platform",
+      "reading": "Parent affiliation, a practice launch and an internal promotion are distinct facts; none reveals individual equity ownership.",
+      "companyIds": [
+        "echo",
+        "tenet"
+      ],
+      "eventIds": [
+        "echo-launch",
+        "echo-promotion"
+      ]
+    },
+    {
+      "id": "acquired-specialist",
+      "title": "Specialist capability meets a new parent",
+      "reading": "The acquisition changes ownership. Retention and local execution determine what the combination delivers.",
+      "companyIds": [
+        "intecrowd",
+        "ust",
+        "tyco"
+      ],
+      "eventIds": [
+        "intecrowd-ust"
+      ]
+    }
+  ]
+}
