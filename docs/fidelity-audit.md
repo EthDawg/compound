@@ -320,3 +320,46 @@ checks cover every registered company screen, known Rippling employee records,
 explicit destinations and cross-company isolation. New scenario tests cover
 payroll sequencing, review invalidation, invitation outcomes and denominators,
 model review, restored drafts, invalid saved data and independent resets.
+
+## Market movement: connect the reading to its evidence
+
+The movement audit found undated records in Recent signals, a history toggle that
+had no effect under direction filters, and event cards disconnected from career
+records. It also found that the latest badge could hide another kind of change.
+The view now starts with concise firm readings and a sourced timeline. Selecting
+a firm includes explicit predecessor history. Firms without a qualifying signal
+remain discoverable without implying stability or decline.
+
+ANZ operating direction, ownership changes and APAC context are separate. Mixed
+local evidence remains mixed instead of allowing the newest positive event to
+overwrite contraction. Ownership applies to the acquired target; regional hires,
+awards and global announcements cannot establish ANZ growth. The existing
+11 September 2026 snapshot is retained. The Kainos FY26 report was rechecked to
+make the growth measure explicit: ANZ revenue from a small base, not a local
+consultant count or evidence of the team available for a new engagement.
+
+Undated events stay outside the dated timeline. A year or month crossing the
+18-month boundary is identified as too broad to count as recent; Full history
+retains its original precision. Direction filters select firms, so changing the
+period still reveals their wider contextual history.
+
+Browser checks covered Building → Full history → Duane Goff → Back, preserving
+the original filters and opening the recorded career with keyboard focus;
+xAmplify's explicit Epicon lineage and the return to matching firms; Kainos's
+local and APAC evidence; Nexon's ownership and separate undated talent story;
+NTT DATA's year-only timing; and Bosley without a dated direction. Rapid search,
+capability and movement selections survive reload. Selecting a person now moves
+focus to that person's expanded record. Full-timeline and overview links land
+below the shared header at narrow widths. Preview testing caught initial profile
+focus overriding a shared timeline fragment; explicit timeline and overview
+fragments now take precedence on arrival.
+
+Inspected 320-, 390- and 1440-pixel layouts did not overflow. The new event, period
+and firm links meet 44 pixels; native links retain separate-tab destinations.
+The development browser error log was empty. These checks do not establish
+physical-device or assistive-technology coverage.
+
+Release validation: production build and all 109 tests pass. New cases cover
+calendar/date precision, signal expiry, mixed local direction, ownership targets,
+APAC isolation, full-history filtering, explicit lineage, unplaced evidence and
+career destinations that clear incompatible filters.
