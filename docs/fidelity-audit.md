@@ -350,7 +350,9 @@ local and APAC evidence; Nexon's ownership and separate undated talent story;
 NTT DATA's year-only timing; and Bosley without a dated direction. Rapid search,
 capability and movement selections survive reload. Selecting a person now moves
 focus to that person's expanded record. Full-timeline and overview links land
-below the shared header at narrow widths.
+below the shared header at narrow widths. Preview testing caught initial profile
+focus overriding a shared timeline fragment; explicit timeline and overview
+fragments now take precedence on arrival.
 
 Inspected 320-, 390- and 1440-pixel layouts did not overflow. The new event, period
 and firm links meet 44 pixels; native links retain separate-tab destinations.

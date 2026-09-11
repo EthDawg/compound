@@ -51,6 +51,12 @@ function EcosystemView() {
   const href = (values: Record<string, string | undefined>) => ecosystemHref(values, params.toString());
   const update = (values: Record<string, string | undefined>) => window.history.replaceState(null, '', ecosystemHref(values, window.location.search));
   useEffect(() => {
+    const anchor = view === 'movement' && ['#movement-timeline', '#current-firm-readings'].includes(window.location.hash) ? document.getElementById(window.location.hash.slice(1)) : null;
+    if (anchor) {
+      anchor.focus({ preventScroll: true });
+      anchor.scrollIntoView({ block: 'start', behavior: 'auto' });
+      return;
+    }
     if (!params.get('firm')) return;
     const person = view === 'people' && params.get('person') ? document.getElementById(`career-${params.get('person')}`) : null;
     const destination = person ?? detail.current;

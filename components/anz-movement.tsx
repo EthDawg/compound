@@ -80,14 +80,14 @@ export function MarketMovement({ data, visible, focusedFirm, query, cap, movemen
   const signalled = readings.filter(r => hasSignal(r.reading));
   const unclassified = readings.filter(r => !hasSignal(r.reading));
   return <div className="space-y-4">
-    {!focusedFirm && <section id="current-firm-readings" className="scroll-mt-36 rounded-xl border border-slate-200 bg-white p-4 sm:scroll-mt-20" aria-label="Current firm readings">
+    {!focusedFirm && <section id="current-firm-readings" tabIndex={-1} className="outline-none scroll-mt-36 rounded-xl border border-slate-200 bg-white p-4 sm:scroll-mt-20" aria-label="Current firm readings">
       <h2 className="text-sm font-semibold">Where the evidence points</h2>
       <p className="mt-1 text-xs leading-relaxed text-slate-500">Local direction and ownership are separate. Choose a firm to follow its evidence.</p>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">{signalled.map(({ company, reading }) => <Link key={company.id} href={href({ firm: company.id, person: undefined })} className="rounded-lg border border-slate-200 p-3 hover:border-[var(--eco-link)] hover:bg-[var(--eco-soft)]"><span className="block text-sm font-semibold text-[var(--eco-link)]">{company.name} →</span><span className="mt-2 block"><MovementBadges reading={reading} /></span><span className="mt-2 block text-xs leading-relaxed text-slate-600">{reading.event?.title ?? reading.regionalSignals[0]?.title}</span></Link>)}</div>
       {!!unclassified.length && <details open={!signalled.length} className="mt-3 rounded-lg bg-slate-50 px-3"><summary className="min-h-11 cursor-pointer py-3 text-xs font-semibold text-slate-600">{unclassified.length} {unclassified.length === 1 ? 'firm without' : 'firms without'} a qualifying signal</summary><p className="pb-2 text-xs leading-relaxed text-slate-500">The reviewed evidence does not establish a recent direction. These firms may still have substantial local capability.</p><div className="flex flex-wrap gap-1 pb-3">{unclassified.map(({ company }) => <Link key={company.id} href={href({ firm: company.id, person: undefined })} className={link}>{company.name}</Link>)}</div></details>}
       {!visible.length && <p className="mt-3 text-xs text-slate-500">No firms match these filters. Try a name or clear a filter.</p>}
     </section>}
-    <section id="movement-timeline" aria-label="Movement timeline" className="scroll-mt-36 space-y-3 sm:scroll-mt-20">
+    <section id="movement-timeline" tabIndex={-1} aria-label="Movement timeline" className="outline-none scroll-mt-36 space-y-3 sm:scroll-mt-20">
       <header className="rounded-xl bg-[var(--eco-link)] p-4 text-white">
         <h2 className="text-sm font-semibold">{focusedFirm ? `${focusedFirm.name} · what changed` : 'Follow the evidence'}</h2>
         {focusedFirm && <Link href={`${href({ firm: undefined, person: undefined })}#current-firm-readings`} className="inline-flex min-h-11 items-center text-xs underline underline-offset-4">Return to matching firms</Link>}
