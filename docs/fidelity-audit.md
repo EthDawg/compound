@@ -271,3 +271,52 @@ responsive browser checks, not physical-device or assistive-technology testing.
 Release validation: production build and all 93 tests pass. Browser errors were
 empty. Checks cover role ownership, fresh review, separate receipts and outcomes,
 shared-service recovery, repair before retry, replay validation and reset isolation.
+
+## Employment Hero: connect employer work to the next person
+
+The audit found three disconnected scenes: Home never reflected completion,
+Find Talent stopped at an invitation, and leaving a screen discarded decisions.
+The study now shares accepted actions and drafts across its four workspaces.
+Payroll carries the source discrepancy through correction, whole-run review,
+finalisation and separate publication. Restoring imported hours invalidates review.
+The EH Work preview exposes only the published gross summary; it does not present
+net pay, a statutory payslip, payment or filing as completed.
+
+Three invitation fixtures demonstrate interested, declined and unanswered.
+Saving a profile is not contact. An invitation needs reviewed profile evidence
+and context. Only an interested reply permits a local follow-up plan; that plan
+retains the original suitability question and creates no application or employee.
+Home displays the invitation denominator and outcome counts. People compares the
+same proposed role, surfaces planned follow-ups and keeps an unreviewed model
+separate from the saved responsibility comparison.
+
+Primary sources checked on 11 September: the AU candidate reminder guide updated
+2 September, payroll finalisation and publication guides, and the Australian
+HeroForce product page. The older Find Talent FAQ says organisation-level
+Interested Candidates is not supported. The study therefore uses explicit
+role-specific reply fixtures, not an organisation-interest feed. Backstage records
+these sources and the limits of the fictional follow-up and employee summary.
+
+Browser checks covered both payroll review cycles, finalised-but-unpublished
+state, the published employee view, interested/declined/unanswered responses,
+follow-up drafts through Backstage, saved-profile empty states, model changes,
+reload and independent reset. Candidate selection brings its profile into view
+at narrow widths; desktop gives the evidence panel more space. The session now
+shows a loading state before restoration instead of briefly displaying stale
+initial counts. Inspected 390- and 1440-pixel layouts did not overflow; tested
+buttons meet 44 pixels. A clean reload produced no browser errors. Development
+hot reload emitted a hook-dependency warning while the hook was being edited;
+it did not recur after reload.
+
+The shared App/Backstage link now carries a registered screen through explanation
+chapters and returns to it. Explicit destinations win, invalid screens fall back,
+and context cannot cross companies. Workday keeps its scenario answers alongside
+the return screen; its Compensation Partner journey was verified in the browser.
+These are responsive and keyboard browser checks, not physical-device or
+assistive-technology certification. Broader company-depth and device audits remain open.
+
+Release validation: production build and all 103 tests pass. The return-path
+checks cover every registered company screen, known Rippling employee records,
+explicit destinations and cross-company isolation. New scenario tests cover
+payroll sequencing, review invalidation, invitation outcomes and denominators,
+model review, restored drafts, invalid saved data and independent resets.
