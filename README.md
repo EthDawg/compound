@@ -16,6 +16,7 @@ needed. Maintained by [Ethan Harley](https://github.com/EthDawg), with contribut
 | [Company connections](https://compound-snowy-pi.vercel.app/?connections=fireworks) | Trace suppliers, distribution, acquisitions and people behind a company. Every link carries its evidence and scope. |
 | [Category guides](https://compound-snowy-pi.vercel.app/categories) | Understand AI inference, developer tools and enterprise AI cloud. Start with a practical problem, then explore company briefs. |
 | [App studies](https://compound-snowy-pi.vercel.app/companies/rippling/app) | Interactive scenarios that make a company’s product logic tangible. Switch companies to compare. |
+| [Pocket password demo](https://compound-snowy-pi.vercel.app/pocket?passwordMode=1&app=rippling) | Try synthetic Rippling, ServiceNow and Workday logins with your browser’s password manager. [Test guide](docs/pocket-password-mode.md). |
 | [Backstage](https://compound-snowy-pi.vercel.app/companies/rippling/backstage) | Strategy, acquisitions, leadership, trade-offs and the evidence behind each interpretation. |
 | [ServiceNow’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/servicenow) | Explore deployment teams, workflow capabilities and acquisition trails. |
 | [Workday’s ANZ ecosystem](https://compound-snowy-pi.vercel.app/atlas/workday) | Follow career lineage, local delivery capability and market movement. The global partner directory is also available here. |

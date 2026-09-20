@@ -1,11 +1,13 @@
 import { ONBOARD } from "@/lib/content/pocket";
 import { PocketFlow } from "@/components/pocket-flow";
 import { InstallHint } from "@/components/install-hint";
+import { PocketApps } from "@/components/pocket-apps";
 
 export default function PocketOnboard() {
   return (
     <>
       <InstallHint />
+      <PocketApps />
       <PocketFlow
         id="onboard"
         title="Onboard"
